@@ -1,0 +1,21 @@
+
+@media (max-width:580px){
+  .container-inscri-3{
+    width: 70%;
+  }
+  .container-inscri-3 h1{
+    font-size: 1.7rem;
+  }
+  .inscri-progress-info-item:nth-of-type(1){
+    display: none;
+  }
+  .inscri-progress-info-item:nth-of-type(3){
+    display: block;
+  }
+  .progress-1{
+    display: none;
+  }
+  .progress-2{
+    display: none;
+  }
+}

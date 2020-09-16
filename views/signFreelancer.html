@@ -1,0 +1,93 @@
+<section ng-controller="MainController">
+
+  <section class="intro-inscri">
+    <h1>Faça a Sua Inscrição</h1>
+  </section>
+
+  <section class="inscri-cadastro">
+    <div class="inscri-progress">
+      <div class="ponto-1"></div>
+      <!-- <div class="progress-1"></div> -->
+      <div class="ponto-2"></div>
+      <div class="ponto-3"></div>
+    </div>
+
+    <div class="inscri-progress-info">
+      <div class="inscri-progress-info-item">
+        <h2>1-Etapa</h2>
+        <span>Dados Pessoais</span>
+      </div>
+      <div class="inscri-progress-info-item" style="margin-right: 25px;">
+        <h2>2-Etapa</h2>
+        <span>Dados Profissionais</span>
+      </div>
+      <div class="inscri-progress-info-item">
+        <h2>3-Etapa</h2>
+        <span>Instruções</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <form class="col-12">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Nome</label>
+              <input type="text" class="form-control" id="inputEmail4" placeholder="Nome Completo">
+            </div>
+            <!-- <div class="form-group col-md-6">
+              <label for="inputAddress">Telefone</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="(xx) x xxxx-xxxx">
+            </div> -->
+            <div class="form-group col-md-6">
+              <label for="inputAddress">CPF</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="xxx-xxx-xxx-xx">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="exampleInputEmail1">Endereço de email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Seu email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="exampleInputEmail1">Repita o Endereço de email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Seu email">
+            </div>
+           
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCEP">Data de Nascimento</label>
+              <input type="text" class="form-control" id="inputCEP" placeholder="dd/mm/aaaa">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEstado">Sexo</label>
+              <select id="inputEstado" class="form-control">
+                <option selected>Escolher...</option>
+                <option>Masculino</option>
+                <option>Feminino</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="password">Senha</label>
+              <input type="password" class="form-control" id="password" aria-describedby="senha do usuario"
+                placeholder="digite uma senha">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="repitasenha">Repita Sua Senha</label>
+              <input type="password" class="form-control" id="repitasenha" placeholder="repita sua senha">
+            </div>
+          </div>
+        </form>
+        <div class="col-12 text-right">
+          <a class="btn btn-primary" ui-sref="signfreelancer2" ui-sref-active="active">Próxima Etapa</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

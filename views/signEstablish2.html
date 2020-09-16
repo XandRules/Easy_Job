@@ -1,0 +1,80 @@
+<section ng-controller="MainController">
+
+  <section class="intro-inscri">
+    <h1>Faça a Sua Inscrição</h1>
+  </section>
+
+  <section class="inscri-cadastro">
+    <div class="inscri-progress">
+      <div class="ponto-1"></div>
+      <div class="progress-1"></div>
+      <div class="ponto-2" style="top: -25px;background: #4455DD;"></div>
+      <div class="ponto-3" style="top: -41px;"></div>
+    </div>
+
+    <div class="inscri-progress-info">
+      <div class="inscri-progress-info-item">
+        <h2>1-Etapa</h2>
+        <span>Dados Pessoais</span>
+      </div>
+      <div class="inscri-progress-info-item" style="margin-right: 25px;">
+        <h2>2-Etapa</h2>
+        <span>Endereço</span>
+      </div>
+      <div class="inscri-progress-info-item">
+        <h2>3-Etapa</h2>
+        <span>Instruções</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <form class="col-12">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEstado">UF</label>
+              <select id="inputEstado" class="form-control">
+                <option selected>Estado...</option>
+                <option>MG</option>
+                <option>SP</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputCEP">CEP</label>
+              <input type="text" class="form-control" id="inputCEP" placeholder="xxxxx-xxx">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="logradouro">Logradouro</label>
+              <input type="text" class="form-control" id="logradouro" aria-describedby="Avenida / Rua"
+                placeholder="Avenida / Rua">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="numero">Número</label>
+              <input type="text" class="form-control" id="numero" placeholder="Número">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="bairro">Bairro</label>
+              <input type="text" class="form-control" id="bairro" aria-describedby="Bairro"
+                placeholder="Bairro">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="municipio">Município</label>
+              <input type="text" class="form-control" id="municipio" placeholder="Município">
+            </div>
+          </div>
+        </form>
+        <div class="col-6 text-left">
+          <a class="btn btn-primary" ui-sref="signfreelancer" ui-sref-active="active">Etapa Anterior</a>
+        </div>
+        <div class="col-6 text-right">
+          <a class="btn btn-primary" ui-sref="signestablish3" ui-sref-active="active">Cadastrar</a>
+        </div>
+     </div>
+  </div>
+  </section>
+</section>

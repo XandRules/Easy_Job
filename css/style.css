@@ -1,0 +1,367 @@
+body{
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+.logo{
+  width: 120px;
+  height: 40px;
+}
+
+.bg{
+  background-color: #F4F4F4 !important;
+}
+.nav-link{
+  color: black;
+  font-weight: 500;
+}
+.btn{
+  border-radius: 0.3rem;
+  font-weight: 500;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
+}
+.img-intro{
+  width: 350px;
+  margin: 0 auto;
+  margin-top: -55px;
+  margin-right: 0; 
+}
+.intro{
+  margin-top: 60px;
+}
+.intro h1{
+  margin-bottom: 20px;
+}
+@media (max-width:770px){
+  .img-intro{
+    margin: 0 auto;
+    width: auto;
+  }
+}
+.navbar-light .navbar-toggler{
+  border: none;
+  box-shadow: none;
+}
+
+.navbar-toggler:focus,.navbar-toggler:hover{
+  border: none;
+  box-shadow: none;
+}
+/* Investimento */
+.invest{
+  background: #4455DD;
+  padding: 60px 0;
+  margin-bottom: 60px;
+}
+.invest-item{
+  background: #FFFFFF;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
+  margin: 0 15px;
+  margin-bottom: 20px;
+  padding: 30px 0px 30px 30px;
+  border-radius: 0.3rem;
+}
+@media (min-width:992px) and (max-width:1140px){
+  .invest-item{
+    flex-basis:330px;
+  }
+}
+.invest-item h2{
+  font-weight: 500;
+  font-size: 1.25rem;  
+}
+.invest-item h3{
+  font-weight: 500;
+  font-size: 1.25rem;  
+  color: #4455DD;
+}
+.invest-item h3::after{
+  content: '';
+  display: block;
+  background: #DEDEDE;
+  width: 40px;
+  height: 2px;
+  margin-top: 10px;
+}
+.invest-item span{
+  color: #808080;
+  font-weight: 500;
+}
+.btn-invest{
+  display: block;
+  width: 200px;
+  padding: 0.62rem 0.75rem;
+  text-align: left;
+  margin-top: 1rem;
+}
+.btn-invest i{
+  font-size: 1.3rem;
+  align-items: center;
+  margin-left: 77px;
+}
+/* Vantagens */
+.vantagens{
+  margin-bottom: 60px;
+}
+.vantagens h1{
+  text-align: center;
+}
+.vantagens-itens{
+  margin: 0 15px;
+  text-align: center;
+}
+.vantagens-itens h2{
+  font-size: 1.25rem;  
+  color: #000000;
+}
+@media (max-width:770px){
+  .img-vantagens{
+    margin: 0 auto;
+    width: auto;
+  }
+  .vantagens-itens{
+    margin: 0;
+  } 
+}
+
+.proffy{
+  display: flex;
+  justify-content: center;
+}
+
+.blockquote p{
+  color: #FFFFFF;
+  margin-top: 120px;
+  font-size: 2.55rem;  
+  max-width: 680px;
+  line-height: 45px
+}
+.blockquote cite{
+  font-size: 1.25rem;  
+  color: #AFAFAF;
+}
+.img-citacao{
+  height: 150px;
+  padding-top: 140px;
+  margin-left: -15px;
+}
+@media (max-width:1140px){
+  .img-citacao{
+    padding-top: 130px;
+  }
+}
+@media (max-width:770px){
+  .blockquote p{
+    margin-top: 170px;
+    font-size: 1.55rem;  
+    line-height: 28px
+  }
+  .img-citacao{
+    width: 300px;
+    position: relative;
+    top: 40px;
+  }
+}
+.form-control{
+  background-color: #DDDDDD;
+}
+.form-control:focus,.form-control:hover{
+  background-color:  #DDDDDD;
+  box-shadow: none;
+}
+button:focus{
+ outline: none;
+}
+.form-group label{
+  font-size: 1.25rem;  
+  font-weight: 500;
+}
+.conta-campos h1{
+  color: #000000;
+}
+.conta-campos{
+  margin-top: 60px;
+}
+.conta-icone{
+    width: 400px;
+    margin: 0 auto;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+@media (max-width:770px){
+  .conta-icone{
+    margin-left: auto;
+    width: auto;
+  }
+}
+
+/* footer */
+.mapa-site span{
+  display: block;
+}
+.redes-sociais-item{
+  display: inline-block;
+}
+footer{
+  background: #000000;
+  padding: 30px 0;
+}
+footer h2{
+  color: #FFFFFF;
+  font-size: 1.25rem;  
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+footer span{
+  font-size: 1rem;
+  color: #808080;
+  cursor: pointer;
+}
+.copy{
+  background: #4455DD;
+  text-align: center;
+  padding: 1.2rem 0;
+}
+.redes-sociais-item{
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  margin: 0 5px;
+  margin-top: 8px;
+}
+.footer-item p{
+  font-size: 1rem;
+  color: #808080;
+}
+.footer-item {
+  margin-bottom: 20px;
+}
+.copy p{
+  color: #FFFFFF;
+  margin: 0;
+}
+
+/* Inscrição */
+.intro-inscri{
+  text-align: center;
+  background: #4455DD;
+  font-size: 1.25rem;  
+  font-weight: 500;
+  color: #FFFFFF;
+  padding: 1.5rem 0;
+}
+
+.inscri-cadastro{
+  margin: 60px 0;
+}
+
+.inscri-progress{
+  background: #DDDDDD;
+  width: 460px;
+  height: 2px;
+  margin: 0 auto;
+}
+.ponto-1{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #7885EF;
+  background: #4455DD;
+  position: relative;
+  top: -7px;
+}
+.ponto-2{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #7885EF;
+  background: #FFFFFF;
+  position: relative;
+  top: -23px;
+  left: 230px;
+}
+
+.ponto-3{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #7885EF;
+  background: #FFFFFF;
+  position: relative;
+  top: -39px;
+  left: 460px;
+}
+.progress-1{
+  background: #4455DD;
+  width: 220px;
+  height: 2px;
+  position: relative;
+  top: -16px;
+  left: 16px;
+}
+.progress-2{
+  background: #4455DD;
+  width: 220px;
+  height: 2px;
+  position: relative;
+  top: -34px;
+  left: 246px;
+}
+.footer-info-item span{
+  display: block;
+}
+.container-inscri-2{
+  width: 425px;
+}
+.container-inscri-3{
+  width: 50%;
+}
+.inscri-progress-info{
+  width: 550px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.inscri-progress-info-item h2{
+  font-size: 1.25rem;
+  color: #000000;
+}
+.inscri-progress-info-item span{
+  font-size: 1rem;
+  color: #808080;
+}
+.inscri-3-monitor{
+  max-width: 400px;
+  margin: 0 auto;
+}
+@media (max-width:580px){
+  .ponto-2{
+    display: none;
+  }
+  .ponto-3{
+    display: none;
+  }
+  .ponto-1{
+    margin-left: 24%;
+  }
+  .inscri-progress{
+    background: none;
+    width: 3%;
+  }
+ 
+  .inscri-progress-info-item:nth-of-type(2){
+    display: none;
+  }
+  .inscri-progress-info-item:nth-of-type(3){
+    display: none;
+  }
+  .inscri-progress-info{
+    width: 30%;
+    display: block;
+  }
+}
