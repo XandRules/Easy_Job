@@ -1,123 +1,170 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>EasyJob Freelancers sob demanda</title>
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:500,600i&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/58da77804a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>EasyJob Freelancers sob demanda</title>
-  <link rel="stylesheet" href="./css/bootstrap.css">
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:500,600i&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/58da77804a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/libs/popper.min.js"></script>
+    <script type="text/javascript" src="./js/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/libs/angular.min.js"></script>
+    <script
+      type="text/javascript"
+      src="js/libs/angular-ui-router.min.js"
+    ></script>
+    <script type="text/javascript" src="js/libs/ngStorage.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 
-  <script type="text/javascript" src="js/libs/jquery.min.js"></script>
-  <script type="text/javascript" src="./js/libs/popper.min.js"></script>
-  <script type="text/javascript" src="./js/libs/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/libs/angular.min.js"></script>
-  <script type="text/javascript" src="js/libs/angular-ui-router.min.js"></script>
-  <script type="text/javascript" src="js/libs/ngStorage.min.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/factories/main.factory.js"></script>
+    <script type="text/javascript" src="js/factories/login.factory.js"></script>
+    <script
+      type="text/javascript"
+      src="js/factories/freelancer.factory.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/factories/establish.factory.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/controller/mainController.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/controller/login.controller.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/controller/freelancer.controller.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/controller/establish.controller.js"
+    ></script>
+  </head>
 
-  <script type="text/javascript" src="js/factories/main.factory.js"></script>  
-  <script type="text/javascript" src="js/factories/login.factory.js"></script>  
-  <script type="text/javascript" src="js/factories/freelancer.factory.js"></script>
-  <script type="text/javascript" src="js/factories/establish.factory.js"></script>
-  <script type="text/javascript" src="js/controller/mainController.js"></script>
-  <script type="text/javascript" src="js/controller/login.controller.js"></script>
-  <script type="text/javascript" src="js/controller/freelancer.controller.js"></script>
-  <script type="text/javascript" src="js/controller/establish.controller.js"></script>
+  <body ng-app="easyjob">
+    <div ng-controller="MainController">
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light bg">
+          <div class="container">
+            <a class="navbar-brand logo" href="#">
+              <img
+                src="./img/logo2.svg"
+                loading="lazy"
+                class="img-fluid"
+                alt="Logo"
+              />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#conteudoNavbarSuportado"
+              aria-controls="conteudoNavbarSuportado"
+              aria-expanded="false"
+              aria-label="Alterna navegação"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-</head>
+            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a
+                    class="nav-link"
+                    ui-sref="selectprofile"
+                    ui-sref-active="active"
+                    >Quero Contratar</a
+                  >
+                </li>
+                <li class="nav-item active">
+                  <a
+                    class="nav-link"
+                    ui-sref="selectprofile"
+                    ui-sref-active="active"
+                    >Quero Trabalhar</a
+                  >
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Contato</a>
+                </li>
+                <li class="nav-item active">
+                  <a ui-sref="login" ui-sref-active="active"
+                    ><button class="btn btn-primary my-2 my-sm-0" type="submit">
+                      Login
+                    </button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
 
-<body ng-app="easyjob">
+      <section class="content-wrapper" ui-view></section>
 
-  <div ng-controller="MainController">
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light bg">
+      <footer>
         <div class="container">
-          <a class="navbar-brand logo" href="#">
-            <img src="./img/logo2.svg" loading="lazy" class="img-fluid" alt="Logo">
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
-            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-  
-          <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link"  ui-sref="selectprofile" ui-sref-active="active">Quero Contratar</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" ui-sref="selectprofile" ui-sref-active="active">Quero Trabalhar</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Contato</a>
-              </li>
-              <li class="nav-item active">
-                <a ui-sref="login" ui-sref-active="active"><button class="btn btn-primary my-2 my-sm-0" type="submit">Login</button>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-  
-    <section class="content-wrapper" ui-view></section>
-  
-    <footer>
-      <div class="container">
-        <div class="row">
-  
-          <div class="col-md footer-item">
-            <h2>Mapa do Site</h2>
-            <div class="row footer-info-item">
-  
-              <div class="col-md">
-                <span>- Home</span>
-                <span>- Contratar</span>
-                <span>- Trabalhar</span>
-              </div>
-  
-              <div class="col-md">
-                <span>- Login</span>
-                <span>- Termos</span>
-                <span>- Contato</span>
+          <div class="row">
+            <div class="col-md footer-item">
+              <h2>Mapa do Site</h2>
+              <div class="row footer-info-item">
+                <div class="col-md">
+                  <span>- Home</span>
+                  <span>- Contratar</span>
+                  <span>- Trabalhar</span>
+                </div>
+
+                <div class="col-md">
+                  <span>- Login</span>
+                  <span>- Termos</span>
+                  <span>- Contato</span>
+                </div>
               </div>
             </div>
-          </div>
-  
-          <div class="col-md footer-item">
-            <h2>Redes Sociais</h2>
-  
-            <div class="redes-sociais-item">
-              <img src="./img/facebook.svg" alt="facebook">
+
+            <div class="col-md footer-item">
+              <h2>Redes Sociais</h2>
+
+              <div class="redes-sociais-item">
+                <img src="./img/facebook.svg" alt="facebook" />
+              </div>
+              <div class="redes-sociais-item">
+                <img src="./img/instagram.svg" alt="Instagram" />
+              </div>
+              <div class="redes-sociais-item">
+                <img src="./img/twitter.svg" alt="twitter" />
+              </div>
             </div>
-            <div class="redes-sociais-item">
-              <img src="./img/instagram.svg" alt="Instagram">
+
+            <div class="col-md footer-item">
+              <h2>Sobre</h2>
+              <p>
+                Estamos dispostos a transformar as relações de trabalho e
+                desburocratizar o processo de contratalção para seu evento, bar,
+                restaurante, trazendo os melhores profissionais até você.
+              </p>
             </div>
-            <div class="redes-sociais-item">
-              <img src="./img/twitter.svg" alt="twitter">
-            </div>
-  
           </div>
-  
-          <div class="col-md footer-item">
-            <h2>Sobre</h2>
-            <p>Estamos dispostos a transformar as relações de trabalho e desburocratizar o processo de contratalção
-              para seu evento, bar, restaurante, trazendo os melhores profissionais até você.</p>
-          </div>
-  
         </div>
-      </div>
-    </footer>
-  </div>
+      </footer>
+    </div>
 
-  <div class="copy">
-    <p>EasyJob 2020 Todos os Direitos Reservados</p>
-  </div>
-</body>
-
+    <div class="copy">
+      <p>EasyJob 2020 Todos os Direitos Reservados</p>
+    </div>
+  </body>
 </html>
