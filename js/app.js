@@ -1,7 +1,42 @@
 var easyjob = angular
     .module('easyjob', [
-        'ui.router'
+        'ui.router',
+        'ngStorage'
     ]);
+
+easyjob.run(
+    ['$rootScope', '$state', '$localStorage', '$sessionStorage', function ($rootScope, $state, $localStorage, $sessionStorage) {
+
+        $rootScope.local = $localStorage;
+
+        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+
+            $rootScope.sessionValidated = sessionStorage.getItem('sessionValidated');
+
+            $rootScope.loggedUser = $localStorage.user;
+
+            $rootScope.pageSelect = toState.name;
+
+            if ($rootScope.sessionValidated) {
+                if (toState.name === 'login') {
+
+                    if ($rootScope.loggedUser) {
+                        event.preventDefault();
+                        if (fromState.name === '') { //se usuario tentar acessar o site diretamente pela a pagina de login, redireciona para sales
+                            $state.go('sales');
+                        }
+                    }
+                    return;
+                } else {
+                    if (!$rootScope.loggedUser) {
+                        $state.go('login');
+                    }
+                }
+            }else{
+                $state.go('login');
+            }
+        });
+    }]);
 
 easyjob.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -53,13 +88,23 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
             url: '/establish/confirmacao',
             templateUrl: 'views/signEstablish3.html',
             controller: 'MainController'
+        })
+        .state('salesfreelancer', {
+            url: '/sales/freelancer',
+            templateUrl: 'views/salesfreelancer.html',
+            controller: 'FreelancerController'
+        })
+        .state('salesestablish', {
+            url: '/sales/establish',
+            templateUrl: 'views/salesestablish.html',
+            controller: 'EstablishController'
         });
 
 
 });
 
 easyjob.constant('config', {
-    baseUrl: "http://" + location.hostname + (location.port != "" ? ":" + location.port : "") + "/" + location.pathname.split('/')[1] + "/app/index.php/",
+    baseUrl: "http://localhost:3333",
 
     defaultDownloadUrl: 'main/download/',
     importUploadUrl: 'parameters/import/upload',
@@ -68,7 +113,7 @@ easyjob.constant('config', {
     webBridgeMaxCount: 4999,
 
     defaultHeader: {
-
+        'Access-Control-Allow-Origin': true,
         'Content-Type': 'application/json',
         'Is-Ajax': 'true'
     },
@@ -81,6 +126,7 @@ easyjob.constant('config', {
         'Is-Ajax': 'true',
         'notify': 'true'
     }
+    
 });
 
 easyjob.constant('HTTP_STATUS_CODES', {
