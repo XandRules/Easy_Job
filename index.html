@@ -14,12 +14,25 @@
       src="https://kit.fontawesome.com/58da77804a.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./css/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <script type="text/javascript" src="js/libs/jquery.min.js"></script>
     <script type="text/javascript" src="./js/libs/popper.min.js"></script>
     <script type="text/javascript" src="./js/libs/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/libs/angular.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"
+    ></script>
     <script
       type="text/javascript"
       src="js/libs/angular-ui-router.min.js"
@@ -39,6 +52,10 @@
     ></script>
     <script
       type="text/javascript"
+      src="js/factories/search.factory.js"
+    ></script>
+    <script
+      type="text/javascript"
       src="js/controller/mainController.js"
     ></script>
     <script
@@ -52,6 +69,10 @@
     <script
       type="text/javascript"
       src="js/controller/establish.controller.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/controller/search.controller.js"
     ></script>
   </head>
 
@@ -102,7 +123,7 @@
                   <a class="nav-link" href="#">Contato</a>
                 </li>
                 <li class="nav-item active">
-                  <a ui-sref="login" ui-sref-active="active"
+                  <a ui-sref="selectprofilelogin" ui-sref-active="active"
                     ><button class="btn btn-primary my-2 my-sm-0" type="submit">
                       Login
                     </button>

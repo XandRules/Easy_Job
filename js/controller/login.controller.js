@@ -15,7 +15,30 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
         });
 
 
-        $scope.login = function(){
+        $scope.loginFreelancer = function(){
+            
+            data = {
+                "email": $scope.user,
+                "password": $scope.password
+            }
+
+            console.log(data);
+
+            LoginModel.login(data).then(function(response){
+                console.log('data : ' + response.status);
+
+                if(response.data.error == undefined){
+                    $state.go('salesfreelancer');
+                }
+
+                else{
+                    console.log('usuário ou senha incorreta');
+                }
+
+            });
+        }
+
+        $scope.loginEstablish = function(){
             
             data = {
                 "email": $scope.user,
