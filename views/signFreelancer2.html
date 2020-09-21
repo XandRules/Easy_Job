@@ -1,5 +1,14 @@
-<section ng-controller="MainController">
+<style>
+  .click {
+    cursor: pointer;
+    color: #4455dd;
+  }
+  .click:hover {
+    color: blueviolet;
+  }
+</style>
 
+<section ng-controller="MainController">
   <section class="intro-inscri">
     <h1>Faça a Sua Inscrição</h1>
   </section>
@@ -8,8 +17,8 @@
     <div class="inscri-progress">
       <div class="ponto-1"></div>
       <div class="progress-1"></div>
-      <div class="ponto-2" style="top: -25px;background: #4455DD;"></div>
-      <div class="ponto-3" style="top: -41px;"></div>
+      <div class="ponto-2" style="top: -25px; background: #4455dd"></div>
+      <div class="ponto-3" style="top: -41px"></div>
     </div>
 
     <div class="inscri-progress-info">
@@ -17,7 +26,7 @@
         <h2>1-Etapa</h2>
         <span>Dados Pessoais</span>
       </div>
-      <div class="inscri-progress-info-item" style="margin-right: 25px;">
+      <div class="inscri-progress-info-item" style="margin-right: 25px">
         <h2>2-Etapa</h2>
         <span>Dados Profissionais</span>
       </div>
@@ -29,71 +38,197 @@
 
     <div class="container">
       <div class="row">
-        <form class="col-12">
+
+        <form
+          class="col-12"
+          novalidate
+          name="freelancer2"
+          ng-submit="createFreelancer()"
+        >
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputAddress">Telefone</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="(xx) x xxxx-xxxx">
+              <label for="sp_celphones">Telefone</label>
+              <input
+                type="text"
+                class="form-control sp_celphones"
+                id="sp_celphones"
+                ng-model="phone"
+                name="phone"
+                placeholder="(xx) x xxxx-xxxx"
+                required
+              />
+              <div
+                ng-if="freelancer2.phone.$invalid && freelancer2.phone.$touched"
+                style="color: red"
+              >
+                <div ng-if="freelancer2.phone.$error.required">
+                  O campo telefone é obrigatório
+                </div>
+              </div>
             </div>
             <div class="form-group col-md-6">
-              <label for="inputEstado">Especialidade</label>
-              <select id="inputEstado" class="form-control">
-                <option selected>Escolher...</option>
-                <option>Garçom/Garçonete</option>
-                <option>Recepcionista</option>
-                <option>Banda/Músico</option>
-                <option>Segurança</option>
-                <option>Motoboy</option>
-                <option>Cozinheiro(a)</option>
+              <label for="inputSpeciality">Especialidade</label>
+              <select
+                class="form-control"
+                id="inputSpeciality"
+                ng-model="speciality"
+                name="speciality1"
+                ng-options="item as item.speciality_function for item in specilities track by item.id"
+                required
+              >
+                <option value="" selected>Selecione sua Especialidade</option>
               </select>
+              <div
+                ng-if="freelancer2.speciality1.$invalid && freelancer2.speciality1.$touched"
+                style="color: red"
+              >
+                <div ng-if="freelancer2.speciality1.$error.required">
+                  O campo Especialidade é obrigatório
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputEstado">UF</label>
-              <select id="inputEstado" class="form-control">
-                <option selected>Estado...</option>
-                <option>MG</option>
-                <option>SP</option>
-              </select>
+              <label for="inputCEP">CEP</label>
+              <input
+                type="text"
+                class="form-control"
+                ng-model="cep"
+                id="inputCEP"
+                name="cep"
+                placeholder="xxxxx-xxx"
+                ng-blur="findCep();"
+              />
+              <div
+                ng-if="freelancer2.cep.$invalid && freelancer2.cep.$touched"
+                style="color: red"
+              >
+                <div ng-if="freelancer2.cep.$error.required">
+                  O campo CEP é obrigatório
+                </div>
+              </div>
             </div>
             <div class="form-group col-md-6">
-              <label for="inputCEP">CEP</label>
-              <input type="text" class="form-control" id="inputCEP" placeholder="xxxxx-xxx">
+              <label for="inputEstado">UF</label>
+              <select
+                id="inputEstado"
+                class="form-control"
+                ng-model="uf"
+                disabled
+                name="uf"
+                ng-options="item for item in ufs"
+              >
+                <option value="" selected>Estado ...</option>
+              </select>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="logradouro">Logradouro</label>
-              <input type="text" class="form-control" id="logradouro" aria-describedby="Avenida / Rua"
-                placeholder="Avenida / Rua">
+              <input
+                type="text"
+                class="form-control"
+                id="logradouro"
+                name="logradouro"
+                ng-model="logradouro"
+                aria-describedby="Avenida / Rua"
+                placeholder="Avenida / Rua"
+              />
+              <div
+                ng-if="freelancer2.logradouro.$invalid && freelancer2.logradouro.$touched"
+                style="color: red"
+              >
+                <div ng-if="freelancer2.logradouro.$error.required">
+                  O campo Logradouro é obrigatório
+                </div>
+              </div>
             </div>
             <div class="form-group col-md-6">
               <label for="numero">Número</label>
-              <input type="text" class="form-control" id="numero" placeholder="Número">
+              <input
+                type="text"
+                class="form-control"
+                id="numero"
+                name="numero"
+                ng-model="numero"
+                placeholder="Número"
+              />
+              <div
+                ng-if="freelancer2.numero.$invalid && freelancer2.numero.$touched"
+                style="color: red"
+              >
+                <div ng-if="freelancer2.numero.$error.required">
+                  O campo Número é obrigatório
+                </div>
+              </div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="bairro">Bairro</label>
-              <input type="text" class="form-control" id="bairro" aria-describedby="Bairro"
-                placeholder="Bairro">
+              <input
+                type="text"
+                class="form-control"
+                id="bairro"
+                ng-model="bairro"
+                aria-describedby="Bairro"
+                placeholder="Bairro"
+              />
             </div>
             <div class="form-group col-md-6">
               <label for="municipio">Município</label>
-              <input type="text" class="form-control" id="municipio" placeholder="Município">
+              <input
+                type="text"
+                class="form-control"
+                id="municipio"
+                name="city"
+                ng-model="city"
+                disabled
+                placeholder="Município"
+              />
             </div>
           </div>
+          <div class="text-right">
+            <input
+              type="checkbox"
+              id="termos"
+              name="termos"
+              ng-model="termos"
+              
+            />
+            <div
+              ng-if="freelancer2.termos.$invalid && freelancer2.termos.$touched"
+            ></div>
+            <label for="termos">
+              <div>Concordo com os termos de Uso</div>
+            </label>
+            <div class="click" ng-click="openTermos();">
+              Abrir Termos de uso.
+            </div>
+          </div>
+          
         </form>
         <div class="col-6 text-left">
-          <a class="btn btn-primary" ui-sref="signfreelancer" ui-sref-active="active">Etapa Anterior</a>
+          <a
+            class="btn btn-primary"
+            ui-sref="signfreelancer"
+            ui-sref-active="active"
+            >Etapa Anterior</a
+          >
         </div>
         <div class="col-6 text-right">
-          <a class="btn btn-primary" ui-sref="signfreelancer3" ui-sref-active="active">Cadastrar</a>
+          <button
+            class="btn btn-primary"
+            ng-disabled="!freelancer2.$valid || !termos"
+            ng-click="createFreelancer();"
+          >
+            Cadastrar
+          </button>
         </div>
-     </div>
-  </div>
+      </div>
+    </div>
   </section>
 </section>

@@ -1,5 +1,4 @@
 <section ng-controller="MainController">
-
   <section class="intro-inscri">
     <h1>Faça a Sua Inscrição</h1>
   </section>
@@ -17,7 +16,7 @@
         <h2>1-Etapa</h2>
         <span>Dados Pessoais</span>
       </div>
-      <div class="inscri-progress-info-item" style="margin-right: 25px;">
+      <div class="inscri-progress-info-item" style="margin-right: 25px">
         <h2>2-Etapa</h2>
         <span>Dados Profissionais</span>
       </div>
@@ -29,64 +28,158 @@
 
     <div class="container">
       <div class="row">
-        <form class="col-12">
+        <form
+          class="col-12"
+          name="freelancer"
+          ng-submit="signInFreelancer()"
+          novalidate
+        >
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nome</label>
-              <input type="text" class="form-control" id="inputEmail4" placeholder="Nome Completo">
+              <input
+                type="text"
+                class="form-control"
+                id="inputEmail4"
+                ng-model="name"
+                name="name"
+                placeholder="Nome Completo"
+                required
+              />
+              <div ng-if="freelancer.name.$invalid && freelancer.name.$touched" style="color:red">
+                <div ng-if="freelancer.name.$error.required">O campo nome é obrigatório</div>
+              </div>
             </div>
-            <!-- <div class="form-group col-md-6">
-              <label for="inputAddress">Telefone</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="(xx) x xxxx-xxxx">
-            </div> -->
             <div class="form-group col-md-6">
-              <label for="inputAddress">CPF</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="xxx-xxx-xxx-xx">
+              <label for="inputCPF">CPF</label>
+              <input
+                type="text"
+                ng-model="cpf"
+                class="form-control"
+                id="inputCPF"
+                name="cpf"
+                placeholder="xxx-xxx-xxx-xx"
+                required
+              />
+              <div ng-if="freelancer.cpf.$invalid && freelancer.cpf.$touched" style="color:red">
+                <div ng-if="freelancer.cpf.$error.required">O campo CPF é obrigatório</div>
+              </div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="exampleInputEmail1">Endereço de email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Seu email">
+              <label for="Email1">Endereço de email</label>
+              <input
+                type="email"
+                ng-model="email"
+                class="form-control"
+                id="Email1"
+                name="email1"
+                aria-describedby="emailHelp"
+                placeholder="Seu email"
+                required
+              />
+              <div ng-if="freelancer.email1.$invalid && freelancer.email1.$touched" style="color:red">
+                <div ng-if="freelancer.email1.$error.required">O campo e-mail é obrigatório</div>
+                <div ng-if="freelancer.email1.$error.email">O e-mail digitado não é válido.</div>
+              </div>
             </div>
             <div class="form-group col-md-6">
-              <label for="exampleInputEmail1">Repita o Endereço de email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Seu email">
+              <label for="Email2">Repita o Endereço de email</label>
+              <input
+                type="email"
+                ng-model="repeatEmail"
+                class="form-control"
+                id="Email2"
+                name="email2"
+                aria-describedby="emailHelp"
+                placeholder="Seu email"
+                required
+              />
+              <div ng-if="freelancer.email2.$invalid && freelancer.email2.$touched" style="color:red">
+                <div ng-if="freelancer.email2.$error.required">O campo e-mail é obrigatório</div>
+                <div ng-if="freelancer.email2.$error.email">O e-mail digitado não é válido.</div>
+              </div>
+              <div style="color:red" ng-if="email !== repeatEmail">O e-mail deve ser igual ao digitado anteriormente.</div>
             </div>
-           
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputCEP">Data de Nascimento</label>
-              <input type="text" class="form-control" id="inputCEP" placeholder="dd/mm/aaaa">
+              <label for="inputDataNasc">Data de Nascimento</label>
+              <input
+                type="date"
+                ng-model="birth"
+                class="form-control"
+                id="inputDataNasc"
+                name="dataNasc"
+                placeholder="dd/mm/aaaa"
+                required
+              />
+              <div ng-if="freelancer.dataNasc.$invalid && freelancer.dataNasc.$touched" style="color:red">
+                <div ng-if="freelancer.dataNasc.$error.required">O campo data de nascimnto é obrigatório</div>
+              </div>
             </div>
             <div class="form-group col-md-6">
-              <label for="inputEstado">Sexo</label>
-              <select id="inputEstado" class="form-control">
-                <option selected>Escolher...</option>
-                <option>Masculino</option>
-                <option>Feminino</option>
+              <label for="gender">Sexo</label>
+              <select
+                id="gender"
+                class="form-control"
+                ng-model="gender"
+                name="gender"
+                required
+              >
+                <option value="" selected>Escolher...</option>
+                <option value="0">Masculino</option>
+                <option value="1">Feminino</option>
               </select>
+              <div ng-if="freelancer.gender.$invalid && freelancer.gender.$touched" style="color:red">
+                <div ng-if="freelancer.gender.$error.required">O campo sexo é obrigatório</div>
+              </div>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="password">Senha</label>
-              <input type="password" class="form-control" id="password" aria-describedby="senha do usuario"
-                placeholder="digite uma senha">
+              <input
+                type="password"
+                class="form-control"
+                ng-model="password"
+                id="password"
+                ng-minlength="6"
+                name="password"
+                aria-describedby="senha do usuario"
+                placeholder="digite uma senha"
+                required
+              />
+              <div ng-if="freelancer.password.$invalid && freelancer.password.$touched" style="color:red">
+                <span ng-class="error" ng-show="freelancer.repitasenha.$error.minlength">Não é permitido menos que 6 digitos</span>
+                <div ng-if="freelancer.password.$error.required">O campo senha é obrigatório</div>
+              </div>
             </div>
             <div class="form-group col-md-6">
               <label for="repitasenha">Repita Sua Senha</label>
-              <input type="password" class="form-control" id="repitasenha" placeholder="repita sua senha">
+              <input
+                type="password"
+                ng-model="repeatPassword"
+                class="form-control"
+                id="repitasenha"
+                ng-minlength="6"
+                name="repitasenha"
+                placeholder="repita sua senha"
+                required
+              />
+              <div ng-if="freelancer.repitasenha.$invalid && freelancer.repitasenha.$touched" style="color:red">
+                <span ng-class="error" ng-show="freelancer.repitasenha.$error.minlength">Não é permitido menos que 6 digitos</span>
+                <div ng-if="freelancer.repitasenha.$error.required">O campo repita senha é obrigatório</div>
+              </div>
+              <div style="color: red;" ng-if="repeatPassword !== password">O campo senha e repita senha devem ser iguais!</div>
             </div>
           </div>
+          <div class="col-12 text-right">
+            <button class="btn btn-primary" ng-disabled="!freelancer.$valid" type="submit">Próxima Etapa</button class="btn btn-primary">
+          </div>
         </form>
-        <div class="col-12 text-right">
-          <a class="btn btn-primary" ui-sref="signfreelancer2" ui-sref-active="active">Próxima Etapa</a>
-        </div>
       </div>
     </div>
   </section>

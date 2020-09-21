@@ -1,13 +1,9 @@
-easyjob.factory('FreelancerModel', ['config', '$http',
-    function (config, $http) {
+easyjob.factory('FreelancerModel', [
+  'config',
+  '$http',
+  function (config, $http) {
+    var MainFactory = {};
 
-        var MainFactory = {};
-
-        MainFactory.getMainMenu = function () {
-
-            return $http.get('mock/getmenuvalues.json', config.defaultHeader);
-        };       
-
-        return MainFactory;
-    }
+    return MainFactory;
+  },
 ]);
