@@ -27,6 +27,15 @@ easyjob.controller('MainController', [
     $rootScope.data;
     $scope.message;
 
+    $scope.openTermos = function(role){
+
+      if(role == 'freelancer'){
+        console.log('termos freelancer');
+      }else{
+        console.log('termos establish');
+      }
+    }
+
     $scope.getSpecilities = function () {
       MainModel.getSpecilities().then(function (response) {
         response.data.forEach((element) => {

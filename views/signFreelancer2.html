@@ -203,11 +203,9 @@
               ng-if="freelancer2.termos.$invalid && freelancer2.termos.$touched"
             ></div>
             <label for="termos">
-              <div>Concordo com os termos de Uso</div>
+              <div>Concordo com os <a style="color: #4455dd; cursor:pointer; " ng-click="openTermos('freelancer');">termos de Uso</a></div>
             </label>
-            <div class="click" ng-click="openTermos();">
-              Abrir Termos de uso.
-            </div>
+
           </div>
           
         </form>
