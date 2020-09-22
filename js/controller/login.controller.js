@@ -24,10 +24,15 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
 
             console.log(data);
 
-            LoginModel.login(data).then(function(response){
+            let route = '/sessionsfreelancer';
+
+            LoginModel.login(data,route).then(function(response){
                 console.log('data : ' + response.status);
 
                 if(response.data.error == undefined){
+
+                    sessionStorage.setItem('sessionValidated', JSON.stringify(response.data));
+
                     $state.go('salesfreelancer');
                 }
 
@@ -48,7 +53,9 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
 
             console.log(data);
 
-            LoginModel.loginEstablish(data).then(function(response){
+            let route = '/sessionsestablish';
+
+            LoginModel.login(data,route).then(function(response){
                 console.log('data : ' + response.status);
 
                 if(response.data.error == undefined){

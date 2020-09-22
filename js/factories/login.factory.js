@@ -5,7 +5,7 @@ easyjob.factory('LoginModel', ['config', '$http',
 
         LoginFactory.login = function (data) {
 
-            return $http.post(config.baseUrl+'/sessionsfreelancer',data, config.defaultHeader);
+            return $http.post(config.baseUrl+ route,data, config.defaultHeader);
         };
 
         return LoginFactory;
