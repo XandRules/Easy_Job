@@ -65,7 +65,7 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
     })
     .state('loginfreelancer', {
       url: '/login/freelancer',
-      templateUrl: 'views/loginFreelancer.html',
+      templateUrl: 'views/loginfreelancer.html',
       controller: 'LoginController',
     })
     .state('loginestablish', {
