@@ -29,13 +29,15 @@
 
     <div class="container">
       <div class="row">
-        <form class="col-12">
+        <form class="col-12" name="establish" ng-submit="SignInStablish()">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nome</label>
-              <input type="text" class="form-control" id="inputEmail4" placeholder="Nome Completo">
+              <input type="text" class="form-control" ng-model="name" name="name" id="inputEmail4" placeholder="Nome Completo" required>
             </div>
-
+            <div ng-if="establish.name.$invalid && establish.name.$touched" style="color:red">
+              <div ng-if="establish.name.$error.required">O campo nome é obrigatório</div>
+            </div>
             <div class="form-group col-md-6">
               <label for="razaoSocial">Razão Social</label>
               <input type="text" class="form-control" id="razaoSocial" placeholder="Razão Social">

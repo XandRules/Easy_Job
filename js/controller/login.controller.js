@@ -32,6 +32,7 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
                 }
 
                 else{
+                    swal("email ou senha incorreta!", "Tente redefinir sua senha!", "error");
                     console.log('usuário ou senha incorreta');
                 }
 
@@ -47,7 +48,7 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
 
             console.log(data);
 
-            LoginModel.login(data).then(function(response){
+            LoginModel.loginEstablish(data).then(function(response){
                 console.log('data : ' + response.status);
 
                 if(response.data.error == undefined){
@@ -55,6 +56,7 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
                 }
 
                 else{
+                    swal("email ou senha incorreta!", "Tente redefinir sua senha!", "error");
                     console.log('usuário ou senha incorreta');
                 }
 
