@@ -69,7 +69,14 @@
                   </button>
                 </a>
               </li>
-
+              <li class="nav-item active" ng-if="headerDefaultLogout">
+                <a ui-sref="selectprofile" ui-sref-active="active">
+                  <img src="img/segurança.jpg" alt="Avatar" class="avatar">
+                </a>
+              </li>
+              <li ng-if="headerDefaultLogout">
+                <span ng-bind="name"></span>
+              </li>
               <li class="nav-item active" ng-if="headerDefaultLogout">
                 <a href="" ng-click="logout()"><button class="btn btn-primary my-2 my-sm-0" type="submit">
                     sair

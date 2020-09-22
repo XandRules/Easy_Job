@@ -6,7 +6,11 @@ easyjob.controller('FreelancerController', [
     console.log('Freelancer');
 
     $rootScope.headerDefault = false;
+    $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
 
+    let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
+
+    $rootScope.name = sessionValidated.name;
   },
 ]);
