@@ -153,7 +153,7 @@
                 required
               />
               <div ng-if="freelancer.password.$invalid && freelancer.password.$touched" style="color:red">
-                <span ng-class="error" ng-show="freelancer.repitasenha.$error.minlength">Não é permitido menos que 6 digitos</span>
+                <span ng-class="error" ng-show="freelancer.password.$error.minlength">Não é permitido menos que 6 digitos</span>
                 <div ng-if="freelancer.password.$error.required">O campo senha é obrigatório</div>
               </div>
             </div>

@@ -34,13 +34,13 @@
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nome</label>
               <input type="text" class="form-control" ng-model="name" name="name" id="inputEmail4" placeholder="Nome Completo" required>
-            </div>
-            <div ng-if="establish.name.$invalid && establish.name.$touched" style="color:red">
-              <div ng-if="establish.name.$error.required">O campo nome é obrigatório</div>
+              <div ng-if="establish.name.$invalid && establish.name.$touched" style="color:red">
+                <div ng-if="establish.name.$error.required">O campo nome é obrigatório</div>
+              </div>
             </div>
             <div class="form-group col-md-6">
               <label for="razaoSocial">Razão Social</label>
-              <input type="text" class="form-control" ng-model="razaoSocial" name="razaosocial" id="razaoSocial" placeholder="Razão Social">
+              <input type="text" class="form-control" ng-model="razaoSocial" name="razaosocial" id="razaosocial" placeholder="Razão Social">
             </div>
             <div ng-if="establish.razaosocial.$invalid && establish.razaosocial.$touched" style="color:red">
               <div ng-if="establish.razaosocial.$error.required">O campo razão soacial é obrigatório</div>
@@ -112,7 +112,7 @@
                 required
               />
               <div ng-if="establish.password.$invalid && establish.password.$touched" style="color:red">
-                <span ng-class="error" ng-show="establish.repitasenha.$error.minlength">Não é permitido menos que 6 digitos</span>
+                <span ng-class="error" ng-show="establish.password.$error.minlength">Não é permitido menos que 6 digitos</span>
                 <div ng-if="establish.password.$error.required">O campo senha é obrigatório</div>
               </div>
             </div>
