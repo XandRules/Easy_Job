@@ -1,9 +1,12 @@
 easyjob.factory('FreelancerModel', [
   'config',
   '$http',
-  function (config, $http) {
-    var MainFactory = {};
+  '$rootScope',
+  function (config, $http ,$rootScope) {
+    var FreelancerFactory = {};
 
-    return MainFactory;
+    
+
+    return FreelancerFactory;
   },
 ]);

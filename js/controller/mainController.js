@@ -6,6 +6,9 @@ easyjob.controller('MainController', [
   function (MainModel, $scope, $rootScope, $state) {
     console.log('Home');
 
+    $scope.headerDefault = true;
+    $scope.headerDefaultLogout = false;
+
     $scope.name;
     $scope.cpf;
     $scope.cnpj;

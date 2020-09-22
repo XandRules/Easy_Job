@@ -1,5 +1,7 @@
 easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootScope',  '$localStorage', '$sessionStorage',
     function (LoginModel, $scope,$state ,$rootScope, $localStorage, $sessionStorage) {
+        
+        $scope.footerDefault = false;
 
         console.log('Login');
 

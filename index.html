@@ -105,7 +105,7 @@
 
             <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item active" ng-if="headerDefault">
                   <a
                     class="nav-link"
                     ui-sref="selectprofile"
@@ -113,7 +113,7 @@
                     >Quero Contratar</a
                   >
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item active" ng-if="headerDefault">
                   <a
                     class="nav-link"
                     ui-sref="selectprofile"
@@ -121,16 +121,25 @@
                     >Quero Trabalhar</a
                   >
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item active" ng-if="headerDefault">
                   <a class="nav-link" href="#">Contato</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item active" ng-if="headerDefault">
                   <a ui-sref="selectprofilelogin" ui-sref-active="active"
                     ><button class="btn btn-primary my-2 my-sm-0" type="submit">
                       Login
                     </button>
                   </a>
                 </li>
+
+                <li class="nav-item active" ng-if="headerDefaultLogout">
+                  <a href="" ng-click="logout()"
+                    ><button class="btn btn-primary my-2 my-sm-0" type="submit">
+                      sair
+                    </button>
+                  </a>
+                </li>
+
               </ul>
             </div>
           </div>
@@ -139,7 +148,7 @@
 
       <section class="content-wrapper" ui-view></section>
 
-      <footer>
+      <footer ng-if="footerDefault">
         <div class="container">
           <div class="row">
             <div class="col-md footer-item">
@@ -186,7 +195,7 @@
       </footer>
     </div>
 
-    <div class="copy">
+    <div class="copy" ng-if="footerDefault">
       <p>EasyJob 2020 Todos os Direitos Reservados</p>
     </div>
   </body>
