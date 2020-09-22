@@ -69,20 +69,27 @@
                   </button>
                 </a>
               </li>
-              <li class="nav-item active" ng-if="headerDefaultLogout">
-                <a ui-sref="selectprofile" ui-sref-active="active">
-                  <img src="img/segurança.jpg" alt="Avatar" class="avatar">
-                </a>
-              </li>
-              <li ng-if="headerDefaultLogout">
-                <span ng-bind="name"></span>
-              </li>
-              <li style="margin-left: 20px;" class="nav-item active" ng-if="headerDefaultLogout">
-                <a href="" ng-click="logout()"><button class="btn btn-warning my-2 my-sm-0" type="submit">
-                    sair
-                  </button>
-                </a>
-              </li>
+              <div class="container ">
+                <div class=" row col-sl-12">
+                  <li class="nav-item active col-sl-4" style="margin-top: 12px;" ng-if="headerDefaultLogout">
+                    <a ui-sref="selectprofile" ui-sref-active="active">
+                      <img src="img/segurança.jpg" alt="Avatar" class="avatar">
+                    </a>
+                  </li>
+                  <li style="margin-left: 20px; margin-top: 18px;" ng-if="headerDefaultLogout" class="col-sl-4">
+                    <span ng-bind="name"></span>
+                  </li>
+                  <li style="margin-left: 20px; margin-top: 10px;" class="nav-item active col-sl-4"
+                    ng-if="headerDefaultLogout">
+                    <a href="" id="logout" style="margin-left: 20px;" ng-click="logout()"><button
+                        class="btn btn-warning my-2 my-sm-0" type="submit">
+                        sair
+                      </button>
+                    </a>
+                  </li>
+
+                </div>
+              </div>
 
             </ul>
           </div>
