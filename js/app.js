@@ -1,56 +1,44 @@
 var easyjob = angular.module('easyjob', ['ui.router', 'ngStorage']);
 
-easyjob.run([
-  '$rootScope',
-  '$state',
-  '$localStorage',
-  '$sessionStorage',
-  function ($rootScope, $state, $localStorage, $sessionStorage) {
-    $rootScope.local = $localStorage;
+easyjob.run(
+  ['$rootScope', '$state', '$localStorage', '$sessionStorage', function ($rootScope, $state, $localStorage, $sessionStorage) {
 
-    $rootScope.$on('$stateChangeStart', function (
-      event,
-      toState,
-      toParams,
-      fromState,
-      fromParams
-    ) {
-      $rootScope.sessionValidated = sessionStorage.getItem('sessionValidated');
+      $rootScope.local = $localStorage;
 
-      $rootScope.loggedUser = $localStorage.user;
+      $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
-      $rootScope.pageSelect = toState.name;
+          $rootScope.sessionValidated = sessionStorage.getItem('sessionValidated');
 
-      if ($rootScope.sessionValidated) {
-        if (toState.name === 'loginfreelancer') {
-          if ($rootScope.loggedUser) {
-            event.preventDefault();
-            if (fromState.name === '') {
-              //se usuario tentar acessar o site diretamente pela a pagina de login, redireciona para sales
-              $state.go('salesfreelancer');
+          $rootScope.loggedUser = $localStorage.user;
+
+          $rootScope.pageSelect = toState.name;
+
+          if ($rootScope.sessionValidated) {
+              if (toState.name === 'loginfreelancer') {
+
+                  if ($rootScope.loggedUser) {
+                      event.preventDefault();
+                      if (fromState.name === '') { //se usuario tentar acessar o site diretamente pela a pagina de login, redireciona para home
+                          $state.go('salesfreelancer');
+                          // location.href = "#!alarms/current";
+                      }
+                  }
+                  return;
+              }if (toState.name === 'loginestablish') {
+
+                if ($rootScope.loggedUser) {
+                    event.preventDefault();
+                    if (fromState.name === '') { //se usuario tentar acessar o site diretamente pela a pagina de login, redireciona para home
+                        $state.go('salesestablish');
+                        // location.href = "#!alarms/current";
+                    }
+                }
+                return;
             }
-          }
-          return;
-        } else if (toState.name === 'loginestablish') {
-          if ($rootScope.loggedUser) {
-            event.preventDefault();
-            if (fromState.name === '') {
-              //se usuario tentar acessar o site diretamente pela a pagina de login, redireciona para sales
-              $state.go('salesestablish');
-            }
-          }
-          return;
-        } else {
-          if (!$rootScope.loggedUser) {
-            $state.go('selectprofilelogin');
-          }
-        }
-      } else {
-        $state.go('selectprofilelogin');
-      }
-    });
-  },
-]);
+          } 
+      });
+  }]);
+
 
 easyjob.config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/home');
