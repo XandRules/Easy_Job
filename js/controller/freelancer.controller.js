@@ -1,12 +1,12 @@
 easyjob.controller('FreelancerController', [
   'FreelancerModel',
   '$scope',
-  function (FreelancerModel, $scope) {
+  '$rootScope',
+  function (FreelancerModel, $scope, $rootScope) {
     console.log('Freelancer');
 
-    $scope.headerDefault = false;
-    $scope.footerDefault = false;
+    $rootScope.headerDefault = false;
+    $rootScope.footerDefault = false;
 
-    
   },
 ]);

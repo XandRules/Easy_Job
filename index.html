@@ -1,241 +1,195 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>EasyJob Freelancers sob demanda</title>
-    <link rel="stylesheet" href="./css/bootstrap.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:500,600i&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/58da77804a.js"
-      crossorigin="anonymous"
-    ></script>
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>EasyJob Freelancers sob demanda</title>
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:500,600i&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/58da77804a.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet" />
 
-    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
-    <script type="text/javascript" src="js/libs/jquery.mask.js"></script>
-    <script type="text/javascript" src="./js/libs/popper.min.js"></script>
-    <script type="text/javascript" src="./js/libs/bootstrap.min.js"></script>
-    <script
-      type="text/javascript"
-      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="js/libs/angular-ui-router.min.js"
-    ></script>
-    <script type="text/javascript" src="js/libs/ngStorage.min.js"></script>
-    <script type="text/javascript" src="js/libs/sweetalert.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-    <script type="text/javascript" src="js/factories/main.factory.js"></script>
-    <script type="text/javascript" src="js/factories/login.factory.js"></script>
-    <script
-      type="text/javascript"
-      src="js/factories/freelancer.factory.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="js/factories/establish.factory.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="js/factories/search.factory.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="js/controller/mainController.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="js/controller/login.controller.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="js/controller/freelancer.controller.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="js/controller/establish.controller.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="js/controller/search.controller.js"
-    ></script>
-  </head>
+  <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+  <script type="text/javascript" src="js/libs/jquery.mask.js"></script>
+  <script type="text/javascript" src="./js/libs/popper.min.js"></script>
+  <script type="text/javascript" src="./js/libs/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+  <script type="text/javascript" src="js/libs/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="js/libs/ngStorage.min.js"></script>
+  <script type="text/javascript" src="js/libs/sweetalert.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
 
-  <body ng-app="easyjob">
-    <div ng-controller="MainController">
-      <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light bg">
-          <div class="container">
-            <a class="navbar-brand logo" href="#">
-              <img
-                src="./img/logo2.svg"
-                loading="lazy"
-                class="img-fluid"
-                alt="Logo"
-              />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#conteudoNavbarSuportado"
-              aria-controls="conteudoNavbarSuportado"
-              aria-expanded="false"
-              aria-label="Alterna navegação"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+  <script type="text/javascript" src="js/factories/main.factory.js"></script>
+  <script type="text/javascript" src="js/factories/login.factory.js"></script>
+  <script type="text/javascript" src="js/factories/freelancer.factory.js"></script>
+  <script type="text/javascript" src="js/factories/establish.factory.js"></script>
+  <script type="text/javascript" src="js/factories/search.factory.js"></script>
+  <script type="text/javascript" src="js/controller/mainController.js"></script>
+  <script type="text/javascript" src="js/controller/login.controller.js"></script>
+  <script type="text/javascript" src="js/controller/freelancer.controller.js"></script>
+  <script type="text/javascript" src="js/controller/establish.controller.js"></script>
+  <script type="text/javascript" src="js/controller/search.controller.js"></script>
+  <script type="text/javascript" src="js/controller/select.controller.js"></script>
+</head>
 
-            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active" ng-if="headerDefault">
-                  <a
-                    class="nav-link"
-                    ui-sref="selectprofile"
-                    ui-sref-active="active"
-                    >Quero Contratar</a
-                  >
-                </li>
-                <li class="nav-item active" ng-if="headerDefault">
-                  <a
-                    class="nav-link"
-                    ui-sref="selectprofile"
-                    ui-sref-active="active"
-                    >Quero Trabalhar</a
-                  >
-                </li>
-                <li class="nav-item active" ng-if="headerDefault">
-                  <a class="nav-link" href="#">Contato</a>
-                </li>
-                <li class="nav-item active" ng-if="headerDefault">
-                  <a ui-sref="selectprofilelogin" ui-sref-active="active"
-                    ><button class="btn btn-primary my-2 my-sm-0" type="submit">
-                      Login
-                    </button>
-                  </a>
-                </li>
-
-                <li class="nav-item active" ng-if="headerDefaultLogout">
-                  <a href="" ng-click="logout()"
-                    ><button class="btn btn-primary my-2 my-sm-0" type="submit">
-                      sair
-                    </button>
-                  </a>
-                </li>
-
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-
-      <section class="content-wrapper" ui-view></section>
-
-      <footer ng-if="footerDefault">
+<body ng-app="easyjob">
+  <div ng-controller="MainController">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light bg">
         <div class="container">
-          <div class="row">
-            <div class="col-md footer-item">
-              <h2>Mapa do Site</h2>
-              <div class="row footer-info-item">
-                <div class="col-md">
-                  <span>- Home</span>
-                  <span>- Contratar</span>
-                  <span>- Trabalhar</span>
-                </div>
+          <a class="navbar-brand logo" href="#">
+            <img src="./img/logo2.svg" loading="lazy" class="img-fluid" alt="Logo" />
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                <div class="col-md">
-                  <span>- Login</span>
-                  <span>- Termos</span>
-                  <span>- Contato</span>
-                </div>
-              </div>
-            </div>
+          <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active" ng-if="headerDefault">
+                <a class="nav-link" ui-sref="selectprofile" ui-sref-active="active">Quero Contratar</a>
+              </li>
+              <li class="nav-item active" ng-if="headerDefault">
+                <a class="nav-link" ui-sref="selectprofile" ui-sref-active="active">Quero Trabalhar</a>
+              </li>
+              <li class="nav-item active" ng-if="headerDefault">
+                <a class="nav-link" href="#">Contato</a>
+              </li>
+              <li class="nav-item active" ng-if="headerDefault">
+                <a ui-sref="selectprofilelogin" ui-sref-active="active"><button class="btn btn-primary my-2 my-sm-0"
+                    type="submit">
+                    Login
+                  </button>
+                </a>
+              </li>
 
-            <div class="col-md footer-item">
-              <h2>Redes Sociais</h2>
+              <li class="nav-item active" ng-if="headerDefaultLogout">
+                <a href="" ng-click="logout()"><button class="btn btn-primary my-2 my-sm-0" type="submit">
+                    sair
+                  </button>
+                </a>
+              </li>
 
-              <div class="redes-sociais-item">
-                <img src="./img/facebook.svg" alt="facebook" />
-              </div>
-              <div class="redes-sociais-item">
-                <img src="./img/instagram.svg" alt="Instagram" />
-              </div>
-              <div class="redes-sociais-item">
-                <img src="./img/twitter.svg" alt="twitter" />
-              </div>
-            </div>
-
-            <div class="col-md footer-item">
-              <h2>Sobre</h2>
-              <p>
-                Estamos dispostos a transformar as relações de trabalho e
-                desburocratizar o processo de contratalção para seu evento, bar,
-                restaurante, trazendo os melhores profissionais até você.
-              </p>
-            </div>
+            </ul>
           </div>
         </div>
-      </footer>
-    </div>
+      </nav>
+    </header>
 
-    <div class="copy" ng-if="footerDefault">
-      <p>EasyJob 2020 Todos os Direitos Reservados</p>
-    </div>
-  </body>
-  <script>
-    $(document).ready(function () {
-      $('.date').mask('00/00/0000');
-      $('.time').mask('00:00:00');
-      $('.date_time').mask('00/00/0000 00:00:00');
-      $('.cep').mask('00000-000');
-      $('.phone').mask('0000-0000');
-      $('.phone_with_ddd').mask('(00) 0000-0000');
-      $('.phone_us').mask('(000) 000-0000');
-      $('.sp_celphones').mask('(000) 000-0000');
-      $('.mixed').mask('AAA 000-S0S');
-      $('.cpf').mask('000.000.000-00', { reverse: true });
-      $('.cnpj').mask('00.000.000/0000-00', { reverse: true });
-      $('.money').mask('000.000.000.000.000,00', { reverse: true });
-      $('.money2').mask('#.##0,00', { reverse: true });
-      $('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
-        translation: {
-          Z: {
-            pattern: /[0-9]/,
-            optional: true,
-          },
-        },
-      });
-      $('.ip_address').mask('099.099.099.099');
-      $('.percent').mask('##0,00%', { reverse: true });
-      $('.clear-if-not-match').mask('00/00/0000', { clearIfNotMatch: true });
-      $('.placeholder').mask('00/00/0000', { placeholder: '__/__/____' });
-      $('.fallback').mask('00r00r0000', {
-        translation: {
-          r: {
-            pattern: /[\/]/,
-            fallback: '/',
-          },
-          placeholder: '__/__/____',
-        },
-      });
-      $('.selectonfocus').mask('00/00/0000', { selectOnFocus: true });
+    <section class="content-wrapper" ui-view></section>
+
+    <footer ng-show="footerDefault">
+      <div class="container">
+        <div class="row">
+          <div class="col-md footer-item">
+            <h2>Mapa do Site</h2>
+            <div class="row footer-info-item">
+              <div class="col-md">
+                <span>- Home</span>
+                <span>- Contratar</span>
+                <span>- Trabalhar</span>
+              </div>
+
+              <div class="col-md">
+                <span>- Login</span>
+                <span>- Termos</span>
+                <span>- Contato</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md footer-item">
+            <h2>Redes Sociais</h2>
+
+            <div class="redes-sociais-item">
+              <img src="./img/facebook.svg" alt="facebook" />
+            </div>
+            <div class="redes-sociais-item">
+              <img src="./img/instagram.svg" alt="Instagram" />
+            </div>
+            <div class="redes-sociais-item">
+              <img src="./img/twitter.svg" alt="twitter" />
+            </div>
+          </div>
+
+          <div class="col-md footer-item">
+            <h2>Sobre</h2>
+            <p>
+              Estamos dispostos a transformar as relações de trabalho e
+              desburocratizar o processo de contratalção para seu evento, bar,
+              restaurante, trazendo os melhores profissionais até você.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="copy" ng-show="footerDefault">
+    <p>EasyJob 2020 Todos os Direitos Reservados</p>
+  </div>
+</body>
+<script>
+  $(document).ready(function () {
+    $('.date').mask('00/00/0000');
+    $('.time').mask('00:00:00');
+    $('.date_time').mask('00/00/0000 00:00:00');
+    $('.cep').mask('00000-000');
+    $('.phone').mask('0000-0000');
+    $('.phone_with_ddd').mask('(00) 0000-0000');
+    $('.phone_us').mask('(000) 000-0000');
+    $('.sp_celphones').mask('(000) 000-0000');
+    $('.mixed').mask('AAA 000-S0S');
+    $('.cpf').mask('000.000.000-00', {
+      reverse: true
     });
-  </script>
+    $('.cnpj').mask('00.000.000/0000-00', {
+      reverse: true
+    });
+    $('.money').mask('000.000.000.000.000,00', {
+      reverse: true
+    });
+    $('.money2').mask('#.##0,00', {
+      reverse: true
+    });
+    $('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
+      translation: {
+        Z: {
+          pattern: /[0-9]/,
+          optional: true,
+        },
+      },
+    });
+    $('.ip_address').mask('099.099.099.099');
+    $('.percent').mask('##0,00%', {
+      reverse: true
+    });
+    $('.clear-if-not-match').mask('00/00/0000', {
+      clearIfNotMatch: true
+    });
+    $('.placeholder').mask('00/00/0000', {
+      placeholder: '__/__/____'
+    });
+    $('.fallback').mask('00r00r0000', {
+      translation: {
+        r: {
+          pattern: /[\/]/,
+          fallback: '/',
+        },
+        placeholder: '__/__/____',
+      },
+    });
+    $('.selectonfocus').mask('00/00/0000', {
+      selectOnFocus: true
+    });
+  });
+</script>
+
 </html>

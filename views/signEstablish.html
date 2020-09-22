@@ -33,14 +33,16 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nome</label>
-              <input type="text" class="form-control" ng-model="name" name="name" id="inputEmail4" placeholder="Nome Completo" required>
+              <input type="text" class="form-control" ng-model="name" name="name" id="inputEmail4"
+                placeholder="Nome Completo" required>
               <div ng-if="establish.name.$invalid && establish.name.$touched" style="color:red">
                 <div ng-if="establish.name.$error.required">O campo nome é obrigatório</div>
               </div>
             </div>
             <div class="form-group col-md-6">
               <label for="inputRazoSocial">Razão Social</label>
-              <input type="text" class="form-control" ng-model="razaoSocial" name="razaoSocial" id="inputRazoSocial" placeholder="Razão Social" required>
+              <input type="text" class="form-control" ng-model="razaoSocial" name="razaoSocial" id="inputRazoSocial"
+                placeholder="Razão Social" required>
               <div ng-if="establish.razaoSocial.$invalid && establish.razaoSocial.$touched" style="color:red">
                 <div ng-if="establish.razaoSocial.$error.required">O campo razão social é obrigatório</div>
               </div>
@@ -49,16 +51,8 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="Email1">Endereço de email</label>
-              <input
-                type="email"
-                ng-model="email"
-                class="form-control"
-                id="Email1"
-                name="email1"
-                aria-describedby="emailHelp"
-                placeholder="Seu email"
-                required
-              />
+              <input type="email" ng-model="email" class="form-control" id="Email1" name="email1"
+                aria-describedby="emailHelp" placeholder="Seu email" required />
               <div ng-if="establish.email1.$invalid && establish.email1.$touched" style="color:red">
                 <div ng-if="establish.email1.$error.required">O campo e-mail é obrigatório</div>
                 <div ng-if="establish.email1.$error.email">O e-mail digitado não é válido.</div>
@@ -66,34 +60,29 @@
             </div>
             <div class="form-group col-md-6">
               <label for="Email2">Repita o Endereço de email</label>
-              <input
-                type="email"
-                ng-model="repeatEmail"
-                class="form-control"
-                id="Email2"
-                name="email2"
-                aria-describedby="emailHelp"
-                placeholder="Seu email"
-                required
-              />
+              <input type="email" ng-model="repeatEmail" class="form-control" id="Email2" name="email2"
+                aria-describedby="emailHelp" placeholder="Seu email" required />
               <div ng-if="establish.email2.$invalid && establish.email2.$touched" style="color:red">
                 <div ng-if="establish.email2.$error.required">O campo e-mail é obrigatório</div>
                 <div ng-if="establish.email2.$error.email">O e-mail digitado não é válido.</div>
               </div>
-              <div style="color:red" ng-if="email !== repeatEmail">O e-mail deve ser igual ao digitado anteriormente.</div>
+              <div style="color:red" ng-if="email !== repeatEmail">O e-mail deve ser igual ao digitado anteriormente.
+              </div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputCNPJ">CNPJ</label>
-              <input type="text" ng-model="cnpj" name="cnpj" class="form-control" id="inputCNPJ" placeholder="CNPJ" required>
+              <input type="text" ng-model="cnpj" name="cnpj" class="form-control" id="inputCNPJ" placeholder="CNPJ"
+                required>
               <div ng-if="establish.cnpj.$invalid && establish.cnpj.$touched" style="color:red">
                 <div ng-if="establish.cnpj.$error.required">O campo CNPJ é obrigatório</div>
               </div>
             </div>
             <div class="form-group col-md-6">
               <label for="inputphone">Telefone</label>
-              <input type="text" class="form-control" name="phone" ng-model="phone" id="inputphone" placeholder="(xx) x xxxx-xxxx">
+              <input type="text" class="form-control" name="phone" ng-model="phone" id="inputphone"
+                placeholder="(xx) x xxxx-xxxx">
               <div ng-if="establish.cnpj.$invalid && establish.cnpj.$touched" style="color:red">
                 <div ng-if="establish.cnpj.$error.required">O campo CNPJ é obrigatório</div>
               </div>
@@ -103,39 +92,25 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="password">Senha</label>
-              <input
-                type="password"
-                class="form-control"
-                ng-model="password"
-                id="password"
-                ng-minlength="6"
-                name="password"
-                aria-describedby="senha do usuario"
-                placeholder="digite uma senha"
-                required
-              />
+              <input type="password" class="form-control" ng-model="password" id="password" ng-minlength="6"
+                name="password" aria-describedby="senha do usuario" placeholder="digite uma senha" required />
               <div ng-if="establish.password.$invalid && establish.password.$touched" style="color:red">
-                <span ng-class="error" ng-show="establish.password.$error.minlength">Não é permitido menos que 6 digitos</span>
+                <span ng-class="error" ng-show="establish.password.$error.minlength">Não é permitido menos que 6
+                  digitos</span>
                 <div ng-if="establish.password.$error.required">O campo senha é obrigatório</div>
               </div>
             </div>
             <div class="form-group col-md-6">
               <label for="repitasenha">Repita Sua Senha</label>
-              <input
-                type="password"
-                ng-model="repeatPassword"
-                class="form-control"
-                id="repitasenha"
-                ng-minlength="6"
-                name="repitasenha"
-                placeholder="repita sua senha"
-                required
-              />
+              <input type="password" ng-model="repeatPassword" class="form-control" id="repitasenha" ng-minlength="6"
+                name="repitasenha" placeholder="repita sua senha" required />
               <div ng-if="establish.repitasenha.$invalid && establish.repitasenha.$touched" style="color:red">
-                <span ng-class="error" ng-show="establish.repitasenha.$error.minlength">Não é permitido menos que 6 digitos</span>
+                <span ng-class="error" ng-show="establish.repitasenha.$error.minlength">Não é permitido menos que 6
+                  digitos</span>
                 <div ng-if="establish.repitasenha.$error.required">O campo repita senha é obrigatório</div>
               </div>
-              <div style="color: red;" ng-if="repeatPassword !== password">O campo senha e repita senha devem ser iguais!</div>
+              <div style="color: red;" ng-if="repeatPassword !== password">O campo senha e repita senha devem ser
+                iguais!</div>
             </div>
           </div>
         </form>

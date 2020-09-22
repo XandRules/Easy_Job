@@ -1,42 +1,43 @@
 <style>
-  input:hover{
+  input:hover {
     box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.4);
   }
 </style>
 
 <section class="inscri-cadastro" ng-controller="LoginController">
 
-        <div class="container">
-          <div class="row">
-            <div class="center" style="border-radius: 2%;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  <div class="container">
+    <div class="row">
+      <div class="center" style="border-radius: 2%;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
             transition: 0.3s; margin: 0 auto; padding: 30px;">
-    
-              <form class="col-md-12">
-                <img src="./img/logo2.svg" class="img-fluid" style="padding: 40px;" alt="Logo">
-      
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                    <label for="exampleInputEmail1">Endereço de email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" ng-model="user" aria-describedby="emailHelp"
-                      placeholder="Seu email" required>
-                  </div>
-                  <div class="form-group col-md-12">
-                    <label for="inputPassword">Senha</label>
-                    <input type="password" class="form-control" id="inputPassword" ng-model="password" placeholder="Senha" required>
-                  </div>
-                </div>
-                <div class="col-12 text-center" style="padding: 40px;">
-                  <a href="" class="btn btn-primary" ng-disabled="!enabledLogin" ng-click="loginEstablish();">Entrar</a>
-                  <a class="btn btn-warning" ui-sref="selectprofile" ui-sref-active="active">Cadastre-se</a>
-                </div>
-                
-              </form>
-              
+
+        <form class="col-md-12">
+          <img src="./img/logo2.svg" class="img-fluid" style="padding: 40px;" alt="Logo">
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="exampleInputEmail1">Endereço de email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" ng-model="user"
+                aria-describedby="emailHelp" placeholder="Seu email" required>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="inputPassword">Senha</label>
+              <input type="password" class="form-control" id="inputPassword" ng-model="password" placeholder="Senha"
+                required>
             </div>
           </div>
-          <div style="display: flex; justify-content: center; margin-top: 10px;">
-            <a href="#">Recuperar Senha</a>
+          <div class="col-12 text-center" style="padding: 40px;">
+            <a href="" class="btn btn-primary" ng-disabled="!enabledLogin" ng-click="loginEstablish();">Entrar</a>
+            <a class="btn btn-warning" ui-sref="selectprofile" ui-sref-active="active">Cadastre-se</a>
           </div>
-          
-        </div>
-      </section>
+
+        </form>
+
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 10px;">
+      <a href="#">Recuperar Senha</a>
+    </div>
+
+  </div>
+</section>

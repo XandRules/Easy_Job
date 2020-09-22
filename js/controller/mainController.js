@@ -6,8 +6,12 @@ easyjob.controller('MainController', [
   function (MainModel, $scope, $rootScope, $state) {
     console.log('Home');
 
-    $scope.headerDefault = true;
-    $scope.headerDefaultLogout = false;
+    $rootScope.headerDefault = true;
+    $rootScope.headerDefaultLogout = false;
+    $rootScope.footerDefault = true;
+
+    const LOGINFREELANCER = 'loginfreelancer';
+    const LOGINESTABLISH = 'loginestablish';
 
     $scope.name;
     $scope.cpf;
@@ -30,43 +34,46 @@ easyjob.controller('MainController', [
     $rootScope.data;
     $scope.message;
 
-    $scope.openTermos = function(role){
+    $scope.openTermos = function (role) {
 
-      if(role == 'freelancer'){
+      if (role == 'freelancer') {
         console.log('termos freelancer');
-      }else{
+      } else {
         console.log('termos establish');
       }
     }
 
     $scope.getSpecilities = function () {
-      MainModel.getSpecilities().then(function (response) {
-        response.data.forEach((element) => {
-          $scope.specilities.push(element);
-        });
 
-        console.log($scope.specilities);
-      });
+      if ($rootScope.pageSelect == 'signfreelancer') {
+        MainModel.getSpecilities().then(function (response) {
+          response.data.forEach((element) => {
+            $scope.specilities.push(element);
+          });
+
+          console.log($scope.specilities);
+        });
+      }
     };
 
     $scope.signInFreelancer = function () {
       $rootScope.data = [];
 
       var year = $scope.birth.getFullYear();
-      var month =  ($scope.birth.getMonth() + 1);
-      var day = $scope.birth.getDay(); 
+      var month = ($scope.birth.getMonth() + 1);
+      var day = $scope.birth.getDay();
 
-      if(month < 10){
+      if (month < 10) {
         month = "0" + month;
       }
 
-      if(day < 10){
+      if (day < 10) {
         day = "0" + day;
       }
 
       $scope.birth = year + '-' + month + '-' + day;
 
-      $scope.gender = $scope.gender == 0 ? "Masculino": "Feminino"; 
+      $scope.gender = $scope.gender == 0 ? "Masculino" : "Feminino";
 
       $rootScope.data.push({
         "name": $scope.name,
@@ -133,7 +140,7 @@ easyjob.controller('MainController', [
     $scope.createFreelancer = function () {
       console.log("teste");
 
-      if($rootScope.data == null){
+      if ($rootScope.data == null) {
         $rootScope.data = [];
         $rootScope.data[0] = JSON.parse(localStorage.getItem("dataUser"));
 
@@ -142,20 +149,19 @@ easyjob.controller('MainController', [
       $rootScope.data[0]["phone"] = $scope.phone;
       $rootScope.data[0]["speciality_id"] = $scope.speciality.id;
 
-      MainModel.createFreelancer($rootScope.data[0]).then(function(response){
+      MainModel.createFreelancer($rootScope.data[0]).then(function (response) {
 
-        if(response.data.error != null){
+        if (response.data.error != null) {
           swal("Usuário já Cadastrado!", "Realize o Login ou tente recuperar sua senha!", "error");
-        }
-        else{
+        } else {
           var data = {
             "freelacer_id": response.data.id,
             "uf": $scope.uf,
             "cep": $scope.cep,
             "public_place": $scope.logradouro,
             "neighborhood": $scope.bairro,
-            "number" : $scope.numero,
-            "city" : $scope.city,
+            "number": $scope.numero,
+            "city": $scope.city,
 
           }
 
@@ -168,11 +174,17 @@ easyjob.controller('MainController', [
     };
 
     $scope.saveFreelancerAddressToDataBase = function (data) {
-        MainModel.saveAddress(data).then(function(response){
-          console.log(response.data);
-        })
+      MainModel.saveAddress(data).then(function (response) {
+        console.log(response.data);
+      })
+    };
+
+    $rootScope.logout = function () {
+      window.sessionStorage.clear();
+      $state.go("home");
     };
 
     $scope.getSpecilities();
+
   },
 ]);

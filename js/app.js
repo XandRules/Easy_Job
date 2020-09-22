@@ -70,12 +70,12 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
     .state('selectprofile', {
       url: '/selectprofile',
       templateUrl: 'views/selectProfile.html',
-      controller: 'MainController',
+      controller: 'SelectController',
     })
     .state('selectprofilelogin', {
       url: '/profile',
       templateUrl: 'views/selectProfileLogin.html',
-      controller: 'MainController',
+      controller: 'SelectController',
     })
     .state('signfreelancer', {
       url: '/freelancer/personal',
