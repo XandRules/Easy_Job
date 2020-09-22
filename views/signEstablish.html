@@ -29,7 +29,7 @@
 
     <div class="container">
       <div class="row">
-        <form class="col-12" name="establish" ng-submit="SignInStablish()" novalidate>
+        <form class="col-12" name="establish" ng-submit="signInStablish()" novalidate>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nome</label>
@@ -92,8 +92,11 @@
               </div>
             </div>
             <div class="form-group col-md-6">
-              <label for="inputAddress">Telefone</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="(xx) x xxxx-xxxx">
+              <label for="inputphone">Telefone</label>
+              <input type="text" class="form-control" name="phone" ng-model="phone" id="inputphone" placeholder="(xx) x xxxx-xxxx">
+              <div ng-if="establish.cnpj.$invalid && establish.cnpj.$touched" style="color:red">
+                <div ng-if="establish.cnpj.$error.required">O campo CNPJ é obrigatório</div>
+              </div>
             </div>
           </div>
 

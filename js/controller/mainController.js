@@ -81,6 +81,24 @@ easyjob.controller('MainController', [
       $state.go('signfreelancer2');
     };
 
+    $scope.signInStablish = function () {
+      $rootScope.data = [];
+
+      $rootScope.data.push({
+        "company_name": $scope.name,
+        "cnpj": $scope.cnpj,
+        "email": $scope.email,
+        "phone": $scope.phone,
+        "password": $scope.password,
+        "active": false,
+        "terms_of_use": true,
+      });
+
+      localStorage.setItem("dataUser", JSON.stringify($rootScope.data[0]));
+
+      $state.go('signestablish2');
+    };
+
     $scope.buscaUFs = function () {
       MainModel.findUFs().then(function (response) {
         console.log($rootScope.data);
