@@ -11,6 +11,6 @@ easyjob.controller('FreelancerController', [
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
-    $rootScope.name = sessionValidated.name;
+    $rootScope.name = sessionValidated.freelancer.name;
   },
 ]);
