@@ -3,7 +3,7 @@ easyjob.factory('LoginModel', ['config', '$http',
 
         var LoginFactory = {};
 
-        LoginFactory.login = function (data) {
+        LoginFactory.login = function (data,route) {
 
             return $http.post(config.baseUrl+ route,data, config.defaultHeader);
         };
