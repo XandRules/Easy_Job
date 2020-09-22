@@ -7,7 +7,13 @@ easyjob.run(
 
       $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
-          $rootScope.sessionValidated = sessionStorage.getItem('sessionValidated');
+          $rootScope.sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
+
+          $rootScope.token = 'Bearer ';
+
+          if($rootScope.sessionValidated){
+            $rootScope.token = $rootScope.token + $rootScope.sessionValidated.token;
+          }
 
           $rootScope.loggedUser = $localStorage.user;
 
@@ -122,6 +128,7 @@ easyjob.constant('config', {
   // baseUrl: 'http://localhost:3333',
 
   baseUrl : 'https://easyjob-app.herokuapp.com',
+
   defaultHeader: {
     'Access-Control-Allow-Origin': true,
     'Content-Type': 'application/json',
@@ -130,6 +137,13 @@ easyjob.constant('config', {
   updateHeader: {
     'Content-Type': 'application/json',
     'Is-Ajax': 'true',
+  },
+  defaultHeaderToken: {
+    'Access-Control-Allow-Origin': true,
+    'Content-Type': 'application/json',
+    'Authorization': $rootScope.token,
+    'Is-Ajax': 'true',
+
   },
   defaultHeaderNotify: {
     'Content-Type': 'application/json',
