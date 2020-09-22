@@ -52,7 +52,7 @@
           </button>
 
           <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" ng-if="headerDefault">
               <li class="nav-item active" ng-if="headerDefault">
                 <a class="nav-link" ui-sref="selectprofile" ui-sref-active="active">Quero Contratar</a>
               </li>
@@ -69,6 +69,10 @@
                   </button>
                 </a>
               </li>
+
+
+            </ul>
+            <ul class="navbar-nav ml-auto" ng-if="headerDefaultLogout">
               <div class="container ">
                 <div class=" row col-sl-12">
                   <li class="nav-item active col-sl-4" style="margin-top: 12px;" ng-if="headerDefaultLogout">
@@ -90,7 +94,6 @@
 
                 </div>
               </div>
-
             </ul>
           </div>
         </div>
