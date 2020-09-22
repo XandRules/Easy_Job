@@ -8,8 +8,10 @@ easyjob.controller('MainController', [
 
     $scope.name;
     $scope.cpf;
+    $scope.cnpj;
     $scope.email;
     $scope.repeatEmail;
+    $scope.razaoSocial;
     $scope.birth;
     $scope.gender;
     $scope.password;
