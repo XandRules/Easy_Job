@@ -54,7 +54,6 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
 
     .state('home', {
       url: '/home',
-      //templateUrl: 'views/home.html',
       templateUrl: 'views/home.html',
       controller: 'MainController',
     })
@@ -128,6 +127,8 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/searchFreelancer.html',
       controller: 'SearchController',
     });
+
+
 });
 
 easyjob.constant('config', {
