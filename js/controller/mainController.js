@@ -6,6 +6,11 @@ easyjob.controller('MainController', [
   function (MainModel, $scope, $rootScope, $state) {
     console.log('Home');
 
+
+    document.getElementById("loading").style.display = "block";
+    document.getElementById("content").style.display = "none";
+    document.getElementById("content2").style.display = "none";
+
     $rootScope.headerDefault = true;
     $rootScope.headerDefaultLogout = false;
     $rootScope.footerDefault = true;
@@ -34,6 +39,12 @@ easyjob.controller('MainController', [
     $rootScope.data;
     $scope.message;
 
+    $scope.loadDom = function () {
+      document.addEventListener('DOMContentLoaded', function () {
+        console.log('loaded');
+      });
+    }
+
     $scope.openTermos = function (role) {
 
       if (role == 'freelancer') {
@@ -45,15 +56,19 @@ easyjob.controller('MainController', [
 
     $scope.getSpecilities = function () {
 
-      if ($rootScope.pageSelect == 'signfreelancer') {
-        MainModel.getSpecilities().then(function (response) {
-          response.data.forEach((element) => {
-            $scope.specilities.push(element);
-          });
+      MainModel.getSpecilities().then(function (response) {
 
-          console.log($scope.specilities);
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("content").style.display = "block";
+        document.getElementById("content2").style.display = "block";
+
+        response.data.forEach((element) => {
+          $scope.specilities.push(element);
         });
-      }
+
+        console.log($scope.specilities);
+      });
+
     };
 
     $scope.signInFreelancer = function () {

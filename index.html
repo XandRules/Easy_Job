@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>EasyJob Freelancers sob demanda</title>
   <link rel="stylesheet" href="./css/bootstrap.css" />
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:500,600i&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/58da77804a.js" crossorigin="anonymous"></script>
+  <!-- <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:500,600i&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/58da77804a.js" crossorigin="anonymous"></script> -->
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet" />
 
@@ -36,10 +36,28 @@
   <script type="text/javascript" src="js/controller/establish.controller.js"></script>
   <script type="text/javascript" src="js/controller/search.controller.js"></script>
   <script type="text/javascript" src="js/controller/select.controller.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+      lozad().observe();
+
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("content").style.display = "block";
+      document.getElementById("content2").style.display = "block";
+
+    };
+  </script>
+
 </head>
 
 <body ng-app="easyjob">
-  <div ng-controller="MainController">
+
+  <div id="loading" style="display: block">
+    <img src="https://shopping25demarco.com.br/img/loading.gif"
+      style="position: relative; margin: 0 auto; display: flex; justify-content: center; margin-top: 30%; width:150px;height:150px;" />
+  </div>
+
+  <div id="content" ng-controller="MainController" style="display: none">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light bg">
         <div class="container">
@@ -149,7 +167,7 @@
     </footer>
   </div>
 
-  <div class="copy" ng-show="footerDefault">
+  <div id="content2" style="display: none;" class="copy" ng-show="footerDefault">
     <p>EasyJob 2020 Todos os Direitos Reservados</p>
   </div>
 </body>
