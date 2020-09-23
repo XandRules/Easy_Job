@@ -6,11 +6,6 @@ easyjob.controller('MainController', [
   function (MainModel, $scope, $rootScope, $state) {
     console.log('Home');
 
-
-    document.getElementById("loading").style.display = "block";
-    document.getElementById("content").style.display = "none";
-    document.getElementById("content2").style.display = "none";
-
     $rootScope.headerDefault = true;
     $rootScope.headerDefaultLogout = false;
     $rootScope.footerDefault = true;
@@ -57,10 +52,6 @@ easyjob.controller('MainController', [
     $scope.getSpecilities = function () {
 
       MainModel.getSpecilities().then(function (response) {
-
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("content").style.display = "block";
-        document.getElementById("content2").style.display = "block";
 
         response.data.forEach((element) => {
           $scope.specilities.push(element);
@@ -190,7 +181,9 @@ easyjob.controller('MainController', [
 
     $scope.saveFreelancerAddressToDataBase = function (data) {
       MainModel.saveAddress(data).then(function (response) {
-        console.log(response.data);
+        if (response.data.error != null) {
+
+        }
       })
     };
 
