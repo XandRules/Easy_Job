@@ -123,7 +123,8 @@
               <div class="col-md-12 mb-3 mb-md-0">
                 <h4>Imagens <h6>(Máx 3 imagens)</h6>
                 </h4>
-                <input id="file-input" type="file" multiple class="form-control col-md-12">
+                <input id="file-input" type="file" multiple class="form-control col-md-12"
+                  ng-change="imageUploadPreview();">
                 <div class="col-md-3" id="preview" style="width:9.5rem; margin-top:10px;"></div>
               </div>
             </div>

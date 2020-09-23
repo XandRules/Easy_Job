@@ -50,7 +50,5 @@ easyjob.controller('FreelancerController', [
 
       }
     }
-
-    document.querySelector('#file-input').addEventListener("change", $scope.imageUploadPreview);
   }
 ]);
