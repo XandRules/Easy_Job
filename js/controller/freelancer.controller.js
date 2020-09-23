@@ -19,7 +19,7 @@ easyjob.controller('FreelancerController', [
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
-    //$rootScope.name = sessionValidated.freelancer.name;
+    $rootScope.name = sessionValidated.freelancer.name.split(" ")[0];
 
     $scope.imageUploadPreview = function () {
 
