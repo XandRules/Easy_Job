@@ -3,46 +3,47 @@ var easyjob = angular.module('easyjob', ['ui.router', 'ngStorage']);
 easyjob.run(
   ['$rootScope', '$state', '$localStorage', '$sessionStorage', function ($rootScope, $state, $localStorage, $sessionStorage) {
 
-      $rootScope.local = $localStorage;
+    $rootScope.local = $localStorage;
 
-      $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
-          $rootScope.sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
+      $rootScope.sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
-          $rootScope.token = 'Bearer ';
+      $rootScope.token = 'Bearer ';
 
-          if($rootScope.sessionValidated){
-            $rootScope.token = $rootScope.token + $rootScope.sessionValidated.token;
-          }
+      if ($rootScope.sessionValidated) {
+        $rootScope.token = $rootScope.token + $rootScope.sessionValidated.token;
+      }
 
-          $rootScope.loggedUser = $localStorage.user;
+      $rootScope.loggedUser = $localStorage.user;
 
-          $rootScope.pageSelect = toState.name;
+      $rootScope.pageSelect = toState.name;
 
-          if ($rootScope.sessionValidated) {
-              if (toState.name === 'loginfreelancer') {
+      if ($rootScope.sessionValidated) {
+        if (toState.name === 'loginfreelancer') {
 
-                  if ($rootScope.loggedUser) {
-                      event.preventDefault();
-                      if (fromState.name === '') { //se usuario tentar acessar o site diretamente pela a pagina de login, redireciona para home
-                          $state.go('salesfreelancer');
-                          // location.href = "#!alarms/current";
-                      }
-                  }
-                  return;
-              }if (toState.name === 'loginestablish') {
-
-                if ($rootScope.loggedUser) {
-                    event.preventDefault();
-                    if (fromState.name === '') { //se usuario tentar acessar o site diretamente pela a pagina de login, redireciona para home
-                        $state.go('salesestablish');
-                        // location.href = "#!alarms/current";
-                    }
-                }
-                return;
+          if ($rootScope.loggedUser) {
+            event.preventDefault();
+            if (fromState.name === '') { //se usuario tentar acessar o site diretamente pela a pagina de login, redireciona para home
+              $state.go('salesfreelancer');
+              // location.href = "#!alarms/current";
             }
-          } 
-      });
+          }
+          return;
+        }
+        if (toState.name === 'loginestablish') {
+
+          if ($rootScope.loggedUser) {
+            event.preventDefault();
+            if (fromState.name === '') { //se usuario tentar acessar o site diretamente pela a pagina de login, redireciona para home
+              $state.go('salesestablish');
+              // location.href = "#!alarms/current";
+            }
+          }
+          return;
+        }
+      }
+    });
   }]);
 
 
@@ -112,6 +113,11 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/salesfreelancer.html',
       controller: 'FreelancerController',
     })
+    .state('announcementfreelancer', {
+      url: '/announcement/freelancer',
+      templateUrl: 'views/announcementfreelancer.html',
+      controller: 'FreelancerController',
+    })
     .state('salesestablish', {
       url: '/sales/establish',
       templateUrl: 'views/salesestablish.html',
@@ -127,7 +133,7 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
 easyjob.constant('config', {
   // baseUrl: 'http://localhost:3333',
 
-  baseUrl : 'https://easyjob-app.herokuapp.com',
+  baseUrl: 'https://easyjob-app.herokuapp.com',
 
   defaultHeader: {
     'Access-Control-Allow-Origin': true,

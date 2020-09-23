@@ -34,6 +34,8 @@ easyjob.controller('MainController', [
     $rootScope.data;
     $scope.message;
 
+    $scope.valor;
+
     $scope.loadDom = function () {
       document.addEventListener('DOMContentLoaded', function () {
         console.log('loaded');

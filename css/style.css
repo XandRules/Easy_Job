@@ -194,6 +194,31 @@ img {
   }
 }
 
+.hero-wrap.hero-wrap-0 {
+  height: 200px !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+@media (max-width: 1199.98px) {
+  .hero-wrap.hero-wrap-0 {
+    background-position: top center !important;
+  }
+}
+
+.hero-wrap.hero-wrap-0 .slider-text {
+  height: 200px !important;
+}
+
+@media (max-width: 991.98px) {
+  .hero-wrap.hero-wrap-0 .slider-text {
+    text-align: center;
+    height: 400px !important;
+  }
+}
+
+
 .bg {
   background-color: #F4F4F4 !important;
 }
