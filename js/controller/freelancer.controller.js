@@ -19,7 +19,7 @@ easyjob.controller('FreelancerController', [
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
-    $rootScope.name = sessionValidated.freelancer.name.split(" ")[0];
+    $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
 
     $scope.imageUploadPreview = function () {
 
@@ -50,5 +50,7 @@ easyjob.controller('FreelancerController', [
 
       }
     }
+
+    let event = document.querySelector('#file-input') != null ? document.querySelector('#file-input').addEventListener("change", $scope.imageUploadPreview) : null;
   }
 ]);
