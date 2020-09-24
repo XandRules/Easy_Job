@@ -4,7 +4,7 @@ easyjob.controller('ChatController', [
     console.log('Chat');
     $scope.message;
 
-    var socket = io.connect("https://easyjob-app.herokuapp.com");
+    var socket = io.connect("https://easyjob-app.herokuapp.com:3333");
     var ready = false;
 
     $scope.contacts = 'Pedro';
