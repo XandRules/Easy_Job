@@ -54,7 +54,8 @@
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <h4 class="col-md-12">Título do anúncio</h4>
-                <input type="text" name="title1" class="form-control" placeholder="Profissional em ...." required />
+                <input ng-model="title" type="text" name="title1" class="form-control"
+                  placeholder="Profissional em ...." required />
                 <div ng-if="freelancer.title1.$invalid && freelancer.title1.$touched" style="color:red">
                   <div ng-if="freelancer.title1.$error.required">O campo Título é obrigatório</div>
                 </div>

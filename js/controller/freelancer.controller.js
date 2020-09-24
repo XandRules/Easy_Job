@@ -33,6 +33,10 @@ easyjob.controller('FreelancerController', [
 
     $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
 
+    $scope.createAnnouncement = function () {
+      console.log("criar anuncio");
+    }
+
     $scope.setAmount = function (value) {
 
       $scope.auxAmount = $scope.amount;
