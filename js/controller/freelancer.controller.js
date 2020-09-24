@@ -9,17 +9,44 @@ easyjob.controller('FreelancerController', [
     $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
 
-    $scope.amount = 10;
+    $scope.amount = 0;
     $scope.period;
     $scope.day_of_week;
     $scope.description;
     $scope.freelancer_id;
     $scope.speciality_id;
-
+    $scope.auxAmount;
+    $scope.domingo;
+    $scope.segunda;
+    $scope.terca;
+    $scope.quarta;
+    $scope.quinta;
+    $scope.sexta;
+    $scope.sabado;
+    $scope.manha;
+    $scope.tarde;
+    $scope.noite;
+    $scope.cidade;
+    $scope.descricao;
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
     $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
+
+    $scope.setAmount = function (value) {
+
+      $scope.auxAmount = $scope.amount;
+
+      $scope.auxAmount += value;
+
+      if ($scope.auxAmount > 0) {
+        $scope.amount = $scope.auxAmount;
+      } else if ($scope.auxAmount <= 0) {
+        $scope.amount = 0;
+        $scope.auxAmount = 0;
+      }
+
+    }
 
     $scope.imageUploadPreview = function () {
 
