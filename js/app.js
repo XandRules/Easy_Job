@@ -122,6 +122,11 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/salesestablish.html',
       controller: 'EstablishController',
     })
+    .state('chat', {
+      url: '/chat',
+      templateUrl: 'views/chat.html',
+      controller: 'ChatController',
+    })
     .state('searchfreelancer', {
       url: '/search/freelancer',
       templateUrl: 'views/searchFreelancer.html',
