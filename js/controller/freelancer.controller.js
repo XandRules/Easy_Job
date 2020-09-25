@@ -87,6 +87,10 @@ easyjob.controller('FreelancerController', [
 
     }
 
+    $scope.getAddressFromFreelancer = function(){
+      
+    }
+
     let event = document.querySelector('#file-input') != null ? document.querySelector('#file-input').addEventListener("change", $scope.imageUploadPreview) : null;
   }
 ]);

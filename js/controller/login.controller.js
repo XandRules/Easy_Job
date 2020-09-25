@@ -21,6 +21,10 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
 
         $scope.loginFreelancer = function () {
 
+            // let entrar = document.getElementById('entrar')
+
+            $scope.entrar = "fa fa-spinner fa-spin fa-fw";
+
             data = {
                 "email": $scope.user,
                 "password": $scope.password
@@ -36,6 +40,8 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
                 if (response.data.error == undefined) {
 
                     sessionStorage.setItem('sessionValidated', JSON.stringify(response.data));
+
+                    $scope.entrar = "";
 
                     $state.go('salesfreelancer');
                 } else {
