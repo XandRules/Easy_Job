@@ -15,7 +15,7 @@ easyjob.controller('ChatController', [
     
     ready = true;
 
-    var socket = io.connect("https://easyjob-app.herokuapp.com:3333/");    
+    var socket = io.connect("https://easyjob-app.herokuapp.com/");    
     socket.emit("join", 'Alexandre');
     
     socket.on("update", function (msg) {
