@@ -4,25 +4,20 @@ easyjob.controller('ChatController', [
     console.log('Chat');
     $scope.message;
 
-    var socket = io.connect("https://easyjob-app.herokuapp.com");
     var ready = false;
-
+    
     $scope.contacts = 'Pedro';
     $scope.contactMessage = 'ola tudo bem com vc?';
-
+    
     $scope.name;
-
+    
     var time = new Date();
-
+    
     ready = true;
-    $scope.login = function () {
-      socket.emit("join", $scope.name);
 
-    }
-
+    var socket = io.connect("https://easyjob-app.herokuapp.com");    
     socket.emit("join", 'Alexandre');
-
-
+    
     socket.on("update", function (msg) {
       if (ready) {
         $('.chat').append('<li class="info">' + msg + '</li>')
@@ -32,11 +27,7 @@ easyjob.controller('ChatController', [
     socket.on("chat", function (client, msg) {
       if (ready) {
         var time = new Date();
-
         $scope.client = client;
-
-        console.log($scope.client);
-
         $scope.time = time.getHours() + ':' + time.getMinutes();
         $scope.messageClient = msg;
 
@@ -52,11 +43,9 @@ easyjob.controller('ChatController', [
     });
 
     $scope.sendMessage = function () {
-
       var text = $scope.message;
       var time = new Date();
       $scope.time = time.getHours() + ':' + time.getMinutes();
-
 
       $('.msg_history').append(`
       <div class="incoming_msg">
