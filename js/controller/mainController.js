@@ -184,6 +184,8 @@ easyjob.controller('MainController', [
     $scope.saveFreelancerAddressToDataBase = function (data) {
       MainModel.saveAddress(data).then(function (response) {
         if (response.data.error != null) {
+          swal("Ocorreu um erro!", "Não foi possível salvar seu endereço!", "error");
+        }else{
           $state.go('signestablish3');
         }
       })
