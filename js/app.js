@@ -73,7 +73,7 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
       controller: 'SelectController',
     })
     .state('selectprofilelogin', {
-      url: '/profile',
+      url: '/profilelogin',
       templateUrl: 'views/selectProfileLogin.html',
       controller: 'SelectController',
     })
@@ -126,6 +126,11 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
       url: '/chat',
       templateUrl: 'views/chat.html',
       controller: 'ChatController',
+    })
+    .state('profile', {
+      url: '/profile',
+      templateUrl: 'views/profile.html',
+      controller: 'FreelancerController',
     })
     .state('searchfreelancer', {
       url: '/search/freelancer',

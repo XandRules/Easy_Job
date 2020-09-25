@@ -1,0 +1,191 @@
+<style>
+    .avatar-custom {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+    }
+
+    div.avatar-body img {
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+
+<div class="container" style="text-align: center; margin: 1.9rem;">
+    <div class="avatar-body">
+        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar-custom img-circle img-thumbnail"
+            alt="avatar">
+        <input type="file" class="text-center center-block file-upload" style="display: none">
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row col-12">
+        <div class="col-md-4 col-12 text-center">
+            <div class="center" style="border-radius: 2%;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s; margin: 0 auto; padding: 30px;">
+                <h3 class="text-center" style="margin: 1.9rem;">Atividades</h3>
+
+                <form>
+
+                    <div class="form-row">
+                        <div class="form-group ">
+                            <label for="exampleInputEmail1">Endereço de email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" ng-model="user"
+                                aria-describedby="emailHelp" placeholder="Seu email" required>
+                        </div>
+                        <div class="form-group ">
+                            <label for="inputPassword">Senha</label>
+                            <input type="password" class="form-control" id="inputPassword" ng-model="password"
+                                placeholder="Senha" required>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="center" style="border-radius: 2%;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s; margin: 0 auto; padding: 30px;">
+                <form name="freelancer" ng-submit="updateFreelancer()" novalidate>
+                    <h3 class="text-center" style="margin: 1.9rem;">Dados Pessoais</h3>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">Nome</label>
+                            <input type="text" class="form-control" id="inputEmail4" ng-model="name" name="name"
+                                placeholder="Nome Completo" required />
+                            <div ng-if="freelancer.name.$invalid && freelancer.name.$touched" style="color:red">
+                                <div ng-if="freelancer.name.$error.required">O campo nome é obrigatório</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="sp_celphones">Telefone</label>
+                            <input type="text" class="form-control sp_celphones" id="sp_celphones" ng-model="phone"
+                                name="phone" placeholder="(xx) x xxxx-xxxx" required />
+                            <div ng-if="freelancer.phone.$invalid && freelancer.phone.$touched" style="color: red">
+                                <div ng-if="freelancer.phone.$error.required">
+                                    O campo telefone é obrigatório
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputDataNasc">Data de Nascimento</label>
+                            <input type="date" ng-model="birth" class="form-control" id="inputDataNasc" name="dataNasc"
+                                placeholder="dd/mm/aaaa" required />
+                            <div ng-if="freelancer.dataNasc.$invalid && freelancer.dataNasc.$touched" style="color:red">
+                                <div ng-if="freelancer.dataNasc.$error.required">O campo data de nascimnto é obrigatório
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="gender">Sexo</label>
+                            <select id="gender" class="form-control" ng-model="gender" name="gender" required>
+                                <option value="" selected>Escolher...</option>
+                                <option value="0">Masculino</option>
+                                <option value="1">Feminino</option>
+                            </select>
+                            <div ng-if="freelancer.gender.$invalid && freelancer.gender.$touched" style="color:red">
+                                <div ng-if="freelancer.gender.$error.required">O campo sexo é obrigatório</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="password">Senha</label>
+                            <input type="password" class="form-control" ng-model="password" id="password"
+                                ng-minlength="6" name="password" aria-describedby="senha do usuario"
+                                placeholder="digite uma senha" required />
+                            <div ng-if="freelancer.password.$invalid && freelancer.password.$touched" style="color:red">
+                                <span ng-class="error" ng-show="freelancer.password.$error.minlength">Não é permitido
+                                    menos
+                                    que
+                                    6
+                                    digitos</span>
+                                <div ng-if="freelancer.password.$error.required">O campo senha é obrigatório</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="repitasenha">Repita Sua Senha</label>
+                            <input type="password" ng-model="repeatPassword" class="form-control" id="repitasenha"
+                                ng-minlength="6" name="repitasenha" placeholder="repita sua senha" required />
+                            <div ng-if="freelancer.repitasenha.$invalid && freelancer.repitasenha.$touched"
+                                style="color:red">
+                                <span ng-class="error" ng-show="freelancer.repitasenha.$error.minlength">Não é permitido
+                                    menos
+                                    que 6
+                                    digitos</span>
+                                <div ng-if="freelancer.repitasenha.$error.required">O campo repita senha é obrigatório
+                                </div>
+                            </div>
+                            <div style="color: red;" ng-if="repeatPassword !== password">O campo senha e repita senha
+                                devem
+                                ser
+                                iguais!</div>
+                        </div>
+                    </div>
+                    <h3 class="text-center" style="margin: 1.9rem;">Endereço</h3>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputCEP">CEP</label>
+                            <input type="text" class="form-control" ng-model="cep" id="inputCEP" name="cep"
+                                placeholder="xxxxx-xxx" ng-blur="findCep();" />
+                            <div ng-if="freelancer2.cep.$invalid && freelancer2.cep.$touched" style="color: red">
+                                <div ng-if="freelancer2.cep.$error.required">
+                                    O campo CEP é obrigatório
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEstado">UF</label>
+                            <select id="inputEstado" class="form-control" ng-model="uf" disabled name="uf"
+                                ng-options="item for item in ufs">
+                                <option value="" selected>Estado ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="logradouro">Logradouro</label>
+                            <input type="text" class="form-control" id="logradouro" name="logradouro"
+                                ng-model="logradouro" aria-describedby="Avenida / Rua" placeholder="Avenida / Rua" />
+                            <div ng-if="freelancer2.logradouro.$invalid && freelancer2.logradouro.$touched"
+                                style="color: red">
+                                <div ng-if="freelancer2.logradouro.$error.required">
+                                    O campo Logradouro é obrigatório
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="numero">Número</label>
+                            <input type="text" class="form-control" id="numero" name="numero" ng-model="numero"
+                                placeholder="Número" />
+                            <div ng-if="freelancer2.numero.$invalid && freelancer2.numero.$touched" style="color: red">
+                                <div ng-if="freelancer2.numero.$error.required">
+                                    O campo Número é obrigatório
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" class="form-control" id="bairro" ng-model="bairro"
+                                aria-describedby="Bairro" placeholder="Bairro" />
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="municipio">Município</label>
+                            <input type="text" class="form-control" id="municipio" name="city" ng-model="city" disabled
+                                placeholder="Município" />
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <button class="btn btn-primary" ng-disabled="!freelancer.$valid"
+                                type="submit">Salvar</button class="btn btn-primary">
+                        </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
