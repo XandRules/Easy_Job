@@ -163,7 +163,7 @@ easyjob.controller('MainController', [
           swal("Usuário já Cadastrado!", "Realize o Login ou tente recuperar sua senha!", "error");
         } else {
           var data = {
-            "freelacer_id": response.data.id,
+            "freelancer_id": response.data.id,
             "uf": $scope.uf,
             "cep": $scope.cep,
             "public_place": $scope.logradouro,
@@ -184,7 +184,7 @@ easyjob.controller('MainController', [
     $scope.saveFreelancerAddressToDataBase = function (data) {
       MainModel.saveAddress(data).then(function (response) {
         if (response.data.error != null) {
-
+          $state.go('signestablish3');
         }
       })
     };
