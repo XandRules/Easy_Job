@@ -13,33 +13,26 @@
 
 <div class="container" style="text-align: center; margin: 1.9rem;">
     <div class="avatar-body">
-        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar-custom img-circle img-thumbnail"
-            alt="avatar">
+        <img src="./img/segurança.jpg" class="avatar-custom img-circle img-thumbnail" alt="avatar">
         <input type="file" class="text-center center-block file-upload" style="display: none">
     </div>
 </div>
 
 
-<div class="container">
+<div class="container" style="border-radius: 2%;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+transition: 0.3s; margin: 0 auto; padding: 30px;">
     <div class="row col-12">
         <div class="col-md-4 col-12 text-center">
-            <div class="center" style="border-radius: 2%;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            transition: 0.3s; margin: 0 auto; padding: 30px;">
+            <div class="center">
                 <h3 class="text-center" style="margin: 1.9rem;">Atividades</h3>
 
                 <form>
 
                     <div class="form-row">
                         <div class="form-group ">
-                            <label for="exampleInputEmail1">Endereço de email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" ng-model="user"
-                                aria-describedby="emailHelp" placeholder="Seu email" required>
+
                         </div>
-                        <div class="form-group ">
-                            <label for="inputPassword">Senha</label>
-                            <input type="password" class="form-control" id="inputPassword" ng-model="password"
-                                placeholder="Senha" required>
-                        </div>
+
                     </div>
 
                 </form>
@@ -48,8 +41,7 @@
 
         </div>
         <div class="col-md-8">
-            <div class="center" style="border-radius: 2%;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s; margin: 0 auto; padding: 30px;">
+            <div class="center">
                 <form name="freelancer" ng-submit="updateFreelancer()" novalidate>
                     <h3 class="text-center" style="margin: 1.9rem;">Dados Pessoais</h3>
 
