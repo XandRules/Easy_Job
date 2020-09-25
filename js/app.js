@@ -142,7 +142,7 @@ easyjob.constant('config', {
   baseUrl: 'https://easyjob-app.herokuapp.com',
 
   defaultHeader: {
-    'Access-Control-Allow-Origin': true,
+    'Access-Control-Allow-Origin': "*",
     'Content-Type': 'application/json',
     'Is-Ajax': 'true',
   },
@@ -151,7 +151,7 @@ easyjob.constant('config', {
     'Is-Ajax': 'true',
   },
   defaultHeaderToken: {
-    'Access-Control-Allow-Origin': true,
+    'Access-Control-Allow-Origin': "*",
     'Content-Type': 'application/json',
     'Authorization': '',
     'Is-Ajax': 'true',
