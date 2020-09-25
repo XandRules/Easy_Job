@@ -139,7 +139,7 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
 easyjob.constant('config', {
   // baseUrl: 'http://localhost:3333',
 
-  baseUrl: 'https://easyjob-app.herokuapp.com',
+  baseUrl: 'http://easyjob-app.herokuapp.com',
 
   defaultHeader: {
     'Access-Control-Allow-Origin': "*",
