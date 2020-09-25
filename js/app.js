@@ -145,6 +145,7 @@ easyjob.constant('config', {
   // baseUrl: 'http://localhost:3333',
 
   baseUrl: 'https://easyjob-app.herokuapp.com',
+
   defaultHeader: {
     'Access-Control-Allow-Origin': true,
     'Content-Type': 'application/json',
