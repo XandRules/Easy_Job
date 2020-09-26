@@ -61,7 +61,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="sp_celphones">Telefone</label>
-                                <input type="text" class="form-control sp_celphones" id="sp_celphones" ng-model="phone"
+                                <input type="text" class="form-control sp_celphones" id="sp_celphones" ng-bind="phone" ng-model="phone"
                                     name="phone" placeholder="(xx) x xxxx-xxxx" required />
                                 <div ng-if="freelancer.phone.$invalid && freelancer.phone.$touched" style="color: red">
                                     <div ng-if="freelancer.phone.$error.required">

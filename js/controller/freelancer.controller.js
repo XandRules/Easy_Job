@@ -40,7 +40,7 @@ easyjob.controller('FreelancerController', [
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
-    $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
+    $scope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
     $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
     $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
@@ -113,11 +113,9 @@ easyjob.controller('FreelancerController', [
 
         if(response.data != null){
           $scope.name = response.data[0].name;
-          $scope.email = response.data[0].email;
           $scope.phone = response.data[0].phone;
           $scope.gender = response.data[0].gender;
           $scope.bio = response.data[0].bio;
-          $scope.cpf = response.data[0].cpf;
           $scope.birth = response.data[0].birth;
   
           $scope.getAddressFromFreelancer();
