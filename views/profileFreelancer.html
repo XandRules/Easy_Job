@@ -103,7 +103,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                             <div class="form-group col-md-4">
                                 <label for="logradouro">Logradouro</label>
                                 <input type="text" class="form-control" id="logradouro" name="logradouro"
-                                    ng-model="logradouro" aria-describedby="Avenida / Rua"
+                                    ng-model="public_place" aria-describedby="Avenida / Rua"
                                     placeholder="Avenida / Rua" />
                                 <div ng-if="freelancer2.logradouro.$invalid && freelancer2.logradouro.$touched"
                                     style="color: red">
@@ -114,7 +114,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="numero">Número</label>
-                                <input type="text" class="form-control" id="numero" name="numero" ng-model="numero"
+                                <input type="text" class="form-control" id="numero" name="numero" ng-model="number"
                                     placeholder="Número" />
                                 <div ng-if="freelancer2.numero.$invalid && freelancer2.numero.$touched"
                                     style="color: red">
@@ -126,7 +126,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
 
                             <div class="form-group col-md-4">
                                 <label for="bairro">Bairro</label>
-                                <input type="text" class="form-control" id="bairro" ng-model="bairro"
+                                <input type="text" class="form-control" id="bairro" ng-model="neighborhood"
                                     aria-describedby="Bairro" placeholder="Bairro" />
                             </div>
                             <div class="form-group col-md-4">
