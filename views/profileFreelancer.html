@@ -55,30 +55,19 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                                 <label for="username">Nome</label>
                                 <input type="text" class="form-control" id="username" ng-model="name" name="username"
                                     placeholder="Nome Completo" required />
-                                <div ng-if="freelancer.username.$invalid" style="color:red">
-                                    <div ng-if="freelancer.username.$error.required">O campo nome é obrigatório</div>
-                                </div>
+
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="sp_celphones">Telefone</label>
                                 <input type="text" class="form-control sp_celphones" id="sp_celphones" ng-model="phone"
                                     name="sp_celphones" placeholder="(xx) x xxxx-xxxx" required />
-                                <div ng-if="freelancer.sp_celphones.$invalid" style="color: red">
-                                    <div ng-if="freelancer.sp_celphones.$error.required">
-                                        O campo telefone é obrigatório
-                                    </div>
-                                </div>
+            
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="birth">Data de Nascimento</label>
                                 <input type="date" ng-model="birth" class="form-control" id="birth"
                                     name="birth" placeholder="dd/mm/aaaa" required />
-                                <div ng-if="freelancer.birth.$invalid"
-                                    style="color:red">
-                                    <div ng-if="freelancer.birth.$error.required">O campo data de nascimento é
-                                        obrigatório
-                                    </div>
-                                </div>
+       
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="gender">Sexo</label>
@@ -87,9 +76,6 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                                     <option value="0">Masculino</option>
                                     <option value="1">Feminino</option>
                                 </select>
-                                <div ng-if="freelancer.gender.$invalid" style="color:red">
-                                    <div ng-if="freelancer.gender.$error.required">O campo sexo é obrigatório</div>
-                                </div>
                             </div>
 
                             <div class="form-group col-md-4">
