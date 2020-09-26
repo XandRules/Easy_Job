@@ -104,7 +104,19 @@ easyjob.controller('FreelancerController', [
 
         console.log(response.data);
 
-        $scope.getAddressFromFreelancer();
+        if(response.data != null){
+          $scope.name = response.data[0].name;
+          $scope.email = response.data[0].email;
+          $scope.phone = response.data[0].phone;
+          $scope.gender = response.data[0].gender;
+          $scope.bio = response.data[0].bio;
+          $scope.cpf = response.data[0].cpf;
+          $scope.birth = response.data[0].birth;
+  
+          $scope.getAddressFromFreelancer();
+        }else{
+          swal("Erro ao buscar os dados","Um erro inesperado aconteceu!","error");
+        }
 
       });
 
@@ -114,6 +126,15 @@ easyjob.controller('FreelancerController', [
 
       AddressModel.getAddressFromFreelancer($rootScope.id).then((response) =>{
         console.log(response.data);
+
+        if(response.data != 0){
+          $scope.cep = response.data[0].cep;
+          $scope.uf = response.data[0].uf;
+          $scope.number = response.data[0].number;
+          $scope.public_place = response.data[0].public_place;
+          $scope.city = response.data[0].city;
+          $scope.neighborhood = response.data[0].neighborhood;
+        }
 
         $state.go("profilefreelancer");
 
