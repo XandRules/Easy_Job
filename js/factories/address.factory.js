@@ -11,6 +11,8 @@ easyjob.factory('AddressModel', [
 
      return $http.get(config.baseUrl + `/address/${id}`, config.defaultHeaderToken);
 
+     $http.get()
+
     }    
 
     return AddressFactory;
