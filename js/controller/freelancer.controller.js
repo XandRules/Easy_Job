@@ -1,10 +1,11 @@
 easyjob.controller('FreelancerController', [
   'FreelancerModel',
   'AddressModel',
+  'MainModel',
   '$scope',
   '$rootScope',
   '$state',
-  function (FreelancerModel, AddressModel,$scope, $rootScope, $state) {
+  function (FreelancerModel, AddressModel, MainModel,$scope, $rootScope, $state) {
     console.log('Freelancer');
 
     $rootScope.headerDefault = false;
@@ -62,6 +63,25 @@ easyjob.controller('FreelancerController', [
       }
 
     }
+
+
+    $scope.buscaUFs = function () {
+      MainModel.findUFs().then(function (response) {
+        console.log($rootScope.data);
+        $scope.ufs = [];
+        response.data.forEach((element) => {
+          $scope.ufs.push(element.sigla);
+        });
+
+        console.log($scope.ufs);
+
+        $scope.findByCep();
+      });
+    };
+
+    $scope.findCep = function () {
+      $scope.buscaUFs();
+    };
 
     $scope.imageUploadPreview = function () {
 
