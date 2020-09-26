@@ -4,7 +4,7 @@ easyjob.factory('FreelancerModel', [
   '$rootScope',
   function (config, $http ,$rootScope) {
 
-    let token = 'Bearer ' + $rootScope.token;
+    let token = $rootScope.token;
 
       axios.interceptors.request.use(
         config =>{

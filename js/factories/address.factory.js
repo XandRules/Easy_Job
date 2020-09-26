@@ -4,7 +4,7 @@ easyjob.factory('AddressModel', [
   '$rootScope',
   function (config, $http ,$rootScope) {
 
-    let token = 'Bearer ' + $rootScope.token;
+    let token = $rootScope.token;
 
     axios.interceptors.request.use(
       config =>{
@@ -20,9 +20,7 @@ easyjob.factory('AddressModel', [
 
     AddressFactory.getAddressFromFreelancer = function(id){
 
-     config.defaultHeaderToken.Authorization = 'Bearer ' + $rootScope.token;
-
-     return axios.get(config.baseUrl + `/address/${id}`);
+        return axios.get(config.baseUrl + `/address/${id}`);
 
     }    
 
