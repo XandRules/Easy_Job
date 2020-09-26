@@ -49,6 +49,31 @@ easyjob.controller('FreelancerController', [
       console.log("criar anuncio");
     }
 
+    $scope.updateFreelancer = function(){
+      freelancer_data = {
+        "id" : $rootScope.id,
+        "gender": $scope.gender.value == 0 ?"Masculino" : "Feminino",
+        "birth": $scope.birth.value,
+        "name" : $scope.name.value,
+        "phone" : $scope.phone.value,
+        "bio": $scope.bio.value
+      };
+
+      freelancer_address = {
+        "cef" : $scope.cef,
+        "uf": $scope.uf,
+        "number": $scope.number,
+        "city": $scope.city,
+        "public_place" : $scope.public_place,
+        "neighborhood": $scope.neighborhood 
+
+      };
+
+
+      console.log(freelancer_data);
+      console.log(freelancer_address);
+    }
+
     $scope.setAmount = function (value) {
 
       $scope.auxAmount = $scope.amount;
