@@ -222,8 +222,6 @@ easyjob.controller('FreelancerController', [
           $scope.neighborhood = response.data[0].neighborhood;
         }
 
-        $state.go("profilefreelancer");
-
       });
 
     }
