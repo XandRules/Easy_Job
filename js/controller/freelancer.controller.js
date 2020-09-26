@@ -3,7 +3,8 @@ easyjob.controller('FreelancerController', [
   'AddressModel',
   '$scope',
   '$rootScope',
-  function (FreelancerModel, AddressModel,$scope, $rootScope) {
+  '$state',
+  function (FreelancerModel, AddressModel,$scope, $rootScope, $state) {
     console.log('Freelancer');
 
     $rootScope.headerDefault = false;
