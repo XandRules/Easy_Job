@@ -13,28 +13,28 @@ easyjob.controller('MainController', [
     const LOGINFREELANCER = 'loginfreelancer';
     const LOGINESTABLISH = 'loginestablish';
 
-    $scope.name;
-    $scope.cpf;
-    $scope.cnpj;
-    $scope.email;
-    $scope.repeatEmail;
-    $scope.razaoSocial;
-    $scope.birth;
-    $scope.gender;
-    $scope.password;
-    $scope.repeatPassword;
-    $scope.phone;
+    $scope.name = '';
+    $scope.cpf = '';
+    $scope.cnpj = '';
+    $scope.email = '';
+    $scope.repeatEmail = '';
+    $scope.razaoSocial = '';
+    $scope.birth = '';
+    $scope.gender = '';
+    $scope.password = '';
+    $scope.repeatPassword = '';
+    $scope.phone = '';
     $scope.specilities = [];
-    $scope.speciality;
-    $scope.cep;
-    $scope.uf;
-    $scope.city;
-    $scope.numero;
-    $scope.bairro;
-    $rootScope.data;
-    $scope.message;
+    $scope.speciality = '';
+    $scope.cep = '';
+    $scope.uf = '';
+    $scope.city = '';
+    $scope.numero = '';
+    $scope.bairro = '';
+    $rootScope.data = '';
+    $scope.message = '';
 
-    $scope.valor;
+    $scope.valor = '';
 
     $scope.loadDom = function () {
       document.addEventListener('DOMContentLoaded', function () {
