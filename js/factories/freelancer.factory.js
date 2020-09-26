@@ -7,10 +7,21 @@ easyjob.factory('FreelancerModel', [
 
     FreelancerFactory.getFreelancerById = function(id){
 
-      config.defaultHeaderToken.Authorization = 'Bearer ' + $rootScope.token;
+      let token = 'Bearer ' + $rootScope.token;
+
+      axios.interceptors.request.use(
+        config =>{
+          config.headers.authorization = token;
+          return config;
+        },
+        error =>{
+          return Promisse.reject(error);
+        }
+      )
 
 
-     return $http.get(config.baseUrl + `/freelancers/${id}`, config.defaultHeaderToken);
+
+     return axios.get(config.baseUrl + `/freelancers/${id}`);
 
     }    
 
