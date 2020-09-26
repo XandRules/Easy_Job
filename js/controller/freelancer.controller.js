@@ -44,6 +44,10 @@ easyjob.controller('FreelancerController', [
     $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
     $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
+    if($rootScope.pageSelect == 'profilefreelancer'){
+      $scope.getFreelancerById();
+    }
+
     let token = 'Bearer ' + $rootScope.token;
 
       axios.interceptors.request.use(
