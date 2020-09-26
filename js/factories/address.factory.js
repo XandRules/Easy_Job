@@ -24,7 +24,7 @@ easyjob.factory('AddressModel', [
     }    
 
     AddressFactory.updateAddress = function(data, id){
-      return axios.put(config.baseUrl + `/address/${Id}`,data);
+      return axios.put(config.baseUrl + `/address/${id}`,data);
     }
 
     return AddressFactory;
