@@ -3,15 +3,26 @@ easyjob.factory('AddressModel', [
   '$http',
   '$rootScope',
   function (config, $http ,$rootScope) {
+
+    let token = 'Bearer ' + $rootScope.token;
+
+    axios.interceptors.request.use(
+      config =>{
+        config.headers.authorization = token;
+        return config;
+      },
+      error =>{
+        return Promisse.reject(error);
+      }
+    );
+
     var AddressFactory = {};
 
-    AddressFactory.getAddressById = function(id){
+    AddressFactory.getAddressFromFreelancer = function(id){
 
      config.defaultHeaderToken.Authorization = 'Bearer ' + $rootScope.token;
 
-     return $http.get(config.baseUrl + `/address/${id}`, config.defaultHeaderToken);
-
-     $http.get()
+     return axios.get(config.baseUrl + `/address/${id}`);
 
     }    
 

@@ -3,11 +3,8 @@ easyjob.factory('FreelancerModel', [
   '$http',
   '$rootScope',
   function (config, $http ,$rootScope) {
-    var FreelancerFactory = {};
 
-    FreelancerFactory.getFreelancerById = function(id){
-
-      let token = 'Bearer ' + $rootScope.token;
+    let token = 'Bearer ' + $rootScope.token;
 
       axios.interceptors.request.use(
         config =>{
@@ -17,9 +14,12 @@ easyjob.factory('FreelancerModel', [
         error =>{
           return Promisse.reject(error);
         }
-      )
+      );
 
 
+    var FreelancerFactory = {};
+
+    FreelancerFactory.getFreelancerById = function(id){
 
      return axios.get(config.baseUrl + `/freelancers/${id}`);
 
