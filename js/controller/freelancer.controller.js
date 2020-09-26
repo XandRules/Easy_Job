@@ -134,6 +134,13 @@ easyjob.controller('FreelancerController', [
       AddressModel.getAddressFromFreelancer($rootScope.id).then((response) =>{
         console.log(response.data);
 
+        $scope.cep = '';
+        $scope.uf = '';
+        $scope.number = '';
+        $scope.public_place = '';
+        $scope.city = '';
+        $scope.neighborhood = '';
+
         if(response.data != 0){
           $scope.cep = response.data[0].cep;
           $scope.uf = response.data[0].uf;
