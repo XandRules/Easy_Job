@@ -25,6 +25,12 @@ easyjob.factory('FreelancerModel', [
 
     }    
 
+    FreelancerFactory.updateFreelancer = function(data,id){
+
+      return axios.put(config.baseUrl + `/freelancers/${id}`,data);
+ 
+     }    
+
     return FreelancerFactory;
   },
 ]);

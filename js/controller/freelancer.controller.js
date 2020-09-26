@@ -50,8 +50,7 @@ easyjob.controller('FreelancerController', [
     }
 
     $scope.updateFreelancer = function(){
-      freelancer_data = {
-        "id" : $rootScope.id,
+      freelancer_data = {      
         "gender": $scope.gender.value == 0 ?"Masculino" : "Feminino",
         "birth": $scope.birth.value,
         "name" : $scope.name.value,
@@ -72,6 +71,15 @@ easyjob.controller('FreelancerController', [
 
       console.log(freelancer_data);
       console.log(freelancer_address);
+
+      FreelancerModel.updateFreelancer(freelancer_data, $rootScope.id).then(function(response){
+        console.log(response.data);
+      });
+
+      AddressModel.updateAddress(freelancer_address,$scope.addressId).then(function(response){
+        console.log(response.data);
+      })
+
     }
 
     $scope.setAmount = function (value) {
@@ -197,6 +205,7 @@ easyjob.controller('FreelancerController', [
         console.log(response.data);
 
         $scope.cep = '';
+        $scope.addressId = '';
         $scope.uf = '';
         $scope.number = '';
         $scope.public_place = '';
@@ -205,6 +214,7 @@ easyjob.controller('FreelancerController', [
 
         if(response.data != 0){
           $scope.cep = response.data[0].cep;
+          $scope.addressId = response.data[0].id;
           $scope.uf = response.data[0].uf;
           $scope.number = response.data[0].number;
           $scope.public_place = response.data[0].public_place;
