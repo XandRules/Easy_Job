@@ -48,17 +48,6 @@ easyjob.controller('FreelancerController', [
       $scope.getFreelancerById();
     }
 
-    let token = 'Bearer ' + $rootScope.token;
-
-      axios.interceptors.request.use(
-        config =>{
-          config.headers.authorization = token;
-          return config;
-        },
-        error =>{
-          return Promisse.reject(error);
-        }
-      )
 
     $scope.createAnnouncement = function () {
       console.log("criar anuncio");
