@@ -30,6 +30,13 @@ easyjob.controller('FreelancerController', [
     $scope.noite;
     $scope.cidade;
     $scope.descricao;
+    $scope.name; 
+    $scope.email; 
+    $scope.phone; 
+    $scope.gender; 
+    $scope.bio; 
+    $scope.cpf; 
+    $scope.birth; 
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
