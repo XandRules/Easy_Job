@@ -1,8 +1,9 @@
 easyjob.controller('FreelancerController', [
   'FreelancerModel',
+  'AddressModel',
   '$scope',
   '$rootScope',
-  function (FreelancerModel, $scope, $rootScope) {
+  function (FreelancerModel, AddressModel,$scope, $rootScope) {
     console.log('Freelancer');
 
     $rootScope.headerDefault = false;
@@ -33,6 +34,7 @@ easyjob.controller('FreelancerController', [
 
     $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
     $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
+    $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
     $scope.createAnnouncement = function () {
       console.log("criar anuncio");
@@ -97,9 +99,12 @@ easyjob.controller('FreelancerController', [
 
     $scope.getAddressFromFreelancer = function(){
 
-      FreelancerModel.getAddressFromFreelancer($rootScope.id).then((response) =>{
+      AddressModel.getAddressFromFreelancer($rootScope.id).then((response) =>{
         console.log(response.data);
-      })
+
+        $state.go("profilefreelancer");
+        
+      });
 
     }
 
