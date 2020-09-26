@@ -75,7 +75,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                                     name="dataNasc" placeholder="dd/mm/aaaa" required />
                                 <div ng-if="freelancer.dataNasc.$invalid"
                                     style="color:red">
-                                    <div ng-if="freelancer.dataNasc.$error.required">O campo data de nascimnto é
+                                    <div ng-if="freelancer.dataNasc.$error.required">O campo data de nascimento é
                                         obrigatório
                                     </div>
                                 </div>
@@ -97,37 +97,15 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                                 <input type="password" class="form-control" ng-model="password" id="password"
                                     ng-minlength="6" name="password" aria-describedby="senha do usuario"
                                     placeholder="digite uma senha" required />
-                                <div ng-if="freelancer.password.$invalid"
-                                    style="color:red">
-                                    <span ng-class="error" ng-show="freelancer.password.$error.minlength">Não é
-                                        permitido
-                                        menos
-                                        que
-                                        6
-                                        digitos</span>
-                                    <div ng-if="freelancer.password.$error.required">O campo senha é obrigatório</div>
-                                </div>
+   
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="repitasenha">Repita Sua Senha</label>
                                 <input type="password" ng-model="repeatPassword" class="form-control" id="repitasenha"
                                     ng-minlength="6" name="repitasenha" placeholder="repita sua senha" required />
-                                <div ng-if="freelancer.repitasenha.$invalid"
-                                    style="color:red">
-                                    <span ng-class="error" ng-show="freelancer.repitasenha.$error.minlength">Não é
-                                        permitido
-                                        menos
-                                        que 6
-                                        digitos</span>
-                                    <div ng-if="freelancer.repitasenha.$error.required">O campo repita senha é
-                                        obrigatório
-                                    </div>
+
                                 </div>
-                                <div style="color: red;" ng-if="repeatPassword !== password">O campo senha e repita
-                                    senha
-                                    devem
-                                    ser
-                                    iguais!</div>
+
                             </div>
                         </div>
                         <h3 class="text-center" style="margin: 1.9rem;">Endereço</h3>
