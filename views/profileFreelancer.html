@@ -84,7 +84,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="inputCEP">CEP</label>
-                                <input type="text" class="form-control" ng-model="cep" id="inputCEP" name="cep"
+                                <input type="text" class="form-control" id="inputCEP" name="cep"
                                     placeholder="xxxxx-xxx" ng-blur="findCep();" />
                                 <div ng-if="freelancer2.cep.$invalid && freelancer2.cep.$touched" style="color: red">
                                     <div ng-if="freelancer2.cep.$error.required">
