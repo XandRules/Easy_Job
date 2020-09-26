@@ -112,13 +112,18 @@ easyjob.controller('FreelancerController', [
       FreelancerModel.getFreelancerById($rootScope.id).then((response)=>{
 
         console.log(response.data);
+        $scope.name   = "" ;
+        $scope.phone  = "" ;
+        $scope.gender = "" ;
+        $scope.bio    = "" ;
+        $scope.birth  = "" ;
 
         if(response.data != null){
-          $scope.name = response.data[0].name;
-          $scope.phone = response.data[0].phone;
+          $scope.name   = response.data[0].name;
+          $scope.phone  = response.data[0].phone;
           $scope.gender = response.data[0].gender == 'Masculino' ? 0 : 1;          
-          $scope.bio = response.data[0].bio;
-          $scope.birth = $scope.formatDate(response.data[0].birth);
+          $scope.bio    = response.data[0].bio;
+          $scope.birth  = $scope.formatDate(response.data[0].birth);
   
           $scope.getAddressFromFreelancer();
         }else{
