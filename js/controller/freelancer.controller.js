@@ -64,6 +64,15 @@ easyjob.controller('FreelancerController', [
 
     }
 
+    $scope.findByCep = function () {
+      let url = `https://viacep.com.br/ws/${$scope.cep}/json/`;
+
+      MainModel.getCep(url).then(function (response) {
+        console.log(response);
+        $scope.uf = response.data.uf;
+        $scope.city = response.data.localidade;
+      });
+    };
 
     $scope.buscaUFs = function () {
       MainModel.findUFs().then(function (response) {
