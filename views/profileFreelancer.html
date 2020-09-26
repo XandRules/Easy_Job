@@ -94,16 +94,16 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputEstado">UF</label>
-                                <select id="inputEstado" class="form-control" ng-model="uf" disabled name="uf"
+                                <select id="inputEstado" class="form-control" disabled name="uf"
                                     ng-options="item for item in ufs">
                                     <option value="" selected>Estado ...</option>
                                 </select>
                             </div>
 
                             <div class="form-group col-md-4">
-                                <label for="logradouro">Logradouro</label>
-                                <input type="text" class="form-control" id="logradouro" name="logradouro"
-                                    ng-model="public_place" aria-describedby="Avenida / Rua"
+                                <label for="public_place">Logradouro</label>
+                                <input type="text" class="form-control" id="public_place" name="logradouro"
+                                    aria-describedby="Avenida / Rua"
                                     placeholder="Avenida / Rua" />
                                 <div ng-if="freelancer2.logradouro.$invalid && freelancer2.logradouro.$touched"
                                     style="color: red">
@@ -113,8 +113,8 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="numero">Número</label>
-                                <input type="text" class="form-control" id="numero" name="numero" ng-model="number"
+                                <label for="number">Número</label>
+                                <input type="text" class="form-control" id="number" name="numero" 
                                     placeholder="Número" />
                                 <div ng-if="freelancer2.numero.$invalid && freelancer2.numero.$touched"
                                     style="color: red">
@@ -125,13 +125,13 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                             </div>
 
                             <div class="form-group col-md-4">
-                                <label for="bairro">Bairro</label>
-                                <input type="text" class="form-control" id="bairro" ng-model="neighborhood"
+                                <label for="neighborhood">Bairro</label>
+                                <input type="text" class="form-control" id="neighborhood" 
                                     aria-describedby="Bairro" placeholder="Bairro" />
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="municipio">Município</label>
-                                <input type="text" class="form-control" id="municipio" name="city" ng-model="city"
+                                <label for="city">Município</label>
+                                <input type="text" class="form-control" id="city" name="city" 
                                     disabled placeholder="Município" />
                             </div>
 

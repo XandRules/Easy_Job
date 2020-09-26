@@ -206,20 +206,20 @@ easyjob.controller('FreelancerController', [
 
         $scope.cep = document.getElementById('inputCEP');
         $scope.addressId = '';
-        $scope.uf = '';
-        $scope.number = '';
-        $scope.public_place = '';
-        $scope.city = '';
-        $scope.neighborhood = '';
+        $scope.uf = document.getElementById('uf');
+        $scope.number = document.getElementById('number');
+        $scope.public_place = document.getElementById('public_place');
+        $scope.city = document.getElementById('city');
+        $scope.neighborhood = document.getElementById('neighborhood');
 
         if(response.data != 0){
           $scope.cep.value = response.data[0].cep;
           $scope.addressId = response.data[0].id;
-          $scope.uf = response.data[0].uf;
-          $scope.number = response.data[0].number;
-          $scope.public_place = response.data[0].public_place;
-          $scope.city = response.data[0].city;
-          $scope.neighborhood = response.data[0].neighborhood;
+          $scope.uf.value = response.data[0].uf;
+          $scope.number.value = response.data[0].number;
+          $scope.public_place.value = response.data[0].public_place;
+          $scope.city.value = response.data[0].city;
+          $scope.neighborhood.value = response.data[0].neighborhood;
         }
 
       });
