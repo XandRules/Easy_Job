@@ -93,6 +93,20 @@ easyjob.controller('FreelancerController', [
       }
     }
 
+    $scope.formatDate = function(date){
+
+      let data = new Date(date);
+
+      let year = parseInt(data.getUTCFullYear());
+      let month = parseInt(data.getUTCMonth());
+      let day = parseInt(data.getUTCDay());
+
+      let fullDate = year + '-' + month + 1 + '-' + day;
+
+      return fullDate;
+
+    }
+
     $scope.getFreelancerById = function () {
 
       FreelancerModel.getFreelancerById($rootScope.id).then((response)=>{
@@ -104,7 +118,7 @@ easyjob.controller('FreelancerController', [
           $scope.phone = response.data[0].phone;
           $scope.gender = response.data[0].gender;
           $scope.bio = response.data[0].bio;
-          $scope.birth = response.data[0].birth;
+          $scope.birth = $scope.formatDate(response.data[0].birth);
   
           $scope.getAddressFromFreelancer();
         }else{

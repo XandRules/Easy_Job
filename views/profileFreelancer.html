@@ -53,9 +53,9 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="inputEmail4">Nome</label>
-                                <input type="text" class="form-control" id="inputEmail4" ng-model="name" name="name"
+                                <input type="text" class="form-control" id="inputEmail4" ng-bind="name" ng-model="name" name="name"
                                     placeholder="Nome Completo" required />
-                                <div ng-if="freelancer.name.$invalid && freelancer.name.$touched" style="color:red">
+                                <div ng-if="freelancer.name.$invalid" style="color:red">
                                     <div ng-if="freelancer.name.$error.required">O campo nome é obrigatório</div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                                 <label for="sp_celphones">Telefone</label>
                                 <input type="text" class="form-control sp_celphones" id="sp_celphones" ng-bind="phone" ng-model="phone"
                                     name="phone" placeholder="(xx) x xxxx-xxxx" required />
-                                <div ng-if="freelancer.phone.$invalid && freelancer.phone.$touched" style="color: red">
+                                <div ng-if="freelancer.phone.$invalid" style="color: red">
                                     <div ng-if="freelancer.phone.$error.required">
                                         O campo telefone é obrigatório
                                     </div>
@@ -73,7 +73,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                                 <label for="inputDataNasc">Data de Nascimento</label>
                                 <input type="date" ng-model="birth" class="form-control" id="inputDataNasc"
                                     name="dataNasc" placeholder="dd/mm/aaaa" required />
-                                <div ng-if="freelancer.dataNasc.$invalid && freelancer.dataNasc.$touched"
+                                <div ng-if="freelancer.dataNasc.$invalid"
                                     style="color:red">
                                     <div ng-if="freelancer.dataNasc.$error.required">O campo data de nascimnto é
                                         obrigatório
@@ -87,7 +87,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                                     <option value="0">Masculino</option>
                                     <option value="1">Feminino</option>
                                 </select>
-                                <div ng-if="freelancer.gender.$invalid && freelancer.gender.$touched" style="color:red">
+                                <div ng-if="freelancer.gender.$invalid" style="color:red">
                                     <div ng-if="freelancer.gender.$error.required">O campo sexo é obrigatório</div>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                                 <input type="password" class="form-control" ng-model="password" id="password"
                                     ng-minlength="6" name="password" aria-describedby="senha do usuario"
                                     placeholder="digite uma senha" required />
-                                <div ng-if="freelancer.password.$invalid && freelancer.password.$touched"
+                                <div ng-if="freelancer.password.$invalid"
                                     style="color:red">
                                     <span ng-class="error" ng-show="freelancer.password.$error.minlength">Não é
                                         permitido
@@ -112,7 +112,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                                 <label for="repitasenha">Repita Sua Senha</label>
                                 <input type="password" ng-model="repeatPassword" class="form-control" id="repitasenha"
                                     ng-minlength="6" name="repitasenha" placeholder="repita sua senha" required />
-                                <div ng-if="freelancer.repitasenha.$invalid && freelancer.repitasenha.$touched"
+                                <div ng-if="freelancer.repitasenha.$invalid"
                                     style="color:red">
                                     <span ng-class="error" ng-show="freelancer.repitasenha.$error.minlength">Não é
                                         permitido
