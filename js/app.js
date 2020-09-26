@@ -162,7 +162,7 @@ easyjob.constant('config', {
   },
   defaultHeaderToken: {
     'Access-Control-Allow-Origin': true,
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded',
     'Authorization': '',
     'Is-Ajax': 'true',
 
