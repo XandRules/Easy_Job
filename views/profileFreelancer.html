@@ -70,12 +70,12 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="inputDataNasc">Data de Nascimento</label>
-                                <input type="date" ng-model="birth" class="form-control" id="inputDataNasc"
-                                    name="dataNasc" placeholder="dd/mm/aaaa" required />
-                                <div ng-if="freelancer.dataNasc.$invalid"
+                                <label for="birth">Data de Nascimento</label>
+                                <input type="date" ng-model="birth" class="form-control" id="birth"
+                                    name="birth" placeholder="dd/mm/aaaa" required />
+                                <div ng-if="freelancer.birth.$invalid"
                                     style="color:red">
-                                    <div ng-if="freelancer.dataNasc.$error.required">O campo data de nascimento é
+                                    <div ng-if="freelancer.birth.$error.required">O campo data de nascimento é
                                         obrigatório
                                     </div>
                                 </div>
