@@ -47,7 +47,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
             </div>
             <div class="col-md-8">
                 <div class="center">
-                    <form name="freelancer" ng-submit="updateFreelancer()" novalidate>
+                    <form name="freelancer" novalidate>
                         <h3 class="text-center" style="margin: 1.9rem;">Dados Pessoais</h3>
 
                         <div class="form-row">
@@ -136,8 +136,8 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                             </div>
 
                             <div class="col-12 text-center">
-                                <button class="btn btn-primary" ng-disabled="!freelancer.$valid"
-                                    type="submit">Salvar</button class="btn btn-primary">
+                                <button class="btn btn-primary" ng-click="updateFreelancer()"
+                                    >Salvar</button class="btn btn-primary">
                             </div>
                     </form>
                 </div>
