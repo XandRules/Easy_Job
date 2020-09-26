@@ -113,7 +113,7 @@ easyjob.controller('FreelancerController', [
 
         console.log(response.data);
         $scope.name   = document.getElementById('name'); ;
-        $scope.phone  = document.getElementById('phone') ;
+        $scope.phone  = document.getElementById('sp_celphones') ;
         $scope.gender = document.getElementById('gender') ;
         $scope.bio    = document.getElementById('bio') ;
         $scope.birth  = document.getElementById('birth') ;
