@@ -52,8 +52,8 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
 
                         <div class="form-row">
                             <div class="form-group col-md-4">
-                                <label for="inputEmail4">Nome</label>
-                                <input type="text" class="form-control" id="inputEmail4" ng-bind="name" ng-model="name" name="name"
+                                <label for="name">Nome</label>
+                                <input type="text" class="form-control" id="name" ng-bind="name" ng-model="name" name="name"
                                     placeholder="Nome Completo" required />
                                 <div ng-if="freelancer.name.$invalid" style="color:red">
                                     <div ng-if="freelancer.name.$error.required">O campo nome é obrigatório</div>
