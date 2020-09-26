@@ -187,6 +187,8 @@ easyjob.controller('MainController', [
           swal("Ocorreu um erro!", "Não foi possível salvar seu endereço!", "error");
         }else{
           $state.go('signestablish3');
+
+          //enviar email para conocluir o cadastro.
         }
       })
     };

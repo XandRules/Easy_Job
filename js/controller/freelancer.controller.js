@@ -85,11 +85,25 @@ easyjob.controller('FreelancerController', [
 
     $scope.getFreelancerById = function () {
 
+      FreelancerModel.getFreelancerById($rootScope.id).then((response)=>{
+
+        console.log(response.data);
+
+        $scope.getAddressFromFreelancer();
+
+      });
+
     }
 
     $scope.getAddressFromFreelancer = function(){
-      
+
+      FreelancerModel.getAddressFromFreelancer($rootScope.id).then((response) =>{
+        console.log(response.data);
+      })
+
     }
+
+    //SELECT  F.id, F.name, F.phone, F.speciality_id, F.birth, F.gender, F.cpf,F.bio, A.number, A.cep, A.public_place, A.uf, A.neighborhood, A.city FROM freelancers F INNER JOIN addresses A on A.freelancer_id = F.id where F.id = 9;
 
     let event = document.querySelector('#file-input') != null ? document.querySelector('#file-input').addEventListener("change", $scope.imageUploadPreview) : null;
   }
