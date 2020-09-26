@@ -7,8 +7,7 @@ easyjob.factory('AddressModel', [
 
     AddressFactory.getAddressById = function(id){
 
-      config.defaultHeaderToken.Authorization += $rootScope.token;
-
+     config.defaultHeaderToken.Authorization = 'Bearer ' + $rootScope.token;
 
      return $http.get(config.baseUrl + `/address/${id}`, config.defaultHeaderToken);
 
