@@ -2,7 +2,7 @@ easyjob.controller('AnnouncementController', [
   'AnnouncementModel',
   '$scope',
   '$rootScope',
-  function (EstablishModel, $scope, $rootScope,AnnouncementModel) {
+  function (AnnouncementModel, $scope, $rootScope) {
     console.log('Anuncios');
 
     $rootScope.headerDefault = true;
