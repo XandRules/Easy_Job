@@ -45,7 +45,9 @@ easyjob.controller('AnnouncementController', [
         document.getElementById("loading").style.display = "none";
         document.getElementById("content").style.display = "block";
         document.getElementById("content2").style.display = "block";
-        $rootScope.records = response.data;
+        $scope.records = response.data;
+
+        
       });
 
     }
@@ -189,11 +191,14 @@ easyjob.controller('AnnouncementController', [
       }
     };
 
+    $scope.initAnnouncement = async function(){
+      await $scope.getAnnouncementsFromFreelancer();
+      
+    }
+
     if($rootScope.pageSelect == 'freelancerannouncement'){
-      $scope.getAnnouncementsFromFreelancer();
-      document.getElementById("loading").style.display = "block";
-      document.getElementById("content").style.display = "none";
-      document.getElementById("content2").style.display = "none";
+      $scope.initAnnouncement();
+
     }else if($rootScope.pageSelect == 'freelancerannouncementedit'){
       let amount = $rootScope.announcement_item.amount.split('R$')[1];
       $scope.amount = parseInt(amount);
