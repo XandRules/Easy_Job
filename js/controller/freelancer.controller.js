@@ -45,6 +45,10 @@ easyjob.controller('FreelancerController', [
     $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
     $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
+    document.getElementById("loading").style.display = "block";
+    document.getElementById("content").style.display = "none";
+    document.getElementById("content2").style.display = "none";
+
     $scope.createAnnouncement = function () {
       console.log("criar anuncio");
     }
@@ -213,6 +217,9 @@ easyjob.controller('FreelancerController', [
       AddressModel.getAddressFromFreelancer($rootScope.id).then((response) =>{
         console.log(response.data);
 
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("content").style.display = "block";
+        document.getElementById("content2").style.display = "block";
 
         $scope.cep = document.getElementById('inputCEP');
         $scope.addressId = '';
