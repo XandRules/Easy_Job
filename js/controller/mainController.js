@@ -56,6 +56,8 @@ easyjob.controller('MainController', [
 
       MainModel.getSpecilities().then(function (response) {
 
+        $rootScope.specilities = "";
+
         response.data.forEach((element) => {
           $rootScope.specilities.push(element);
         });
@@ -149,7 +151,7 @@ easyjob.controller('MainController', [
     $scope.createFreelancer = function () {
       console.log("teste");
 
-      if ($rootScope.data == null) {
+      if ($rootScope.data == "") {
         $rootScope.data = [];
         $rootScope.data[0] = JSON.parse(localStorage.getItem("dataUser"));
 
