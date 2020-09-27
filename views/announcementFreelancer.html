@@ -30,7 +30,7 @@
 
         <div class="col-md-12 col-lg-12 mb-5">
 
-          <form class="p-5 bg-white" ng-submit="createAnnouncement()" name="freelancer" novalidate>
+          <form class="p-5 bg-white"  name="freelancer" novalidate>
 
             <div class="row form-group col-md-12 ">
               <h4 class="col-md-12">Valor por hora</h4>
@@ -161,7 +161,7 @@
 
             <div class="row form-group">
               <div class="col-md-12">
-                <input ng-disabled="!freelancer.$valid" type="submit" value="Salvar" class="btn btn-primary  py-2 px-5">
+                <input ng-disabled="!freelancer.$valid" ng-click="createAnnouncement()" value="Salvar" class="btn btn-primary  py-2 px-5">
               </div>
             </div>
           </form>
