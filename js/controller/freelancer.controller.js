@@ -63,7 +63,7 @@ easyjob.controller('FreelancerController', [
 
       freelancer_address = {
         "cep" : $scope.cep.value,
-        "uf": $scope.uf,
+        "uf": $scope.uf.value,
         "number": $scope.number.value,
         "city": $scope.city.value,
         "public_place" : $scope.public_place.value,
