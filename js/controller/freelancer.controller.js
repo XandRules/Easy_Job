@@ -225,7 +225,7 @@ easyjob.controller('FreelancerController', [
 
         $scope.cep = document.getElementById('inputCEP');
         $scope.addressId = '';
-        $scope.uf = '';
+        $scope.uf = document.getElementById('uf');;
         $scope.number = document.getElementById('number');
         $scope.public_place = document.getElementById('public_place');
         $scope.city = document.getElementById('city');
@@ -234,7 +234,7 @@ easyjob.controller('FreelancerController', [
         if(response.data != 0){
           $scope.cep.value = response.data[0].cep;
           $scope.addressId = response.data[0].id;
-          $scope.uf = response.data[0].uf;
+          $scope.uf.value = response.data[0].uf;
           $scope.number.value = response.data[0].number;
           $scope.public_place.value = response.data[0].public_place;
           $scope.city.value = response.data[0].city;
