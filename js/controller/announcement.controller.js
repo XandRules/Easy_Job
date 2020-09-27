@@ -29,66 +29,7 @@ easyjob.controller('AnnouncementController', [
     $scope.noite;
     $scope.salvar = document.getElementById('salvar');
     
-    $scope.announcements = {
-      "title": "Meu Título",
-      "description": "description",
-      "amount": "R$40,00",
-      "name": "Alexandre",
-      "speciality": "Segurança",
-      "period": "Quarta Sexta",
-      "city": "Caxambu"
-    };
-
-    $scope.records = [
-  {
-    "id": 3,
-    "title": "profissional Garçom",
-    "description": "Tenho muita experiência",
-    "period": "Noite",
-    "amount": "R$100.00",
-    "day_of_week": "Segunda a Domingo",
-    "createdAt": "2020-09-27T03:31:25.517Z",
-    "updatedAt": "2020-09-27T03:31:25.517Z",
-    "freelancer_id": 3,
-    "speciality_id": 3
-  },
-  {
-    "id": 4,
-    "title": "sdfgsdfg",
-    "description": "Olá",
-    "period": "Manhã |Tarde |",
-    "amount": "40",
-    "day_of_week": "Domingo |||Quarta |Quinta ||",
-    "createdAt": "2020-09-27T12:54:06.247Z",
-    "updatedAt": "2020-09-27T12:54:06.247Z",
-    "freelancer_id": 3,
-    "speciality_id": 1
-  },
-  {
-    "id": 5,
-    "title": "Segurança",
-    "description": "Trabalho com Segurança.",
-    "period": "Manhã |Tarde |Sexta ",
-    "amount": "30",
-    "day_of_week": "|||Quarta |Quinta |Sexta |Sábado ",
-    "createdAt": "2020-09-27T13:15:58.171Z",
-    "updatedAt": "2020-09-27T13:15:58.171Z",
-    "freelancer_id": 3,
-    "speciality_id": 3
-  },
-  {
-    "id": 6,
-    "title": "motoboy",
-    "description": "Meu nome é Alexandre",
-    "period": "Manhã |Tarde |",
-    "amount": "30",
-    "day_of_week": "Domingo |Segunda |Terça |Quarta |Quinta ||",
-    "createdAt": "2020-09-27T13:21:37.614Z",
-    "updatedAt": "2020-09-27T13:21:37.614Z",
-    "freelancer_id": 3,
-    "speciality_id": 1
-  }
-]
+    $scope.records = [];
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
