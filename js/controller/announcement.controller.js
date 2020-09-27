@@ -26,9 +26,12 @@ easyjob.controller('AnnouncementController', [
     $scope.manha;
     $scope.tarde;
     $scope.noite;
+    $scope.salvar = document.getElementById('salvar');
 
     $scope.createAnnouncement = function () {
       console.log("criar anuncio");
+
+      $scope.salvar.className = "fa fa-spinner fa-spin fa-fw";
 
       var domingo = $scope.domingo == true ? "Domingo " : "" ;      
       var segunda = $scope.segunda == true ? "Segunda ": ""; 
@@ -64,6 +67,12 @@ easyjob.controller('AnnouncementController', [
       AnnouncementModel.createAnnoucement(data).then(response =>{
 
         console.log(response.data);
+
+        if(response.data.error == null){
+          swal("Anúncio criado!","Seu anúncio foi criado com sucesso!","success");
+        }
+
+        $scope.salvar.className = "";
 
       });
 
