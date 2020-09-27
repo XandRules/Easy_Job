@@ -42,7 +42,7 @@ easyjob.controller('FreelancerController', [
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
-    $scope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
+    $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
     $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
     $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
@@ -50,12 +50,12 @@ easyjob.controller('FreelancerController', [
       console.log("criar anuncio");
 
       $scope.day_of_week = (
-        $scope.domingo == true ? "Domingo" : null + 
-        " " + $scope.segunda == true ? "Segunda": null + " " +
-        " " + $scope.terca == true ? "Terça": null + " " +
-        " " + $scope.quarta == true ? "Quarta": null + " " +
-        " " + $scope.quinta == true ? "Quinta": null + " " +
-        " " + $scope.sexta == true ? "Sexta": null + " " +
+        $scope.domingo == true ? "Domingo" : null || + 
+        " " + $scope.segunda == true ? "Segunda": null || + " " +
+        " " + $scope.terca == true ? "Terça": null ||+ " " +
+        " " + $scope.quarta == true ? "Quarta": null || + " " +
+        " " + $scope.quinta == true ? "Quinta": null || + " " +
+        " " + $scope.sexta == true ? "Sexta": null || + " " +
         " " + $scope.sabado == true ? "Sábado": null 
        );
 
