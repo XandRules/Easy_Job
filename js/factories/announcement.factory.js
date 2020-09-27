@@ -1,7 +1,8 @@
 easyjob.factory('AnnouncementModel', [
   'config',
   '$http',
-  function (config, $http) {
+  '$rootScope',
+  function (config, $http,$rootScope) {
 
     let token = $rootScope.token;
 
