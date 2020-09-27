@@ -23,5 +23,5 @@ easyjob.factory('AnnouncementModel', [
     };
 
     return AnnoucementFactory;
-  },
+  }
 ]);
