@@ -26,6 +26,6 @@ easyjob.factory('AnnouncementModel', [
       return axios.get(config.baseUrl + `/announcements/${$rootScope.id}`);
     };
 
-    return AnnoucementFactory;
+    return AnnoucementFactory; 
   },
 ]);
