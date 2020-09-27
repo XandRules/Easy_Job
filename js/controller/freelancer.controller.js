@@ -48,6 +48,35 @@ easyjob.controller('FreelancerController', [
 
     $scope.createAnnouncement = function () {
       console.log("criar anuncio");
+
+      $scope.day_of_week = (
+        $scope.domingo == true ? "Domingo" : null + 
+        " " + $scope.segunda == true ? "Segunda": null + " " +
+        " " + $scope.terca == true ? "Terça": null + " " +
+        " " + $scope.quarta == true ? "Quarta": null + " " +
+        " " + $scope.quinta == true ? "Quinta": null + " " +
+        " " + $scope.sexta == true ? "Sexta": null + " " +
+        " " + $scope.sabado == true ? "Sábado": null 
+       );
+
+      $scope.period = (
+        $scope.manha == true ? "Manhã" : null + " " +
+        $scope.tarde == true ? "Tarde" : null + " " +
+        $scope.noite == true ? "Noite" : null
+      )  
+
+      data = {
+        "amount" : $scope.amount,
+        "title": $scope.title,
+        "period":$scope.period,
+        "description": $scope.description,
+        "day_of_week":$scope.day_of_week,
+        "freelancer_id":$scope.freelancer_id,
+        "peciality_id":$scope.speciality_id,
+      }
+
+      console.log(data);
+
     }
 
     $scope.updateFreelancer = function(){
