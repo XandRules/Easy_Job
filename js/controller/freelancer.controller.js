@@ -240,8 +240,6 @@ easyjob.controller('FreelancerController', [
           $scope.city.value = response.data[0].city;
           $scope.neighborhood.value = response.data[0].neighborhood;
         }
-
-
       });
 
     }
