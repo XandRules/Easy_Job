@@ -49,7 +49,7 @@ easyjob.controller('FreelancerController', [
     $scope.createAnnouncement = function () {
       console.log("criar anuncio");
 
-      var domingo = $scope.domingo == true ? "Domingo " : "" ; 
+      var domingo = $scope.domingo == true ? "Domingo " : "" ;      
       var segunda = $scope.segunda == true ? "Segunda ": ""; 
       var terca = $scope.terca == true ? "Terça ": ""; 
       var quarta = $scope.quarta == true ? "Quarta ": ""; 
