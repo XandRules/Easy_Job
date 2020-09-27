@@ -38,7 +38,7 @@ easyjob.controller('FreelancerController', [
     $scope.bio; 
     $scope.cpf; 
     $scope.birth; 
-    $scope.salvar = '';
+    $scope.salvar = document.getElementById('salvar');
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
@@ -52,7 +52,7 @@ easyjob.controller('FreelancerController', [
 
     $scope.updateFreelancer = function(){
 
-      $scope.salvar = "fa fa-spinner fa-spin fa-fw";
+      $scope.salvar.className = "fa fa-spinner fa-spin fa-fw";
 
       freelancer_data = {      
         "gender": $scope.gender.value == 0 ?"Masculino" : "Feminino",
@@ -93,7 +93,7 @@ easyjob.controller('FreelancerController', [
           swal("Ooops!","Seus dados não foram atualizados!","error");
         }
 
-        $scope.salvar = "none";
+        $scope.salvar.className = "";
 
       })
     }
