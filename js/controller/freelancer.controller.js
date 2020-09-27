@@ -114,8 +114,8 @@ easyjob.controller('FreelancerController', [
 
       MainModel.getCep(url).then(function (response) {
         console.log(response);
-        $scope.uf = response.data.uf;
-        $scope.city = response.data.localidade;
+        $scope.uf.value = response.data.uf;
+        $scope.city.value = response.data.localidade;
       });
     };
 
