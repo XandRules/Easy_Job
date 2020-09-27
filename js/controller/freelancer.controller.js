@@ -243,7 +243,7 @@ easyjob.controller('FreelancerController', [
           $scope.neighborhood.value = response.data[0].neighborhood;
         }
 
-        if($scope.uf == ''){
+        if($scope.ufs == null){
           $scope.getAddressFromFreelancer();
         }
 
