@@ -59,9 +59,13 @@ easyjob.controller('AnnouncementController', [
     $scope.getAnnouncementsFromFreelancer = function(){
       console.log("buscar anuncios")
 
-      document.getElementById("loading").style.display = "none";
-      document.getElementById("content").style.display = "block";
-      document.getElementById("content2").style.display = "block";
+      AnnouncementModel.getAnnouncementsFromFreelancer().then(response =>{
+        console.log(response.data);
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("content").style.display = "block";
+        document.getElementById("content2").style.display = "block";
+      });
+
     }
 
     $scope.createAnnouncement = function () {
