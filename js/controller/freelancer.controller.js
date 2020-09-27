@@ -74,12 +74,16 @@ easyjob.controller('FreelancerController', [
 
       FreelancerModel.updateFreelancer(freelancer_data, $rootScope.id).then(function(response){
         console.log(response.data);
+        $scope.updateFreelancerAddress();
+
       });
 
+    }
+
+    $scope.updateFreelancerAddress = function(){
       AddressModel.updateAddress(freelancer_address,$scope.addressId).then(function(response){
         console.log(response.data);
       })
-
     }
 
     $scope.setAmount = function (value) {
