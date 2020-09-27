@@ -107,7 +107,7 @@ easyjob.controller('FreelancerController', [
       });
     };
 
-    $scope.buscaUFs = function () {
+    $scope.buscaUFs = function (value) {
       MainModel.findUFs().then(function (response) {
         console.log($rootScope.data);
         $scope.ufs = [];
@@ -117,12 +117,15 @@ easyjob.controller('FreelancerController', [
 
         console.log($scope.ufs);
 
-        $scope.findByCep();
+        if(value == 0){
+          $scope.findByCep();
+        }
+
       });
     };
 
     $scope.findCep = function () {
-      $scope.buscaUFs();
+      $scope.buscaUFs(0);
     };
 
     $scope.imageUploadPreview = function () {
@@ -204,7 +207,7 @@ easyjob.controller('FreelancerController', [
       AddressModel.getAddressFromFreelancer($rootScope.id).then((response) =>{
         console.log(response.data);
 
-        await $scope.buscaUFs();
+        await $scope.buscaUFs(1);
 
         $scope.cep = document.getElementById('inputCEP');
         $scope.addressId = '';
