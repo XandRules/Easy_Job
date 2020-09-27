@@ -45,10 +45,6 @@ easyjob.controller('FreelancerController', [
     $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
     $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
-    document.getElementById("loading").style.display = "block";
-    document.getElementById("content").style.display = "none";
-    document.getElementById("content2").style.display = "none";
-
     $scope.createAnnouncement = function () {
       console.log("criar anuncio");
     }
@@ -245,6 +241,9 @@ easyjob.controller('FreelancerController', [
 
     if($rootScope.pageSelect == 'profilefreelancer'){
       $scope.getFreelancerById();
+      document.getElementById("loading").style.display = "block";
+      document.getElementById("content").style.display = "none";
+      document.getElementById("content2").style.display = "none";
     }
 
     //SELECT  F.id, F.name, F.phone, F.speciality_id, F.birth, F.gender, F.cpf,F.bio, A.number, A.cep, A.public_place, A.uf, A.neighborhood, A.city FROM freelancers F INNER JOIN addresses A on A.freelancer_id = F.id where F.id = 9;
