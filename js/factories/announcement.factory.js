@@ -28,6 +28,10 @@ easyjob.factory('AnnouncementModel', [
     AnnoucementFactory.deleteAnnouncementById = function (id) {
 
       return axios.delete(config.baseUrl + `/announcements/${id}`, {
+        headers: {
+          'Authorization': `Bearer ${$rootScope.token}`,
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify([
           id
         ])
