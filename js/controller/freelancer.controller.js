@@ -172,7 +172,7 @@ easyjob.controller('FreelancerController', [
 
       let year = parseInt(data.getUTCFullYear());
       let month = parseInt(data.getUTCMonth());
-      let day = parseInt(data.getUTCDay());
+      let day = parseInt(data.getDay());
 
       month = (month + 1) < 10 ? "0" + (month+1) : (month+1);
       day = day < 10 ? "0" + day : day;
