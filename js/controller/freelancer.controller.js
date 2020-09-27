@@ -50,6 +50,9 @@ easyjob.controller('FreelancerController', [
     }
 
     $scope.updateFreelancer = function(){
+
+      $scope.entrar = "fa fa-spinner fa-spin fa-fw";
+
       freelancer_data = {      
         "gender": $scope.gender.value == 0 ?"Masculino" : "Feminino",
         "birth": $scope.birth.value,
@@ -82,6 +85,7 @@ easyjob.controller('FreelancerController', [
 
     $scope.updateFreelancerAddress = function(){
       AddressModel.updateAddress(freelancer_address,$scope.addressId).then(function(response){
+        $scope.entrar = '';
         if(typeof(response.data) !== "string" || response.data != 'Validation Fails' || response.data.error != null){
           swal("Dados atualizados com sucesso!","Seus dados foram atualizados!","success");
         }else{
