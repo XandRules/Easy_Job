@@ -202,12 +202,13 @@ easyjob.controller('FreelancerController', [
 
     }
 
-    $scope.getAddressFromFreelancer = function(){
+    $scope.getAddressFromFreelancer = async function(){
+      
+      await $scope.buscaUFs(1);
 
       AddressModel.getAddressFromFreelancer($rootScope.id).then((response) =>{
         console.log(response.data);
 
-        await $scope.buscaUFs(1);
 
         $scope.cep = document.getElementById('inputCEP');
         $scope.addressId = '';
