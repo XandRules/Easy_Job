@@ -86,12 +86,15 @@ easyjob.controller('FreelancerController', [
 
     $scope.updateFreelancerAddress = function(){
       AddressModel.updateAddress(freelancer_address,$scope.addressId).then(function(response){
-        $scope.salvar = '';
+       
         if(typeof(response.data) !== "string" || response.data != 'Validation Fails' || response.data.error != null){
           swal("Dados atualizados com sucesso!","Seus dados foram atualizados!","success");
         }else{
           swal("Ooops!","Seus dados não foram atualizados!","error");
         }
+
+        $scope.salvar = "none";
+
       })
     }
 
