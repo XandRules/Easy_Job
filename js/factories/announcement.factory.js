@@ -15,7 +15,6 @@ easyjob.factory('AnnouncementModel', [
         return Promisse.reject(error);
       }
     );
-
     var AnnoucementFactory = {};
 
     AnnoucementFactory.createAnnoucement = function (data) {
