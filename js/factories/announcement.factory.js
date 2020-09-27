@@ -25,6 +25,10 @@ easyjob.factory('AnnouncementModel', [
       return axios.get(config.baseUrl + `/announcements/${$rootScope.id}`);
     };
 
+    AnnoucementFactory.deleteAnnouncementById = function (id) {
+      return axios.delete(config.baseUrl + `/announcements/${id}`);
+    };
+
     return AnnoucementFactory; 
   },
 ]);

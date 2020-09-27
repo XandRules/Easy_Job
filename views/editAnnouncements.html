@@ -1,0 +1,169 @@
+  <style>
+    voltar:hover {
+      box-shadow: 0 10px 14px 0 rgba(230, 3, 5, 0.4);
+    }
+  </style>
+
+  <div ng-controller="AnnouncementController">
+
+    <div class="container">
+      <a  ui-sref="freelancerannouncement" ui-sref-active="active"><i class="fa fa-reply fa-2x voltar"
+          style="z-index: 99999; position:absolute; color: white; cursor: pointer; margin-top: 0.5rem; "
+          aria-hidden="true"></i></a>
+    </div>
+    <div class="hero-wrap hero-wrap-0" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+          <div class="col-md-12 text-center mb-10">
+
+            <h1 class="mb-3 bread">Editar Anúncio</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class=" bg-light"></section>
+    <div class="container" style="display: flex; justify-content: center;">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-12 mb-5">
+
+          <form class="p-5 bg-white"  name="freelancer" novalidate>
+
+            <div class="row form-group col-md-12 ">
+              <h4 class="col-md-12">Valor por hora</h4>
+              <div class="col-md-2 col-sm-4 "><button class="btn btn-primary"
+                  style="display: flex; justify-content: center; width: 100px; margin: 0.2rem"
+                  ng-click="setAmount(1);">R$1,00</button>
+              </div>
+              <div class="col-md-2 col-sm-4"><button class="btn btn-primary" style="width: 100px; margin: 0.2rem;"
+                  ng-click="setAmount(10);">R$10,00</button></div>
+              <div class="col-md-2 col-sm-4"><button class="btn btn-primary" style="width: 100px; margin: 0.2rem;"
+                  ng-click="setAmount(-1);">- R$1,00</button>
+              </div>
+              <div class="col-md-2 col-sm-4"><button class="btn btn-primary" style="width: 100px;margin: 0.2rem ;"
+                  ng-click="setAmount(-10);">- R$10,00</button></div>
+              <label><span class="text-success" style="font-style: bold"> R${{amount}},00</span></label>
+
+            </div>
+
+            <div class="row form-group col-md-12">
+              <h4 class="col-md-12">Especialidade</h4>
+              <select class="form-control" id="inputSpeciality" ng-model="speciality" name="speciality1"
+                ng-options="item as item.speciality_function for item in specilities track by item.id" required>
+                <option value="" selected>Selecione sua Especialidade</option>
+              </select>
+              <div ng-if="freelancer.speciality1.$invalid && freelancer.speciality1.$touched" style="color: red">
+                <div ng-if="freelancer.speciality1.$error.required">
+                  O campo Especialidade é obrigatório
+                </div>
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <h4 class="col-md-12">Título do anúncio</h4>
+                <input ng-model="title" type="text" name="title1" class="form-control"
+                  placeholder="Profissional em ...." required />
+                <div ng-if="freelancer.title1.$invalid && freelancer.title1.$touched" style="color:red">
+                  <div ng-if="freelancer.title1.$error.required">O campo Título é obrigatório</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <h4 class="col-md-12">Turno</h4>
+                <label class="checkbox-inline col-md-3" for="option-time-1">
+                  <input ng-model="manha" type="checkbox" id="option-time-1" name="job-type" /> Manhã
+                </label>
+
+                <label class="checkbox-inline col-md-3" for="option-time-2">
+                  <input ng-model="tarde" type="checkbox" id="option-time-2" name="job-type" /> Tarde
+                </label>
+
+                <label class="checkbox-inline col-md-3" for="option-time-3">
+                  <input ng-model="noite" type="checkbox" id="option-time-3" name="job-type" /> Noite
+                </label>
+              </div>
+
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <h4 class="col-md-12">Dias da semana</h4>
+
+                <label class="checkbox-inline col-md-3" for="option-day-1">
+                  <input ng-model="domingo" type="checkbox" id="option-day-1" name="job-type"> Domingo
+                </label>
+
+                <label class="checkbox-inline col-md-3" for="option-day-2">
+                  <input ng-model="segunda" type="checkbox" id="option-day-2" name="job-type"> Segunda
+                </label>
+
+                <label class="checkbox-inline col-md-3" for="option-day-3">
+                  <input ng-model="terca" type="checkbox" id="option-day-3" name="job-type"> Terça
+                </label>
+
+                <label class="checkbox-inline col-md-3" for="option-day-4">
+                  <input ng-model="quarta" type="checkbox" id="option-day-4" name="job-type"> Quarta
+                </label>
+
+                <label class="checkbox-inline col-md-3" for="option-day-5">
+                  <input ng-model="quinta" type="checkbox" id="option-day-5" name="job-type"> Quinta
+                </label>
+
+                <label class="checkbox-inline col-md-3" for="option-day-6">
+                  <input ng-model="sexta" type="checkbox" id="option-day-6" name="job-type"> Sexta
+                </label>
+
+                <label class="checkbox-inline col-md-3" for="option-day-7">
+                  <input ng-model="sabado" type="checkbox" id="option-day-7" name="job-type"> Sábado
+                </label>
+              </div>
+
+            </div>
+
+            <div class="row form-group mb-4">
+              <div class="col-md-12">
+                <h4 class="col-md-12">Local</h4>
+
+                <input ng-model="cidade" type="text" name="cidade" class="form-control" placeholder="Sua cidade ... 
+                " required />
+              </div>
+              <div ng-if="freelancer.cidade.$invalid && freelancer.cidade.$touched" style="color:red">
+                <div ng-if="freelancer.cidade.$error.required">O campo Cidade é obrigatório</div>
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <h4 class="col-md-12">Descriçao</h4>
+
+                <textarea ng-model="description" name="descricao" class="form-control" id="" cols="30" rows="5"
+                  required></textarea>
+              </div>
+              <div ng-if="freelancer.descricao.$invalid && freelancer.descricao.$touched" style="color:red">
+                <div ng-if="freelancer.descricao.$error.required">O campo Descrição é obrigatório</div>
+              </div>
+            </div>
+
+            <!-- <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <h4 class="col-md-12">Imagens <h6>(Máx 3 imagens)</h6>
+                </h4>
+                <input id="file-input" type="file" multiple class="form-control col-md-12">
+                <div class="col-md-3" id="preview" style="width:9.5rem; margin-top:10px;"></div>
+              </div>
+            </div> -->
+
+            <div class="col-12 text-center">
+              <button class="btn btn-primary" ng-disabled="!freelancer.$valid" ng-click="update()"
+                  >Salvar <i id="salvar" ng-class="salvar"></i></a></button>                 
+            </div>
+
+          </form>
+        </div>
+      </div>

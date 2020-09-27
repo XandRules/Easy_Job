@@ -33,6 +33,7 @@ easyjob.controller('MainController', [
     $scope.bairro = '';
     $rootScope.data = '';
     $scope.message = '';
+    $rootScope.announcement_item;
 
     $scope.valor = '';
 

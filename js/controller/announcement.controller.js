@@ -2,7 +2,8 @@ easyjob.controller('AnnouncementController', [
   'AnnouncementModel',
   '$scope',
   '$rootScope',
-  function (AnnouncementModel, $scope, $rootScope) {
+  '$state',
+  function (AnnouncementModel, $scope, $rootScope, $state) {
     console.log('Anuncios');
 
     $rootScope.headerDefault = true;
@@ -38,23 +39,58 @@ easyjob.controller('AnnouncementController', [
       "city": "Caxambu"
     };
 
-    $scope.records = [{
-      "title": "Meu Título",
-      "description": "description",
-      "amount": "R$40,00",
-      "name": "Alexandre",
-      "speciality": "Segurança",
-      "period": "Quarta | Sexta",
-      "city": "Caxambu"
-    },{
-      "title": "Meu Título",
-      "description": "description",
-      "amount": "R$40,00",
-      "name": "Alexandre",
-      "speciality": "Segurança",
-      "period": "Quarta | Sexta",
-      "city": "Caxambu"
-    }];
+    $scope.records = [
+  {
+    "id": 3,
+    "title": "profissional Garçom",
+    "description": "Tenho muita experiência",
+    "period": "Noite",
+    "amount": "R$100.00",
+    "day_of_week": "Segunda a Domingo",
+    "createdAt": "2020-09-27T03:31:25.517Z",
+    "updatedAt": "2020-09-27T03:31:25.517Z",
+    "freelancer_id": 3,
+    "speciality_id": 3
+  },
+  {
+    "id": 4,
+    "title": "sdfgsdfg",
+    "description": "Olá",
+    "period": "Manhã |Tarde |",
+    "amount": "40",
+    "day_of_week": "Domingo |||Quarta |Quinta ||",
+    "createdAt": "2020-09-27T12:54:06.247Z",
+    "updatedAt": "2020-09-27T12:54:06.247Z",
+    "freelancer_id": 3,
+    "speciality_id": 1
+  },
+  {
+    "id": 5,
+    "title": "Segurança",
+    "description": "Trabalho com Segurança.",
+    "period": "Manhã |Tarde |Sexta ",
+    "amount": "30",
+    "day_of_week": "|||Quarta |Quinta |Sexta |Sábado ",
+    "createdAt": "2020-09-27T13:15:58.171Z",
+    "updatedAt": "2020-09-27T13:15:58.171Z",
+    "freelancer_id": 3,
+    "speciality_id": 3
+  },
+  {
+    "id": 6,
+    "title": "motoboy",
+    "description": "Meu nome é Alexandre",
+    "period": "Manhã |Tarde |",
+    "amount": "30",
+    "day_of_week": "Domingo |Segunda |Terça |Quarta |Quinta ||",
+    "createdAt": "2020-09-27T13:21:37.614Z",
+    "updatedAt": "2020-09-27T13:21:37.614Z",
+    "freelancer_id": 3,
+    "speciality_id": 1
+  }
+]
+
+    let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
     $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
     $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
@@ -69,6 +105,58 @@ easyjob.controller('AnnouncementController', [
         document.getElementById("content").style.display = "block";
         document.getElementById("content2").style.display = "block";
       });
+
+    }
+
+    $scope.deleteAnnouncementById = function(id){
+      AnnouncementModel.deleteAnnouncementById(id).then(response =>{
+        console.log(response.data);
+      });
+    }
+
+    $scope.edit = function(item){
+      console.log(item);
+      $rootScope.announcement_item = item;
+      $state.go('freelancerannouncementedit');
+    }
+
+    $scope.update = function(){
+
+      //$scope.salvar.className = 'fa fa-spinner fa-spin fa-fw';
+
+      var domingo = $scope.domingo == true ? 'Domingo |' : '';
+      var segunda = $scope.segunda == true ? 'Segunda |' : '';
+      var terca = $scope.terca == true ? 'Terça |' : '';
+      var quarta = $scope.quarta == true ? 'Quarta |' : '';
+      var quinta = $scope.quinta == true ? 'Quinta |' : '';
+      var sexta = $scope.sexta == true ? 'Sexta |' : '';
+      var sabado = $scope.sabado == true ? 'Sábado ' : '';
+      var manha = $scope.manha == true ? 'Manhã |' : '';
+      var tarde = $scope.tarde == true ? 'Tarde |' : '';
+      var noite = $scope.noite == true ? 'Noite ' : '';
+
+      $scope.day_of_week =
+        domingo +
+        segunda +
+        terca +
+        quarta +
+        quinta +
+        sexta +
+        sabado;
+
+      $scope.period = manha +  tarde +  noite;
+
+      data = {
+        amount: $scope.amount,
+        title: $scope.title,
+        period: $scope.period,
+        description: $scope.description,
+        day_of_week: $scope.day_of_week,
+        freelancer_id: $rootScope.id,
+        speciality_id: $scope.speciality.id,
+      };
+
+      console.log(data);
 
     }
 
@@ -97,7 +185,7 @@ easyjob.controller('AnnouncementController', [
         sexta +
         sabado;
 
-      $scope.period = manha +  tarde +  sexta;
+      $scope.period = manha +  tarde +  noite;
 
       data = {
         amount: $scope.amount,
@@ -144,6 +232,26 @@ easyjob.controller('AnnouncementController', [
       document.getElementById("loading").style.display = "block";
       document.getElementById("content").style.display = "none";
       document.getElementById("content2").style.display = "none";
+    }else if($rootScope.pageSelect == 'freelancerannouncementedit'){
+      let amount = $rootScope.announcement_item.amount.split('R$')[1];
+      $scope.amount = parseInt(amount);
+
+      $scope.title = $rootScope.announcement_item.title;
+      $scope.description = $rootScope.announcement_item.description;
+      $scope.speciality = $rootScope.announcement_item.speciality_id;
+
+      $scope.manha = $rootScope.announcement_item.period.includes("Manhã") ? true : false;
+      $scope.tarde = $rootScope.announcement_item.period.includes("Tarde") ? true : false;
+      $scope.noite = $rootScope.announcement_item.period.includes("Noite") ? true : false;
+
+      $scope.domingo = $rootScope.announcement_item.day_of_week.includes("Domingo") ? true : false;
+      $scope.segunda = $rootScope.announcement_item.day_of_week.includes("Segunda") ? true : false;
+      $scope.terca = $rootScope.announcement_item.day_of_week.includes("Terça") ? true : false;
+      $scope.quarta = $rootScope.announcement_item.day_of_week.includes("Quarta") ? true : false;
+      $scope.quinta = $rootScope.announcement_item.day_of_week.includes("Quinta") ? true : false;
+      $scope.sexta = $rootScope.announcement_item.day_of_week.includes("Sexta") ? true : false;
+      $scope.sabado = $rootScope.announcement_item.day_of_week.includes("Sábado") ? true : false;
+
     }
 
 
