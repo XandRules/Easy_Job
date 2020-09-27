@@ -252,6 +252,7 @@ easyjob.controller('FreelancerController', [
     }
 
     if($rootScope.pageSelect == 'profilefreelancer'){
+      $scope.buscaUFs(1);
       $scope.getFreelancerById();
       document.getElementById("loading").style.display = "block";
       document.getElementById("content").style.display = "none";
