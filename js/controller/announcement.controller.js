@@ -45,6 +45,7 @@ easyjob.controller('AnnouncementController', [
         document.getElementById("loading").style.display = "none";
         document.getElementById("content").style.display = "block";
         document.getElementById("content2").style.display = "block";
+        $scope.records = response.data[0];
       });
 
     }
