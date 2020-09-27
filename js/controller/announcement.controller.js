@@ -45,7 +45,7 @@ easyjob.controller('AnnouncementController', [
         document.getElementById("loading").style.display = "none";
         document.getElementById("content").style.display = "block";
         document.getElementById("content2").style.display = "block";
-        $scope.records = response.data[0];
+        $scope.records = response.data;
       });
 
     }
@@ -151,6 +151,24 @@ easyjob.controller('AnnouncementController', [
             'Anúncio criado!',
             'Seu anúncio foi criado com sucesso!',
             'success'
+          );
+          $scope.amount = 0;
+          $scope.description;
+          $scope.domingo;
+          $scope.segunda;
+          $scope.terca;
+          $scope.quarta;
+          $scope.quinta;
+          $scope.sexta;
+          $scope.sabado;
+          $scope.manha;
+          $scope.tarde;
+          $scope.noite;
+        }else{
+          swal(
+            'Anúncio não criado!',
+            'Seu anúncio não foi criado!',
+            'error'
           );
         }
 
