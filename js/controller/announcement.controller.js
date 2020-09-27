@@ -46,7 +46,6 @@ easyjob.controller('AnnouncementController', [
         document.getElementById("content").style.display = "block";
         document.getElementById("content2").style.display = "block";
         $scope.records = response.data;
-
         
       });
 
@@ -192,6 +191,9 @@ easyjob.controller('AnnouncementController', [
     };
 
     $scope.initAnnouncement = async function(){
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("content").style.display = "block";
+      document.getElementById("content2").style.display = "block";
       await $scope.getAnnouncementsFromFreelancer();
       
     }
