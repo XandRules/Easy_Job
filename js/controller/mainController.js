@@ -56,7 +56,7 @@ easyjob.controller('MainController', [
 
       MainModel.getSpecilities().then(function (response) {
 
-        $rootScope.specilities = "";
+        $rootScope.specilities = [];
 
         response.data.forEach((element) => {
           $rootScope.specilities.push(element);
