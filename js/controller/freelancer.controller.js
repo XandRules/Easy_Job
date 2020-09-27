@@ -71,7 +71,7 @@ easyjob.controller('FreelancerController', [
         "period":$scope.period,
         "description": $scope.description,
         "day_of_week":$scope.day_of_week,
-        "freelancer_id":$scope.freelancer_id,
+        "freelancer_id":$rootScope.id,
         "peciality_id":$scope.speciality_id,
       }
 

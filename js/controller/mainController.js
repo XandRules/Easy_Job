@@ -24,7 +24,7 @@ easyjob.controller('MainController', [
     $scope.password = '';
     $scope.repeatPassword = '';
     $scope.phone = '';
-    $scope.specilities = [];
+    $rootScope.specilities = [];
     $scope.speciality = '';
     $scope.cep = '';
     $scope.uf = '';
@@ -56,7 +56,7 @@ easyjob.controller('MainController', [
       MainModel.getSpecilities().then(function (response) {
 
         response.data.forEach((element) => {
-          $scope.specilities.push(element);
+          $rootScope.specilities.push(element);
         });
 
         console.log($scope.specilities);
