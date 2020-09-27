@@ -23,7 +23,7 @@ easyjob.factory('AnnouncementModel', [
     };
 
     AnnoucementFactory.getAnnouncementsFromFreelancer = function () {
-      return axios.get(config.baseUrl + `/announcements/${$rootScope.id}`,data);
+      return axios.get(config.baseUrl + `/announcements/${$rootScope.id}`);
     };
 
     return AnnoucementFactory;
