@@ -110,7 +110,7 @@ easyjob.controller('FreelancerController', [
     }
 
     $scope.findByCep = function () {
-      let url = `https://viacep.com.br/ws/${$scope.cep}/json/`;
+      let url = `https://viacep.com.br/ws/${$scope.cep.value}/json/`;
 
       MainModel.getCep(url).then(function (response) {
         console.log(response);
