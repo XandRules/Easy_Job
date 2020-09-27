@@ -41,12 +41,11 @@ easyjob.controller('AnnouncementController', [
       console.log("buscar anuncios")
 
       AnnouncementModel.getAnnouncementsFromFreelancer().then(response =>{
-        console.log(response.data);
+        $scope.records = response.data;
+        $scope.$apply();
         document.getElementById("loading").style.display = "none";
         document.getElementById("content").style.display = "block";
         document.getElementById("content2").style.display = "block";
-        $scope.records = response.data;
-        $scope.$apply();
         
       });
 
