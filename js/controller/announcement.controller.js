@@ -91,6 +91,7 @@ easyjob.controller('AnnouncementController', [
         amount: $scope.amount,
         title: $scope.title,
         period: $scope.period,
+        city: $scope.city,
         description: $scope.description,
         day_of_week: $scope.day_of_week,
         freelancer_id: $rootScope.id,
@@ -134,6 +135,7 @@ easyjob.controller('AnnouncementController', [
         period: $scope.period,
         description: $scope.description,
         day_of_week: $scope.day_of_week,
+        city: $scope.city,
         freelancer_id: $rootScope.id,
         speciality_id: $scope.speciality.id,
       };
