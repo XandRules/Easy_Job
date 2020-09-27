@@ -49,16 +49,16 @@ easyjob.controller('FreelancerController', [
     $scope.createAnnouncement = function () {
       console.log("criar anuncio");
 
-      var domingo = $scope.domingo == true ? "Domingo " : null ; 
-      var segunda = $scope.segunda == true ? "Segunda ": null; 
-      var terca = $scope.terca == true ? "Terça ": null; 
-      var quarta = $scope.quarta == true ? "Quarta ": null; 
-      var quinta = $scope.quinta == true ? "Quinta ": null; 
-      var sexta = $scope.sexta == true ? "Sexta ": null; 
-      var sabado = $scope.sabado == true ? "Sábado ": null; 
-      var manha = $scope.manha == true ? "Manhã " : null;
-      var tarde = $scope.tarde == true ? "Tarde " : null;
-      var noite = $scope.noite == true ? "Noite " : null;
+      var domingo = $scope.domingo == true ? "Domingo " : "" ; 
+      var segunda = $scope.segunda == true ? "Segunda ": ""; 
+      var terca = $scope.terca == true ? "Terça ": ""; 
+      var quarta = $scope.quarta == true ? "Quarta ": ""; 
+      var quinta = $scope.quinta == true ? "Quinta ": ""; 
+      var sexta = $scope.sexta == true ? "Sexta ": ""; 
+      var sabado = $scope.sabado == true ? "Sábado ": ""; 
+      var manha = $scope.manha == true ? "Manhã " : "";
+      var tarde = $scope.tarde == true ? "Tarde " : "";
+      var noite = $scope.noite == true ? "Noite " : "";
 
       $scope.day_of_week = (
         domingo + segunda + terca + quarta + quinta + sexta + sabado
