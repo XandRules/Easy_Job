@@ -26,7 +26,12 @@ easyjob.factory('AnnouncementModel', [
     };
 
     AnnoucementFactory.deleteAnnouncementById = function (id) {
-      return $http.delete(config.baseUrl + `/announcements/${id}`);
+      return $http.delete(config.baseUrl + `/announcements/${id}`,{
+        headers: {
+          'Authorization': `Bearer ${$rootScope.token}`,
+          'Content-Type': 'application/json'
+        }
+      });
     };
 
     return AnnoucementFactory; 
