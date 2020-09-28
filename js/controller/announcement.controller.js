@@ -54,6 +54,11 @@ easyjob.controller('AnnouncementController', [
     $scope.deleteAnnouncementById = function (id) {
       AnnouncementModel.deleteAnnouncementById(id).then(response => {
         console.log(response.data);
+
+        if(response.data.error == undefined){
+          swal("Anúncio removido!","Seu Anúncio foi removido com sucesso!","sucess");
+          $scope.getAnnouncementsFromFreelancer();
+        }
       });
     }
 
