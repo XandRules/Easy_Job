@@ -188,7 +188,11 @@ easyjob.controller('MainController', [
       MainModel.saveAddress(data).then(function (response) {
         if (response.data.error != null) {
           swal("Ocorreu um erro!", "Não foi possível salvar seu endereço!", "error");
-        }else{
+        } else {
+
+          MainModel.sendEmail($rootScope.data[0]).then(response => {
+            console.log(response);
+          })
           $state.go('signestablish3');
 
           //enviar email para conocluir o cadastro.

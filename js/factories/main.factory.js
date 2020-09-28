@@ -19,12 +19,16 @@ easyjob.factory('MainModel', [
       );
     };
 
-    MainFactory.createFreelancer = function(data){
-      return $http.post(config.baseUrl + '/freelancers',data, config.defaultHeader);
+    MainFactory.sendEmail = function (data) {
+      return $http.post(config.baseUrl + '/mail', data, config.defaultHeader);
     }
 
-    MainFactory.saveAddress = function(data){
-      return $http.post(config.baseUrl + '/address',data, config.defaultHeader);
+    MainFactory.createFreelancer = function (data) {
+      return $http.post(config.baseUrl + '/freelancers', data, config.defaultHeader);
+    }
+
+    MainFactory.saveAddress = function (data) {
+      return $http.post(config.baseUrl + '/address', data, config.defaultHeader);
     }
 
     return MainFactory;
