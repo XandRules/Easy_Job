@@ -22,7 +22,6 @@ easyjob.factory('AnnouncementModel', [
       return axios.post(config.baseUrl + '/announcement',data);
     };
 
-
     AnnoucementFactory.getAnnouncementsFromFreelancer = function () {
       return axios.get(config.baseUrl + `/announcements/${$rootScope.id}`);
     };
