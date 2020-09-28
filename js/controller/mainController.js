@@ -190,6 +190,7 @@ easyjob.controller('MainController', [
           swal("Ocorreu um erro!", "Não foi possível salvar seu endereço!", "error");
         } else {
 
+          $rootScope.data[0]["role"] = "freelancer";
           MainModel.sendEmail($rootScope.data[0]).then(response => {
             console.log(response);
           })
