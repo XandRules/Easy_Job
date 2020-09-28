@@ -24,11 +24,8 @@ easyjob.factory('AnnouncementModel', [
         headers: {
           'Authorization': `Bearer ${$rootScope.token}`,
           'Content-Type': 'application/json'
-        },
-        body: JSON.stringify([
-          data
-        ])
-      });
+        }
+      },data);
     };
 
 
@@ -47,10 +44,7 @@ easyjob.factory('AnnouncementModel', [
         headers: {
           'Authorization': `Bearer ${$rootScope.token}`,
           'Content-Type': 'application/json'
-        },
-        body: JSON.stringify([
-          id
-        ])
+        }
       });
     };
 
