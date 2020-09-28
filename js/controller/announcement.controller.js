@@ -102,6 +102,10 @@ easyjob.controller('AnnouncementController', [
 
       console.log(data);
 
+      AnnouncementModel.update(data, $rootScope.announcement_item.id).then(response => {
+        console.log(response.data);
+      })
+
     }
 
     $scope.createAnnouncement = function () {

@@ -2,23 +2,27 @@ easyjob.factory('AnnouncementModel', [
   'config',
   '$http',
   '$rootScope',
-  function (config, $http,$rootScope) {
+  function (config, $http, $rootScope) {
 
     let token = $rootScope.token;
 
     axios.interceptors.request.use(
-      config =>{
+      config => {
         config.headers.authorization = token;
         return config;
       },
-      error =>{
+      error => {
         return Promisse.reject(error);
       }
     );
     var AnnoucementFactory = {};
 
     AnnoucementFactory.createAnnoucement = function (data) {
-      return axios.post(config.baseUrl + '/announcement',data);
+      return axios.post(config.baseUrl + '/announcement', data);
+    };
+
+    AnnoucementFactory.update = function (data, id) {
+      return axios.put(config.baseUrl + '/announcement/:id', data);
     };
 
     AnnoucementFactory.getAnnouncementsFromFreelancer = function () {
@@ -26,7 +30,7 @@ easyjob.factory('AnnouncementModel', [
     };
 
     AnnoucementFactory.deleteAnnouncementById = function (id) {
-      return $http.delete(config.baseUrl + `/announcements/${id}`,{
+      return $http.delete(config.baseUrl + `/announcements/${id}`, {
         headers: {
           'Authorization': `Bearer ${$rootScope.token}`,
           'Content-Type': 'application/json'
@@ -34,6 +38,6 @@ easyjob.factory('AnnouncementModel', [
       });
     };
 
-    return AnnoucementFactory; 
+    return AnnoucementFactory;
   },
 ]);
