@@ -18,7 +18,6 @@ easyjob.factory('AnnouncementModel', [
     var AnnoucementFactory = {};
 
     AnnoucementFactory.createAnnoucement = function (data) {
-
       return axios.post(config.baseUrl + '/announcement',data);
     };
 
@@ -27,8 +26,7 @@ easyjob.factory('AnnouncementModel', [
     };
 
     AnnoucementFactory.deleteAnnouncementById = function (id) {
-
-      return axios.delete(config.baseUrl + `/announcements/${id}`);
+      return $http.delete(config.baseUrl + `/announcements/${id}`);
     };
 
     return AnnoucementFactory; 
