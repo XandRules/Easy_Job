@@ -30,7 +30,6 @@ easyjob.controller('FreelancerController', [
     $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
     $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
-
     $scope.updateFreelancer = function(){
 
       $scope.salvar.className = "fa fa-spinner fa-spin fa-fw";
@@ -225,6 +224,8 @@ easyjob.controller('FreelancerController', [
     if($rootScope.pageSelect == 'profilefreelancer'){
       $scope.getFreelancerData();
     }
+
+    $scope.$apply();
 
     //SELECT  F.id, F.name, F.phone, F.speciality_id, F.birth, F.gender, F.cpf,F.bio, A.number, A.cep, A.public_place, A.uf, A.neighborhood, A.city FROM freelancers F INNER JOIN addresses A on A.freelancer_id = F.id where F.id = 9;
 
