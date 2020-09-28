@@ -28,7 +28,7 @@ easyjob.controller('AnnouncementController', [
     $scope.tarde;
     $scope.noite;
     $scope.salvar = document.getElementById('salvar');
-    
+
     $scope.records = [];
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
@@ -37,33 +37,33 @@ easyjob.controller('AnnouncementController', [
     $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
     $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
-    $scope.getAnnouncementsFromFreelancer = function(){
+    $scope.getAnnouncementsFromFreelancer = function () {
       console.log("buscar anuncios")
 
-      AnnouncementModel.getAnnouncementsFromFreelancer().then(response =>{
+      AnnouncementModel.getAnnouncementsFromFreelancer().then(response => {
         $scope.records = response.data;
         $scope.$apply();
         document.getElementById("loading").style.display = "none";
         document.getElementById("content").style.display = "block";
         document.getElementById("content2").style.display = "block";
-        
+
       });
 
     }
 
-    $scope.deleteAnnouncementById = function(id){
-      AnnouncementModel.deleteAnnouncementById(id).then(response =>{
+    $scope.deleteAnnouncementById = function (id) {
+      AnnouncementModel.deleteAnnouncementById(id).then(response => {
         console.log(response.data);
       });
     }
 
-    $scope.edit = function(item){
+    $scope.edit = function (item) {
       console.log(item);
       $rootScope.announcement_item = item;
       $state.go('freelancerannouncementedit');
     }
 
-    $scope.update = function(){
+    $scope.update = function () {
 
       //$scope.salvar.className = 'fa fa-spinner fa-spin fa-fw';
 
@@ -87,7 +87,7 @@ easyjob.controller('AnnouncementController', [
         sexta +
         sabado;
 
-      $scope.period = manha +  tarde +  noite;
+      $scope.period = manha + tarde + noite;
 
       data = {
         amount: $scope.amount,
@@ -129,7 +129,7 @@ easyjob.controller('AnnouncementController', [
         sexta +
         sabado;
 
-      $scope.period = manha +  tarde +  noite;
+      $scope.period = manha + tarde + noite;
 
       data = {
         amount: $scope.amount,
@@ -165,7 +165,7 @@ easyjob.controller('AnnouncementController', [
           $scope.manha;
           $scope.tarde;
           $scope.noite;
-        }else{
+        } else {
           swal(
             'Anúncio não criado!',
             'Seu anúncio não foi criado!',
@@ -190,19 +190,19 @@ easyjob.controller('AnnouncementController', [
       }
     };
 
-    $scope.initAnnouncement = async function(){
+    $scope.initAnnouncement = async function () {
       document.getElementById("loading").style.display = "none";
       document.getElementById("content").style.display = "block";
       document.getElementById("content2").style.display = "block";
       await $scope.getAnnouncementsFromFreelancer();
-      
+
     }
 
-    if($rootScope.pageSelect == 'freelancerannouncement'){
+    if ($rootScope.pageSelect == 'freelancerannouncement') {
       $scope.initAnnouncement();
 
-    }else if($rootScope.pageSelect == 'freelancerannouncementedit'){
-      let amount = $rootScope.announcement_item.amount.split('R$')[1];
+    } else if ($rootScope.pageSelect == 'freelancerannouncementedit') {
+      let amount = $rootScope.announcement_item.amount;
       $scope.amount = parseInt(amount);
 
       $scope.title = $rootScope.announcement_item.title;
