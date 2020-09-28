@@ -66,7 +66,7 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
       url: '/freelancer/announcement',
       templateUrl: 'views/browserAnnouncements.html',
       controller: 'AnnouncementController',
-    }) 
+    })
     .state('freelancerannouncementedit', {
       url: '/freelancer/announcement/edit',
       templateUrl: 'views/editAnnouncements.html',
@@ -76,6 +76,11 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
       url: '/login/establish',
       templateUrl: 'views/loginEstablish.html',
       controller: 'LoginController',
+    })
+    .state('freelanceractivate', {
+      url: '/freelancer/activate',
+      templateUrl: 'views/freelancerActivate.html',
+      controller: 'FreelancerController',
     })
     .state('selectprofile', {
       url: '/selectprofile',
