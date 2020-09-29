@@ -44,7 +44,7 @@
                     </h2>
                     <strong><span class="badge badge-success" style="padding: 5px;">Turno:
                       </span></strong><span class="badge badge-pill badge-primary"
-                      ng-repeat="day in item.period track by index" style="padding: 5px;">{{day}}</span>
+                      ng-repeat="day in item.period track by index" style="padding: 5px;">{{day[$index]}}</span>
                     <br>
                     <strong><span class="" style="padding: 5px;">Dias da semana:
                       </span></strong><strong>{{item.day_of_week}}</strong>
