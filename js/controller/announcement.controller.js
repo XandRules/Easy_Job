@@ -48,9 +48,13 @@ easyjob.controller('AnnouncementController', [
 
         response.data.forEach(element => {
           let period = element.period.split(" ");
+          let day = element.day_of_week.split(" ");
           element.period = [];
+          element.day_of_week = [];
           element.period.push(period);
+          element.day_of_week.push(period);
           $scope.records.push(element);
+
         });
         $scope.$apply();
 

@@ -1,3 +1,10 @@
+<style>
+  .labelsUnit {
+    font-size: 16px;
+  }
+</style>
+
+
 <div ng-controller="AnnouncementController">
   <div class="container">
     <a ui-sref="salesfreelancer" ui-sref-active="active"><i class="fa fa-reply fa-2x voltar" style="
@@ -42,14 +49,37 @@
                     <h2 class="mr-3 text-black">
                       <a href="#">{{item.title}}</a>
                     </h2>
-                    <strong><span class="badge badge-success" style="padding: 5px;">Turno:
-                      </span></strong><span class="badge badge-pill badge-primary"
-                      ng-repeat="day in item.period track by index" style="padding: 5px;">{{day[$index]}}</span>
+                    <div>
+                      <strong><span class="badge badge-success"
+                          style="font-size: 16px; padding: 5px;margin: 4px;">Turno:
+                        </span>
+                        <span class="labelsUnit badge badge-primary">{{item.period[0]}}</span>
+                        <span class="labelsUnit badge badge-primary">{{item.period[1]}}</span>
+                        <span class="labelsUnit badge badge-primary">{{item.period[2]}}</span>
+                      </strong>
+                    </div>
+
+                    <strong><span class="badge badge-success" style="font-size: 16px; padding: 5px; margin: 4px;">Dias
+                        da semana:
+                      </span>
+                      <span class="labelsUnit badge badge-primary">{{item.day_of_week[0]}}</span>
+                      <span class="labelsUnit badge badge-primary">{{item.day_of_week[1]}}</span>
+                      <span class="labelsUnit badge badge-primary">{{item.day_of_week[2]}}</span>
+                      <span class="labelsUnit badge badge-primary">{{item.day_of_week[3]}}</span>
+                      <span class="labelsUnit badge badge-primary">{{item.day_of_week[4]}}</span>
+                      <span class="labelsUnit badge badge-primary">{{item.day_of_week[5]}}</span>
+                      <span class="labelsUnit badge badge-primary">{{item.day_of_week[6]}}</span>
+
+                    </strong>
+
                     <br>
-                    <strong><span class="" style="padding: 5px;">Dias da semana:
-                      </span></strong><strong>{{item.day_of_week}}</strong>
+
                     <br>
-                    <label><span class="text-success" style="font-style: bold"> {{item.amount}}</span></label>
+                    <label>
+                      <span class="text-success " style="font-size: 20px; padding: .7rem;">
+                        <strong>R${{item.amount}},00</strong>
+                      </span>
+                    </label>
                   </div>
                   <div class="mr-5">
                     <br>
