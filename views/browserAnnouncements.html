@@ -1,28 +1,17 @@
 <div ng-controller="AnnouncementController">
   <div class="container">
-    <a ui-sref="salesfreelancer" ui-sref-active="active"
-      ><i
-        class="fa fa-reply fa-2x voltar"
-        style="
+    <a ui-sref="salesfreelancer" ui-sref-active="active"><i class="fa fa-reply fa-2x voltar" style="
           z-index: 99999;
           position: absolute;
           color: white;
           cursor: pointer;
           margin-top: 0.5rem;
-        "
-        aria-hidden="true"
-      ></i
-    ></a>
+        " aria-hidden="true"></i></a>
   </div>
-  <div
-    class="hero-wrap hero-wrap-0"
-    data-stellar-background-ratio="0.5"
-  >
+  <div class="hero-wrap hero-wrap-0" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
-      <div
-        class="row no-gutters slider-text align-items-end justify-content-start"
-      >
+      <div class="row no-gutters slider-text align-items-end justify-content-start">
         <div class="col-md-12 text-center mb-10">
           <h1 class="mb-3 bread">Meus Anúncios</h1>
         </div>
@@ -36,14 +25,17 @@
       <div class="row">
         <div class="col-lg-12 pr-lg-4">
           <div class="row">
-            <div
-              class="col-md-12"
-              
-            >
+            <div class="col-md-12">
+              <div ng-hide="records[0]" class="col-md-12 text-center">
+                <div>
+                  <h3>Nenhum Anúncio Cadastrado</h3>
+                  <br>
+                  <a ui-sref="announcementfreelancer" ui-sref-active="active"><button class="btn btn-primary">Criar
+                      Anúncio</button></a>
+                </div>
+              </div>
 
-              <div ng-repeat="item in records"
-                class="job-post-item p-4 d-block d-lg-flex align-items-center"
-              >
+              <div ng-repeat="item in records" class="job-post-item p-4 d-block d-lg-flex align-items-center">
                 <div class="one-third mb-4 mb-md-0">
                   <div class="job-post-item-header align-items-center">
 
@@ -58,9 +50,9 @@
                   </div>
                   <div class="mr-5">
                     <br>
-                    
-                      <span>{{item.description}}</span>
-                  
+
+                    <span>{{item.description}}</span>
+
                   </div>
                   <br>
                   <div class="job-post-item-body d-block d-md-flex">
@@ -69,18 +61,13 @@
                       <a href="#">{{item.name}}</a>
                     </div>
                     <div>
-                      <span
-                        class="fa fa-map-marker"
-                        style="color: black"
-                      ></span>
+                      <span class="fa fa-map-marker" style="color: black"></span>
                       <span>{{item.city}}</span>
                     </div>
                   </div>
                 </div>
 
-                <div
-                  class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0"
-                >
+                <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
                   <!-- <div>
                     <a
                       href="#"
@@ -90,12 +77,8 @@
                     </a>
                   </div> -->
                   <div>
-                    <a href="" ng-click="edit(item)" class="btn btn-primary fa fa-edit fa-2x"
-                      ></a
-                    >
-                    <a href="" ng-click="deleteAnnouncementById(item.id)" class="btn btn-danger fa fa-trash fa-2x"
-                      ></a
-                    >
+                    <a href="" ng-click="edit(item)" class="btn btn-primary fa fa-edit fa-2x"></a>
+                    <a href="" ng-click="deleteAnnouncementById(item.id)" class="btn btn-danger fa fa-trash fa-2x"></a>
                   </div>
                 </div>
               </div>

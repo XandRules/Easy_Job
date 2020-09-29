@@ -148,6 +148,10 @@ easyjob.controller('MainController', [
       });
     };
 
+    $scope.createEstablish = function () {
+
+    }
+
     $scope.createFreelancer = function () {
       console.log("teste");
 
