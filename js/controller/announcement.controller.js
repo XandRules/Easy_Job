@@ -51,7 +51,6 @@ easyjob.controller('AnnouncementController', [
           element.period = [];
           element.period.push(period);
           $scope.records.push(element);
-
         });
         $scope.$apply();
 
