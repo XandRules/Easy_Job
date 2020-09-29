@@ -47,7 +47,7 @@ easyjob.controller('AnnouncementController', [
         // $scope.records = response.data;
 
         response.data.forEach(element => {
-          let period = element.period.split("");
+          let period = element.period.split(" ");
           element.period = [];
           element.period.push(period);
           $scope.records.push(element);
