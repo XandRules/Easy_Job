@@ -42,11 +42,12 @@
                     <h2 class="mr-3 text-black">
                       <a href="#">{{item.title}}</a>
                     </h2>
-                    <strong><span class="badge badge-success" style="padding: 2px;">Turno:
-                      </span></strong><span class="badge badge-primary"
-                      ng-repeat="day in item.period">{{day[$index]}}</span>
+                    <strong><span class="badge badge-success" style="padding: 5px;">Turno:
+                      </span></strong><span class="badge badge-pill badge-primary" ng-repeat="day in item.period"
+                      style="padding: 5px;">{{day[index]}}</span>
                     <br>
-                    <strong><span class="subadge">Dias da semana: </span></strong><strong>{{item.day_of_week}}</strong>
+                    <strong><span class="" style="padding: 5px;">Dias da semana:
+                      </span></strong><strong>{{item.day_of_week}}</strong>
                     <br>
                     <label><span class="text-success" style="font-style: bold"> {{item.amount}}</span></label>
                   </div>
