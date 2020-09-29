@@ -52,7 +52,7 @@ easyjob.controller('AnnouncementController', [
           element.period = [];
           element.day_of_week = [];
           element.period.push(period);
-          element.day_of_week.push(period);
+          element.day_of_week.push(day);
           $scope.records.push(element);
 
         });
