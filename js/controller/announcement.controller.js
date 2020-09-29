@@ -216,6 +216,7 @@ easyjob.controller('AnnouncementController', [
 
     $scope.initAnnouncement = async function () {
 
+      $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
       await $scope.getAnnouncementsFromFreelancer();
 
     }
