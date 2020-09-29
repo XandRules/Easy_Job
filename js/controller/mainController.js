@@ -34,14 +34,15 @@ easyjob.controller('MainController', [
     $rootScope.data = '';
     $scope.message = '';
     $rootScope.announcement_item;
+    $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
 
     $scope.valor = '';
 
-    $scope.loadDom = function () {
-      document.addEventListener('DOMContentLoaded', function () {
-        console.log('loaded');
-      });
-    }
+    window.onload = function () {
+      console.log('loaded');
+      $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+    };
+
 
     $scope.openTermos = function (role) {
 
@@ -63,6 +64,7 @@ easyjob.controller('MainController', [
         });
 
         console.log($scope.specilities);
+        $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
       });
 
     };
