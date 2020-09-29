@@ -44,10 +44,14 @@ easyjob.controller('AnnouncementController', [
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
 
       AnnouncementModel.getAnnouncementsFromFreelancer().then(response => {
-        $scope.records = response.data;
+        // $scope.records = response.data;
 
         response.data.forEach(element => {
-          console.log(element);
+          let period = element.period.split("");
+          element.period = [];
+          element.period.push(period);
+          $scope.records.push(element);
+
         });
         $scope.$apply();
 
