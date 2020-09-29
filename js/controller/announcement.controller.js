@@ -78,16 +78,16 @@ easyjob.controller('AnnouncementController', [
 
       //$scope.salvar.className = 'fa fa-spinner fa-spin fa-fw';
 
-      var domingo = $scope.domingo == true ? 'Domingo ' : '';
-      var segunda = $scope.segunda == true ? 'Segunda ' : '';
-      var terca = $scope.terca == true ? 'Terça ' : '';
-      var quarta = $scope.quarta == true ? 'Quarta ' : '';
-      var quinta = $scope.quinta == true ? 'Quinta ' : '';
-      var sexta = $scope.sexta == true ? 'Sexta ' : '';
-      var sabado = $scope.sabado == true ? 'Sábado ' : '';
-      var manha = $scope.manha == true ? 'Manhã ' : '';
-      var tarde = $scope.tarde == true ? 'Tarde ' : '';
-      var noite = $scope.noite == true ? 'Noite ' : '';
+      var domingo = $scope.domingo == true ? 'Domingo' : '';
+      var segunda = $scope.segunda == true ? ' Segunda' : '';
+      var terca = $scope.terca == true ? ' Terça' : '';
+      var quarta = $scope.quarta == true ? ' Quarta' : '';
+      var quinta = $scope.quinta == true ? ' Quinta' : '';
+      var sexta = $scope.sexta == true ? ' Sexta' : '';
+      var sabado = $scope.sabado == true ? ' Sábado' : '';
+      var manha = $scope.manha == true ? ' Manhã' : '';
+      var tarde = $scope.tarde == true ? ' Tarde' : '';
+      var noite = $scope.noite == true ? ' Noite' : '';
 
       $scope.day_of_week =
         domingo +
@@ -129,16 +129,16 @@ easyjob.controller('AnnouncementController', [
 
       $scope.salvar.className = 'fa fa-spinner fa-spin fa-fw';
 
-      var domingo = $scope.domingo == true ? 'Domingo ' : '';
-      var segunda = $scope.segunda == true ? 'Segunda ' : '';
-      var terca = $scope.terca == true ? 'Terça ' : '';
-      var quarta = $scope.quarta == true ? 'Quarta ' : '';
-      var quinta = $scope.quinta == true ? 'Quinta ' : '';
-      var sexta = $scope.sexta == true ? 'Sexta ' : '';
-      var sabado = $scope.sabado == true ? 'Sábado ' : '';
-      var manha = $scope.manha == true ? 'Manhã ' : '';
-      var tarde = $scope.tarde == true ? 'Tarde ' : '';
-      var noite = $scope.noite == true ? 'Noite ' : '';
+      var domingo = $scope.domingo == true ? 'Domingo' : '';
+      var segunda = $scope.segunda == true ? ' Segunda' : '';
+      var terca = $scope.terca == true ? ' Terça' : '';
+      var quarta = $scope.quarta == true ? ' Quarta' : '';
+      var quinta = $scope.quinta == true ? ' Quinta' : '';
+      var sexta = $scope.sexta == true ? ' Sexta' : '';
+      var sabado = $scope.sabado == true ? ' Sábado' : '';
+      var manha = $scope.manha == true ? ' Manhã' : '';
+      var tarde = $scope.tarde == true ? ' Tarde' : '';
+      var noite = $scope.noite == true ? ' Noite' : '';
 
       $scope.day_of_week =
         domingo +
