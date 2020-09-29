@@ -45,7 +45,12 @@ easyjob.controller('AnnouncementController', [
 
       AnnouncementModel.getAnnouncementsFromFreelancer().then(response => {
         $scope.records = response.data;
+
+        response.data.forEach(element => {
+          console.log(element);
+        });
         $scope.$apply();
+
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
       });
