@@ -41,6 +41,8 @@ easyjob.controller('AnnouncementController', [
     $scope.getAnnouncementsFromFreelancer = function () {
       console.log("buscar anuncios")
 
+      $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
+
       AnnouncementModel.getAnnouncementsFromFreelancer().then(response => {
         $scope.records = response.data;
         $scope.$apply();
@@ -213,9 +215,7 @@ easyjob.controller('AnnouncementController', [
     };
 
     $scope.initAnnouncement = async function () {
-      document.getElementById("loading").style.display = "none";
-      document.getElementById("content").style.display = "block";
-      document.getElementById("content2").style.display = "block";
+
       await $scope.getAnnouncementsFromFreelancer();
 
     }

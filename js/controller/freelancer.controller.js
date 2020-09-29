@@ -210,11 +210,7 @@ easyjob.controller('FreelancerController', [
 
     $scope.getFreelancerData = async function () {
       $scope.getFreelancerById();
-      document.getElementById("loading").style.display = "block";
-      document.getElementById("content").style.display = "none";
-      document.getElementById("content2").style.display = "none";
     }
-
 
     if ($rootScope.pageSelect == 'profilefreelancer') {
       $scope.getFreelancerData();
