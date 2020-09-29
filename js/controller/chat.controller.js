@@ -4,6 +4,10 @@ easyjob.controller('ChatController', [
     console.log('Chat');
     $scope.message;
 
+    $rootScope.headerDefault = false;
+    $rootScope.headerDefaultLogout = true;
+    $rootScope.footerDefault = false;
+
     var socket = io.connect("https://easyjob-app.herokuapp.com");
     var ready = false;
 

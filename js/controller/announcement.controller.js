@@ -6,8 +6,8 @@ easyjob.controller('AnnouncementController', [
   function (AnnouncementModel, $scope, $rootScope, $state) {
     console.log('Anuncios');
 
-    $rootScope.headerDefault = true;
-    $rootScope.headerDefaultLogout = false;
+    $rootScope.headerDefault = false;
+    $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
 
     $scope.amount = 0;
@@ -55,8 +55,8 @@ easyjob.controller('AnnouncementController', [
       AnnouncementModel.deleteAnnouncementById(id).then(response => {
         console.log(response.data);
 
-        if(response.data.error == undefined){
-          swal("Anúncio removido!","Seu Anúncio foi removido com sucesso!","sucess");
+        if (response.data.error == undefined) {
+          swal("Anúncio removido!", "Seu Anúncio foi removido com sucesso!", "sucess");
           $scope.getAnnouncementsFromFreelancer();
         }
       });
