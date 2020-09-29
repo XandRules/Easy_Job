@@ -12,11 +12,6 @@ easyjob.controller('FreelancerController', [
     $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
 
-    document.getElementById("loading").style.display = "block";
-    document.getElementById("content").style.display = "none";
-    document.getElementById("content2").style.display = "none";
-
-
     $scope.cidade;
     $scope.descricao;
     $scope.name;
