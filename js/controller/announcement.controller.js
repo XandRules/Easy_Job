@@ -224,6 +224,9 @@ easyjob.controller('AnnouncementController', [
     if ($rootScope.pageSelect == 'freelancerannouncement') {
       $scope.initAnnouncement();
 
+    } else if ($rootScope.pageSelect == 'announcementfreelancer') {
+      $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+
     } else if ($rootScope.pageSelect == 'freelancerannouncementedit') {
       let amount = $rootScope.announcement_item.amount;
       $scope.amount = parseInt(amount);
