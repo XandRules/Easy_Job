@@ -19,9 +19,14 @@ easyjob.factory('AddressModel', [
     var AddressFactory = {};
 
     AddressFactory.getAddressFromFreelancer = function(id){
-      return axios.get(config.baseUrl + `/address/${id}`);
+      return axios.get(config.baseUrl + `/address/freelancer/${id}`);
 
     }    
+
+    AddressFactory.getAddressFromEstablish = function(id){
+      return axios.get(config.baseUrl + `/address/establish/${id}`);
+
+    }   
 
     AddressFactory.updateAddress = function(data, id){
       return axios.put(config.baseUrl + `/address/${id}`,data);
