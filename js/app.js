@@ -57,105 +57,118 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/home.html',
       controller: 'MainController',
     })
+    /*===================================================
+     **********************FREELANCER*********************
+     *===================================================*/
     .state('loginfreelancer', {
       url: '/login/freelancer',
-      templateUrl: 'views/loginfreelancer.html',
+      templateUrl: 'views/freelancer/loginfreelancer.html',
       controller: 'LoginController',
     })
     .state('freelancerannouncement', {
       url: '/freelancer/announcement',
-      templateUrl: 'views/browserAnnouncements.html',
+      templateUrl: 'views/freelancer/freelancerAnnouncements.html',
       controller: 'AnnouncementController',
     })
     .state('freelancerannouncementedit', {
       url: '/freelancer/announcement/edit',
-      templateUrl: 'views/editAnnouncements.html',
+      templateUrl: 'views/freelancer/editFreelancerAnnouncements.html',
       controller: 'AnnouncementController',
-    })
-    .state('loginestablish', {
-      url: '/login/establish',
-      templateUrl: 'views/loginEstablish.html',
-      controller: 'LoginController',
     })
     .state('freelanceractivate', {
       url: '/freelancer/activate',
-      templateUrl: 'views/freelancerActivate.html',
+      templateUrl: 'views/freelancer/freelancerActivate.html',
       controller: 'FreelancerController',
-    })
-    .state('selectprofile', {
-      url: '/selectprofile',
-      templateUrl: 'views/selectProfile.html',
-      controller: 'SelectController',
-    })
-    .state('selectprofilelogin', {
-      url: '/profilelogin',
-      templateUrl: 'views/selectProfileLogin.html',
-      controller: 'SelectController',
-    })
-    .state('signfreelancer', {
+    }).state('signfreelancer', {
       url: '/freelancer/personal',
-      templateUrl: 'views/signFreelancer.html',
+      templateUrl: 'views/freelancer/signFreelancer.html',
       controller: 'MainController',
     })
     .state('signfreelancer2', {
       url: '/freelancer/endereco',
-      templateUrl: 'views/signFreelancer2.html',
+      templateUrl: 'views/freelancer/signFreelancer2.html',
       controller: 'MainController',
     })
     .state('signfreelancer3', {
       url: '/freelancer/confirmacao',
-      templateUrl: 'views/signFreelancer3.html',
-      controller: 'MainController',
-    })
-    .state('signestablish', {
-      url: '/establish/personal',
-      templateUrl: 'views/signEstablish.html',
-      controller: 'MainController',
-    })
-    .state('signestablish2', {
-      url: '/establish/endereco',
-      templateUrl: 'views/signEstablish2.html',
-      controller: 'MainController',
-    })
-    .state('signestablish3', {
-      url: '/establish/confirmacao',
-      templateUrl: 'views/signEstablish3.html',
+      templateUrl: 'views/freelancer/signFreelancer3.html',
       controller: 'MainController',
     })
     .state('salesfreelancer', {
       url: '/sales/freelancer',
-      templateUrl: 'views/salesfreelancer.html',
+      templateUrl: 'views/freelancer/salesfreelancer.html',
       controller: 'FreelancerController',
     })
     .state('announcementfreelancer', {
       url: '/announcement/freelancer',
-      templateUrl: 'views/announcementFreelancer.html',
+      templateUrl: 'views/freelancer/announcementFreelancer.html',
       controller: 'FreelancerController',
-    })
-    .state('salesestablish', {
-      url: '/sales/establish',
-      templateUrl: 'views/salesestablish.html',
-      controller: 'EstablishController',
-    })
-    .state('chat', {
-      url: '/chat',
-      templateUrl: 'views/chat.html',
-      controller: 'ChatController',
     })
     .state('profilefreelancer', {
       url: '/profile/freelancer',
-      templateUrl: 'views/profileFreelancer.html',
+      templateUrl: 'views/freelancer/profileFreelancer.html',
       controller: 'FreelancerController',
+    })
+    /*===================================================
+     ******************END FREELANCER*********************
+     *===================================================*/
+
+    /*===================================================
+     **********************ESTABLISH*********************
+     *===================================================*/
+    .state('loginestablish', {
+      url: '/login/establish',
+      templateUrl: 'views/establish/loginEstablish.html',
+      controller: 'LoginController',
+    })
+    .state('signestablish', {
+      url: '/establish/personal',
+      templateUrl: 'views/establish/signEstablish.html',
+      controller: 'MainController',
+    })
+    .state('signestablish2', {
+      url: '/establish/endereco',
+      templateUrl: 'views/establish/signEstablish2.html',
+      controller: 'MainController',
+    })
+    .state('signestablish3', {
+      url: '/establish/confirmacao',
+      templateUrl: 'views/establish/signEstablish3.html',
+      controller: 'MainController',
+    })
+    .state('salesestablish', {
+      url: '/sales/establish',
+      templateUrl: 'views/establish/salesestablish.html',
+      controller: 'EstablishController',
     })
     .state('profileestablish', {
       url: '/profile/establish',
-      templateUrl: 'views/profileEstablish.html',
+      templateUrl: 'views/establish/profileEstablish.html',
       controller: 'FreelancerController',
     })
     .state('searchfreelancer', {
       url: '/search/freelancer',
-      templateUrl: 'views/searchFreelancer.html',
+      templateUrl: 'views/establish/searchFreelancer.html',
       controller: 'SearchController',
+    })
+
+    /*===================================================
+     ******************END ESTABLISH*********************
+     *===================================================*/
+    .state('selectprofile', {
+      url: '/selectprofile',
+      templateUrl: 'views/general/selectProfile.html',
+      controller: 'SelectController',
+    })
+    .state('selectprofilelogin', {
+      url: '/profilelogin',
+      templateUrl: 'views/general/selectProfileLogin.html',
+      controller: 'SelectController',
+    })
+    .state('chat', {
+      url: '/chat',
+      templateUrl: 'views/general/chat.html',
+      controller: 'ChatController',
     });
 
 
