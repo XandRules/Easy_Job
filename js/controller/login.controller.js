@@ -61,7 +61,7 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
 
             console.log(data);
 
-            let route = '/sessionsestablish';
+            let route = '/sessionsestablishment';
 
             LoginModel.login(data, route).then(function (response) {
                 console.log('data : ' + response.status);
