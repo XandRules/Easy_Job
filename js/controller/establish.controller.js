@@ -1,7 +1,8 @@
 easyjob.controller('EstablishController', ['EstablishModel', '$scope',
     function (EstablishModel, $scope) {
 
-        console.log('Establish');
-
+        $rootScope.headerDefault = false;
+        $rootScope.headerDefaultLogout = true;
+        $rootScope.footerDefault = false;
     }
 ]);
