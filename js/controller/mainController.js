@@ -163,7 +163,7 @@ easyjob.controller('MainController', [
           swal("Usuário já Cadastrado!", "Realize o Login ou tente recuperar sua senha!", "error");
         } else {
           var data = {
-            "freelancer_id": response.data.id,
+            "establish_id": response.data.id,
             "uf": $scope.uf,
             "cep": $scope.cep,
             "public_place": $scope.logradouro,
