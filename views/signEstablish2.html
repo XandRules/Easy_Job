@@ -1,5 +1,15 @@
-<section ng-controller="MainController">
+<style>
+  .click {
+    cursor: pointer;
+    color: #4455dd;
+  }
 
+  .click:hover {
+    color: blueviolet;
+  }
+</style>
+
+<section ng-controller="MainController">
   <section class="intro-inscri">
     <h1>Faça a Sua Inscrição</h1>
   </section>
@@ -8,8 +18,8 @@
     <div class="inscri-progress">
       <div class="ponto-1"></div>
       <div class="progress-1"></div>
-      <div class="ponto-2" style="top: -25px;background: #4455DD;"></div>
-      <div class="ponto-3" style="top: -41px;"></div>
+      <div class="ponto-2" style="top: -25px; background: #4455dd"></div>
+      <div class="ponto-3" style="top: -41px"></div>
     </div>
 
     <div class="inscri-progress-info">
@@ -17,9 +27,9 @@
         <h2>1-Etapa</h2>
         <span>Dados Pessoais</span>
       </div>
-      <div class="inscri-progress-info-item" style="margin-right: 25px;">
+      <div class="inscri-progress-info-item" style="margin-right: 25px">
         <h2>2-Etapa</h2>
-        <span>Endereço</span>
+        <span>Dados Profissionais</span>
       </div>
       <div class="inscri-progress-info-item">
         <h2>3-Etapa</h2>
@@ -29,7 +39,9 @@
 
     <div class="container">
       <div class="row">
-        <form class="col-12" name="establish2" novalidate>
+
+        <form class="col-12" novalidate name="establish2" ng-submit="createEstablish()">
+
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputCEP">CEP</label>
@@ -89,16 +101,19 @@
             <div ng-if="establish2.termos.$invalid && establish2.termos.$touched"></div>
             <label for="termos">
               <div>Concordo com os <a style="color: #4455dd; cursor:pointer; "
-                  ng-click="openTermos('establish');">termos de Uso</a></div>
+                  ng-click="openTermos('freelancer');">termos de Uso</a></div>
             </label>
 
           </div>
+
         </form>
         <div class="col-6 text-left">
           <a class="btn btn-primary" ui-sref="signfreelancer" ui-sref-active="active">Etapa Anterior</a>
         </div>
         <div class="col-6 text-right">
-          <a class="btn btn-primary" ui-sref="signestablish3" ui-sref-active="active">Cadastrar</a>
+          <button class="btn btn-primary" ng-disabled="!establish2.$valid || !termos" ng-click="createEstablish();">
+            Cadastrar
+          </button>
         </div>
       </div>
     </div>

@@ -152,11 +152,35 @@ easyjob.controller('MainController', [
 
     $scope.createEstablish = function () {
 
+      if ($rootScope.data == "") {
+        $rootScope.data = [];
+        $rootScope.data[0] = JSON.parse(localStorage.getItem("dataUser"));
+      }
+
+      MainModel.createEstablish($rootScope.data[0]).then(function (response) {
+
+        if (response.data.error != null) {
+          swal("Usuário já Cadastrado!", "Realize o Login ou tente recuperar sua senha!", "error");
+        } else {
+          var data = {
+            "freelancer_id": response.data.id,
+            "uf": $scope.uf,
+            "cep": $scope.cep,
+            "public_place": $scope.logradouro,
+            "neighborhood": $scope.bairro,
+            "number": $scope.numero,
+            "city": $scope.city,
+
+          }
+
+          $scope.saveAddressToDataBase(data,'establish');
+        }
+
+      })
     }
 
     $scope.createFreelancer = function () {
-      console.log("teste");
-
+     
       if ($rootScope.data == "") {
         $rootScope.data = [];
         $rootScope.data[0] = JSON.parse(localStorage.getItem("dataUser"));
@@ -182,25 +206,36 @@ easyjob.controller('MainController', [
 
           }
 
-          $scope.saveFreelancerAddressToDataBase(data);
-
-          $scope.freelancer_id = response.data.id;
+          $scope.saveAddressToDataBase(data, 'freelancer');
         }
 
       })
     };
 
-    $scope.saveFreelancerAddressToDataBase = function (data) {
+    $scope.saveAddressToDataBase = function (data,role) {
+
       MainModel.saveAddress(data).then(function (response) {
         if (response.data.error != null) {
           swal("Ocorreu um erro!", "Não foi possível salvar seu endereço!", "error");
         } else {
 
-          $rootScope.data[0]["role"] = "freelancer";
+          if(role == 'freelancer'){
+            $rootScope.data[0]["role"] = "freelancer";
+            localStorage.setItem('dataUser',$rootScope.data);
+          }else{
+            $rootScope.data[0]["role"] = "establish";
+            localStorage.setItem('dataUser',$rootScope.data);
+          }
+
           MainModel.sendEmail($rootScope.data[0]).then(response => {
             console.log(response);
+
+            if(role == 'freelancer'){
+              $state.go('signfreelancer3');
+            }else{
+              $state.go('signestablish3');
+            }
           })
-          $state.go('signestablish3');
 
           //enviar email para conocluir o cadastro.
         }
