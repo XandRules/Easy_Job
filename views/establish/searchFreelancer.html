@@ -26,16 +26,13 @@
                             <div class="form-group">
                               <div class="form-field">
                                 <div class="select-wrap">
+
+
                                   <div class="icon"><span></span></div>
-                                  <select name="" id="" class="form-control">
-                                    <option value="">Especialidade</option>
-                                    <option value="">Garçom/Garçonete</option>
-                                    <option value="">Recepcionista</option>
-                                    <option value="">Banda/Músico</option>
-                                    <option value="">Segurança</option>
-                                    <option value="">Motoboy</option>
-                                    <option value="">Cozinheiro(a)</option>
-                                  </select>
+                                  <select class="form-control" id="inputSpeciality" ng-model="speciality" name="speciality1"
+                                  ng-options="item as item.speciality_function for item in specilities track by item.id" required>
+                                  <option value="" selected>Selecione sua Especialidade</option>
+                                </select>
                                 </div>
                               </div>
                             </div>

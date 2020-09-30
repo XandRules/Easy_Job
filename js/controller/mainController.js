@@ -123,6 +123,7 @@ easyjob.controller('MainController', [
     };
 
     $scope.buscaUFs = function () {
+      $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       MainModel.findUFs().then(function (response) {
         console.log($rootScope.data);
         $scope.ufs = [];
@@ -147,6 +148,7 @@ easyjob.controller('MainController', [
         console.log(response);
         $scope.uf = response.data.uf;
         $scope.city = response.data.localidade;
+        $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
       });
     };
 
@@ -246,6 +248,8 @@ easyjob.controller('MainController', [
       window.sessionStorage.clear();
       $state.go("home");
     };
+
+    $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
     $scope.getSpecilities();
 
