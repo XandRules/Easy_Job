@@ -173,14 +173,14 @@ easyjob.controller('MainController', [
 
           }
 
-          $scope.saveAddressToDataBase(data,'establish');
+          $scope.saveAddressToDataBase(data, 'establish');
         }
 
       })
     }
 
     $scope.createFreelancer = function () {
-     
+
       if ($rootScope.data == "") {
         $rootScope.data = [];
         $rootScope.data[0] = JSON.parse(localStorage.getItem("dataUser"));
@@ -212,30 +212,30 @@ easyjob.controller('MainController', [
       })
     };
 
-    $scope.saveAddressToDataBase = function (data,role) {
+    $scope.saveAddressToDataBase = function (data, role) {
 
       MainModel.saveAddress(data).then(function (response) {
         if (response.data.error != null) {
           swal("Ocorreu um erro!", "Não foi possível salvar seu endereço!", "error");
         } else {
 
-          if(role == 'freelancer'){
+          if (role == 'freelancer') {
             $rootScope.data[0]["role"] = "freelancer";
-            localStorage.setItem('dataUser',JSON.stringify($rootScope.data));
-          }else{
+            localStorage.setItem('dataUser', JSON.stringify($rootScope.data));
+          } else {
             $rootScope.data[0]["role"] = "establish";
-            localStorage.setItem('dataUser',JSON.stringify($rootScope.data));
+            localStorage.setItem('dataUser', JSON.stringify($rootScope.data));
           }
 
           MainModel.sendEmail($rootScope.data[0]).then(response => {
             console.log(response);
 
-            if(role == 'freelancer'){
+            if (role == 'freelancer') {
               $state.go('signfreelancer3');
-            }else{
+            } else {
               $state.go('signestablish3');
             }
-          })
+          });
 
           //enviar email para conocluir o cadastro.
         }

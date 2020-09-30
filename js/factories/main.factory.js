@@ -27,6 +27,10 @@ easyjob.factory('MainModel', [
       return $http.post(config.baseUrl + '/freelancers', data, config.defaultHeader);
     }
 
+    MainFactory.createEstablish = function (data) {
+      return $http.post(config.baseUrl + '/establishment', data, config.defaultHeader);
+    }
+
     MainFactory.saveAddress = function (data) {
       return $http.post(config.baseUrl + '/address', data, config.defaultHeader);
     }

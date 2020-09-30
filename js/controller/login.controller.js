@@ -61,13 +61,13 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
 
             console.log(data);
 
-            let route = '/sessionsestablish';
+            let route = '/sessionsestablishment';
 
             LoginModel.login(data, route).then(function (response) {
                 console.log('data : ' + response.status);
 
                 if (response.data.error == undefined) {
-                    $state.go('salesfreelancer');
+                    $state.go('salesestablish');
                 } else {
                     swal("email ou senha incorreta!", "Tente redefinir sua senha!", "error");
                     console.log('usuário ou senha incorreta');
