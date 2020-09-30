@@ -4,7 +4,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         $rootScope.headerDefault = false;
         $rootScope.headerDefaultLogout = true;
         $rootScope.footerDefault = false;
-        $scope.speciality;
+        $scope.speciality = "";
 
         $scope.getSpecilities = function () {
 
