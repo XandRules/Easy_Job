@@ -221,10 +221,10 @@ easyjob.controller('MainController', [
 
           if(role == 'freelancer'){
             $rootScope.data[0]["role"] = "freelancer";
-            localStorage.setItem('dataUser',$rootScope.data);
+            localStorage.setItem('dataUser',JSON.stringify($rootScope.data));
           }else{
             $rootScope.data[0]["role"] = "establish";
-            localStorage.setItem('dataUser',$rootScope.data);
+            localStorage.setItem('dataUser',JSON.stringify($rootScope.data));
           }
 
           MainModel.sendEmail($rootScope.data[0]).then(response => {
