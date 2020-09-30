@@ -1,5 +1,5 @@
-easyjob.controller('EstablishController', ['EstablishModel', '$scope',
-    function (EstablishModel, $scope) {
+easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootScope',
+    function (EstablishModel, $scope, $rootScope) {
 
         $rootScope.headerDefault = false;
         $rootScope.headerDefaultLogout = true;
