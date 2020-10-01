@@ -66,7 +66,7 @@ easyjob.controller('AnnouncementController', [
     }
 
 
-    $scope.deleteAnnouncementById = function (id) {
+    $scope.deleteAnnouncementById = function (id, item) {
 
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       AnnouncementModel.deleteAnnouncementById(id).then(response => {
