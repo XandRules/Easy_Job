@@ -30,31 +30,8 @@ easyjob.controller('SearchController', [
       
         };
 
-        $scope.typeWriter = function(){
-
-          for (let i = 0; i < $scope.speciality_label.length; i++) {
-            
-            let writer = $scope.speciality_label[i].split("");
-          
-
-              writer.forEach((letter,j) => {
-                setTimeout(()=>{
-                  $scope.speciality_label_writer += writer;   
-                  console.log($scope.speciality_label_writer);    
-  
-                },100 * j)            
-              });     
-            
-          }
-
-          $scope.typeWriter();
-            
-        }
-
-
         if($rootScope.pageSelect == 'searchfreelancer'){
             $scope.getSpecilities();
-            $scope.typeWriter();
         }
   },
 ]);
