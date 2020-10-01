@@ -57,6 +57,8 @@ easyjob.controller('AnnouncementController', [
 
         });
 
+        $scope.$apply();
+
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
       });
@@ -69,10 +71,10 @@ easyjob.controller('AnnouncementController', [
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       AnnouncementModel.deleteAnnouncementById(id).then(response => {
 
-        
+
         if (response.data.error == undefined) {
           swal("Anúncio removido!", "Seu Anúncio foi removido com sucesso!", "success");
-          
+
           $scope.$apply();
         } else {
           $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
