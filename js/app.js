@@ -7,8 +7,6 @@ easyjob.run(
 
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
-      $rootScope.$apply();
-
       $rootScope.sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
       $rootScope.token = 'Bearer ';
