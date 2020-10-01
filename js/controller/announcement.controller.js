@@ -77,6 +77,7 @@ easyjob.controller('AnnouncementController', [
           $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
           swal("Ooops!", "Seu Anúncio não foi removido, tente novamente!", "error");
         }
+        $scope.$digest();
       });
     }
 
