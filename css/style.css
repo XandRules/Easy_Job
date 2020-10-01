@@ -94,20 +94,25 @@ img {
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
 .job-post-item h2 {
   font-size: 28px;
 }
+
 .job-post-item h2 a {
   color: #000000;
 }
+
 .job-post-item .one-third {
   width: calc(100% - 145px);
 }
+
 @media (max-width: 991.98px) {
   .job-post-item .one-third {
     width: 100%;
   }
 }
+
 .job-post-item .one-third .subadge {
   color: rgba(0, 0, 0, 0.3);
   color: #206dfb;
@@ -115,15 +120,18 @@ img {
   font-weight: 500;
   font-size: 14px;
 }
+
 .job-post-item .one-forth {
   width: 145px;
 }
+
 @media (max-width: 991.98px) {
   .job-post-item .one-forth {
     width: 100%;
   }
 }
-.job-post-item .one-forth > div .icon {
+
+.job-post-item .one-forth>div .icon {
   width: 40px;
   height: 40px;
   -webkit-border-radius: 50%;
@@ -131,6 +139,7 @@ img {
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
+
 .job-post-item .icon {
   border: none !important;
   background: #ffefdb !important;
@@ -140,14 +149,17 @@ img {
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
 @media (min-width: 992px) {
   .job-post-item .icon {
     opacity: 0;
   }
 }
+
 .job-post-item .icon span {
   color: #fdab44;
 }
+
 .job-post-item .job-post-item-body span,
 .job-post-item .job-post-item-body a {
   text-transform: uppercase;
@@ -155,6 +167,7 @@ img {
   font-weight: 500;
   color: rgba(0, 0, 0, 0.7);
 }
+
 .job-post-item:hover,
 .job-post-item:focus {
   -webkit-box-shadow: 0px 0px 24px 5px rgba(0, 0, 0, 0.1);
@@ -162,11 +175,13 @@ img {
   box-shadow: 0px 0px 24px 5px rgba(0, 0, 0, 0.1);
   border: none;
 }
+
 .job-post-item:hover .icon,
 .job-post-item:focus .icon {
   background: #fdab44 !important;
   opacity: 1;
 }
+
 .job-post-item:hover .icon span,
 .job-post-item:focus .icon span {
   color: #fff;
@@ -319,6 +334,7 @@ img {
 .ftco-section-parallax {
   position: relative;
 }
+
 .ftco-section-parallax .parallax-img {
   background-size: cover;
   background-repeat: no-repeat;
@@ -327,6 +343,7 @@ img {
   padding: 4em 0;
   background: #206dfb;
 }
+
 .ftco-section-parallax .heading-section-white h2 {
   font-weight: 400 !important;
 }
@@ -335,6 +352,7 @@ img {
   padding: 6em 0;
   position: relative;
 }
+
 @media (max-width: 767.98px) {
   .ftco-section {
     padding: 6em 0;
@@ -358,22 +376,18 @@ img {
   background: #000000;
   background: #207dff;
   background: -moz-linear-gradient(left, #207dff 0%, #a16ae8 100%);
-  background: -webkit-gradient(
-    left top,
-    right top,
-    color-stop(0%, #207dff),
-    color-stop(100%, #a16ae8)
-  );
+  background: -webkit-gradient(left top,
+      right top,
+      color-stop(0%, #207dff),
+      color-stop(100%, #a16ae8));
   background: -webkit-linear-gradient(left, #207dff 0%, #a16ae8 100%);
   background: -o-linear-gradient(left, #207dff 0%, #a16ae8 100%);
   background: -ms-linear-gradient(left, #207dff 0%, #a16ae8 100%);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#207dff),
-    to(#a16ae8)
-  );
+  background: -webkit-gradient(linear,
+      left top,
+      right top,
+      from(#207dff),
+      to(#a16ae8));
   background: linear-gradient(to right, #207dff 0%, #a16ae8 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#207dff', endColorstr='#a16ae8', GradientType=1);
 }
