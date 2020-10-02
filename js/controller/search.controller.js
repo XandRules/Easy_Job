@@ -22,34 +22,7 @@ easyjob.controller('SearchController', [
     });
 
 
-    $scope.anuncios = [{
-        name: "Alexandre Ribeiro",
-        title: "Trabalho como Garçom",
-        amount: "10",
-        city: "Caxambu"
-      },
-      {
-        name: "Alexandre Ribeiro",
-        title: "Trabalho como Garçom",
-        amount: "10",
-        city: "Caxambu"
-      }, {
-        name: "Alexandre Ribeiro",
-        title: "Trabalho como Garçom",
-        amount: "10",
-        city: "Caxambu"
-      }, {
-        name: "Alexandre Ribeiro",
-        title: "Trabalho como Garçom",
-        amount: "10",
-        city: "Caxambu"
-      }, , {
-        name: "Alexandre Ribeiro",
-        title: "Trabalho como Garçom",
-        amount: "10",
-        city: "Caxambu"
-      }
-    ]
+    $scope.anuncios = [];
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
@@ -98,7 +71,7 @@ easyjob.controller('SearchController', [
           $rootScope.specilities.push(element);
         });
 
-        console.log($scope.specilities);
+        console.log($rootScope.specilities);
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
       });
 
@@ -109,7 +82,7 @@ easyjob.controller('SearchController', [
 
     $scope.searchAnnouncements = function () {
       SearchModel.getAllAnnouncements().then(response => {
-        console.log(response.data);
+        $scope.anuncios = $scope.data[0];
       })
     }
 

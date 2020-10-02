@@ -127,16 +127,31 @@
               <div class="text pl-md-4">
                 <span class="location mb-0">{{anuncio.city}}</span>
                 <h2>{{anuncio.title}}</h2>
-                <span class="position">Garçom</span>
+                <span class="position">{{specialities[anuncio.speciality_id].speciality_function}}</span>
                 <span class="text-success " style="font-size: 15px; padding: .7rem;">
                   <strong>R${{anuncio.amount}},00</strong>
                 </span>
                 <p class="mb-2">{{anuncio.decription}}</p>
-                <span class="labelsUnit badge badge-primary">Sábado</span>
-                <span class="labelsUnit badge badge-primary">Domingo</span>
-                <span class="labelsUnit badge badge-primary">Segunda</span>
+                <div>
+                  <strong><span class="badge badge-success" style="font-size: 16px; padding: 5px;margin: 4px;">Turno:
+                    </span>
+                    <span class="labelsUnit badge badge-primary">{{anuncio.period[0][0]}}</span>
+                    <span class="labelsUnit badge badge-primary">{{anuncio.period[0][1]}}</span>
+                    <span class="labelsUnit badge badge-primary">{{anuncio.period[0][2]}}</span>
+                  </strong>
+                </div>
+                <strong><span class="badge badge-success" style="font-size: 16px; padding: 5px; margin: 4px;">Dias
+                    da semana:
+                  </span>
+                  <span class="labelsUnit badge badge-primary">{{anuncio.day_of_week[0][0]}}</span>
+                  <span class="labelsUnit badge badge-primary">{{anuncio.day_of_week[0][1]}}</span>
+                  <span class="labelsUnit badge badge-primary">{{anuncio.day_of_week[0][2]}}</span>
+                  <span class="labelsUnit badge badge-primary">{{anuncio.day_of_week[0][3]}}</span>
+                  <span class="labelsUnit badge badge-primary">{{anuncio.day_of_week[0][4]}}</span>
+                  <span class="labelsUnit badge badge-primary">{{anuncio.day_of_week[0][5]}}</span>
+                  <span class="labelsUnit badge badge-primary">{{anuncio.day_of_week[0][6]}}</span>
 
-                <span class="labelsUnit badge badge-success">Noite</span>
+                </strong>
                 <br>
                 <span class="seen" style="color: gold"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
                     class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
@@ -146,7 +161,7 @@
             </div>
           </div>
           <div ng-show='busy'>Carregando ...</div>
-          <div class="row mt-5">
+          <!-- <div class="row mt-5">
             <div class="col text-center">
               <div class="block-27">
                 <ul>
@@ -160,7 +175,7 @@
                 </ul>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="col-lg-4 sidebar">
