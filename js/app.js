@@ -1,4 +1,4 @@
-var easyjob = angular.module('easyjob', ['ui.router', 'ngStorage', 'infinite-scroll']);
+var easyjob = angular.module('easyjob', ['ui.router', 'ngStorage']);
 
 easyjob.run(
   ['$rootScope', '$state', '$localStorage', '$sessionStorage', function ($rootScope, $state, $localStorage, $sessionStorage) {
