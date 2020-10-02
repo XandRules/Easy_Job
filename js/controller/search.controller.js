@@ -121,8 +121,22 @@ easyjob.controller('SearchController', [
       $scope.busy = true;
 
       SearchModel.getAllAnnouncements().then(response => {
-        console.log(response.data);
-        $scope.busy = false;
+        if (response.data[0]) {
+          response.data.forEach(element => {
+            let period = element.period.split(" ");
+            let day = element.day_of_week.split(" ");
+            element.period = [];
+            element.day_of_week = [];
+            element.period.push(period);
+            element.day_of_week.push(day);
+            $scope.anuncios.push(element);
+          });
+
+          $scope.busy = false;
+          $scope.$apply();
+        } else {
+          $scope.loadMore();
+        }
       })
 
     }
