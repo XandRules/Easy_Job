@@ -21,8 +21,8 @@ easyjob.controller('SearchController', [
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
-    $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
-    $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
+    $rootScope.name = sessionValidated != undefined ? sessionValidated.establishment.name.split(" ")[0] : null;
+    $rootScope.id = sessionValidated != undefined ? sessionValidated.establishment.id : null;
     $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
     //
