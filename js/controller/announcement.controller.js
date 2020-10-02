@@ -56,18 +56,23 @@ easyjob.controller('AnnouncementController', [
       AnnouncementModel.getAnnouncementsFromFreelancer().then(response => {
         // $scope.records = response.data;
 
-        response.data.forEach(element => {
-          let period = element.period.split(" ");
-          let day = element.day_of_week.split(" ");
-          element.period = [];
-          element.day_of_week = [];
-          element.period.push(period);
-          element.day_of_week.push(day);
-          $scope.records.push(element);
+        if(response.data[0]){
+          response.data.forEach(element => {
+            let period = element.period.split(" ");
+            let day = element.day_of_week.split(" ");
+            element.period = [];
+            element.day_of_week = [];
+            element.period.push(period);
+            element.day_of_week.push(day);
+            $scope.records.push(element);
+  
+          });
+  
+          $scope.$apply();
+        }else{
+          $scope.getAnnouncementsFromFreelancer();
+        }
 
-        });
-
-        $scope.$apply();
 
        // $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 

@@ -166,14 +166,14 @@ easyjob.controller('FreelancerController', [
 
       FreelancerModel.getFreelancerById($rootScope.id).then((response) => {
 
-        console.log(response.data);
+        
         $scope.name = document.getElementById('username');
         $scope.phone = document.getElementById('sp_celphones');
         $scope.gender = document.getElementById('gender');
         $scope.bio = document.getElementById('bio');
         $scope.birth = document.getElementById('birth');
 
-        if (response.data != null) {
+        if (response.data[0] != null) {
           $scope.name.value = response.data[0].name;
           $scope.phone.value = response.data[0].phone;
           $scope.gender.value = response.data[0].gender == 'Masculino' ? 0 : 1;
@@ -202,7 +202,7 @@ easyjob.controller('FreelancerController', [
         $scope.city = document.getElementById('city');
         $scope.neighborhood = document.getElementById('neighborhood');
 
-        if (response.data != 0) {
+        if (response.data[0] != 0) {
           $scope.cep.value = response.data[0].cep;
           $scope.addressId = response.data[0].id;
           $scope.uf.value = response.data[0].uf;
@@ -210,6 +210,8 @@ easyjob.controller('FreelancerController', [
           $scope.public_place.value = response.data[0].public_place;
           $scope.city.value = response.data[0].city;
           $scope.neighborhood.value = response.data[0].neighborhood;
+
+          $scope.$apply();
         }
       });
 
@@ -218,6 +220,8 @@ easyjob.controller('FreelancerController', [
     $scope.getFreelancerData = async function () {
       $scope.getFreelancerById();
     }
+
+    $scope.getFreelancerData();
 
     //SELECT  F.id, F.name, F.phone, F.speciality_id, F.birth, F.gender, F.cpf,F.bio, A.number, A.cep, A.public_place, A.uf, A.neighborhood, A.city FROM freelancers F INNER JOIN addresses A on A.freelancer_id = F.id where F.id = 9;
 
