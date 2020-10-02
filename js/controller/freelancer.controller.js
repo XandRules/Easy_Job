@@ -45,20 +45,20 @@ easyjob.controller('FreelancerController', [
       $scope.salvar.className = "fa fa-spinner fa-spin fa-fw";
 
       freelancer_data = {
-        "gender": $scope.gender.value == 0 ? "Masculino" : "Feminino",
-        "birth": $scope.birth.value,
-        "name": $scope.name.value,
-        "phone": $scope.phone.value,
-        "bio": $scope.bio.value
+        "gender": $scope.gender == 0 ? "Masculino" : "Feminino",
+        "birth": $scope.birth,
+        "name": $scope.name,
+        "phone": $scope.phone,
+        "bio": $scope.bio
       };
 
       freelancer_address = {
-        "cep": $scope.cep.value,
-        "uf": $scope.uf.value,
-        "number": $scope.number.value,
-        "city": $scope.city.value,
-        "public_place": $scope.public_place.value,
-        "neighborhood": $scope.neighborhood.value
+        "cep": $scope.cep,
+        "uf": $scope.uf,
+        "number": $scope.number,
+        "city": $scope.city,
+        "public_place": $scope.public_place,
+        "neighborhood": $scope.neighborhood
 
       };
 
