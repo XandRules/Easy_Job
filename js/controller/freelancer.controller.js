@@ -11,6 +11,7 @@ easyjob.controller('FreelancerController', [
     $rootScope.headerDefault = false;
     $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
+    $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
 
     window.addEventListener("load", () => {
 
