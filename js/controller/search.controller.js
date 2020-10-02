@@ -16,6 +16,7 @@ easyjob.controller('SearchController', [
     window.addEventListener('load', () => {
       $scope.buscarCidadesBrasil();
       $scope.getSpecilities();
+      $scope.searchAnnouncements();
     });
 
     var expanded = false;
@@ -34,10 +35,11 @@ easyjob.controller('SearchController', [
     $scope.buscarCidadesBrasil = function () {
       SearchModel.buscarCidades().then(response => {
         if (response.data != null) {
-          $scope.cidades = response.data.map(cidade => {
-            return cidade.nome;
-
-          })
+          $scope.cidades = response.data.filter(cidade => {
+            return cidade.municipio.microrregiao.mesorregiao.UF.sigla === "MG" && cidade.municipio.microrregiao.mesorregiao.nome === "Sul/Sudoeste de Minas";
+          }).map(cidadesDeMinas => {
+            return cidadesDeMinas.nome;
+          }).sort();
           console.log($scope.cidades);
         }
       })
@@ -72,7 +74,9 @@ easyjob.controller('SearchController', [
     // 
 
     $scope.searchAnnouncements = function () {
-
+      SearchModel.getAllAnnouncements().then(response => {
+        console.log(response.data);
+      })
     }
 
 
