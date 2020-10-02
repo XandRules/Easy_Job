@@ -28,8 +28,6 @@ easyjob.controller('FreelancerController', [
     $scope.bio;
     $scope.cpf;
     $scope.birth;
-    $scope.amount = 0;
-    $scope.auxAmount = 0;
     $scope.salvar = document.getElementById('salvar');
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
@@ -223,18 +221,6 @@ easyjob.controller('FreelancerController', [
       $scope.getFreelancerById();
     }
 
-    $scope.setAmount = function (value) {
-      $scope.auxAmount = $scope.amount;
-
-      $scope.auxAmount += value;
-
-      if ($scope.auxAmount > 0) {
-        $scope.amount = $scope.auxAmount;
-      } else if ($scope.auxAmount <= 0) {
-        $scope.amount = 0;
-        $scope.auxAmount = 0;
-      }
-    };
 
     //SELECT  F.id, F.name, F.phone, F.speciality_id, F.birth, F.gender, F.cpf,F.bio, A.number, A.cep, A.public_place, A.uf, A.neighborhood, A.city FROM freelancers F INNER JOIN addresses A on A.freelancer_id = F.id where F.id = 9;
 
