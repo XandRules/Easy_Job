@@ -166,7 +166,7 @@ easyjob.controller('FreelancerController', [
 
       FreelancerModel.getFreelancerById($rootScope.id).then((response) => {
 
-        
+
         $scope.name = document.getElementById('username');
         $scope.phone = document.getElementById('sp_celphones');
         $scope.gender = document.getElementById('gender');
@@ -220,8 +220,6 @@ easyjob.controller('FreelancerController', [
     $scope.getFreelancerData = async function () {
       $scope.getFreelancerById();
     }
-
-    $scope.getFreelancerData();
 
     //SELECT  F.id, F.name, F.phone, F.speciality_id, F.birth, F.gender, F.cpf,F.bio, A.number, A.cep, A.public_place, A.uf, A.neighborhood, A.city FROM freelancers F INNER JOIN addresses A on A.freelancer_id = F.id where F.id = 9;
 
