@@ -16,35 +16,6 @@ easyjob.controller('AnnouncementController', [
         $scope.getFreelancerData();
       }
 
-
-    if ($rootScope.pageSelect == 'freelancerannouncement') {
-      $scope.initAnnouncement();
-
-    } else if ($rootScope.pageSelect == 'announcementfreelancer') {
-      $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
-
-    } else if ($rootScope.pageSelect == 'freelancerannouncementedit') {
-      let amount = $rootScope.announcement_item.amount;
-      $scope.amount = parseInt(amount);
-
-      $scope.title = $rootScope.announcement_item.title;
-      $scope.description = $rootScope.announcement_item.description;
-      $scope.speciality = $rootScope.announcement_item.speciality_id;
-
-      $scope.manha = $rootScope.announcement_item.period.includes("Manhã") ? true : false;
-      $scope.tarde = $rootScope.announcement_item.period.includes("Tarde") ? true : false;
-      $scope.noite = $rootScope.announcement_item.period.includes("Noite") ? true : false;
-
-      $scope.domingo = $rootScope.announcement_item.day_of_week.includes("Domingo") ? true : false;
-      $scope.segunda = $rootScope.announcement_item.day_of_week.includes("Segunda") ? true : false;
-      $scope.terca = $rootScope.announcement_item.day_of_week.includes("Terça") ? true : false;
-      $scope.quarta = $rootScope.announcement_item.day_of_week.includes("Quarta") ? true : false;
-      $scope.quinta = $rootScope.announcement_item.day_of_week.includes("Quinta") ? true : false;
-      $scope.sexta = $rootScope.announcement_item.day_of_week.includes("Sexta") ? true : false;
-      $scope.sabado = $rootScope.announcement_item.day_of_week.includes("Sábado") ? true : false;
-
-    }
-
       $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
     });
@@ -80,7 +51,7 @@ easyjob.controller('AnnouncementController', [
     $scope.getAnnouncementsFromFreelancer = function () {
       console.log("buscar anuncios")
 
-      $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
+      //$scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
 
       AnnouncementModel.getAnnouncementsFromFreelancer().then(response => {
         // $scope.records = response.data;
@@ -98,7 +69,7 @@ easyjob.controller('AnnouncementController', [
 
         $scope.$apply();
 
-        $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+       // $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
       });
 
@@ -221,8 +192,6 @@ easyjob.controller('AnnouncementController', [
 
       console.log(data);
 
-      $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
-
       AnnouncementModel.createAnnoucement(data).then((response) => {
         console.log(response.data);
 
@@ -277,6 +246,35 @@ easyjob.controller('AnnouncementController', [
       await $scope.getAnnouncementsFromFreelancer();
 
     }
+
+    if ($rootScope.pageSelect == 'freelancerannouncement') {
+      $scope.initAnnouncement();
+
+    } else if ($rootScope.pageSelect == 'announcementfreelancer') {
+      $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+
+    } else if ($rootScope.pageSelect == 'freelancerannouncementedit') {
+      let amount = $rootScope.announcement_item.amount;
+      $scope.amount = parseInt(amount);
+
+      $scope.title = $rootScope.announcement_item.title;
+      $scope.description = $rootScope.announcement_item.description;
+      $scope.speciality = $rootScope.announcement_item.speciality_id;
+
+      $scope.manha = $rootScope.announcement_item.period.includes("Manhã") ? true : false;
+      $scope.tarde = $rootScope.announcement_item.period.includes("Tarde") ? true : false;
+      $scope.noite = $rootScope.announcement_item.period.includes("Noite") ? true : false;
+
+      $scope.domingo = $rootScope.announcement_item.day_of_week.includes("Domingo") ? true : false;
+      $scope.segunda = $rootScope.announcement_item.day_of_week.includes("Segunda") ? true : false;
+      $scope.terca = $rootScope.announcement_item.day_of_week.includes("Terça") ? true : false;
+      $scope.quarta = $rootScope.announcement_item.day_of_week.includes("Quarta") ? true : false;
+      $scope.quinta = $rootScope.announcement_item.day_of_week.includes("Quinta") ? true : false;
+      $scope.sexta = $rootScope.announcement_item.day_of_week.includes("Sexta") ? true : false;
+      $scope.sabado = $rootScope.announcement_item.day_of_week.includes("Sábado") ? true : false;
+
+    }
+
 
   },
 ]);
