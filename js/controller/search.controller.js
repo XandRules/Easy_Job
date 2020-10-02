@@ -82,7 +82,7 @@ easyjob.controller('SearchController', [
 
     $scope.searchAnnouncements = function () {
       SearchModel.getAllAnnouncements().then(response => {
-        $scope.anuncios = $scope.data[0];
+        $scope.anuncios = response.data[0];
       })
     }
 
