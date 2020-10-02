@@ -28,8 +28,8 @@ easyjob.controller('FreelancerController', [
     $scope.bio;
     $scope.cpf;
     $scope.birth;
-    $scope.amount;
-    $scope.auxAmount;
+    $scope.amount = 0;
+    $scope.auxAmount = 0;
     $scope.salvar = document.getElementById('salvar');
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
