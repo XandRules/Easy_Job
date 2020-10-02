@@ -140,6 +140,10 @@ easyjob.controller('SearchController', [
       })
 
     }
+
+    $scope.goToUp = function(){
+      window.scrollTo(0, 0);
+    }
   },
 ]);
 
