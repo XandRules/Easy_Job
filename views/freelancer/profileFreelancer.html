@@ -42,7 +42,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                     </div>
                     <div class="form-group">
                         <label for="bio">Resumo Profissional</label>
-                        <textarea class="form-control" id="bio" rows="7"></textarea>
+                        <textarea class="form-control" id="bio" ng-model="bio" rows="7"></textarea>
                     </div>
 
                 </div>
@@ -56,25 +56,25 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <label for="username">Nome</label>
-                                <input type="text" class="form-control" id="username" name="username"
+                                <input type="text" class="form-control" id="username" ng-model="name" name="username"
                                     placeholder="Nome Completo" required />
 
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="sp_celphones">Telefone</label>
                                 <input type="text" class="form-control sp_celphones" id="sp_celphones" 
-                                    name="sp_celphones" placeholder="(xx) x xxxx-xxxx" required />
+                                    name="sp_celphones" ng-model="phone" placeholder="(xx) x xxxx-xxxx" required />
             
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="birth">Data de Nascimento</label>
                                 <input type="date" class="form-control" id="birth"
-                                    name="birth" placeholder="dd/mm/aaaa" required />
+                                    name="birth" placeholder="dd/mm/aaaa" ng-model="birth" required />
        
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="gender">Sexo</label>
-                                <select id="gender" class="form-control" name="gender" required>
+                                <select id="gender" class="form-control" name="gender" ng-model="gender" required>
                                     <option value="" selected>Escolher...</option>
                                     <option value="0">Masculino</option>
                                     <option value="1">Feminino</option>
@@ -88,7 +88,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                             <div class="form-group col-md-4">
                                 <label for="inputCEP">CEP</label>
                                 <input type="text" class="form-control" id="inputCEP" name="cep"
-                                    placeholder="xxxxx-xxx" ng-blur="findCep();" />
+                                    placeholder="xxxxx-xxx" ng-model="cep" ng-blur="findCep();" />
                                 <div ng-if="freelancer2.cep.$invalid && freelancer2.cep.$touched" style="color: red">
                                     <div ng-if="freelancer2.cep.$error.required">
                                         O campo CEP é obrigatório
@@ -98,7 +98,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                             <div class="form-group col-md-4">
                                 <label for="uf">UF</label>
 
-                                <select id="uf" name="uf" class="form-control">
+                                <select id="uf" name="uf" ng-model="uf" class="form-control">
                                     <option value="AC">Acre</option>
                                     <option value="AL">Alagoas</option>
                                     <option value="AP">Amapá</option>
@@ -131,7 +131,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
 
                             <div class="form-group col-md-4">
                                 <label for="public_place">Logradouro</label>
-                                <input type="text" class="form-control" id="public_place" name="logradouro"
+                                <input type="text" class="form-control" ng-model="public_place" id="public_place" name="logradouro"
                                     aria-describedby="Avenida / Rua"
                                     placeholder="Avenida / Rua" />
                                 <div ng-if="freelancer2.logradouro.$invalid && freelancer2.logradouro.$touched"
@@ -143,7 +143,7 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="number">Número</label>
-                                <input type="text" class="form-control" id="number" name="numero" 
+                                <input type="text" class="form-control" id="number" ng-model="number" name="numero" 
                                     placeholder="Número" />
                                 <div ng-if="freelancer2.numero.$invalid && freelancer2.numero.$touched"
                                     style="color: red">
@@ -155,12 +155,12 @@ transition: 0.3s; margin: 0 auto; padding: 30px;">
 
                             <div class="form-group col-md-4">
                                 <label for="neighborhood">Bairro</label>
-                                <input type="text" class="form-control" id="neighborhood" 
+                                <input type="text" class="form-control" ng-model="neighborhood" id="neighborhood" 
                                     aria-describedby="Bairro" placeholder="Bairro" />
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="city">Município</label>
-                                <input type="text" class="form-control" id="city" name="city" 
+                                <input type="text" class="form-control" ng-model="city" id="city" name="city" 
                                     disabled placeholder="Município" />
                             </div>
 

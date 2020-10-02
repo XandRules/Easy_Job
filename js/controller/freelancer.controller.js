@@ -171,18 +171,13 @@ easyjob.controller('FreelancerController', [
       FreelancerModel.getFreelancerById($rootScope.id).then((response) => {
 
         console.log(response.data);
-        $scope.name = document.getElementById('username');
-        $scope.phone = document.getElementById('sp_celphones');
-        $scope.gender = document.getElementById('gender');
-        $scope.bio = document.getElementById('bio');
-        $scope.birth = document.getElementById('birth');
 
         if (response.data != null) {
-          $scope.name.value = response.data[0].name;
-          $scope.phone.value = response.data[0].phone;
-          $scope.gender.value = response.data[0].gender == 'Masculino' ? 0 : 1;
-          $scope.bio.value = response.data[0].bio;
-          $scope.birth.value = $scope.formatDate(response.data[0].birth);
+          $scope.name = response.data[0].name;
+          $scope.phone = response.data[0].phone;
+          $scope.gender = response.data[0].gender == 'Masculino' ? 0 : 1;
+          $scope.bio = response.data[0].bio;
+          $scope.birth = $scope.formatDate(response.data[0].birth);
 
           $scope.getAddressFromFreelancer();
         } else {
@@ -198,29 +193,25 @@ easyjob.controller('FreelancerController', [
       AddressModel.getAddressFromFreelancer($rootScope.id).then((response) => {
         console.log(response.data);
 
-        $scope.cep = document.getElementById('inputCEP');
-        $scope.addressId = '';
-        $scope.uf = document.getElementById('uf');;
-        $scope.number = document.getElementById('number');
-        $scope.public_place = document.getElementById('public_place');
-        $scope.city = document.getElementById('city');
-        $scope.neighborhood = document.getElementById('neighborhood');
-
         if (response.data != 0) {
-          $scope.cep.value = response.data[0].cep;
+          $scope.cep = response.data[0].cep;
           $scope.addressId = response.data[0].id;
-          $scope.uf.value = response.data[0].uf;
-          $scope.number.value = response.data[0].number;
-          $scope.public_place.value = response.data[0].public_place;
-          $scope.city.value = response.data[0].city;
-          $scope.neighborhood.value = response.data[0].neighborhood;
+          $scope.uf = response.data[0].uf;
+          $scope.number = response.data[0].number;
+          $scope.public_place = response.data[0].public_place;
+          $scope.city = response.data[0].city;
+          $scope.neighborhood = response.data[0].neighborhood;
+
+          $scope.$apply();
+        }else{
+          $scope.getAddressFromFreelancer();
         }
       });
 
     }
 
     $scope.getFreelancerData = async function () {
-      $scope.getFreelancerById();
+      await $scope.getFreelancerById();
     }
 
     //SELECT  F.id, F.name, F.phone, F.speciality_id, F.birth, F.gender, F.cpf,F.bio, A.number, A.cep, A.public_place, A.uf, A.neighborhood, A.city FROM freelancers F INNER JOIN addresses A on A.freelancer_id = F.id where F.id = 9;
