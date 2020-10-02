@@ -19,19 +19,9 @@ easyjob.controller('SearchController', [
       $scope.searchAnnouncements();
     });
 
-    var expanded = false;
-
-    $scope.showCheckboxes = function () {
-      var checkboxes = document.getElementById("checkboxes");
-      if (!expanded) {
-        checkboxes.style.display = "block";
-        expanded = true;
-      } else {
-        checkboxes.style.display = "none";
-        expanded = false;
-      }
-    }
-
+    //
+    //  Função para retornar apenas as cidades do sul de minas gerais.
+    //
     $scope.buscarCidadesBrasil = function () {
       SearchModel.buscarCidades().then(response => {
         if (response.data != null) {
@@ -45,7 +35,9 @@ easyjob.controller('SearchController', [
       })
     };
 
-
+    //  
+    // Função para autocompletar o nome da cidade 
+    // 
     $scope.autoCompleteLocale = function () {
       $(function () {
         $("#localidade").autocomplete({
@@ -53,6 +45,10 @@ easyjob.controller('SearchController', [
         });
       });
     }
+
+    //  
+    // Função Buscar as especialidades cadastradas no Banco 
+    // 
 
     $scope.getSpecilities = function () {
 
