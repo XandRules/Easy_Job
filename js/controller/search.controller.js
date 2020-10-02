@@ -3,6 +3,7 @@ easyjob.controller('SearchController', [
   '$scope',
   '$rootScope',
   'MainModel',
+
   function (SearchModel, $scope, $rootScope, MainModel) {
     console.log('Search');
 
@@ -12,12 +13,43 @@ easyjob.controller('SearchController', [
 
     $scope.cidades;
     $scope.city;
+    $scope.busy = false;
 
     window.addEventListener('load', () => {
       $scope.buscarCidadesBrasil();
       $scope.getSpecilities();
       $scope.searchAnnouncements();
     });
+
+
+    $scope.anuncios = [{
+        name: "Alexandre Ribeiro",
+        title: "Trabalho como Garçom",
+        amount: "10",
+        city: "Caxambu"
+      },
+      {
+        name: "Alexandre Ribeiro",
+        title: "Trabalho como Garçom",
+        amount: "10",
+        city: "Caxambu"
+      }, {
+        name: "Alexandre Ribeiro",
+        title: "Trabalho como Garçom",
+        amount: "10",
+        city: "Caxambu"
+      }, {
+        name: "Alexandre Ribeiro",
+        title: "Trabalho como Garçom",
+        amount: "10",
+        city: "Caxambu"
+      }, , {
+        name: "Alexandre Ribeiro",
+        title: "Trabalho como Garçom",
+        amount: "10",
+        city: "Caxambu"
+      }
+    ]
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
@@ -89,5 +121,38 @@ easyjob.controller('SearchController', [
     $scope.searchAnnouncementsByFilter = function () {
 
     }
+
+    // 
+    // Função para Criar um Scrool Infinito
+    // 
+
+    $scope.loadMore = function () {
+
+      if ($scope.busy) return;
+
+      $scope.busy = true;
+
+      SearchModel.getAllAnnouncements().then(response => {
+        console.log(response.data);
+        $scope.busy = false;
+      })
+
+    }
   },
 ]);
+
+
+easyjob.directive('infinitScrollPage', function () {
+  return {
+    restrict: 'A',
+    link: function (scope, element, attr) {
+      var elm = $(document);
+      elm.bind('scroll', function () {
+        var porcentagem = (($(window).scrollTop() + window.innerHeight) / $(this).height()).toFixed(2);
+        if (porcentagem >= 0.95) { //só aplica o scroll se for maior igual a 95%
+          scope.$apply(attr.infinitScrollPage);
+        }
+      });
+    }
+  };
+});

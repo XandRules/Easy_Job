@@ -114,24 +114,24 @@
 <section class="ftco-section ftco-candidates ftco-candidates-2 bg-light">
   <div class="container">
     <div class="row">
+
       <div class="col-lg-8 pr-lg-4">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12" ng-repeat="anuncio in anuncios" data-infinit-scroll-page="loadMore()">
             <div class="team d-md-flex p-4 bg-white">
               <div><img class="img" src="./img/segurança.jpg">
 
-                <span class="position" style="color: #4457fd;">Alexandre Ribeiro</span>
+                <span class="position" style="color: #4457fd;">{{anuncio.name}}</span>
 
               </div>
               <div class="text pl-md-4">
-                <span class="location mb-0">Santa Rita do Sapucaí</span>
-                <h2>Serviço de Garçom</h2>
+                <span class="location mb-0">{{anuncio.city}}</span>
+                <h2>{{anuncio.title}}</h2>
                 <span class="position">Garçom</span>
                 <span class="text-success " style="font-size: 15px; padding: .7rem;">
-                  <strong>R${{item.amount}},00</strong>
+                  <strong>R${{anuncio.amount}},00</strong>
                 </span>
-                <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua...</p>
+                <p class="mb-2">{{anuncio.decription}}</p>
                 <span class="labelsUnit badge badge-primary">Sábado</span>
                 <span class="labelsUnit badge badge-primary">Domingo</span>
                 <span class="labelsUnit badge badge-primary">Segunda</span>
@@ -145,6 +145,7 @@
               </div>
             </div>
           </div>
+          <div ng-show='busy'>Carregando ...</div>
           <div class="row mt-5">
             <div class="col text-center">
               <div class="block-27">
