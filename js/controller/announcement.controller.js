@@ -220,6 +220,8 @@ easyjob.controller('AnnouncementController', [
           $scope.manha;
           $scope.tarde;
           $scope.noite;
+
+          $scope.$apply();
         } else {
           swal(
             'Anúncio não criado!',
