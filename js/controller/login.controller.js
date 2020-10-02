@@ -54,6 +54,8 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
 
         $scope.loginEstablish = function () {
 
+            $scope.entrar = "fa fa-spinner fa-spin fa-fw";
+
             data = {
                 "email": $scope.user,
                 "password": $scope.password
@@ -67,6 +69,10 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
                 console.log('data : ' + response.status);
 
                 if (response.data.error == undefined) {
+                    sessionStorage.setItem('sessionValidated', JSON.stringify(response.data));
+
+                    $scope.entrar = "";
+
                     $state.go('salesestablish');
                 } else {
                     swal("email ou senha incorreta!", "Tente redefinir sua senha!", "error");
