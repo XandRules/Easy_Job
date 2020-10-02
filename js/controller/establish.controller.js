@@ -5,6 +5,16 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         $rootScope.headerDefaultLogout = true;
         $rootScope.footerDefault = false;
 
+        // 
+        // Buscar dados do estabelecimento
+        // 
+
+        $scope.getEstablishment = function(){
+
+        }
+
+        
+
 
     }
 ]);

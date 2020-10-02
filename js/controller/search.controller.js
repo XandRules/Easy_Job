@@ -42,47 +42,23 @@ easyjob.controller('SearchController', [
       });
 
     };
+    // 
+    // Função responsavel por buscar os anuncios mais recentes sem categoria
+    // 
 
-    // function typeWrite(elemento, palavra) {
-    //   const textoArray = palavra.split('');
-    //   elemento.innerHTML = ' ';
-    //   $scope.timeLapse = 0;
-    //   textoArray.forEach(function (letra, i) {
-    //     setTimeout(function () {
-    //       elemento.innerHTML += letra;
-    //       $scope.timeLapse += (150 * i);
-    //     }, 150 * i);
-    //   });
+    $scope.searchAnnouncements = function(){
 
-    //   setTimeout(function () {
-    //     $scope.end = true;
-    //     $scope.nextWord();
-    //   }, $scope.timeLapse)
+    }
 
-    //   return $scope.end;
 
-    // }
+    // 
+    // Função responsavel por buscar os anuncios por Filtro
+    // 
 
-    // $scope.typeWriter = function () {
+    $scope.searchAnnouncementsByFilter = function(){
 
-    //   const titulo = document.querySelector('.especialidade');
+    }
 
-    //   typeWrite(titulo, $scope.especialitiesLabel[index]);
-
-    // }
-
-    // $scope.nextWord = function () {
-    //   if ($scope.end) {
-    //     setTimeout(function () {
-    //       if ($scope.especialitiesLabel.length > index) {
-    //         index++;
-    //       } else {
-    //         index = 0;
-    //       }
-    //       $scope.typeWriter();
-    //     }, 3000);
-    //   }
-    // }
 
 
     if ($rootScope.pageSelect == 'searchfreelancer') {
