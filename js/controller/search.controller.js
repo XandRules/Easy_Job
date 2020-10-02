@@ -3,29 +3,54 @@ easyjob.controller('SearchController', [
   '$scope',
   '$rootScope',
   'MainModel',
-  function (EstablishModel, $scope, $rootScope, MainModel) {
+  function (SearchModel, $scope, $rootScope, MainModel) {
     console.log('Search');
 
     $rootScope.headerDefault = false;
     $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
-    $scope.speciality_label = ["Freelancer", "Garçom / Garçonete", "Segurança", "Recepcionista", "Banda / Músico", "Motoboy"];
-    $scope.speciality_label_writer = "";
-    var index = 0;
-    $scope.timeLapse = 0;
-    $scope.end = false;
 
-    $scope.especialitiesLabel = [
-      "Freelancer",
-      "Cozinheiro(a)",
-      "Banda/Músico",
-      "Garçon",
-      "Segurança",
-      "Motoboy",
-      "Recepcionista"
-    ]
+    $scope.cidades;
+    $scope.city;
 
-    $scope.speciality = "";
+    window.addEventListener('load', () => {
+      $scope.buscarCidadesBrasil();
+      $scope.getSpecilities();
+    });
+
+    var expanded = false;
+
+    $scope.showCheckboxes = function () {
+      var checkboxes = document.getElementById("checkboxes");
+      if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+      } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }
+
+    $scope.buscarCidadesBrasil = function () {
+      SearchModel.buscarCidades().then(response => {
+        if (response.data != null) {
+          $scope.cidades = response.data.map(cidade => {
+            return cidade.nome;
+
+          })
+          console.log($scope.cidades);
+        }
+      })
+    };
+
+
+    $scope.autoCompleteLocale = function () {
+      $(function () {
+        $("#localidade").autocomplete({
+          source: $scope.cidades
+        });
+      });
+    }
 
     $scope.getSpecilities = function () {
 
@@ -46,7 +71,7 @@ easyjob.controller('SearchController', [
     // Função responsavel por buscar os anuncios mais recentes sem categoria
     // 
 
-    $scope.searchAnnouncements = function(){
+    $scope.searchAnnouncements = function () {
 
     }
 
@@ -55,18 +80,8 @@ easyjob.controller('SearchController', [
     // Função responsavel por buscar os anuncios por Filtro
     // 
 
-    $scope.searchAnnouncementsByFilter = function(){
+    $scope.searchAnnouncementsByFilter = function () {
 
-    }
-
-
-
-    if ($rootScope.pageSelect == 'searchfreelancer') {
-      $scope.getSpecilities();
-
-      // $scope.typeWriter();
-
-      console.log("teste");
     }
   },
 ]);
