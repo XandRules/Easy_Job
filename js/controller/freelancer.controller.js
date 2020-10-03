@@ -189,7 +189,7 @@ easyjob.controller('FreelancerController', [
 
     }
 
-    $scope.getAddressFromFreelancer = async function () {
+    $scope.getAddressFromFreelancer = function () {
 
       AddressModel.getAddressFromFreelancer($rootScope.id).then((response) => {
         console.log(response.data);
@@ -202,7 +202,7 @@ easyjob.controller('FreelancerController', [
         $scope.city = '';
         $scope.neighborhood = '';
 
-        if (response.data[0] != 0) {
+        if (response.data[0] != null) {
           $scope.cep = response.data[0].cep;
           $scope.addressId = response.data[0].id;
           $scope.uf = response.data[0].uf;
@@ -212,6 +212,8 @@ easyjob.controller('FreelancerController', [
           $scope.neighborhood = response.data[0].neighborhood;
 
           $scope.$apply();
+        }else{
+          $scope.getAddressFromFreelancer();
         }
       });
 
