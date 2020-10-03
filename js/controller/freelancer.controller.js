@@ -41,20 +41,20 @@ easyjob.controller('FreelancerController', [
       $scope.salvar.className = "fa fa-spinner fa-spin fa-fw";
 
       freelancer_data = {
-        "gender": $scope.gender.value == 0 ? "Masculino" : "Feminino",
-        "birth": $scope.birth.value,
-        "name": $scope.name.value,
-        "phone": $scope.phone.value,
-        "bio": $scope.bio.value
+        "gender": $scope.gender == 0 ? "Masculino" : "Feminino",
+        "birth": $scope.birth,
+        "name": $scope.name,
+        "phone": $scope.phone,
+        "bio": $scope.bio
       };
 
       freelancer_address = {
-        "cep": $scope.cep.value,
-        "uf": $scope.uf.value,
-        "number": $scope.number.value,
-        "city": $scope.city.value,
-        "public_place": $scope.public_place.value,
-        "neighborhood": $scope.neighborhood.value
+        "cep": $scope.cep,
+        "uf": $scope.uf,
+        "number": $scope.number,
+        "city": $scope.city,
+        "public_place": $scope.public_place,
+        "neighborhood": $scope.neighborhood
 
       };
 
@@ -167,18 +167,18 @@ easyjob.controller('FreelancerController', [
       FreelancerModel.getFreelancerById($rootScope.id).then((response) => {
 
 
-        $scope.name = document.getElementById('username');
-        $scope.phone = document.getElementById('sp_celphones');
-        $scope.gender = document.getElementById('gender');
-        $scope.bio = document.getElementById('bio');
-        $scope.birth = document.getElementById('birth');
+        $scope.name = '';
+        $scope.phone = '';
+        $scope.gender = '';
+        $scope.bio = '';
+        $scope.birth = '';
 
         if (response.data[0] != null) {
-          $scope.name.value = response.data[0].name;
-          $scope.phone.value = response.data[0].phone;
-          $scope.gender.value = response.data[0].gender == 'Masculino' ? 0 : 1;
-          $scope.bio.value = response.data[0].bio;
-          $scope.birth.value = $scope.formatDate(response.data[0].birth);
+          $scope.name = response.data[0].name;
+          $scope.phone = response.data[0].phone;
+          $scope.gender = response.data[0].gender == 'Masculino' ? 0 : 1;
+          $scope.bio = response.data[0].bio;
+          $scope.birth = $scope.formatDate(response.data[0].birth);
 
           $scope.getAddressFromFreelancer();
         } else {
@@ -194,22 +194,22 @@ easyjob.controller('FreelancerController', [
       AddressModel.getAddressFromFreelancer($rootScope.id).then((response) => {
         console.log(response.data);
 
-        $scope.cep = document.getElementById('inputCEP');
+        $scope.cep = '';
         $scope.addressId = '';
-        $scope.uf = document.getElementById('uf');;
-        $scope.number = document.getElementById('number');
-        $scope.public_place = document.getElementById('public_place');
-        $scope.city = document.getElementById('city');
-        $scope.neighborhood = document.getElementById('neighborhood');
+        $scope.uf = '';
+        $scope.number = '';
+        $scope.public_place = '';
+        $scope.city = '';
+        $scope.neighborhood = '';
 
         if (response.data[0] != 0) {
-          $scope.cep.value = response.data[0].cep;
+          $scope.cep = response.data[0].cep;
           $scope.addressId = response.data[0].id;
-          $scope.uf.value = response.data[0].uf;
-          $scope.number.value = response.data[0].number;
-          $scope.public_place.value = response.data[0].public_place;
-          $scope.city.value = response.data[0].city;
-          $scope.neighborhood.value = response.data[0].neighborhood;
+          $scope.uf = response.data[0].uf;
+          $scope.number = response.data[0].number;
+          $scope.public_place = response.data[0].public_place;
+          $scope.city = response.data[0].city;
+          $scope.neighborhood = response.data[0].neighborhood;
 
           $scope.$apply();
         }
