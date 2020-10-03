@@ -85,12 +85,12 @@ easyjob.controller('FreelancerController', [
     }
 
     $scope.findByCep = function () {
-      let url = `https://viacep.com.br/ws/${$scope.cep.value}/json/`;
+      let url = `https://viacep.com.br/ws/${$scope.cep}/json/`;
 
       MainModel.getCep(url).then(function (response) {
         console.log(response);
-        $scope.uf.value = response.data.uf;
-        $scope.city.value = response.data.localidade;
+        $scope.uf = response.data.uf;
+        $scope.city = response.data.localidade;
       });
     };
 
@@ -222,7 +222,7 @@ easyjob.controller('FreelancerController', [
       $scope.getFreelancerById();
     }
 
-
+    $scope.getFreelancerData();
     //SELECT  F.id, F.name, F.phone, F.speciality_id, F.birth, F.gender, F.cpf,F.bio, A.number, A.cep, A.public_place, A.uf, A.neighborhood, A.city FROM freelancers F INNER JOIN addresses A on A.freelancer_id = F.id where F.id = 9;
 
     let event = document.querySelector('#file-input') != null ? document.querySelector('#file-input').addEventListener("change", $scope.imageUploadPreview) : null;
