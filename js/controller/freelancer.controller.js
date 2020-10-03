@@ -212,8 +212,6 @@ easyjob.controller('FreelancerController', [
           $scope.neighborhood = response.data[0].neighborhood;
 
          // $scope.$apply();
-        }else{
-          $scope.getAddressFromFreelancer();
         }
         $scope.$apply();
       });
