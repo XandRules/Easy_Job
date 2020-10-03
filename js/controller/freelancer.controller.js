@@ -178,7 +178,7 @@ easyjob.controller('FreelancerController', [
           $scope.phone = response.data[0].phone;
           $scope.gender = response.data[0].gender == 'Masculino' ? 0 : 1;
           $scope.bio = response.data[0].bio;
-          $scope.birth = $scope.formatDate(response.data[0].birth);
+          $scope.birth = new Date($scope.formatDate(response.data[0].birth) + ' 23:59:59');
 
           $scope.getAddressFromFreelancer();
         } else {
