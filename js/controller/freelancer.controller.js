@@ -71,17 +71,29 @@ easyjob.controller('FreelancerController', [
     }
 
     $scope.updateFreelancerAddress = function () {
-      AddressModel.updateAddress(freelancer_address, $scope.addressId).then(function (response) {
 
-        if (typeof (response.data) !== "string" || response.data != 'Validation Fails' || response.data.error != null) {
-          swal("Dados atualizados com sucesso!", "Seus dados foram atualizados!", "success");
-        } else {
-          swal("Ooops!", "Seus dados não foram atualizados!", "error");
-        }
-
-        $scope.salvar.className = "";
-
-      })
+      if($scope.addressId){
+        AddressModel.updateAddress(freelancer_address, $scope.addressId).then(function (response) {
+  
+          if (typeof (response.data) !== "string" || response.data != 'Validation Fails' || response.data.error != null) {
+            swal("Dados atualizados com sucesso!", "Seus dados foram atualizados!", "success");
+          } else {
+            swal("Ooops!", "Seus dados não foram atualizados!", "error");
+          }
+  
+          $scope.salvar.className = "";
+  
+        })
+      }else{
+        freelancer_address["freelancer_id"] = $rootScope.id;
+        MainModel.saveAddress(freelancer_address).then(function (response) {
+          if (response.data.error != null) {
+            swal("Ooops!", "Seus dados não foram atualizados!", "error");
+          }else{
+            swal("Dados atualizados com sucesso!", "Seus dados foram atualizados!", "success");
+          }
+        });
+      }
     }
 
     $scope.findByCep = function () {
