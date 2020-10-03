@@ -166,7 +166,7 @@ easyjob.controller('FreelancerController', [
       let day = parseInt(data.getDay());
 
       month = (month + 1) < 10 ? "0" + (month + 1) : (month + 1);
-      day = (day + 1) < 10 ? "0" + (day + 1) : (day + 1);
+      day = day  < 10 ? "0" + day : day ;
 
       let fullDate = year + '-' + month + '-' + day;
 
