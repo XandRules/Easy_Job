@@ -81,6 +81,7 @@ easyjob.controller('SearchController', [
     // 
 
     $scope.searchAnnouncements = function () {
+      $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       SearchModel.getAllAnnouncements().then(response => {
         if (response.data[0]) {
           response.data.forEach(element => {
@@ -91,9 +92,10 @@ easyjob.controller('SearchController', [
             element.period.push(period);
             element.day_of_week.push(day);
             $scope.anuncios.push(element);
+            
 
           });
-
+          $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
           $scope.$apply();
         } else {
           $scope.searchAnnouncements();
