@@ -105,6 +105,7 @@ easyjob.controller('AnnouncementController', [
     $scope.edit = function (item) {
       console.log(item);
       $rootScope.announcement_item = item;
+      localStorage.setItem("anuncio_edit", JSON.stringify($rootScope.announcement_item));
       $state.go('freelancerannouncementedit');
     }
 
@@ -262,6 +263,12 @@ easyjob.controller('AnnouncementController', [
       $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
     } else if ($rootScope.pageSelect == 'freelancerannouncementedit') {
+
+
+      if($rootScope.announcement_item == null){
+        $rootScope.announcement_item = JSON.parse(localStorage.getItem("anuncio_edit"));
+      }
+
       let amount = $rootScope.announcement_item.amount;
       $scope.amount = parseInt(amount);
 
