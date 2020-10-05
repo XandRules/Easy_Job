@@ -292,7 +292,6 @@ easyjob.controller('AnnouncementController', [
       $scope.sabado = $rootScope.announcement_item.day_of_week.includes("Sábado") ? true : false;
 
       $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
-
     }
 
   },
