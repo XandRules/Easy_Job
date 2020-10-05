@@ -9,15 +9,15 @@ easyjob.controller('AnnouncementController', [
 
     $rootScope.headerDefault = false;
     $rootScope.headerDefaultLogout = true;
-    $rootScope.footerDefault = false;
-
-    $rootScope.specialities = JSON.parse(localStorage.getItem("specialities"));
+    $rootScope.footerDefault = false;   
 
     window.addEventListener("load", () => {
 
       if ($rootScope.pageSelect == 'profilefreelancer') {
         $scope.getFreelancerData();
       }
+
+      $rootScope.specialities = JSON.parse(localStorage.getItem("specialities"));
 
       $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
@@ -294,7 +294,6 @@ easyjob.controller('AnnouncementController', [
       $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
     }
-
 
   },
 ]);
