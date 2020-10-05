@@ -63,6 +63,8 @@ easyjob.controller('MainController', [
           $rootScope.specilities.push(element);
         });
 
+        localStorage.setItem("specialities",JSON.stringify($rootScope.specilities));
+
         console.log($scope.specilities);
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
       });

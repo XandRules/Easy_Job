@@ -6,9 +6,12 @@ easyjob.controller('AnnouncementController', [
   function (AnnouncementModel, $scope, $rootScope, $state) {
     console.log('Anuncios');
 
+
     $rootScope.headerDefault = false;
     $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
+
+    $rootScope.specialities = JSON.parse(localStorage.getItem("specialities"));
 
     window.addEventListener("load", () => {
 
