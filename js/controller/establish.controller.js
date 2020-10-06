@@ -5,6 +5,15 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         $rootScope.headerDefaultLogout = true;
         $rootScope.footerDefault = false;
 
+        window.addEventListener("load", () => {
+
+            let welcome = document.getElementById("welcomeUser");
+            welcome.value = $rootScope.name;
+            let userLogin = document.getElementById("userlogin");
+            userLogin.value = $rootScope.name;
+
+        });
+
         let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
         $rootScope.name = sessionValidated != undefined ? sessionValidated.establishment.name : null;
@@ -14,12 +23,6 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         // 
         // Buscar dados do estabelecimento
         // 
-
-        let welcome = document.getElementById("welcomeUser");
-        welcome.value = $rootScope.name;
-        let userLogin = document.getElementById("userlogin");
-        userLogin.value = $rootScope.name;
-
         $scope.getEstablishment = function () {
 
         }
