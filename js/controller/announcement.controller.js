@@ -55,10 +55,11 @@ easyjob.controller('AnnouncementController', [
       console.log("buscar anuncios")
 
       //$scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
+      $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
 
       AnnouncementModel.getAnnouncementsFromFreelancer().then(response => {
         // $scope.records = response.data;
-        $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
+        $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
         if(response.data[0]){
           response.data.forEach(element => {
@@ -71,9 +72,10 @@ easyjob.controller('AnnouncementController', [
             $scope.records.push(element);
   
           });
-          $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
           $scope.$apply();
         }else{
+          
+          if(response.status != 200)
           $scope.getAnnouncementsFromFreelancer();
         }
 
