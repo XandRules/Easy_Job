@@ -41,9 +41,6 @@ easyjob.controller('FreelancerController', [
     $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
     $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
-    
-    let userLogin = document.getElementById("userlogin").value = $rootScope.name;
-
     $scope.updateFreelancer = function () {
 
       $scope.salvar.className = "fa fa-spinner fa-spin fa-fw";
