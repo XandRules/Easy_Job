@@ -15,8 +15,10 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         // Buscar dados do estabelecimento
         // 
 
-        let welcome = document.getElementById("welcomeUser").value = $rootScope.name;
-        let userLogin = document.getElementById("userlogin").value = $rootScope.name;
+        let welcome = document.getElementById("welcomeUser");
+        welcome.value = $rootScope.name;
+        let userLogin = document.getElementById("userlogin");
+        userLogin.value = $rootScope.name;
 
         $scope.getEstablishment = function () {
 
