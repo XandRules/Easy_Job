@@ -293,7 +293,6 @@ easyjob.controller('AnnouncementController', [
 
       $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
-      $scope.$apply();
     }
 
   },
