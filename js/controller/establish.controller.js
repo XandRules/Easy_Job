@@ -19,10 +19,6 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
 
         }
 
-        $scope.$apply();
-
-
-
-
+        
     }
 ]);
