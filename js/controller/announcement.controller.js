@@ -157,6 +157,7 @@ easyjob.controller('AnnouncementController', [
         console.log(response.data);
 
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+        swal("Anúncio atualizado!","Seu anúncio foi atualizado com Sucesso","success");
 
       })
 
