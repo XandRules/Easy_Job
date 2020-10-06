@@ -24,7 +24,7 @@ easyjob.run(
       $rootScope.pageSelect = toState.name;
 
       if ($rootScope.sessionValidated) {
-        if (toState.name === 'loginfreelancer') {
+        if (toState.name === 'loginfreelancer' || toState.name === "home") {
 
           if ($rootScope.loggedUser) {
             event.preventDefault();
@@ -35,7 +35,7 @@ easyjob.run(
           }
           return;
         }
-        if (toState.name === 'loginestablish') {
+        if (toState.name === 'loginestablish' || toState.name === "home") {
 
           if ($rootScope.loggedUser) {
             event.preventDefault();
