@@ -60,8 +60,9 @@ easyjob.controller('AnnouncementController', [
       AnnouncementModel.getAnnouncementsFromFreelancer().then(response => {
         // $scope.records = response.data;
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
-
+                
         if(response.data[0]){
+          $scope.records = [];
           response.data.forEach(element => {
             let period = element.period.split(" ");
             let day = element.day_of_week.split(" ");
