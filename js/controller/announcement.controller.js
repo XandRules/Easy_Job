@@ -272,6 +272,8 @@ easyjob.controller('AnnouncementController', [
         $rootScope.announcement_item = JSON.parse(localStorage.getItem("anuncio_edit"));
       }
 
+      $rootScope.specialities = JSON.parse(localStorage.getItem("specialities"));
+
       let amount = $rootScope.announcement_item.amount;
       $scope.amount = parseInt(amount);
 
