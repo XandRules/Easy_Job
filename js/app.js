@@ -15,7 +15,11 @@ easyjob.run(
         $rootScope.token = $rootScope.token + $rootScope.sessionValidated.token;
       }
 
-      $rootScope.loggedUser = $localStorage.user;
+      if($rootScope.sessionValidated.freelancer){
+        $rootScope.loggedUser = $rootScope.sessionValidated.freelancer;
+      }else if($rootScope.sessionValidated.establishment){
+        $rootScope.loggedUser = $rootScope.sessionValidated.establishment;
+      }
 
       $rootScope.pageSelect = toState.name;
 
