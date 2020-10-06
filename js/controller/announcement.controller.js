@@ -13,8 +13,8 @@ easyjob.controller('AnnouncementController', [
 
     window.addEventListener("load", () => {
 
-      if ($rootScope.pageSelect == 'profilefreelancer') {
-        $scope.getFreelancerData();
+      if ($rootScope.pageSelect == 'freelancerannouncement') {
+        $scope.initAnnouncement();  
       }
 
       $rootScope.specialities = JSON.parse(localStorage.getItem("specialities"));
@@ -300,6 +300,8 @@ easyjob.controller('AnnouncementController', [
       $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
     }
+
+    $scope.initAnnouncement();
 
   },
 ]);

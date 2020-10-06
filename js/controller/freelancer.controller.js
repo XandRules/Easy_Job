@@ -17,6 +17,7 @@ easyjob.controller('FreelancerController', [
       if ($rootScope.pageSelect == 'profilefreelancer') {
         $scope.getFreelancerData();
       }
+      
     });
 
     $scope.cidade;
