@@ -91,8 +91,7 @@ easyjob.controller('SearchController', [
             element.day_of_week = [];
             element.period.push(period);
             element.day_of_week.push(day);
-            $scope.anuncios.push(element);
-            
+            $scope.anuncios.push(element);            
 
           });
           $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
@@ -146,6 +145,8 @@ easyjob.controller('SearchController', [
     $scope.goToUp = function(){
       window.scrollTo(0, 0);
     }
+
+    $scope.searchAnnouncements();
   },
 ]);
 
