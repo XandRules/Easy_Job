@@ -8,9 +8,11 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         window.addEventListener("load", () => {
 
             let welcome = document.getElementById("welcomeUser");
-            welcome.value = $rootScope.name;
+           
+            welcome.innerHTML = welcome.innerHTML + $rootScope.name;
+
             let userLogin = document.getElementById("userlogin");
-            userLogin.value = $rootScope.name;
+            userLogin.innerHTML = $rootScope.name;
 
         });
 
@@ -25,8 +27,6 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         // 
         $scope.getEstablishment = function () {
 
-        }
-
-        
+        }        
     }
 ]);

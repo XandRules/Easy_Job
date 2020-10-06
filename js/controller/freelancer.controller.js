@@ -18,6 +18,10 @@ easyjob.controller('FreelancerController', [
         $scope.getFreelancerData();
       }
 
+      
+      let userLogin = document.getElementById("userlogin");
+      userLogin.innerHTML = $rootScope.name;
+
     });
 
     $scope.cidade;
