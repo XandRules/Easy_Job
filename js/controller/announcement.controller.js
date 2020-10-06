@@ -277,21 +277,23 @@ easyjob.controller('AnnouncementController', [
 
       $scope.title = $rootScope.announcement_item.title;
       $scope.description = $rootScope.announcement_item.description;
-      $scope.speciality = $rootScope.announcement_item.speciality_id;
+      $scope.speciality = $rootScope.announcement_item.speciality_id -1;
 
-      $scope.manha = $rootScope.announcement_item.period.includes("Manhã") ? true : false;
-      $scope.tarde = $rootScope.announcement_item.period.includes("Tarde") ? true : false;
-      $scope.noite = $rootScope.announcement_item.period.includes("Noite") ? true : false;
+      $scope.manha = $rootScope.announcement_item.period[0] == "Manhã" ? true : false;
+      $scope.tarde = $rootScope.announcement_item.period[1] == "Tarde" ? true : false;
+      $scope.noite = $rootScope.announcement_item.period[2] == "Noite" ? true : false;
 
-      $scope.domingo = $rootScope.announcement_item.day_of_week.includes("Domingo") ? true : false;
-      $scope.segunda = $rootScope.announcement_item.day_of_week.includes("Segunda") ? true : false;
-      $scope.terca = $rootScope.announcement_item.day_of_week.includes("Terça") ? true : false;
-      $scope.quarta = $rootScope.announcement_item.day_of_week.includes("Quarta") ? true : false;
-      $scope.quinta = $rootScope.announcement_item.day_of_week.includes("Quinta") ? true : false;
-      $scope.sexta = $rootScope.announcement_item.day_of_week.includes("Sexta") ? true : false;
-      $scope.sabado = $rootScope.announcement_item.day_of_week.includes("Sábado") ? true : false;
+      $scope.domingo = $rootScope.announcement_item.day_of_week[0] == "Domingo" ? true : false;
+      $scope.segunda = $rootScope.announcement_item.day_of_week[1] == "Segunda" ? true : false;
+      $scope.terca = $rootScope.announcement_item.day_of_week[2] == "Terça" ? true : false;
+      $scope.quarta = $rootScope.announcement_item.day_of_week[3] == "Quarta" ? true : false;
+      $scope.quinta = $rootScope.announcement_item.day_of_week[4] == "Quinta" ? true : false;
+      $scope.sexta = $rootScope.announcement_item.day_of_week[5] == "Sexta" ? true : false;
+      $scope.sabado = $rootScope.announcement_item.day_of_week[6] == "Sábado" ? true : false;
 
       $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+
+      $scope.$apply();
     }
 
   },
