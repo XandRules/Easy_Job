@@ -7,7 +7,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
 
         let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
-        $rootScope.name = sessionValidated != undefined ? sessionValidated.establishment.name.split(" ")[0] : null;
+        $rootScope.name = sessionValidated != undefined ? sessionValidated.establishment.name : null;
         $rootScope.id = sessionValidated != undefined ? sessionValidated.establishment.id : null;
         $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
