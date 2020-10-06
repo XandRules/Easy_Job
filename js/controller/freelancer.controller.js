@@ -17,7 +17,7 @@ easyjob.controller('FreelancerController', [
       if ($rootScope.pageSelect == 'profilefreelancer') {
         $scope.getFreelancerData();
       }
-      
+
     });
 
     $scope.cidade;
@@ -36,6 +36,9 @@ easyjob.controller('FreelancerController', [
     $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
     $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
     $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
+
+    
+    let userLogin = document.getElementById("userlogin").value = $rootScope.name;
 
     $scope.updateFreelancer = function () {
 
