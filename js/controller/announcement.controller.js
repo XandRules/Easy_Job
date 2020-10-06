@@ -277,7 +277,7 @@ easyjob.controller('AnnouncementController', [
 
       $scope.title = $rootScope.announcement_item.title;
       $scope.description = $rootScope.announcement_item.description;
-      $scope.speciality = $rootScope.announcement_item.speciality_id - 1;
+      $scope.speciality = $rootScope.announcement_item.speciality_id;
 
       $scope.manha = $rootScope.announcement_item.period.includes("Manhã") ? true : false;
       $scope.tarde = $rootScope.announcement_item.period.includes("Tarde") ? true : false;
