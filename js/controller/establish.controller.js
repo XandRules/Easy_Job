@@ -42,9 +42,19 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
 
             AddressModel.getAddressFromEstablish($rootScope.id).then((response) => {
                 console.log(response.data);
-            })
 
-            $scope.$apply();
+                if (response.data[0] != null) {
+                    $scope.cep = response.data[0].cep;
+                    $scope.addressId = response.data[0].id;
+                    $scope.uf = response.data[0].uf;
+                    $scope.number = response.data[0].number;
+                    $scope.public_place = response.data[0].public_place;
+                    $scope.city = response.data[0].city;
+                    $scope.neighborhood = response.data[0].neighborhood;
+          
+                    $scope.$apply();
+                  }
+            })
 
         }
 

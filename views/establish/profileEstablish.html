@@ -78,7 +78,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputCEP">CEP</label>
-                        <input type="text" class="form-control" id="inputCEP" name="cep" placeholder="xxxxx-xxx"
+                        <input type="text" class="form-control" ng-model="cep" id="inputCEP" name="cep" placeholder="xxxxx-xxx"
                             ng-blur="findCep();" />
                         <div ng-if="establish.cep.$invalid && establish.cep.$touched" style="color: red">
                             <div ng-if="establish.cep.$error.required">
@@ -89,7 +89,7 @@
                     <div class="form-group col-md-4">
                         <label for="uf">UF</label>
 
-                        <select id="uf" name="uf" class="form-control">
+                        <select id="uf" name="uf" class="form-control" ng-model="uf">
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
                             <option value="AP">Amapá</option>
@@ -122,7 +122,7 @@
 
                     <div class="form-group col-md-4">
                         <label for="public_place">Logradouro</label>
-                        <input type="text" class="form-control" id="public_place" name="logradouro"
+                        <input type="text" class="form-control" id="public_place" ng-model="public_place" name="logradouro"
                             aria-describedby="Avenida / Rua" placeholder="Avenida / Rua" />
                         <div ng-if="establish.logradouro.$invalid && establish.logradouro.$touched" style="color: red">
                             <div ng-if="establish.logradouro.$error.required">
@@ -132,7 +132,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="number">Número</label>
-                        <input type="text" class="form-control" id="number" name="numero" placeholder="Número" />
+                        <input type="text" class="form-control" id="number" name="numero" ng-model="number" placeholder="Número" />
                         <div ng-if="establish.numero.$invalid && establish.numero.$touched" style="color: red">
                             <div ng-if="establish.numero.$error.required">
                                 O campo Número é obrigatório
@@ -142,12 +142,12 @@
 
                     <div class="form-group col-md-4">
                         <label for="neighborhood">Bairro</label>
-                        <input type="text" class="form-control" id="neighborhood" aria-describedby="Bairro"
+                        <input type="text" class="form-control" id="neighborhood" ng-model="neighborhood" aria-describedby="Bairro"
                             placeholder="Bairro" />
                     </div>
                     <div class="form-group col-md-4">
                         <label for="city">Município</label>
-                        <input type="text" class="form-control" id="city" name="city" disabled
+                        <input type="text" class="form-control" id="city" name="city" ng-model="city" disabled
                             placeholder="Município" />
                     </div>
 
