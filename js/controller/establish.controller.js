@@ -17,6 +17,8 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         $scope.public_place = '';
         $scope.city = '';
         $scope.neighborhood = '';
+        $scope.salvar = document.getElementById('salvar');
+
 
         window.addEventListener("load", () => {
 
