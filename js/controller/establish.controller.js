@@ -8,6 +8,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         $scope.establishName; 
         $scope.establishPhone; 
         $scope.establishSocialReason;
+        $scope.establishBio;
 
         $scope.cep = '';
         $scope.addressId = '';
@@ -33,6 +34,69 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         $rootScope.name = sessionValidated != undefined ? sessionValidated.establishment.name : null;
         $rootScope.id = sessionValidated != undefined ? sessionValidated.establishment.id : null;
         $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
+
+        // 
+        // Update dados do estabelecimento
+        // 
+        $scope.updateEstablish = function () {
+
+            $scope.salvar.className = "fa fa-spinner fa-spin fa-fw";
+      
+            establish_data = {
+              "company_name": $scope.establishName,
+              "social_reason": $scope.establishSocialReason,
+              "phone": $scope.establishPhone,
+              "bio": $scope.establishBio
+            };
+      
+            establish_address = {
+              "cep": $scope.cep,
+              "uf": $scope.uf,
+              "number": $scope.number,
+              "city": $scope.city,
+              "public_place": $scope.public_place,
+              "neighborhood": $scope.neighborhood
+      
+            };
+      
+      
+            console.log(establish_data);
+            console.log(establish_address);
+      
+            EstablishModel.updateFStablish(establish_data, $rootScope.id).then(function (response) {
+              console.log(response.data);
+              $scope.updateStablishAddress();
+      
+            });
+      
+          }
+      
+          $scope.updateStablishAddress = function () {
+      
+            if($scope.addressId){
+              AddressModel.updateAddress(establish_address, $scope.addressId).then(function (response) {
+        
+                if (typeof (response.data) !== "string" || response.data != 'Validation Fails' || response.data.error != null) {
+                  swal("Dados atualizados com sucesso!", "Seus dados foram atualizados!", "success");
+                } else {
+                  swal("Ooops!", "Seus dados não foram atualizados!", "error");
+                }
+        
+                $scope.salvar.className = "";
+        
+              })
+            }else{
+              establish_address["stablish_id"] = $rootScope.id;
+              MainModel.saveAddress(establish_address).then(function (response) {
+                if (response.data.error != null) {
+                  swal("Ooops!", "Seus dados não foram atualizados!", "error");
+                }else{
+                  swal("Dados atualizados com sucesso!", "Seus dados foram atualizados!", "success");
+                }
+              });
+            }
+          }
+      
 
         // 
         // Buscar Endereço do estabelecimento
