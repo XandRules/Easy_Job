@@ -14,6 +14,7 @@ easyjob.controller('MainController', [
     const LOGINESTABLISH = 'loginestablish';
 
     $scope.name = '';
+    social_reason = '';
     $scope.cpf = '';
     $scope.cnpj = '';
     $scope.email = '';
@@ -125,6 +126,7 @@ easyjob.controller('MainController', [
 
       $rootScope.data.push({
         "company_name": $scope.name,
+        "social_reason": $scope.social_reason,
         "cnpj": $scope.cnpj,
         "email": $scope.email,
         "phone": $scope.phone,
