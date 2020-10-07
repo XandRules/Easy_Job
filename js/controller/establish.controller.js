@@ -7,6 +7,10 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
 
         window.addEventListener("load", () => {
 
+            if($rootScope.pageSelect == "profileestablish"){
+                $scope.getEstablishment();
+            }
+
             let welcome = document.getElementById("welcomeUser");
            
             welcome.innerHTML = welcome.innerHTML + $rootScope.name;
@@ -26,7 +30,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         // Buscar dados do estabelecimento
         // 
         $scope.getEstablishment = function () {
-            EstablishModel.getEstablish().then(response =>{
+            EstablishModel.getEstablish($rootScope.id).then(response =>{
                 console.log(response.data);
             })
         }        
