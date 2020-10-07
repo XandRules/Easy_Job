@@ -22,7 +22,12 @@ easyjob.factory('EstablishModel', [
     };
 
     EstablishFactory.updateStablish = function (data, id) {
-      return $http.put(config.baseUrl + `/establishments/${id}`, data);
+      config.defaultHeaderToken.Authorization = 'Bearer ' + $rootScope.token;
+      return $http.put(
+        config.baseUrl + `/establishments/${id}`,
+        data,
+        config.defaultHeaderToken
+      );
     };
 
     return EstablishFactory;
