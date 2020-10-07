@@ -5,6 +5,9 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         $rootScope.headerDefaultLogout = true;
         $rootScope.footerDefault = false;
 
+        $scope.establishName; 
+        $scope.establishPhone; 
+
         window.addEventListener("load", () => {
 
             if($rootScope.pageSelect == "profileestablish"){
@@ -32,6 +35,9 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         $scope.getEstablishment = function () {
             EstablishModel.getEstablish($rootScope.id).then(response =>{
                 console.log(response.data);
+
+                $scope.establishName = response.data[0].company_name;
+                $scope.establishPhone = response.data[0].phone;
             })
         }        
     }
