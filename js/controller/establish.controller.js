@@ -14,10 +14,6 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
                 $scope.getEstablishment();
             }
 
-            let welcome = document.getElementById("welcomeUser");
-           
-            welcome.innerHTML = welcome.innerHTML + $rootScope.name;
-
             let userLogin = document.getElementById("userlogin");
             userLogin.innerHTML = $rootScope.name;
 
@@ -38,6 +34,8 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
 
                 $scope.establishName = response.data[0].company_name;
                 $scope.establishPhone = response.data[0].phone;
+
+                $scope.$apply();
             })
         }        
     }
