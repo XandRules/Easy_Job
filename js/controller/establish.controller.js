@@ -7,6 +7,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
 
         $scope.establishName; 
         $scope.establishPhone; 
+        $scope.establishSocialReason;
 
         window.addEventListener("load", () => {
 
@@ -34,6 +35,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
 
                 $scope.establishName = response.data[0].company_name;
                 $scope.establishPhone = response.data[0].phone;
+                $scope.establishSocialReason = response.data[0].social_reason;
 
                 $scope.$apply();
             })
