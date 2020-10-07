@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Rubik:wght@500&display=swap');
+
+
+.font-secondary{
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-primary{
+  font-family: 'Rubik', sans-serif;
+}
+
 .ftco-navbar-light {
   background: transparent !important;
   position: absolute;

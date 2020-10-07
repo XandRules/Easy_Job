@@ -38,9 +38,23 @@ easyjob.controller('MainController', [
 
     $scope.valor = '';
 
+    $scope.show = 1;
+
     window.onload = function () {
       console.log('loaded');
       $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+
+      this.setInterval(()=>{
+        if($scope.show == 1){
+          $("#hide1").hide(1500);  $("#hide2").hide(1500);  $("#hide3").show(1500);  $("#hide4").show(1500); 
+          $scope.show = 0;
+        }else{
+          $("#hide1").show(1500);  $("#hide2").show(1500);  $("#hide3").hide(1500);  $("#hide4").hide(1500); 
+          $scope.show = 1;
+        }
+      },5000);
+
+
     };
 
 
