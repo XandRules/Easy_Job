@@ -65,7 +65,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
             console.log(establish_data);
             console.log(establish_address);
       
-            EstablishModel.updateFStablish(establish_data, $rootScope.id).then(function (response) {
+            EstablishModel.updateStablish(establish_data, $rootScope.id).then(function (response) {
               console.log(response.data);
               $scope.updateStablishAddress();
       
