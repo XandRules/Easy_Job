@@ -1,5 +1,5 @@
-easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootScope', 'MainModel',
-    function (EstablishModel, $scope, $rootScope, MainModel) {
+easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootScope', 'MainModel', 'AddressModel',
+    function (EstablishModel, $scope, $rootScope, MainModel,AddressModel) {
 
         $rootScope.headerDefault = false;
         $rootScope.headerDefaultLogout = true;
@@ -8,6 +8,14 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         $scope.establishName; 
         $scope.establishPhone; 
         $scope.establishSocialReason;
+
+        $scope.cep = '';
+        $scope.addressId = '';
+        $scope.uf = '';
+        $scope.number = '';
+        $scope.public_place = '';
+        $scope.city = '';
+        $scope.neighborhood = '';
 
         window.addEventListener("load", () => {
 
@@ -27,17 +35,38 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
         // 
+        // Buscar Endereço do estabelecimento
+        // 
+
+        $scope.getAddressFromStablishment = function(){
+
+            AddressModel.getAddressFromEstablish($rootScope.id).then((response) => {
+                console.log(response.data);
+            })
+
+            $scope.$apply();
+
+        }
+
+
+        // 
         // Buscar dados do estabelecimento
         // 
         $scope.getEstablishment = function () {
             EstablishModel.getEstablish($rootScope.id).then(response =>{
-                console.log(response.data);
+               
 
-                $scope.establishName = response.data[0].company_name;
-                $scope.establishPhone = response.data[0].phone;
-                $scope.establishSocialReason = response.data[0].social_reason;
+                if(response.data[0] != null){
+                    
+                    $scope.establishName = response.data[0].company_name;
+                    $scope.establishPhone = response.data[0].phone;
+                    $scope.establishSocialReason = response.data[0].social_reason;
+                    $scope.establishBio = response.data[0].bio;
 
-                $scope.$apply();
+                    $scope.getAddressFromStablishment();    
+                   
+                }
+
             })
         }    
         
