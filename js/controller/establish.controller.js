@@ -26,7 +26,9 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         // Buscar dados do estabelecimento
         // 
         $scope.getEstablishment = function () {
-
+            EstablishModel.getEstablish().then(response =>{
+                console.log(response.data);
+            })
         }        
     }
 ]);

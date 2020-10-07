@@ -1,11 +1,23 @@
-easyjob.factory('EstablishModel', ['config', '$http',
-    function (config, $http) {
+easyjob.factory('EstablishModel', ['config', '$http','$rootScope',
+    function (config, $http,$rootScope) {
+
+    let token = $rootScope.token;
+
+      axios.interceptors.request.use(
+        config =>{
+          config.headers.authorization = token;
+          return config;
+        },
+        error =>{
+          return Promisse.reject(error);
+        }
+      );
 
         var EstablishFactory = {};
 
-        EstablishFactory.getEstablish = function () {
+        EstablishFactory.getEstablish = function (id) {
 
-            return $http.get('mock/getmenuvalues.json', config.defaultHeader);
+            return axios.get(config.baseUrl + `/establishments/${id}`);
         };
 
         return EstablishFactory;
