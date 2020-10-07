@@ -37,6 +37,10 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
 
                 $scope.$apply();
             })
-        }        
+        }    
+        
+        if($rootScope.pageSelect == "profileestablish"){
+            $scope.getEstablishment();
+        }
     }
 ]);
