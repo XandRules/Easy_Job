@@ -8,25 +8,29 @@ easyjob.controller('ChatController', [
     $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
 
+    window.addEventListener("load", () => {
+      $scope.login();
+    });
+
     var socket = io.connect("https://easyjob-app.herokuapp.com");
     var ready = false;
 
     $scope.contacts = 'Pedro';
     $scope.contactMessage = 'ola tudo bem com vc?';
 
-    $scope.name;
-
     var time = new Date();
 
     ready = true;
     $scope.login = function () {
-      socket.emit("join", $scope.name);
+      socket.emit("join", $rootScope.name);
 
     }
 
-    socket.emit("join", 'Alexandre');
+    $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
+    $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
+    $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
-
+    
     socket.on("update", function (msg) {
       if (ready) {
         $('.chat').append('<li class="info">' + msg + '</li>')
