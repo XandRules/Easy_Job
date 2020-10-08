@@ -8,15 +8,9 @@ easyjob.controller('ChatController', [
     $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
 
-    window.addEventListener("load", () => {
-      $scope.login();
-    });
 
     var socket = io.connect("https://easyjob-app.herokuapp.com");
-    var ready = false;
-
-    $scope.contacts = 'Pedro';
-    $scope.contactMessage = 'ola tudo bem com vc?';
+    var ready = false;   
 
     var time = new Date();
 
@@ -55,6 +49,9 @@ easyjob.controller('ChatController', [
         $scope.time = time.getHours() + ':' + time.getMinutes();
         $scope.messageClient = msg;
 
+        $scope.contacts = $scope.client;
+        $scope.contactMessage = $scope.messageClient;
+
         $('.msg_history').append(`
         <div class="outgoing_msg">
             <div class="sent_msg">
@@ -88,6 +85,8 @@ easyjob.controller('ChatController', [
 
       $scope.message = '';
     }
+
+    $scope.login();
 
 
   },
