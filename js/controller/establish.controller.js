@@ -22,10 +22,6 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
 
         window.addEventListener("load", () => {
 
-            if($rootScope.pageSelect == "profileestablish"){
-                $scope.getEstablishment();
-            }
-
             let userLogin = document.getElementById("userlogin");
             userLogin.innerHTML = $rootScope.name;
 
