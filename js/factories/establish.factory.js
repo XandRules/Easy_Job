@@ -22,11 +22,9 @@ easyjob.factory('EstablishModel', [
     };
 
     EstablishFactory.updateStablish = function (data, id) {
-      config.defaultHeaderToken.Authorization = 'Bearer ' + $rootScope.token;
-      return $http.put(
+      return axios.put(
         config.baseUrl + `/establishments/${id}`,
-        data,
-        config.defaultHeaderToken
+        data
       );
     };
 
