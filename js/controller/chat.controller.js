@@ -1,6 +1,6 @@
 easyjob.controller('ChatController', [
-  '$scope',
-  function ($scope) {
+  '$scope','$rootScope',
+  function ($scope, $rootScope) {
     console.log('Chat');
     $scope.message;
 
