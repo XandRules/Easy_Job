@@ -25,10 +25,9 @@ easyjob.controller('ChatController', [
       socket.emit("join", $rootScope.name);
     }
 
-    let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
-    let dataUser = JSON.parse(localStorage.getItem('dataUser'));
+    let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));    
 
-    if(dataUser[0].role == 'freelancer'){
+    if(sessionValidated.freelancer != undefined){
       $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
       $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
       $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
