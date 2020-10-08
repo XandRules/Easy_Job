@@ -23,7 +23,6 @@ easyjob.controller('ChatController', [
     ready = true;
     $scope.login = function () {
       socket.emit("join", $rootScope.name);
-
     }
 
     $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
