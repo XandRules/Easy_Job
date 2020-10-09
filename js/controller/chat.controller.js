@@ -52,6 +52,8 @@ easyjob.controller('ChatController', [
         $scope.contacts = $scope.client;
         $scope.contactMessage = $scope.messageClient;
 
+        $scope.$apply();
+
         $('.msg_history').append(`
         <div class="outgoing_msg">
             <div class="sent_msg">
