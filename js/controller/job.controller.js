@@ -8,6 +8,5 @@ easyjob.controller('JobController', [
     $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
 
-
   },
 ]);

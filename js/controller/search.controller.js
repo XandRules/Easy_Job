@@ -146,6 +146,14 @@ easyjob.controller('SearchController', [
       window.scrollTo(0, 0);
     }
 
+    // 
+    // Ir para o Anuncio e carregar seu dados
+    // 
+
+    $scope.announcementSelect = function(){
+      
+    }
+
     $scope.searchAnnouncements();
   },
 ]);
