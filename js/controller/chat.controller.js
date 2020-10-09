@@ -7,6 +7,7 @@ easyjob.controller('ChatController', [
     $rootScope.headerDefault = false;
     $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
+    $scope.salesUser;
 
 
     var socket = io.connect("https://easyjob-app.herokuapp.com");
@@ -25,10 +26,13 @@ easyjob.controller('ChatController', [
       $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
       $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
       $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
+      $scope.salesUser = 'salesfreelancer'
+
     }else{
       $rootScope.name = sessionValidated != undefined ? sessionValidated.establishment.name.split(" ")[0] : null;
       $rootScope.id = sessionValidated != undefined ? sessionValidated.establishment.id : null;
       $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
+      $scope.salesUser = 'salesestablish'
     }
 
     
@@ -64,15 +68,6 @@ easyjob.controller('ChatController', [
         `)
 
         $scope.$apply();
-
-        // $('.msg_history').append(`
-        // <div class="outgoing_msg">
-        //     <div class="sent_msg">
-        //         <p>${$scope.client } diz:  ${$scope.messageClient}</p>
-        //         <span class="time_date"> ${$scope.time}</span>
-        //     </div>
-        // </div>
-        // `);
       }
     });
 
@@ -94,18 +89,6 @@ easyjob.controller('ChatController', [
       
       `)
 
-
-    //   $('.msg_history').append(`
-    //   <div class="incoming_msg">
-    //   <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-    //   <div class="received_msg">
-    //       <div class="received_withd_msg">
-    //           <p>${$scope.message}</p>
-    //           <span class="time_date"> ${$scope.time}</span>
-    //       </div>
-    //   </div>
-    // </div>
-    //   `);
       socket.emit("send", text);
 
       $scope.message = '';
