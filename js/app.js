@@ -187,7 +187,7 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
     })
     .state('chat', {
       url: '/chat',
-      templateUrl: 'views/general/chat.html',
+      templateUrl: 'views/chat.html',
       controller: 'ChatController',
     });
 });

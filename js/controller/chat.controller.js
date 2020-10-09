@@ -52,16 +52,27 @@ easyjob.controller('ChatController', [
         $scope.contacts = $scope.client;
         $scope.contactMessage = $scope.messageClient;
 
+        $('.msg_history').append(`
+        <div class="media w-50 ml-auto mb-3">
+        <div class="media-body">
+          <div class="bg-primary rounded py-2 px-3 mb-2">
+            <p class="text-small mb-0 text-white">${$scope.client } diz:  ${$scope.messageClient}</p>
+          </div>
+          <p class="small text-muted">${$scope.time}</p>
+        </div>
+      </div>  
+        `)
+
         $scope.$apply();
 
-        $('.msg_history').append(`
-        <div class="outgoing_msg">
-            <div class="sent_msg">
-                <p>${$scope.client } diz:  ${$scope.messageClient}</p>
-                <span class="time_date"> ${$scope.time}</span>
-            </div>
-        </div>
-        `);
+        // $('.msg_history').append(`
+        // <div class="outgoing_msg">
+        //     <div class="sent_msg">
+        //         <p>${$scope.client } diz:  ${$scope.messageClient}</p>
+        //         <span class="time_date"> ${$scope.time}</span>
+        //     </div>
+        // </div>
+        // `);
       }
     });
 
@@ -71,18 +82,30 @@ easyjob.controller('ChatController', [
       var time = new Date();
       $scope.time = time.getHours() + ':' + time.getMinutes();
 
-
       $('.msg_history').append(`
-      <div class="incoming_msg">
-      <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-      <div class="received_msg">
-          <div class="received_withd_msg">
-              <p>${$scope.message}</p>
-              <span class="time_date"> ${$scope.time}</span>
-          </div>
+      <div class="media "><img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50" class="rounded-circle">
+      <div class="media-body ml-3">
+        <div class="bg-light rounded py-2 px-3 mb-2">
+          <p class="text-small mb-0 text-muted">${$scope.message}</p>
+        </div>
+        <p class="small text-muted">${$scope.time}</p>
       </div>
     </div>
-      `);
+      
+      `)
+
+
+    //   $('.msg_history').append(`
+    //   <div class="incoming_msg">
+    //   <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+    //   <div class="received_msg">
+    //       <div class="received_withd_msg">
+    //           <p>${$scope.message}</p>
+    //           <span class="time_date"> ${$scope.time}</span>
+    //       </div>
+    //   </div>
+    // </div>
+    //   `);
       socket.emit("send", text);
 
       $scope.message = '';

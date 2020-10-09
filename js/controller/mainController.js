@@ -41,6 +41,23 @@ easyjob.controller('MainController', [
 
     $scope.show = 1;
 
+    var i = 0;
+    var input = document.getElementsByClassName('chat-box');
+  
+    $scope.showChat = function(){
+  
+        if(i == 0){
+            $("#users").hide(100);
+            i=1;
+            console.log(input);
+            input[0].style = "width: 180%";
+        }else{
+          $("#users").show(100);
+          input[0].style = "width: 100%";
+          i=0;
+        }
+    }
+
     window.onload = function () {
       console.log('loaded');
       $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
