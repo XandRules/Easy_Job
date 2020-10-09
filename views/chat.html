@@ -55,7 +55,7 @@ body {
 </style>
 
 <div class="container py-5 px-4">
-    <a ui-sref="salesUser" ui-sref-active="active"><i class="fa fa-reply fa-2x voltar"
+    <a ui-sref="{{salesUser}}" ui-sref-active="active"><i class="fa fa-reply fa-2x voltar"
       style="z-index: 99999; position:absolute; color: #4455dd  ; cursor: pointer; margin-top: 0.5rem; "
       aria-hidden="true"></i></a>
   
@@ -66,8 +66,8 @@ body {
       <div class="bg-white">
 
         <div class="bg-gray px-4 py-2 bg-light">
-          <p class="h5 mb-0 py-1">Recentes</p>
-         
+          <p class="h5 mb-0 py-1" style="position: relative;
+          left: 150px;">Recentes</p>         
         </div>
 
         <div class="messages-box">

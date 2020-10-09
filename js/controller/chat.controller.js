@@ -35,6 +35,9 @@ easyjob.controller('ChatController', [
       $scope.salesUser = 'salesestablish'
     }
 
+    $scope.returnToFather = function(){
+      $state.go($scope.salesUser);
+    }
     
     socket.on("update", function (msg) {
       if (ready) {
