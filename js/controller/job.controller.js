@@ -19,7 +19,7 @@ easyjob.controller('JobController', [
     if(!$rootScope.announcementSelectId){
       $rootScope.announcementSelectId = JSON.parse(localStorage.getItem("anuncio_id"));
     }
-    
+
     $scope.pushAnnouncementFromFreelancer = () =>{
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       JobModel.getAnnouncementsFromFreelancer($rootScope.announcementSelectId.anuncio_id).then(response =>{
@@ -28,7 +28,7 @@ easyjob.controller('JobController', [
 
         $scope.dataFreelancer = response.data;        
         $scope.dataFreelancer.day_of_week = $scope.dataFreelancer.day_of_week.split(" ");
-        $scope.dataFreelancer.period = $scope.dataFreelancer.period.split(" ");
+        $scope.dataFreelancer.period = $scope.dataFreelancer.period.trim().split(" ");
 
         $scope.$apply();
         
