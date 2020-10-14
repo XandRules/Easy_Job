@@ -25,8 +25,8 @@ easyjob.controller('JobController', [
         console.log(response.data);
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
         
-  // $scope.dataFreelancer.day_of_week = $scope.dataFreelancer.day_of_week.split(" ");
-  // $scope.dataFreelancer.period = $scope.dataFreelancer.period.split(" ");
+      // $scope.dataFreelancer.day_of_week = $scope.dataFreelancer.day_of_week.split(" ");
+      // $scope.dataFreelancer.period = $scope.dataFreelancer.period.split(" ");
       });
     }
 
