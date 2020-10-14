@@ -1,10 +1,11 @@
 easyjob.controller('SearchController', [
   'SearchModel',
   '$scope',
+  '$state',
   '$rootScope',
   'MainModel',
 
-  function (SearchModel, $scope, $rootScope, MainModel) {
+  function (SearchModel, $scope, $state, $rootScope, MainModel) {
     console.log('Search');
 
     $rootScope.headerDefault = false;
