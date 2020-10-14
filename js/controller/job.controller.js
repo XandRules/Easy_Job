@@ -24,9 +24,11 @@ easyjob.controller('JobController', [
       JobModel.getAnnouncementsFromFreelancer($rootScope.announcementSelectId.anuncio_id).then(response =>{
         console.log(response.data);
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+
+        $scope.dataFreelancer = response.data;        
+        $scope.dataFreelancer.day_of_week = $scope.dataFreelancer.day_of_week.split(" ");
+        $scope.dataFreelancer.period = $scope.dataFreelancer.period.split(" ");
         
-      // $scope.dataFreelancer.day_of_week = $scope.dataFreelancer.day_of_week.split(" ");
-      // $scope.dataFreelancer.period = $scope.dataFreelancer.period.split(" ");
       });
     }
 
