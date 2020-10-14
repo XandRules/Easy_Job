@@ -13,30 +13,6 @@ easyjob.controller('MainController', [
     const LOGINFREELANCER = 'loginfreelancer';
     const LOGINESTABLISH = 'loginestablish';
 
-    
-    $scope.freelancerName = 'Alexandre da Silva Ribeiro';
-    $scope.freelancerFunction = 'Garçom';
-    $scope.note = 4.89;
-    $scope.announcementTitle = 'Profisssional Garçom';
-    $scope.bio = "Experiência de mais de 2 anos como Garçom";
-    $scope.amount = 10;
-    $scope.freelancerCity = "Santa Rita do Sapucaí"
-
-    $scope.dataFreelancer = {
-      "title": "profissional Garçom",
-      "description": "Tenho mais de 2 anos de experiência",
-      "period": "Manhã Tarde Noite",
-      "amount": "70",
-      "city": "Santa Rita do Sapucaí",
-      "day_of_week": "Domingo Segunda Terça Quarta Quinta Sexta Sábado",
-      "bio": "Experiência de mais de 2 anos como Garçom",
-      "name": "Alexandre da Silva Ribeiro",
-      "speciality_function": "Garçom/Garçonete"
-  }
-
-  $scope.dataFreelancer.day_of_week = $scope.dataFreelancer.day_of_week.split(" ");
-  $scope.dataFreelancer.period = $scope.dataFreelancer.period.split(" ");
-
   console.log($scope.dataFreelancer);
 
     $scope.name = '';
