@@ -8,5 +8,9 @@ easyjob.controller('JobController', [
     $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
 
+    $scope.openChat = function(){
+      console.log($rootScope.id);
+    }
+
   },
 ]);
