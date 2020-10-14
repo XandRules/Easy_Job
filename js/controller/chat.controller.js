@@ -10,7 +10,7 @@ easyjob.controller('ChatController', [
     $scope.salesUser;
 
 
-    var socket = io.connect("https://easyjob-app.herokuapp.com");
+    var socket = io.connect("https://easyjob-app.herokuapp.com/chat");
     var ready = false;   
 
     var time = new Date();

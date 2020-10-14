@@ -33,7 +33,11 @@ easyjob.controller('JobController', [
     }
 
     $scope.openChat = function(){
-      console.log($rootScope.id);
+      console.log($rootScope.announcementSelectId.anuncio_id);
+
+      JobModel.createChat($rootScope.announcementSelectId).then(response =>{
+        console.log(response.data);
+      })
     }
 
     $scope.pushAnnouncementFromFreelancer();
