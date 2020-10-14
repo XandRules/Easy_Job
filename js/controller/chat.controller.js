@@ -41,6 +41,7 @@ easyjob.controller('ChatController', [
     
     socket.on("update", function (msg) {
       if (ready) {
+        console.log(msg);
         $('.chat').append('<li class="info">' + msg + '</li>')
       }
     });

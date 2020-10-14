@@ -34,8 +34,12 @@ easyjob.controller('JobController', [
 
     $scope.openChat = function(){
       console.log($rootScope.announcementSelectId.anuncio_id);
+      var socket = io.connect("https://easyjob-app.herokuapp.com");
+      socket.emit("anuncio_id", $rootScope.name);
 
       JobModel.createChat($rootScope.announcementSelectId).then(response =>{
+
+
         console.log(response.data);
       })
     }
