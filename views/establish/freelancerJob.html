@@ -113,15 +113,17 @@
                         </div>
                         <div class="col-md-6">
                             <div class="profile-head">
+                                        <h4>
+                                            {{dataFreelancer.name}}
+                                        </h4>
                                         <h5>
-                                            Alexandre da Silva Ribeiro
+                                            {{dataFreelancer.title}}
                                         </h5>
                                         <h5>
-                                            <label for="" class="badge badge-success"> Garçom</label>
-                                            <label for="" class="badge badge-success"> Bartender</label>
+                                            <label for="" class="badge badge-success">{{dataFreelancer.speciality_function}}</label>
                                         </h5>
              
-                                        <p class="proile-rating">Reputação : <span>4/5</span></p>
+                                        <p class="proile-rating">Reputação : <span>{{note}}/5</span></p>
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item">
                                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Resumo Profissional</a>
@@ -140,16 +142,18 @@
                         <div class="col-md-4">
                             <div class="profile-work">
                                 <p>Disponibilidade</p>
-                                <a href="">Segunda</a><br/>
-                                <a href="">Terça</a><br/>
-                                <a href="">Quarta</a><br/>
-                                <a href="">Sexta</a><br/>
-                                <a href="">Sábado</a><br/>
-                                <a href="">Domingo</a><br/>
+                                <a href="">{{dataFreelancer.day_of_week[0]}}</a><br/>
+                                <a href="">{{dataFreelancer.day_of_week[1]}}</a><br/>
+                                <a href="">{{dataFreelancer.day_of_week[2]}}</a><br/>
+                                <a href="">{{dataFreelancer.day_of_week[3]}}</a><br/>
+                                <a href="">{{dataFreelancer.day_of_week[4]}}</a><br/>
+                                <a href="">{{dataFreelancer.day_of_week[5]}}</a><br/>
+                                <a href="">{{dataFreelancer.day_of_week[6]}}</a><br/>
     
                                 <p>Turno</p>
-                                <a href="">Manhã</a><br/>
-                                <a href="">Noite</a><br/>
+                                <a href="">{{dataFreelancer.period[0]}}</a><br/>
+                                <a href="">{{dataFreelancer.period[1]}}</a><br/>
+                                <a href="">{{dataFreelancer.period[2]}}</a><br/>
          
                             </div>
                         </div>
@@ -158,12 +162,7 @@
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                             <div class="row">
                                                 <div class="col-md-10">
-                                                    <label>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                                           ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-                                                           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                                            sunt in culpa qui officia deserunt mollit anim id est laborum</label>
+                                                    <label>{{dataFreelancer.bio}}</label>
                                                 </div>
                                             </div>
                                             
@@ -174,7 +173,7 @@
                                                     <label>Qualificação</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p>Garçom</p>
+                                                    <p>{{dataFreelancer.speciality_function}}</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -182,7 +181,7 @@
                                                     <label>Valor por Hora</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p>R$10,00</p>
+                                                    <p>R${{dataFreelancer.amount}},00</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -190,7 +189,7 @@
                                                     <label>Total de Serviços</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p>5</p>
+                                                    <p>0</p>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -198,7 +197,7 @@
                                                     <label>Cidade</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p>Santa Rita do Sapucaí</p>
+                                                    <p>{{dataFreelancer.city}}</p>
                                                 </div>
                                             </div>
     

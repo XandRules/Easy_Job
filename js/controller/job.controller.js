@@ -1,12 +1,29 @@
 easyjob.controller('JobController', [
-  '$scope','$rootScope',
-  function ($scope,$rootScope) { 
+  'JobModel','$scope','$rootScope',
+  function (JobModel,$scope,$rootScope) { 
 
     console.log("Job");
+
+    window.addEventListener("load", ()=>{
+      $scope.pushAnnouncementFromFreelancer();
+    })
 
     $rootScope.headerDefault = false;
     $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
+
+    if(!$rootScope.announcementSelectId){
+      $rootScope.announcementSelectId = JSON.parse(localStorage.getItem("anuncio_id"));
+    }
+
+
+    $scope.pushAnnouncementFromFreelancer = () =>{
+      $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
+      JobModel.getAnnouncementsFromFreelancer($rootScope.announcementSelectId).then(response =>{
+        console.log(response);
+        $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+      });
+    }
 
     $scope.openChat = function(){
       console.log($rootScope.id);

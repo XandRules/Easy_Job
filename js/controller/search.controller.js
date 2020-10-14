@@ -150,7 +150,13 @@ easyjob.controller('SearchController', [
     // Ir para o Anuncio e carregar seu dados
     // 
 
-    $scope.announcementSelect = function(){
+    $scope.announcementSelect = function(id){
+
+      $rootScope.announcementSelectId = id;
+
+      localStorage.setItem('anuncio_id',JSON.stringify({"anuncio_id" : $rootScope.announcementSelectId}));
+
+      $state.go('freelancerjob');
       
     }
 
