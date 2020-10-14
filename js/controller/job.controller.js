@@ -14,11 +14,8 @@ easyjob.controller('JobController', [
 
     $scope.note = 4.89;
 
-    $scope.dataFreelancer;
-
-    if(!$rootScope.announcementSelectId){
-      $rootScope.announcementSelectId = JSON.parse(localStorage.getItem("anuncio_id"));
-    }
+    $scope.dataFreelancer;    
+    $rootScope.announcementSelectId = JSON.parse(localStorage.getItem("anuncio_id")); 
 
     $scope.pushAnnouncementFromFreelancer = () =>{
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
