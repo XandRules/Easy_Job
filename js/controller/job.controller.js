@@ -11,8 +11,15 @@ easyjob.controller('JobController', [
     $rootScope.headerDefault = false;
     $rootScope.headerDefaultLogout = true;
     $rootScope.footerDefault = false;
+    $scope.room;
 
     $scope.note = 4.89;
+
+    let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
+
+    $rootScope.name = sessionValidated != undefined ? sessionValidated.establishment.name : null;
+    $rootScope.id = sessionValidated != undefined ? sessionValidated.establishment.id : null;
+    $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
     $scope.dataFreelancer;    
     $rootScope.announcementSelectId = JSON.parse(localStorage.getItem("anuncio_id")); 
@@ -34,15 +41,49 @@ easyjob.controller('JobController', [
 
     $scope.openChat = function(){
       console.log($rootScope.announcementSelectId.anuncio_id);
-      var socket = io.connect("https://easyjob-app.herokuapp.com");
-      socket.emit("anuncio_id", $rootScope.name);
 
-      JobModel.createChat($rootScope.announcementSelectId).then(response =>{
+      var data = {
+        room: $scope.generateHash(),
+        stablish_id: $rootScope.id,
+        anuncio_id: $rootScope.announcementSelectId.anuncio_id
+      }
+      
+      JobModel.createChat({room : `anuncio_${$rootScope.id}_${$rootScope.announcementSelectId.anuncio_id}`}).then(response =>{
 
+        if(response.data){
+          $scope.room = response.data.room;
+        }
 
-        console.log(response.data);
+      });
+
+      $scope.createChatRoom();
+    }
+
+    $scope.createChatRoom = function(){
+      var data = {
+        room: $scope.room,
+        stablish_id: $rootScope.id,
+        anuncio_id: $rootScope.announcementSelectId.anuncio_id
+      }
+
+      console.log(data)
+
+      JobModel.createNotificationFreelancer(data).then(response =>{
+        console.log(response.data)
       })
     }
+
+    $scope.generateHash = function(){
+      var hash = 0, i, chr;
+      var code = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+        for (i = 0; i < 30; i++) {
+         hash +=  code[Math.floor(Math.random() * code.length)]
+        }
+        return hash;
+    }
+
+    console.log($scope.generateHash());
 
     $scope.pushAnnouncementFromFreelancer();
 

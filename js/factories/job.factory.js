@@ -21,8 +21,12 @@ easyjob.factory('JobModel', [
     };
 
     JobFactory.createChat = function(data){
-      return axios.post(config.baseUrl + 'chat/create', data);
+      return axios.post(config.baseUrl + '/newchat', data);
     } 
+
+    JobFactory.createNotificationFreelancer = function(data){
+      return axios.post(config.baseUrl + '/create/chat',data);
+    }
 
     return JobFactory;
   },

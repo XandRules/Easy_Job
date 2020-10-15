@@ -155,7 +155,7 @@ easyjob.controller('SearchController', [
 
       $rootScope.announcementSelectId = id;
 
-      localStorage.setItem('anuncio_id',JSON.stringify({"anuncio_id" : $rootScope.announcementSelectId}));
+      localStorage.setItem('anuncio_id',JSON.stringify({"anuncio_id" : $rootScope.announcementSelectId,}));
 
       $state.go('freelancerjob');
       
