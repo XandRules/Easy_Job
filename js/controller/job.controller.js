@@ -60,50 +60,45 @@ easyjob.controller('JobController', [
     }
 
     $scope.createChatRoom = function(){
+
+      swal({
+        text: 'Para iniciar a conversa digite sua mensagem!',
+        content: "input",
+        button: {
+          text: "Enviar",
+          closeModal: false,
+        },
+      })
+      .then(name => {
+        if (!name) throw null;
+       
+        $scope.message = name;     
+  
+      })
+      .catch(err => {
+        if (err) {
+          swal("Oops!", "Mensagem não pode ser enviada", "error");
+        } else {
+          swal.stopLoading();
+          swal.close();
+        }
+      });
+
+
       var data = {
         room: $scope.room,
         establishment_id: $rootScope.id,
         announcement_id: $rootScope.announcementSelectId.anuncio_id,
         freelancer_id: $rootScope.freelancer_id,
+        message: $scope.message,
       }
 
       console.log(data)
 
-      swal({
-        title: 'Submit your Github username',
-        input: 'text',
-        inputAttributes: {
-          autocapitalize: 'off'
-        },
-        showCancelButton: true,
-        confirmButtonText: 'Look up',
-        showLoaderOnConfirm: true,
-        preConfirm: (login) => {
-          return fetch(`//api.github.com/users/${login}`)
-            .then(response => {
-              if (!response.ok) {
-                throw new Error(response.statusText)
-              }
-              return response.json()
-            })
-            .catch(error => {
-              Swal.showValidationMessage(
-                `Request failed: ${error}`
-              )
-            })
-        },
-        allowOutsideClick: () => !Swal.isLoading()
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: `${result.value.login}'s avatar`,
-            imageUrl: result.value.avatar_url
-          })
-        }
-      })
-
       JobModel.createNotificationFreelancer(data).then(response =>{
         console.log(response.data)
+        swal.stopLoading();
+        swal.close();
       })
     }
 
