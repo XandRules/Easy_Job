@@ -48,7 +48,7 @@ easyjob.controller('JobController', [
 
       JobModel.createChat({room : `anuncio_${$rootScope.id}_${$rootScope.announcementSelectId.anuncio_id}_${$rootScope.freelancer_id}`}).then(response =>{
 
-        if(response.data){
+        if(response.data.room){
           $scope.room = response.data.room;
         }
 
@@ -61,7 +61,8 @@ easyjob.controller('JobController', [
       var data = {
         room: $scope.room,
         stablish_id: $rootScope.id,
-        anuncio_id: $rootScope.announcementSelectId.anuncio_id
+        anuncio_id: $rootScope.announcementSelectId.anuncio_id,
+        freelancer_id: $rootScope.freelancer_id,
       }
 
       console.log(data)
