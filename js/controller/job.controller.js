@@ -69,28 +69,28 @@ easyjob.controller('JobController', [
           closeModal: false,
         },
       })
-      .then(name => {
+      .finally(name => {
         if (!name) throw null;
        
         $scope.message = name;     
+        var data = {
+          room: $scope.room,
+          establishment_id: $rootScope.id,
+          announcement_id: $rootScope.announcementSelectId.anuncio_id,
+          freelancer_id: $rootScope.freelancer_id,
+          message: $scope.message,
+        }
+  
+        console.log(data)
+  
+        JobModel.createNotificationFreelancer(data).then(response =>{
+          console.log(response.data)
+          swal.stopLoading();
+          swal.close();
+        })
   
       });
 
-      var data = {
-        room: $scope.room,
-        establishment_id: $rootScope.id,
-        announcement_id: $rootScope.announcementSelectId.anuncio_id,
-        freelancer_id: $rootScope.freelancer_id,
-        message: $scope.message,
-      }
-
-      console.log(data)
-
-      JobModel.createNotificationFreelancer(data).then(response =>{
-        console.log(response.data)
-        swal.stopLoading();
-        swal.close();
-      })
     }
 
     $scope.generateHash = function(){
