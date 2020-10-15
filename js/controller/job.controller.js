@@ -69,7 +69,7 @@ easyjob.controller('JobController', [
           closeModal: false,
         },
       })
-      .finally(name => {
+      .then(name => {
         if (!name) throw null;
        
         $scope.message = name;     
