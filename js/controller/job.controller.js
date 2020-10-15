@@ -30,6 +30,8 @@ easyjob.controller('JobController', [
         console.log(response.data);
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
+        localStorage.setItem("freelancer_id",response.data.freelancer_id);
+
         $scope.dataFreelancer = response.data;        
         $scope.dataFreelancer.day_of_week = $scope.dataFreelancer.day_of_week.split(" ");
         $scope.dataFreelancer.period = $scope.dataFreelancer.period.trim().split(" ");
@@ -42,13 +44,9 @@ easyjob.controller('JobController', [
     $scope.openChat = function(){
       console.log($rootScope.announcementSelectId.anuncio_id);
 
-      var data = {
-        room: $scope.generateHash(),
-        stablish_id: $rootScope.id,
-        anuncio_id: $rootScope.announcementSelectId.anuncio_id
-      }
-      
-      JobModel.createChat({room : `anuncio_${$rootScope.id}_${$rootScope.announcementSelectId.anuncio_id}`}).then(response =>{
+      $rootScope.freelancer_id = JSON.parse(localStorage.getItem("freelancer_id")); 
+
+      JobModel.createChat({room : `anuncio_${$rootScope.id}_${$rootScope.announcementSelectId.anuncio_id}_${$rootScope.freelancer_id}`}).then(response =>{
 
         if(response.data){
           $scope.room = response.data.room;
