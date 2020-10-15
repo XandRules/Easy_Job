@@ -74,16 +74,7 @@ easyjob.controller('JobController', [
        
         $scope.message = name;     
   
-      })
-      .catch(err => {
-        if (err) {
-          swal("Oops!", "Mensagem não pode ser enviada", "error");
-        } else {
-          swal.stopLoading();
-          swal.close();
-        }
       });
-
 
       var data = {
         room: $scope.room,
