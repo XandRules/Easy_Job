@@ -50,6 +50,8 @@ easyjob.controller('JobController', [
 
         if(response.data.room){
           $scope.room = response.data.room;
+        }else{
+          $scope.openChat();
         }
 
       });
@@ -60,7 +62,7 @@ easyjob.controller('JobController', [
     $scope.createChatRoom = function(){
       var data = {
         room: $scope.room,
-        establish_id: $rootScope.id,
+        establishment_id: $rootScope.id,
         announcement_id: $rootScope.announcementSelectId.anuncio_id,
         freelancer_id: $rootScope.freelancer_id,
       }
