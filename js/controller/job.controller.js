@@ -87,6 +87,7 @@ easyjob.controller('JobController', [
           console.log(response.data)
           swal.stopLoading();
           swal.close();
+          swal("Mensagem Enviada", `Sua Mensagem foi Enviada para ${dataFreelancer.name.trim().split(" ")[0]}`,"success");
         })
   
       });
