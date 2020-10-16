@@ -31,7 +31,7 @@ easyjob.controller('JobController', [
         console.log(response.data);
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
-        localStorage.setItem("freelancer_id",{"id" : response.data.freelancer_id, "id_hash": response.data.freelancer_id_hash});
+        localStorage.setItem("freelancer_id", JSON.stringify({"id" : response.data.freelancer_id, "id_hash": response.data.freelancer_id_hash}));
 
         $scope.dataFreelancer = response.data;        
         $scope.dataFreelancer.day_of_week = $scope.dataFreelancer.day_of_week.split(" ");
