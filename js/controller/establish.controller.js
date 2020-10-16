@@ -149,13 +149,19 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
 
         $scope.fetchNotification = function(){
           if($rootScope.pageSelect === "salesestablish"){
-            SearchModel.fetchNotificationChat($rootScope.id).then(response =>{
+            SearchModel.fetchNotificationChat($rootScope.id_hash).then(response =>{
               if(response.data){
                 console.log(response.data)
               }
             })
           }
+
+          setTimeout(() =>{
+            $scope.fetchNotification();
+          },3000);
         }
+
+        $scope.fetchNotification();
         
         if($rootScope.pageSelect == "profileestablish"){
             $scope.getEstablishment();
