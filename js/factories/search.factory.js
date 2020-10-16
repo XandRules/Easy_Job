@@ -28,6 +28,14 @@ easyjob.factory('SearchModel', [
       return axios.get(config.baseUrl + '/announcements');
     };
 
+    SearchFactory.fetchNotificationChat = function(id){
+      return axios.get(config.baseUrl + '/chat/index');
+    }
+
+    SearchFactory.fetchNotificationJob = function(id){
+      return axios.get(config.baseUrl + '/job/index');
+    }
+
     return SearchFactory;
   },
 ]);

@@ -1,5 +1,5 @@
-easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootScope', 'MainModel', 'AddressModel',
-    function (EstablishModel, $scope, $rootScope, MainModel,AddressModel) {
+easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootScope', 'MainModel', 'AddressModel','SearchModel',
+    function (EstablishModel, $scope, $rootScope, MainModel,AddressModel,SearchModel) {
 
         $rootScope.headerDefault = false;
         $rootScope.headerDefaultLogout = true;
@@ -141,6 +141,20 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
 
             })
         }    
+
+        // 
+        // Buscar notificações de novas mensagens
+        // 
+
+        $scope.fetchNotification = function(){
+          if($rootScope.pageSelect === "salesestablish"){
+            SearchModel.fetchNotificationChat($rootScope.id).then(response =>{
+              if(response.data){
+                console.log(response.data)
+              }
+            })
+          }
+        }
         
         if($rootScope.pageSelect == "profileestablish"){
             $scope.getEstablishment();

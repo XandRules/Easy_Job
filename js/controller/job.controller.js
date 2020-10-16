@@ -78,6 +78,8 @@ easyjob.controller('JobController', [
           establishment_id: $rootScope.id,
           announcement_id: $rootScope.announcementSelectId.anuncio_id,
           freelancer_id: $rootScope.freelancer_id,
+          to_user: $rootScope.freelancer_id,
+          from_user: $rootScope.id,
           message: $scope.message,
         }
   
