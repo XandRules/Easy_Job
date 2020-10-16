@@ -74,6 +74,9 @@ easyjob.controller('JobController', [
         if (!name) throw null;
        
         $scope.message = name;     
+
+        let messageDate = new Date();
+        messageDate = messageDate.toLocaleString('pt-BR', {});
         var data = {
           room: $scope.room,
           establishment_id: $rootScope.id,
@@ -81,7 +84,7 @@ easyjob.controller('JobController', [
           freelancer_id: $rootScope.freelancer_id.id,
           to_user: $rootScope.freelancer_id.id_hash,
           from_user: $rootScope.id_hash,
-          date: new Date(),
+          date: messageDate,
           message: $scope.message,
         }
   
