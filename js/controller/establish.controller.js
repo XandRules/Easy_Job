@@ -18,6 +18,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         $scope.city = '';
         $scope.neighborhood = '';
         $scope.salvar = document.getElementById('salvar');
+        $scope.chatCount;
 
 
         window.addEventListener("load", () => {
@@ -152,7 +153,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
             SearchModel.fetchNotificationChat($rootScope.id_hash).then(response =>{
               if(response.data){
                 console.log(response.data)
-                $scope.countChat = response.data.length;
+                $scope.chatCount = response.data.length;
                 
               }
             })

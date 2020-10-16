@@ -34,6 +34,7 @@ easyjob.controller('FreelancerController', [
     $scope.cpf;
     $scope.birth;
     $scope.salvar = document.getElementById('salvar');
+    $scope.chatCount;
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
@@ -265,7 +266,7 @@ easyjob.controller('FreelancerController', [
         SearchModel.fetchNotificationChat($rootScope.id_hash).then(response =>{
           if(response.data){
             console.log(response.data)
-            $scope.countChat = response.data.length;
+            $scope.chatCount = response.data.length;
             
           }
         })
