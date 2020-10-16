@@ -76,7 +76,7 @@ easyjob.controller('JobController', [
         $scope.message = name;     
 
         let messageDate = new Date();
-        messageDate = messageDate.toLocaleString('pt-BR', {});
+        // messageDate = messageDate.toLocaleString('pt-BR', {});
         var data = {
           room: $scope.room,
           establishment_id: $rootScope.id,
