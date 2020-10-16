@@ -196,6 +196,8 @@ easyjob.controller('MainController', [
         $rootScope.data[0] = JSON.parse(localStorage.getItem("dataUser"));
       }
 
+      $rootScope.data[0]["id_hash"] = $scope.generateHash();
+
       MainModel.createEstablish($rootScope.data[0]).then(function (response) {
 
         if (response.data.error != null) {
@@ -228,6 +230,7 @@ easyjob.controller('MainController', [
 
       $rootScope.data[0]["phone"] = $scope.phone;
       $rootScope.data[0]["speciality_id"] = $scope.speciality.id;
+      $rootScope.data[0]["id_hash"] = $scope.generateHash();
 
       MainModel.createFreelancer($rootScope.data[0]).then(function (response) {
 
@@ -285,6 +288,18 @@ easyjob.controller('MainController', [
       window.sessionStorage.clear();
       $state.go("home");
     };
+
+    $scope.generateHash = function(){
+      var hash = 0, i, chr;
+      var code = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+        for (i = 0; i < 60; i++) {
+         hash +=  code[Math.floor(Math.random() * code.length)]
+        }
+        return hash;
+    }
+
+    console.log($scope.generateHash());
 
     $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 

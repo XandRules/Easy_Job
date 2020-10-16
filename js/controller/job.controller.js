@@ -96,18 +96,6 @@ easyjob.controller('JobController', [
 
     }
 
-    $scope.generateHash = function(){
-      var hash = 0, i, chr;
-      var code = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-
-        for (i = 0; i < 30; i++) {
-         hash +=  code[Math.floor(Math.random() * code.length)]
-        }
-        return hash;
-    }
-
-    console.log($scope.generateHash());
-
     $scope.pushAnnouncementFromFreelancer();
 
   },
