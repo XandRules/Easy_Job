@@ -31,7 +31,7 @@ easyjob.controller('JobController', [
         console.log(response.data);
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
-        localStorage.setItem("freelancer_id",response.data.freelancer_id);
+        localStorage.setItem("freelancer_id",{"id" : response.data.freelancer_id, "id_hash": response.data.freelancer_id_hash});
 
         $scope.dataFreelancer = response.data;        
         $scope.dataFreelancer.day_of_week = $scope.dataFreelancer.day_of_week.split(" ");
@@ -47,7 +47,7 @@ easyjob.controller('JobController', [
 
       $rootScope.freelancer_id = JSON.parse(localStorage.getItem("freelancer_id")); 
 
-      JobModel.createChat({room : `anuncio_${$rootScope.id}_${$rootScope.announcementSelectId.anuncio_id}_${$rootScope.freelancer_id}`}).then(response =>{
+      JobModel.createChat({room : `anuncio_${$rootScope.id}_${$rootScope.announcementSelectId.anuncio_id}_${$rootScope.freelancer_id.id}`}).then(response =>{
 
         if(response.data.room){
           $scope.room = response.data.room;
@@ -78,9 +78,9 @@ easyjob.controller('JobController', [
           room: $scope.room,
           establishment_id: $rootScope.id,
           announcement_id: $rootScope.announcementSelectId.anuncio_id,
-          freelancer_id: $rootScope.freelancer_id,
-          to_user: $rootScope.freelancer_id,
-          from_user: $rootScope.id,
+          freelancer_id: $rootScope.freelancer_id.id,
+          to_user: $rootScope.freelancer_id.id_hash,
+          from_user: $rootScope.id_hash,
           message: $scope.message,
         }
   
