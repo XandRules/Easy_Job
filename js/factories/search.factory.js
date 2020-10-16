@@ -29,11 +29,11 @@ easyjob.factory('SearchModel', [
     };
 
     SearchFactory.fetchNotificationChat = function(id){
-      return axios.get(config.baseUrl + '/chat/index');
+      return axios.get(config.baseUrl + `/chat/index/${id}`);
     }
 
     SearchFactory.fetchNotificationJob = function(id){
-      return axios.get(config.baseUrl + '/job/index');
+      return axios.get(config.baseUrl + `/job/index/${id}`);
     }
 
     return SearchFactory;
