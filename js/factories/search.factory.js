@@ -36,6 +36,10 @@ easyjob.factory('SearchModel', [
       return axios.get(config.baseUrl + `/job/index/${id}`);
     }
 
+    SearchFactory.fetchDataChatUsers = function(id){
+      return axios.get(config.baseUrl + `/chat/userroom/${id}`);
+    }
+
     return SearchFactory;
   },
 ]);

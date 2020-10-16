@@ -1,6 +1,6 @@
 easyjob.controller('ChatController', [
-  '$scope','$rootScope',
-  function ($scope, $rootScope) {
+  '$scope','$rootScope','SearchModel',
+  function ($scope, $rootScope,SearchModel) {
     console.log('Chat');
     $scope.message;
 
@@ -17,7 +17,7 @@ easyjob.controller('ChatController', [
 
     ready = true;
     $scope.login = function () {
-      socket.emit("join", $rootScope.name);
+      socket.emit($rootScope.chatRoom, $rootScope.name);
     }
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));    
@@ -48,7 +48,7 @@ easyjob.controller('ChatController', [
       }
     });
 
-    socket.on("chat", function (client, msg) {
+    socket.on($rootScope.chatRoom, function (client, msg) {
       if (ready) {
         var time = new Date();
 
@@ -99,6 +99,14 @@ easyjob.controller('ChatController', [
 
       $scope.message = '';
     }
+
+    $scope.fetchDataChatUsers = function(){
+      SearchModel.fetchDataChatUsers($rootScope.chatRoom).then(response =>{
+        console.log(response.data)
+      });
+    }
+
+    $scope.fetchDataChatUsers();
 
     $scope.login();
 
