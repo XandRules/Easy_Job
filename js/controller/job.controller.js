@@ -19,6 +19,7 @@ easyjob.controller('JobController', [
 
     $rootScope.name = sessionValidated != undefined ? sessionValidated.establishment.name : null;
     $rootScope.id = sessionValidated != undefined ? sessionValidated.establishment.id : null;
+    $rootScope.id_hash = sessionValidated != undefined ? sessionValidated.establishment.id_hash : null;
     $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
 
     $scope.dataFreelancer;    

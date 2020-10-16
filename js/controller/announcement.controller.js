@@ -49,6 +49,7 @@ easyjob.controller('AnnouncementController', [
 
     $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
     $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
+    $rootScope.id_hash = sessionValidated != undefined ? sessionValidated.freelancer.id_hash : null;
     $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;    
 
     $scope.getAnnouncementsFromFreelancer = function () {
