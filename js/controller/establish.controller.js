@@ -155,6 +155,8 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
                 console.log(response.data)
                 $scope.chatCount = response.data.length;
 
+                $rootScope.chatRoom = response.data[0].room;
+
                 $scope.$apply();
                 
               }
