@@ -17,7 +17,7 @@ easyjob.controller('ChatController', [
 
     ready = true;
     $scope.login = function () {
-      socket.on("join", $rootScope.name);
+      socket.emit("join", $rootScope.name);
     }
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));    
