@@ -105,7 +105,6 @@ easyjob.controller('ChatController', [
     // 
 
     $scope.fetchNotification = function(){
-      if($rootScope.pageSelect === "salesestablish"){
         SearchModel.fetchNotificationChat($rootScope.id_hash).then(response =>{
           if(response.data){
             console.log(response.data)
@@ -118,8 +117,6 @@ easyjob.controller('ChatController', [
             
           }
         })
-      }
-
     }
 
     $scope.fetchDataChatUsers = function(){
