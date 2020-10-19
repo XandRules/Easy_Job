@@ -100,6 +100,28 @@ easyjob.controller('ChatController', [
       $scope.message = '';
     }
 
+    // 
+    // Buscar notificações de novas mensagens
+    // 
+
+    $scope.fetchNotification = function(){
+      if($rootScope.pageSelect === "salesestablish"){
+        SearchModel.fetchNotificationChat($rootScope.id_hash).then(response =>{
+          if(response.data){
+            console.log(response.data)
+            $scope.chatCount = response.data.length;
+
+            $rootScope.chatRoom = response.data[0].room;
+            $scope.fetchDataChatUsers();
+
+            $scope.$apply();
+            
+          }
+        })
+      }
+
+    }
+
     $scope.fetchDataChatUsers = function(){
       SearchModel.fetchDataChatUsers($rootScope.chatRoom).then(response =>{
         console.log(response.data)
