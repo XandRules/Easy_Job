@@ -35,7 +35,8 @@ easyjob.controller('FreelancerController', [
     $scope.cpf;
     $scope.birth;
     $scope.salvar = document.getElementById('salvar');
-    $scope.chatCount;
+    $scope.chatCount = 0;
+    $scope.jobCount = 0;
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
