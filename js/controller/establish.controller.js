@@ -168,6 +168,11 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
           },5000);
         }
 
+        // 
+        // Carregar mensagens
+        // 
+
+        
         $scope.fetchNotification();
         
         if($rootScope.pageSelect == "profileestablish"){
