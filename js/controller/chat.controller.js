@@ -17,7 +17,7 @@ easyjob.controller('ChatController', [
 
     ready = true;
     $scope.login = function () {
-      socket.on($rootScope.chatRoom, $rootScope.name);
+      socket.on("join", $rootScope.name);
     }
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));    
@@ -48,7 +48,7 @@ easyjob.controller('ChatController', [
       }
     });
 
-    socket.on($rootScope.chatRoom, function (client, msg) {
+    socket.on("chat", function (client, msg) {
       if (ready) {
         var time = new Date();
 
