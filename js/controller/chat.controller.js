@@ -128,7 +128,7 @@ easyjob.controller('ChatController', [
       });
     }
 
-    $scope.fetchDataChatUsers();
+    $scope.fetchNotification();
 
     $scope.login();
 
