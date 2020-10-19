@@ -120,7 +120,7 @@ easyjob.controller('ChatController', [
     }
 
     $scope.fetchDataChatUsers = function(){
-      SearchModel.fetchDataChatUsers({room : $rootScope.chatRoom}).then(response =>{
+      SearchModel.fetchDataChatUsers($rootScope.chatRoom).then(response =>{
         console.log(response.data)
       });
     }
