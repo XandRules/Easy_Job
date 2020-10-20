@@ -112,12 +112,15 @@ easyjob.controller('ChatController', [
         SearchModel.fetchNotificationChat($rootScope.id_hash).then(response =>{
           if(response.data){
             console.log(response.data)
-            $scope.chatCount = response.data.length;
 
-            $rootScope.chatRoom = response.data[0].room;
-            $scope.fetchDataChatUsers();
-
-            $scope.$apply();
+            if(response.data[0].room){
+              $scope.chatCount = response.data.length;
+  
+              $rootScope.chatRoom = response.data[0].room;
+              $scope.fetchDataChatUsers();
+  
+              $scope.$apply();
+            }
             
           }
         })
