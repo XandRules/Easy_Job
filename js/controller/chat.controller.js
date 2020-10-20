@@ -110,7 +110,7 @@ easyjob.controller('ChatController', [
 
     $scope.fetchNotification = function(){
         SearchModel.fetchNotificationChat($rootScope.id_hash).then(response =>{
-          if(response.data){
+          if(response.data.length > 0){
             console.log(response.data)
 
             if(response.data[0].room != undefined){
