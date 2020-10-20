@@ -113,7 +113,7 @@ easyjob.controller('ChatController', [
           if(response.data){
             console.log(response.data)
 
-            if(response.data[0].room){
+            if(response.data[0].room != undefined){
               $scope.chatCount = response.data.length;
   
               $rootScope.chatRoom = response.data[0].room;
