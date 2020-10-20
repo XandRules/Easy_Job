@@ -13,7 +13,7 @@ easyjob.controller('ChatController', [
     var socket = io.connect("https://easyjob-app.herokuapp.com");
     var ready = false;   
 
-    var time = new Date();
+    var time = new Date();    
 
     ready = true;
     $scope.login = function () {
@@ -39,6 +39,10 @@ easyjob.controller('ChatController', [
 
     $scope.returnToFather = function(){
       $state.go($scope.salesUser);
+    }
+
+    $scope.offerJob = function(){
+      /// aqui preciso abrir o modal;
     }
     
     socket.on("update", function (msg) {
