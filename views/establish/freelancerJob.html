@@ -213,37 +213,37 @@
         <div class="modal fade cd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl" style="margin-top: 80px;">
             <div class="modal-content container col-md-12" >
-                <h1 class="text-center" style="position: relative; margin: 20px;"> Fechamento de serviço</h1>
+                <h1 class="text-center" style="position: relative; margin: 20px;"> Solicitação de serviço</h1>
                 <form class="text-center" style="position: relative; left: 100px;">
                     <div class="row col-md-10 text-center">
                         <div class="col-md-3">
                             <label for="begin_time"> Hora de entrada</label>
-                            <input class="col-md-12 form-control" type="time" id="begin_time" />
+                            <input class="col-md-12 form-control" type="time" id="begin_time" ng-model="beginTime"/>
                         </div>
                         <div class="col-md-3">
                             <label for="end_time"> Hora de saída</label>
-                            <input class="col-md-12 form-control" type="time" id="end_time" />
+                            <input class="col-md-12 form-control" type="time" id="end_time" ng-model="endTime"/>
                         </div>
                         <div class="col-md-3">
                             <label for="begin_date"> Data do serviço</label>
-                            <input class="col-md-12 form-control" type="date" id="begin_date" />
+                            <input class="col-md-12 form-control" type="date" id="begin_date" ng-model="date"/>
                         </div>
                         <div class="col-md-3">
                             <label for="begin_amount"> Valor por hora</label>
-                            <input class="col-md-12 form-control" type="number" id="begin_amount" />
+                            <input class="col-md-12 form-control" type="number" id="begin_amount" ng-model="amount"/>
                         </div>
                         <div  style="position: relative; margin-top: 40px; width: 100%;">
                             <label for="obs"> Observações</label>
-                            <textarea class="col-md-12 form-control" cols="5" rows="5" type="text" id="obs" placeholder="Digite aqui um informação que você acha importante!"/>
+                            <textarea class="col-md-12 form-control" cols="5" rows="5" type="text" id="obs" ng-model="comment" placeholder="Digite aqui um informação que você acha importante!"/>
                         </div>
                         <div class="col-md-4 text-left" style="position: relative; top: 20px;">
-                            <input  type="checkbox" id="confirm_question"  style="width: 20px; height: 20px;"/>
+                            <input  type="checkbox" id="confirm_question"  style="width: 20px; height: 20px;" ng-model="accept" />
                             <label for="confirm_question"> Aceito os <a href="">termos</a>  de serviço</label>
                         </div>
                         <div class="col-md-12" style="position: relative; margin-top: 40px; margin-bottom: 40px;" >
                             <div class="col-md-12">
                                 <button class="btn btn-danger" data-dismiss="modal"> Cancelar</button>
-                                <button class="btn btn-primary">Enviar</button>
+                                <button class="btn btn-primary" ng-click="sendNotificationJob();">Enviar</button>
                             </div>
                             <div class="col-md-12">
                             </div>

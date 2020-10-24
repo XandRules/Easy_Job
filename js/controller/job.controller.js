@@ -13,6 +13,13 @@ easyjob.controller('JobController', [
     $rootScope.footerDefault = false;
     $scope.room;
 
+    $scope.beginTime;
+    $scope.endTime;
+    $scope.date;
+    $scope.amountService;
+    $scope.comment;
+    $scope.acceptTerms;
+
     $scope.note = 4.89;
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
@@ -57,6 +64,19 @@ easyjob.controller('JobController', [
         }
 
       });
+
+    }
+
+    $scope.sendNotificationJob = function(){
+
+      console.log($scope.beginTime);
+      console.log($scope.endTime);
+      console.log($scope.date);
+      console.log($scope.amountService);
+      console.log($scope.comment);
+      console.log($scope.acceptTerms);
+
+      console.log("Clicou em enviar notificação");
 
     }
 
