@@ -53,7 +53,8 @@
       </div>
 
       <div class="card col-4 col-sm-2 col-xl-2  card-edit" style="width: 18rem; margin: 0.5rem">
-        <a ui-sref="signestablish" ui-sref-active="active" alt="Serviços">
+        <a ui-sref="signestablish" ui-sref-active="active" alt="Serviços">          <span class="badge badge-pill badge-primary" ng-show="jobCount > 0" 
+            style="position: absolute; width: 30px; font-size: 17px; display: flex; right: 5px; top: 5px;">{{jobCount}}</span>
           <img class="lozad" src="./img/hand.png" alt="Contratar">
           <h5 class="card-title text-center">Serviços</h5>
         </a>
@@ -61,6 +62,8 @@
 
       <div class="card col-4 col-sm-2 col-xl-2  card-edit" style="width: 18rem; margin: 0.5rem">
         <a ui-sref="chat" ui-sref-active="active" alt="Chat">
+            <span class="badge badge-pill badge-primary" ng-show="chatCount > 0" 
+                style="position: absolute; width: 30px; font-size: 17px; display: flex; right: 5px; top: 5px;">{{chatCount}}</span>
           <img class="lozad" src="./img/chat.png" alt="Trabalhar">
           <h5 class="card-title text-center">Chat</h5>
         </a>

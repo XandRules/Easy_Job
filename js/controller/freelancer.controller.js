@@ -2,10 +2,11 @@ easyjob.controller('FreelancerController', [
   'FreelancerModel',
   'AddressModel',
   'MainModel',
+  'SearchModel',
   '$scope',
   '$rootScope',
   '$state',
-  function (FreelancerModel, AddressModel, MainModel, $scope, $rootScope, $state) {
+  function (FreelancerModel, AddressModel, MainModel,SearchModel, $scope, $rootScope, $state) {
     console.log('Freelancer');
 
     $rootScope.headerDefault = false;
@@ -34,7 +35,8 @@ easyjob.controller('FreelancerController', [
     $scope.cpf;
     $scope.birth;
     $scope.salvar = document.getElementById('salvar');
-    $scope.chatCount;
+    $scope.chatCount = 0;
+    $scope.jobCount = 0;
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
@@ -276,6 +278,8 @@ easyjob.controller('FreelancerController', [
         $scope.fetchNotification();
       },3000);
     }
+
+    $scope.fetchNotification();
 
     $scope.getFreelancerData();
     //SELECT  F.id, F.name, F.phone, F.speciality_id, F.birth, F.gender, F.cpf,F.bio, A.number, A.cep, A.public_place, A.uf, A.neighborhood, A.city FROM freelancers F INNER JOIN addresses A on A.freelancer_id = F.id where F.id = 9;

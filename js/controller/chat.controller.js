@@ -13,11 +13,11 @@ easyjob.controller('ChatController', [
     var socket = io.connect("https://easyjob-app.herokuapp.com");
     var ready = false;   
 
-    var time = new Date();
+    var time = new Date();    
 
     ready = true;
     $scope.login = function () {
-      socket.emit($rootScope.chatRoom, $rootScope.name);
+      socket.emit("join", $rootScope.name);
     }
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));    
@@ -40,6 +40,10 @@ easyjob.controller('ChatController', [
     $scope.returnToFather = function(){
       $state.go($scope.salesUser);
     }
+
+    $scope.offerJob = function(){
+      /// aqui preciso abrir o modal;
+    }
     
     socket.on("update", function (msg) {
       if (ready) {
@@ -48,7 +52,7 @@ easyjob.controller('ChatController', [
       }
     });
 
-    socket.on($rootScope.chatRoom, function (client, msg) {
+    socket.on("chat", function (client, msg) {
       if (ready) {
         var time = new Date();
 
@@ -100,13 +104,35 @@ easyjob.controller('ChatController', [
       $scope.message = '';
     }
 
+    // 
+    // Buscar notificações de novas mensagens
+    // 
+
+    $scope.fetchNotification = function(){
+        SearchModel.fetchNotificationChat($rootScope.id_hash).then(response =>{
+          if(response.data.length > 0){
+            console.log(response.data)
+
+            if(response.data[0].room != undefined){
+              $scope.chatCount = response.data.length;
+  
+              $rootScope.chatRoom = response.data[0].room;
+              $scope.fetchDataChatUsers();
+  
+              $scope.$apply();
+            }
+            
+          }
+        })
+    }
+
     $scope.fetchDataChatUsers = function(){
       SearchModel.fetchDataChatUsers($rootScope.chatRoom).then(response =>{
         console.log(response.data)
       });
     }
 
-    $scope.fetchDataChatUsers();
+    $scope.fetchNotification();
 
     $scope.login();
 
