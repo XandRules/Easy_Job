@@ -1,7 +1,7 @@
 <section ng-controller="MainController">
 
   <section class="intro-inscri">
-    <h1>Faça a Sua Inscrição</h1>
+    <h1>Faça a sua Inscrição</h1>
   </section>
 
   <section class="inscri-cadastro">
@@ -50,7 +50,7 @@
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="Email1">Endereço de email</label>
+              <label for="Email1">E-mail</label>
               <input type="email" ng-model="email" class="form-control" id="Email1" name="email1"
                 aria-describedby="emailHelp" placeholder="Seu email" required />
               <div ng-if="establish.email1.$invalid && establish.email1.$touched" style="color:red">
@@ -59,14 +59,14 @@
               </div>
             </div>
             <div class="form-group col-md-6">
-              <label for="Email2">Repita o Endereço de email</label>
+              <label for="Email2">Repita o e-mail</label>
               <input type="email" ng-model="repeatEmail" class="form-control" id="Email2" name="email2"
                 aria-describedby="emailHelp" placeholder="Seu email" required />
               <div ng-if="establish.email2.$invalid && establish.email2.$touched" style="color:red">
                 <div ng-if="establish.email2.$error.required">O campo e-mail é obrigatório</div>
                 <div ng-if="establish.email2.$error.email">O e-mail digitado não é válido.</div>
               </div>
-              <div style="color:red" ng-if="email !== repeatEmail">O e-mail deve ser igual ao digitado anteriormente.
+              <div style="color:red" ng-if="email !== repeatEmail">Os campos “Senha” e “Repita sua senha” devem ser iguais!.
               </div>
             </div>
           </div>
