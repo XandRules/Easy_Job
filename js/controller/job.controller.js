@@ -113,9 +113,9 @@ easyjob.controller('JobController', [
         amount : $scope.amountService,
         comment : $scope.comment,
         date : $scope.date,
-        beginTime : $scope.beginTime,
-        endTime : $scope.endTime,
-        acceptTerms : $scope.acceptTerms,
+        begin_time : $scope.beginTime,
+        end_time : $scope.endTime,
+        accepted : $scope.acceptTerms,
       }
 
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
