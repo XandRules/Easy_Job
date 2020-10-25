@@ -19,14 +19,15 @@ easyjob.controller('JobController', [
     $scope.amountService;
     $scope.comment;
     $scope.acceptTerms;
+    $scope.applyJob;
 
     const week = [
       'Domingo',
-      'Segunda-Feira',
-      'Terça-Feira',
-      'Quarta-Feira',
-      'Quinta-Feira',
-      'Sexta-Feira',
+      'Segunda',
+      'Terça',
+      'Quarta',
+      'Quinta',
+      'Sexta',
       'Sábado',
     ]
 
@@ -66,6 +67,12 @@ easyjob.controller('JobController', [
       const day = dateService.getDay();
 
       console.log(week[day])
+
+      $scope.applyJob = $scope.dataFreelancer.day_of_week.find(day =>{
+        return week[day] === day;
+      });
+
+      console.log($scope.applyJob);
     }
 
     $scope.openChat = function(){
@@ -94,8 +101,6 @@ easyjob.controller('JobController', [
       console.log($scope.amountService);
       console.log($scope.comment);
       console.log($scope.acceptTerms);
-
-
 
       console.log("Clicou em enviar notificação");
 
