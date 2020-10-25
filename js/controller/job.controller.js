@@ -127,7 +127,7 @@ easyjob.controller('JobController', [
 
       var year = $scope.date.getFullYear();
       var month = ($scope.date.getMonth() + 1);
-      var day = $scope.date.getDay();
+      var day = $scope.date.getDate();
 
       if (month < 10) {
         month = "0" + month;
