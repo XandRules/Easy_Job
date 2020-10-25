@@ -3,6 +3,8 @@ easyjob.factory('FreelancerModel', [
   '$http',
   '$rootScope',
   function (config, $http, $rootScope) {
+
+    
     let token = $rootScope.token;
 
     axios.interceptors.request.use(

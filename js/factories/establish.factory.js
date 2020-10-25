@@ -3,6 +3,7 @@ easyjob.factory('EstablishModel', [
   '$http',
   '$rootScope',
   function (config, $http, $rootScope) {
+
     let token = $rootScope.token;
 
     axios.interceptors.request.use(
@@ -22,10 +23,7 @@ easyjob.factory('EstablishModel', [
     };
 
     EstablishFactory.updateStablish = function (data, id) {
-      return axios.put(
-        config.baseUrl + `/establishments/${id}`,
-        data
-      );
+      return axios.put(config.baseUrl + `/establishments/${id}`,data);
     };
 
     return EstablishFactory;
