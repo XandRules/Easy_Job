@@ -144,36 +144,35 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
             })
         }    
 
-        // 
-        // Buscar notificações de novas mensagens
-        // 
+    // 
+    // Buscar notificações de novas mensagens e notificações de serviços
+    // 
 
-        $scope.fetchNotification = function(){
-          if($rootScope.pageSelect === "salesestablish"){
-            SearchModel.fetchNotificationChat($rootScope.id_hash).then(response =>{
-              if(response.data){
-                console.log(response.data)
-                $scope.chatCount = response.data.length;
-
-                $rootScope.chatRoom = response.data[0].room;
-
-                $scope.$apply();
-                
-              }
-            })
+    $scope.fetchNotification = function(){
+      if($rootScope.pageSelect === "salesestablish"){
+        SearchModel.fetchNotificationChat($rootScope.id_hash).then(response =>{
+          if(response.data){
+            console.log(response.data)
+            $scope.chatCount = response.data.length;
+            
           }
+        })
 
-          setTimeout(() =>{
-            $scope.fetchNotification();
-          },5000);
-        }
+        SearchModel.fetchNotificationJob($rootScope.id_hash).then(response =>{
+          if(response.data){
+            console.log(response.data)
+            $scope.jobCount = response.data.length;
+            
+          }
+        })
+      }
 
-        // 
-        // Carregar mensagens
-        // 
-
-        
+      setTimeout(() =>{
         $scope.fetchNotification();
+      },3000);
+    }
+
+    $scope.fetchNotification();
         
         if($rootScope.pageSelect == "profileestablish"){
             $scope.getEstablishment();

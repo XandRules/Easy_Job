@@ -260,7 +260,7 @@ easyjob.controller('FreelancerController', [
     }
 
     // 
-    // Buscar notificações de novas mensagens
+    // Buscar notificações de novas mensagens e notificações de serviços
     // 
 
     $scope.fetchNotification = function(){
@@ -269,6 +269,14 @@ easyjob.controller('FreelancerController', [
           if(response.data){
             console.log(response.data)
             $scope.chatCount = response.data.length;
+            
+          }
+        })
+
+        SearchModel.fetchNotificationJob($rootScope.id_hash).then(response =>{
+          if(response.data){
+            console.log(response.data)
+            $scope.jobCount = response.data.length;
             
           }
         })
