@@ -28,6 +28,10 @@ easyjob.factory('JobModel', [
       return axios.post(config.baseUrl + '/create/chat',data);
     }
 
+    JobFactory.sendNotificationJob = function(data){
+      return axios.post(config.baseUrl + '/initialjob',data);
+    }
+
     return JobFactory;
   },
 ]);

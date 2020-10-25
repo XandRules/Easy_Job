@@ -107,6 +107,27 @@ easyjob.controller('JobController', [
 
       console.log("Clicou em enviar notificação");
 
+      data = {
+        to_user : $rootScope.freelancer_id.id_hash,
+        from_user : $rootScope.id_hash,
+        amount : $scope.amountService,
+        comment : $scope.comment,
+        date : $scope.date,
+        beginTime : $scope.beginTime,
+        endTime : $scope.endTime,
+        acceptTerms : $scope.acceptTerms,
+      }
+
+      $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
+
+      JobModel.sendNotificationJob(data).then(response =>{
+        $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+
+        if(response.data.error == null){
+          swal('Solicitação enviada!',`Notificação enviada com sucesso para ${$scope.dataFreelancer.name.trim().split(" ")[0]} você receberá uma notificação informando a negociação!`, 'success')
+        }
+      })
+
     }
 
     $scope.createChatRoom = function(){
