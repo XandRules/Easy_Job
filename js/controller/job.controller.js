@@ -118,6 +118,20 @@ easyjob.controller('JobController', [
       
       beginTime += ":" + beginTime.getMinutes() > 9 ? beginTime.getMinutes() : "0" + beginTime.getMinutes(); 
 
+      var year = $scope.date.getFullYear();
+      var month = ($scope.date.getMonth() + 1);
+      var day = $scope.date.getDay();
+
+      if (month < 10) {
+        month = "0" + month;
+      }
+
+      if (day < 10) {
+        day = "0" + day;
+      }
+
+      $scope.date = year + '-' + month + '-' + day;
+
       data = {
         to_user : $scope.dataFreelancer.freelancer_id_hash,
         from_user : $rootScope.id_hash,
