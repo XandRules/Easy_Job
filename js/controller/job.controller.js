@@ -43,7 +43,7 @@ easyjob.controller('JobController', [
         $scope.dataFreelancer = response.data;        
         $scope.dataFreelancer.day_of_week = $scope.dataFreelancer.day_of_week.split(" ");
         $scope.dataFreelancer.period = $scope.dataFreelancer.period.trim().split(" ");
-        $scope.amountService = $scope.dataFreelancer.amount;
+        $scope.amountService = parseInt($scope.dataFreelancer.amount);
 
         $scope.$apply();
         
