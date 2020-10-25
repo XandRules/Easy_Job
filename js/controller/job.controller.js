@@ -20,6 +20,16 @@ easyjob.controller('JobController', [
     $scope.comment;
     $scope.acceptTerms;
 
+    const week = [
+      'Domingo',
+      'Segunda-Feira',
+      'Terça-Feira',
+      'Quarta-Feira',
+      'Quinta-Feira',
+      'Sexta-Feira',
+      'Sábado',
+    ]
+
     $scope.note = 4.89;
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
@@ -51,7 +61,11 @@ easyjob.controller('JobController', [
     }
 
     $scope.verifyDisponibilityDate = function(){
-      console.log(new Date($scope.date));
+      const dateService  = new Date($scope.date);
+
+      const day = dateService.getDay();
+
+      console.log(week[day])
     }
 
     $scope.openChat = function(){
