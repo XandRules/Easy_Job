@@ -23,7 +23,7 @@ easyjob.factory('EstablishModel', [
     };
 
     EstablishFactory.updateStablish = function (data, id) {
-      return axios.put(config.baseUrl + `/establishments/${id}`,data);
+      return axios.put(config.baseUrl + `/easyjob/${id}`,data);
     };
 
     return EstablishFactory;
