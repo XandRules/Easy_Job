@@ -15,6 +15,8 @@ easyjob.controller('ChatController', [
 
     var time = new Date();    
 
+    $scope.showOptions = false;
+
     ready = true;
     $scope.login = function () {
       socket.emit("join", $rootScope.name);
@@ -28,6 +30,7 @@ easyjob.controller('ChatController', [
       $rootScope.id_hash = sessionValidated != undefined ? sessionValidated.freelancer.id_hash : null;
       $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
       $scope.salesUser = 'salesfreelancer'
+      $scope.showOptions = false;
 
     }else{
       $rootScope.name = sessionValidated != undefined ? sessionValidated.establishment.name.split(" ")[0] : null;
@@ -35,6 +38,7 @@ easyjob.controller('ChatController', [
       $rootScope.id_hash = sessionValidated != undefined ? sessionValidated.establishment.id_hash : null;
       $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
       $scope.salesUser = 'salesestablish'
+      $scope.showOptions = true;
     }
 
     $scope.returnToFather = function(){
