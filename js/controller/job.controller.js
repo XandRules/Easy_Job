@@ -110,13 +110,20 @@ easyjob.controller('JobController', [
       let endTime;
       let beginTime;
 
-      endTime = ($scope.endTime.getHours() > 9 ? $scope.endTime.getHours() : "0" + $scope.endTime.getHours()) 
-      
-      endTime += ":" + $scope.endTime.getMinutes() > 9 ? $scope.endTime.getMinutes() : "0" + $scope.endTime.getMinutes(); 
+      let hour;
+      let minutes;
 
-      beginTime = ($scope.beginTime.getHours() > 9 ? $scope.beginTime.getHours() : "0" + $scope.beginTime.getHours()) 
+      hour = ($scope.endTime.getHours() > 9 ? $scope.endTime.getHours() : "0" + $scope.endTime.getHours()) 
       
-      beginTime += ":" + $scope.beginTime.getMinutes() > 9 ? $scope.beginTime.getMinutes() : "0" + $scope.beginTime.getMinutes(); 
+      minutes =  $scope.endTime.getMinutes() > 9 ? $scope.endTime.getMinutes() : "0" + $scope.endTime.getMinutes(); 
+
+      endTime = hour + ":" + minutes;
+      
+      hour = ($scope.beginTime.getHours() > 9 ? $scope.beginTime.getHours() : "0" + $scope.beginTime.getHours()) 
+      
+      minutes = $scope.beginTime.getMinutes() > 9 ? $scope.beginTime.getMinutes() : "0" + $scope.beginTime.getMinutes(); 
+      
+      beginTime = hour + ":" + minutes;
 
       var year = $scope.date.getFullYear();
       var month = ($scope.date.getMonth() + 1);
