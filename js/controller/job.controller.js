@@ -73,7 +73,9 @@ easyjob.controller('JobController', [
         return $scope.applyJob;
       });
 
-      console.log($scope.applyJob);
+      if($scope.applyJob == undefined){
+        swal("Atenção!","A data selecionada para o serviço não atende o critério de disponibilidade do anunciante!","info");
+      }
     }
 
     $scope.openChat = function(){
