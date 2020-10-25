@@ -107,16 +107,16 @@ easyjob.controller('JobController', [
 
       console.log("Clicou em enviar notificação");
 
-      let endTime = new Date($scope.endTime);
-      let beginTime = new Date($scope.beginTime);
+      let endTime;
+      let beginTime;
 
-      endTime = (endTime.getHours() > 9 ? endTime.getHours() : "0" + endTime.getHours()) 
+      endTime = ($scope.endTime.getHours() > 9 ? $scope.endTime.getHours() : "0" + $scope.endTime.getHours()) 
       
-      endTime += ":" + endTime.getMinutes() > 9 ? endTime.getMinutes() : "0" + endTime.getMinutes(); 
+      endTime += ":" + $scope.endTime.getMinutes() > 9 ? $scope.endTime.getMinutes() : "0" + $scope.endTime.getMinutes(); 
 
-      beginTime = (beginTime.getHours() > 9 ? beginTime.getHours() : "0" + beginTime.getHours()) 
+      beginTime = ($scope.beginTime.getHours() > 9 ? $scope.beginTime.getHours() : "0" + $scope.beginTime.getHours()) 
       
-      beginTime += ":" + beginTime.getMinutes() > 9 ? beginTime.getMinutes() : "0" + beginTime.getMinutes(); 
+      beginTime += ":" + $scope.beginTime.getMinutes() > 9 ? $scope.beginTime.getMinutes() : "0" + $scope.beginTime.getMinutes(); 
 
       var year = $scope.date.getFullYear();
       var month = ($scope.date.getMonth() + 1);
