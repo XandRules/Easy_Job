@@ -29,7 +29,7 @@ easyjob.factory('JobModel', [
     }
 
     JobFactory.sendNotificationJob = function(data){
-      return axios.post(config.baseUrl + '/initialjob',data);
+      return axios.post(config.baseUrl + '/initialjob', data);
     }
 
     return JobFactory;

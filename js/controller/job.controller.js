@@ -107,16 +107,27 @@ easyjob.controller('JobController', [
 
       console.log("Clicou em enviar notificação");
 
+      let endTime = new Date($scope.endTime);
+      let beginTime = new Date($scope.beginTime);
+
+      endTime = (endTime.getHours() > 9 ? endTime.getHours() : "0" + endTime.getHours()) +
+      ":" + endTime.getMinutes() > 9 ? endTime.getMinutes() : "0" + endTime.getMinutes(); 
+      
+      beginTime = (beginTime.getHours() > 9 ? beginTime.getHours() : "0" + beginTime.getHours()) +
+      ":" + beginTime.getMinutes() > 9 ? beginTime.getMinutes() : "0" + beginTime.getMinutes(); 
+
       data = {
         to_user : $scope.dataFreelancer.freelancer_id_hash,
         from_user : $rootScope.id_hash,
         amount : $scope.amountService,
         comment : $scope.comment,
         date : $scope.date,
-        begin_time : $scope.beginTime,
-        end_time : $scope.endTime,
+        begin_time : beginTime,
+        end_time : endTime,
         accepted : $scope.acceptTerms,
       }
+
+
 
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
 
