@@ -108,7 +108,7 @@ easyjob.controller('JobController', [
       console.log("Clicou em enviar notificação");
 
       data = {
-        to_user : $scope.dataFreelancer.id_hash,
+        to_user : $scope.dataFreelancer.freelancer_id_hash,
         from_user : $rootScope.id_hash,
         amount : $scope.amountService,
         comment : $scope.comment,
