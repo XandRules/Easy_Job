@@ -68,8 +68,8 @@ easyjob.controller('JobController', [
 
       console.log(week[day])
 
-      $scope.applyJob = $scope.dataFreelancer.day_of_week.find(day =>{
-        $scope.applyJob = week[day] === day;
+      $scope.applyJob = $scope.dataFreelancer.day_of_week.find(dayOfWeek =>{
+        $scope.applyJob = week[day] === dayOfWeek;
         return $scope.applyJob;
       });
 
