@@ -110,11 +110,13 @@ easyjob.controller('JobController', [
       let endTime = new Date($scope.endTime);
       let beginTime = new Date($scope.beginTime);
 
-      endTime = (endTime.getHours() > 9 ? endTime.getHours() : "0" + endTime.getHours()) +
-      ":" + endTime.getMinutes() > 9 ? endTime.getMinutes() : "0" + endTime.getMinutes(); 
+      endTime = (endTime.getHours() > 9 ? endTime.getHours() : "0" + endTime.getHours()) 
       
-      beginTime = (beginTime.getHours() > 9 ? beginTime.getHours() : "0" + beginTime.getHours()) +
-      ":" + beginTime.getMinutes() > 9 ? beginTime.getMinutes() : "0" + beginTime.getMinutes(); 
+      endTime += ":" + endTime.getMinutes() > 9 ? endTime.getMinutes() : "0" + endTime.getMinutes(); 
+
+      beginTime = (beginTime.getHours() > 9 ? beginTime.getHours() : "0" + beginTime.getHours()) 
+      
+      beginTime += ":" + beginTime.getMinutes() > 9 ? beginTime.getMinutes() : "0" + beginTime.getMinutes(); 
 
       data = {
         to_user : $scope.dataFreelancer.freelancer_id_hash,
