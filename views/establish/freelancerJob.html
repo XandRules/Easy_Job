@@ -228,7 +228,7 @@
                         </div>
                         <div class="col-md-3">
                             <label for="begin_date"> Data do serviço</label>
-                            <input class="col-md-12 form-control" type="date" id="begin_date" ng-model="date"/>
+                            <input class="col-md-12 form-control" type="date" id="begin_date" ng-model="date" ng-change="verifyDisponibilityDate();"/>
                         </div>
                         <div class="col-md-3">
                             <label for="begin_amount"> Valor por hora</label>

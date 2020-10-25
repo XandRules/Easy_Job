@@ -43,10 +43,15 @@ easyjob.controller('JobController', [
         $scope.dataFreelancer = response.data;        
         $scope.dataFreelancer.day_of_week = $scope.dataFreelancer.day_of_week.split(" ");
         $scope.dataFreelancer.period = $scope.dataFreelancer.period.trim().split(" ");
+        $scope.amountService = $scope.dataFreelancer.amount;
 
         $scope.$apply();
         
       });
+    }
+
+    $scope.verifyDisponibilityDate = function(){
+      console.log(new Date($scope.date));
     }
 
     $scope.openChat = function(){
@@ -75,6 +80,8 @@ easyjob.controller('JobController', [
       console.log($scope.amountService);
       console.log($scope.comment);
       console.log($scope.acceptTerms);
+
+
 
       console.log("Clicou em enviar notificação");
 
