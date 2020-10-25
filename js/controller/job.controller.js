@@ -147,7 +147,6 @@ easyjob.controller('JobController', [
         date : $scope.date,
         begin_time : beginTime,
         end_time : endTime,
-        accepted : $scope.acceptTerms,
       }
 
 
