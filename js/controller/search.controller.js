@@ -15,7 +15,7 @@ easyjob.controller('SearchController', [
     $scope.cidades;
     $scope.city;
     $scope.busy = false;
-    $scope.speciality = -1;
+    $scope.speciality = 0;
 
     window.addEventListener('load', () => {
       $scope.buscarCidadesBrasil();
