@@ -153,7 +153,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         SearchModel.fetchNotificationChat($rootScope.id_hash).then(response =>{
           if(response.data){
             console.log(response.data)
-            $scope.chatCount = response.data.length;
+            $scope.chatCount = response.data;
             
           }
         })

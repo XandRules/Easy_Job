@@ -217,6 +217,32 @@ easyjob.controller('JobController', [
 
     }
 
+        // 
+    // Buscar notificações de novas mensagens e notificações de serviços
+    // 
+
+    $scope.fetchNotification = function(){
+      if($rootScope.pageSelect === "establishjoblist"){
+        SearchModel.fetchNotificationChatList($rootScope.id_hash).then(response =>{
+          if(response.data){
+            console.log(response.data)
+            $scope.chatMessage = response.data;
+            
+          }
+        })
+
+        SearchModel.fetchNotificationJobList($rootScope.id_hash).then(response =>{
+          if(response.data){
+            console.log(response.data)
+            $scope.jobList = response.data;
+            $scope.$apply();
+          }
+        })
+      }
+    }
+
+    $scope.fetchNotification();
+
     $scope.pushAnnouncementFromFreelancer();
 
   },
