@@ -35,10 +35,23 @@ easyjob.controller('JobController', [
 
     let sessionValidated = JSON.parse(sessionStorage.getItem('sessionValidated'));
 
-    $rootScope.name = sessionValidated != undefined ? sessionValidated.establishment.name : null;
-    $rootScope.id = sessionValidated != undefined ? sessionValidated.establishment.id : null;
-    $rootScope.id_hash = sessionValidated != undefined ? sessionValidated.establishment.id_hash : null;
-    $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
+
+    if(sessionValidated.freelancer != undefined){
+      $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
+      $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
+      $rootScope.id_hash = sessionValidated != undefined ? sessionValidated.freelancer.id_hash : null;
+      $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
+      $scope.salesUser = 'salesfreelancer'
+      $scope.showOptions = false;
+
+    }else{
+      $rootScope.name = sessionValidated != undefined ? sessionValidated.establishment.name.split(" ")[0] : null;
+      $rootScope.id = sessionValidated != undefined ? sessionValidated.establishment.id : null;
+      $rootScope.id_hash = sessionValidated != undefined ? sessionValidated.establishment.id_hash : null;
+      $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
+      $scope.salesUser = 'salesestablish'
+      $scope.showOptions = true;
+    }
 
     $scope.dataFreelancer;    
     $rootScope.announcementSelectId = JSON.parse(localStorage.getItem("anuncio_id")); 
