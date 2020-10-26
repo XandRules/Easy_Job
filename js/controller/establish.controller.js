@@ -161,7 +161,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         SearchModel.fetchNotificationJob($rootScope.id_hash).then(response =>{
           if(response.data){
             console.log(response.data)
-            $scope.jobCount = response.data.length;
+            $scope.jobCount = response.data;
 
             $scope.$apply();
             
