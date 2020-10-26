@@ -152,6 +152,7 @@ easyjob.controller('JobController', [
         begin_time : beginTime,
         end_time : endTime,
         announcement_id : $rootScope.announcementSelectId.anuncio_id,
+        establishment_id : $rootScope.id,
       }
 
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
