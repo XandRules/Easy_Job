@@ -33,6 +33,10 @@ easyjob.factory('SearchModel', [
     }
 
     SearchFactory.fetchNotificationJob = function(id){
+      return axios.get(config.baseUrl + `/initialjobcount/${id}`);
+    }
+
+    SearchFactory.fetchNotificationJobList = function(id){
       return axios.get(config.baseUrl + `/initialjob/${id}`);
     }
 
