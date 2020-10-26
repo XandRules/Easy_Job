@@ -111,15 +111,6 @@ easyjob.controller('JobController', [
 
     $scope.sendNotificationJob = function(){
 
-      console.log($scope.beginTime);
-      console.log($scope.endTime);
-      console.log($scope.date);
-      console.log($scope.amountService);
-      console.log($scope.comment);
-      console.log($scope.acceptTerms);
-
-      console.log("Clicou em enviar notificação");
-
       let endTime;
       let beginTime;
 
@@ -160,9 +151,8 @@ easyjob.controller('JobController', [
         date : $scope.date,
         begin_time : beginTime,
         end_time : endTime,
+        announcement_id : $rootScope.announcementSelectId.anuncio_id,
       }
-
-
 
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
 
@@ -224,13 +214,6 @@ easyjob.controller('JobController', [
     $scope.fetchNotification = function(){
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       if($rootScope.pageSelect === "establishjoblist"){
-        SearchModel.fetchNotificationChatList($rootScope.id_hash).then(response =>{
-          if(response.data){
-            console.log(response.data)
-            $scope.chatMessage = response.data;
-            
-          }
-        })
 
         SearchModel.fetchNotificationJobList($rootScope.id_hash).then(response =>{
           if(response.data){
@@ -239,7 +222,8 @@ easyjob.controller('JobController', [
             $scope.$apply();
             $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
           }
-        })
+        });
+
       }
     }
 
