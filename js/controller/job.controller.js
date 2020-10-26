@@ -1,6 +1,6 @@
 easyjob.controller('JobController', [
-  'JobModel','$scope','$rootScope',
-  function (JobModel,$scope,$rootScope) { 
+  'JobModel','SearchModel','$scope','$rootScope',
+  function (JobModel, SearchModel, $scope,$rootScope) { 
 
     console.log("Job");
 
@@ -222,6 +222,7 @@ easyjob.controller('JobController', [
     // 
 
     $scope.fetchNotification = function(){
+      $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       if($rootScope.pageSelect === "establishjoblist"){
         SearchModel.fetchNotificationChatList($rootScope.id_hash).then(response =>{
           if(response.data){
@@ -236,6 +237,7 @@ easyjob.controller('JobController', [
             console.log(response.data)
             $scope.jobList = response.data;
             $scope.$apply();
+            $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
           }
         })
       }
