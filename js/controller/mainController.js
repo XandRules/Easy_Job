@@ -198,26 +198,18 @@ easyjob.controller('MainController', [
 
       $rootScope.data[0]["id_hash"] = $scope.generateHash();
 
-      MainModel.createEstablish($rootScope.data[0]).then(function (response) {
+      var data = {
+        "uf": $scope.uf,
+        "cep": $scope.cep,
+        "public_place": $scope.logradouro,
+        "neighborhood": $scope.bairro,
+        "number": $scope.numero,
+        "city": $scope.city,
 
-        if (response.data.error != null) {
-          swal("Usuário já Cadastrado!", "Realize o Login ou tente recuperar sua senha!", "error");
-        } else {
-          var data = {
-            "establish_id": response.data.id,
-            "uf": $scope.uf,
-            "cep": $scope.cep,
-            "public_place": $scope.logradouro,
-            "neighborhood": $scope.bairro,
-            "number": $scope.numero,
-            "city": $scope.city,
+      }
 
-          }
+      $scope.saveAddressToDataBase(data, 'establish');
 
-          $scope.saveAddressToDataBase(data, 'establish');
-        }
-
-      })
     }
 
     $scope.createFreelancer = function () {
@@ -232,34 +224,38 @@ easyjob.controller('MainController', [
       $rootScope.data[0]["speciality_id"] = $scope.speciality.id;
       $rootScope.data[0]["id_hash"] = $scope.generateHash();
 
-      MainModel.createFreelancer($rootScope.data[0]).then(function (response) {
+      var data = {
+        "uf": $scope.uf,
+        "cep": $scope.cep,
+        "public_place": $scope.logradouro,
+        "neighborhood": $scope.bairro,
+        "number": $scope.numero,
+        "city": $scope.city,
+      }
 
-        if (response.data.error != null) {
-          swal("Usuário já Cadastrado!", "Realize o Login ou tente recuperar sua senha!", "error");
-        } else {
-          var data = {
-            "freelancer_id": response.data.id,
-            "uf": $scope.uf,
-            "cep": $scope.cep,
-            "public_place": $scope.logradouro,
-            "neighborhood": $scope.bairro,
-            "number": $scope.numero,
-            "city": $scope.city,
+      $scope.saveAddressToDataBase(data, 'freelancer');
 
-          }
-
-          $scope.saveAddressToDataBase(data, 'freelancer');
-        }
-
-      })
     };
 
     $scope.saveAddressToDataBase = function (data, role) {
+      $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
 
       MainModel.saveAddress(data).then(function (response) {
         if (response.data.error != null) {
           swal("Ocorreu um erro!", "Não foi possível salvar seu endereço!", "error");
         } else {
+
+          $rootScope.data[0]["address_id"] = response.data.id;
+
+          MainModel.createFreelancer($rootScope.data[0]).then(function (response) {
+
+            if (response.data.error != null) {
+              swal("Usuário já Cadastrado!", "Realize o Login ou tente recuperar sua senha!", "error");
+            }  
+            else{
+
+            }       
+          })
 
           if (role == 'freelancer') {
             $rootScope.data[0]["role"] = "freelancer";
@@ -267,7 +263,9 @@ easyjob.controller('MainController', [
           } else {
             $rootScope.data[0]["role"] = "establish";
             localStorage.setItem('dataUser', JSON.stringify($rootScope.data));
-          }
+          }         
+          
+          $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
           MainModel.sendEmail($rootScope.data[0]).then(response => {
             console.log(response);
