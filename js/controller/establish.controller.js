@@ -162,6 +162,8 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
           if(response.data){
             console.log(response.data)
             $scope.jobCount = response.data.length;
+
+            $scope.$apply();
             
           }
         })
