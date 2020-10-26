@@ -171,7 +171,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
 
       setTimeout(() =>{
         $scope.fetchNotification();
-      },3000);
+      },10000);
     }
 
     $scope.fetchNotification();

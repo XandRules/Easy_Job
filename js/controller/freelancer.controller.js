@@ -284,7 +284,7 @@ easyjob.controller('FreelancerController', [
 
       setTimeout(() =>{
         $scope.fetchNotification();
-      },3000);
+      },10000);
     }
 
     $scope.fetchNotification();
