@@ -20,6 +20,7 @@ easyjob.controller('JobController', [
     $scope.comment;
     $scope.acceptTerms;
     $scope.applyJob;
+    $scope.jobList;
 
     const week = [
       'Domingo',
@@ -208,7 +209,7 @@ easyjob.controller('JobController', [
 
     }
 
-        // 
+    // 
     // Buscar notificações de novas mensagens e notificações de serviços
     // 
 
@@ -218,7 +219,17 @@ easyjob.controller('JobController', [
 
         SearchModel.fetchNotificationJobList($rootScope.id_hash).then(response =>{
           if(response.data){
-            console.log(response.data)
+            $scope.jobList = response.data;
+            $scope.$apply();
+            $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+          }
+        });
+
+      }
+      if($rootScope.pageSelect === "freelancerjoblist"){
+
+        SearchModel.fetchNotificationJobList($rootScope.id_hash).then(response =>{
+          if(response.data){
             $scope.jobList = response.data;
             $scope.$apply();
             $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
