@@ -102,9 +102,9 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         // Buscar Endereço do estabelecimento
         // 
 
-        $scope.getAddressFromStablishment = function(){
+        $scope.getAddressFromStablishment = function(id){
 
-            AddressModel.getAddressFromEstablish($rootScope.id).then((response) => {
+            AddressModel.getAddressFromEstablish(id).then((response) => {
                 console.log(response.data);
 
                 if (response.data[0] != null) {
@@ -137,7 +137,9 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
                     $scope.establishSocialReason = response.data[0].social_reason;
                     $scope.establishBio = response.data[0].bio;
 
-                    $scope.getAddressFromStablishment();    
+                    $scope.establishAddressId = response.data[0].address_id;
+
+                    $scope.getAddressFromStablishment($scope.establishAddressId);    
                    
                 }
 
