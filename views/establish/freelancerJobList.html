@@ -59,7 +59,7 @@
                       </strong>
 
                     <strong><span class="text-right badge badge-primary"
-                        style="position: relative; font-size: 24px; padding: 5px;margin: 4px; left: 50%;"> {{time}}
+                        style="position: relative; font-size: 24px; padding: 5px;margin: 4px; left: 50%;" ng-if="time"> {{time}}
                       </span>
                    
                     </strong>
@@ -125,7 +125,7 @@
                   </div> -->
                   <div class="col-md-12">
                     <div class="col-md-12" ng-if="showOptions">
-                      <button ng-click="refuseById(item.id)" class="btn btn-danger col-md-12" style="margin: 2px;"> Cancelar</button>
+                      <button ng-click="deleteById(item.id)" class="btn btn-danger col-md-12" style="margin: 2px;"> Cancelar</button>
                     </div>
                   </div>
                 </div>

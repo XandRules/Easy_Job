@@ -97,6 +97,16 @@ easyjob.controller('JobController', [
       })
     }
 
+    $scope.deleteById = function(id){
+      $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+
+      JobModel.deleteById(id).then(function(response){
+        console.log(response);
+        $scope.fetchNotification();
+        $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
+      })
+    }
+
     $scope.pushAnnouncementFromFreelancer = function(){
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       JobModel.getAnnouncementsFromFreelancer($rootScope.announcementSelectId.anuncio_id).then(response =>{

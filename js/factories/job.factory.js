@@ -33,7 +33,11 @@ easyjob.factory('JobModel', [
     }
 
     JobFactory.refuseById = function(id, data){
-      return axios.put(config.baseUrl + `/initialjob/${id}`, data);
+      return axios.put(config.baseUrl + `/initialjob/${id}`);
+    }
+
+    JobFactory.deleteById = function(id, data){
+      return axios.delete(config.baseUrl + `/initialjob/${id}`, data);
     }
 
     return JobFactory;
