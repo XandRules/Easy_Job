@@ -17,52 +17,8 @@ easyjob.controller('JobController', [
     $scope.acceptTerms;
     $scope.applyJob;
 
-    $scope.jobList = [
-      {
-        id: 1,
-        to_user: "06WrgKxLrmr6yjlKPK1KIU5G1jYRpRdvv2TAijjpbnUhmGgG8uNohRLFmmcIx",
-        from_user: "0NSA8wPPY0XDA2H64jMI0sCLm0orydegWhYqy2QL6mHc1iBQ4ugFql6BynICR",
-        comment: "gostaria de poder contar com seus serviços",
-        begin_time: "22:07",
-        end_time: "22:07",
-        date: "2020-10-30T00:00:00.000Z",
-        amount: 10,
-        accepted: null,
-        createdAt: "2020-10-27T01:08:07.107Z",
-        updatedAt: "2020-10-27T01:08:07.107Z",
-        announcement_id: 1,
-        title: "Garçom experiente",
-        establishment_id: 1,
-        establishment: {
-          id: 1,
-          company_name: "Restaurante do Manuel",
-          social_reason: "Bar e Restaurante Fecha Nunca",
-          email: "alexandresilva58@gmail.com",
-          cnpj: "1234567897899",
-          bio: "Bar e Restaurante Fecha nunca aberto todos os dias.",
-          phone: "(35) 99990-9612",
-          password_hash: "$2a$08$CJPLewbhHuoUe./3ciW/u.KfLlDf3tGIKx6m0busDHd1m/VR.mhbq",
-          active: false,
-          terms_of_use: true,
-          id_hash: "0NSA8wPPY0XDA2H64jMI0sCLm0orydegWhYqy2QL6mHc1iBQ4ugFql6BynICR",
-          createdAt: "2020-10-27T00:38:27.052Z",
-          updatedAt: "2020-10-27T01:03:33.693Z",
-          avatar_id: null,
-          address_id: 5,
-          address: {
-            id: 5,
-            public_place: "rua Vicente Vono",
-            uf: "MG",
-            number: "116",
-            city: "Santa Rita do Sapucaí",
-            neighborhood: "Centro",
-            cep: "37540-000",
-            createdAt: "2020-10-27T00:31:54.534Z",
-            updatedAt: "2020-10-27T00:31:54.534Z"
-          }
-        }
-      }
-    ]
+    $scope.jobList;
+    
     console.log($scope.jobList[0]);
 
     const week = [
