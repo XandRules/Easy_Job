@@ -52,6 +52,23 @@ easyjob.controller('JobController', [
     }
 
     $scope.dataFreelancer;    
+
+    $scope.formatDate = function(data){
+
+      let date = new Date(data);
+
+      let year;
+      let month;
+      let day;
+
+      day = date.getDate();
+      year = date.getFullYear();
+      month = date.getMonth();
+
+      return day + "/" + month + "/" + year;
+
+
+    }
     $rootScope.announcementSelectId = JSON.parse(localStorage.getItem("anuncio_id")); 
 
     $scope.pushAnnouncementFromFreelancer = function(){

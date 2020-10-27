@@ -66,10 +66,9 @@
                     </div>
                     
 
-                    <strong><span class="badge badge-success" style="font-size: 16px; padding: 5px; margin: 4px;">Dia
-                        da semana:
+                    <strong><span class="badge badge-success" style="font-size: 16px; padding: 5px; margin: 4px;">Data:
                       </span>
-                      <span class="labelsUnit badge badge-primary">{{item.date}}
+                      <span class="labelsUnit badge badge-primary">{{formatDate(item.date)}}
                       </span>
 
                     </strong>
@@ -79,7 +78,7 @@
                     <br>
                     <label>
                       <span class="text-success " style="font-size: 20px; padding: .7rem;">
-                        <strong>R${{item.amount}},00</strong>
+                        <strong>R${{item.amount}},00 / Hora</strong>
                       </span>
                     </label>
                   </div>
