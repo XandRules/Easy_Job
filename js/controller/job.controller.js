@@ -63,9 +63,9 @@ easyjob.controller('JobController', [
 
       day = date.getDate();
       year = date.getFullYear();
-      month = date.getMonth();
+      month = date.getMonth() + 1;
 
-      return day + "/" + month + "/" + year;
+      return day + " / " + month + " / " + year;
 
 
     }
