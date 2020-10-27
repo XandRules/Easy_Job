@@ -1,6 +1,6 @@
 easyjob.controller('JobController', [
-  'JobModel','SearchModel','$scope','$rootScope',
-  function (JobModel, SearchModel, $scope,$rootScope) { 
+  'JobModel','SearchModel','MainModel','$scope','$rootScope',
+  function (JobModel, SearchModel,MainModel, $scope,$rootScope) { 
 
     console.log("Job");
 
@@ -37,19 +37,23 @@ easyjob.controller('JobController', [
 
     if(sessionValidated.freelancer != undefined){
       $rootScope.name = sessionValidated != undefined ? sessionValidated.freelancer.name.split(" ")[0] : null;
+      $rootScope.email = sessionValidated != undefined ? sessionValidated.freelancer.email: null;
       $rootScope.id = sessionValidated != undefined ? sessionValidated.freelancer.id : null;
       $rootScope.id_hash = sessionValidated != undefined ? sessionValidated.freelancer.id_hash : null;
       $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
       $scope.salesUser = 'salesfreelancer'
       $scope.showOptions = false;
+      $scope.role = "freelancer";
 
     }else{
-      $rootScope.name = sessionValidated != undefined ? sessionValidated.establishment.name.split(" ")[0] : null;
+      $rootScope.name = sessionValidated != undefined ? sessionValidated.establishment.name : null;
+      $rootScope.email = sessionValidated != undefined ? sessionValidated.establishment.email : null;
       $rootScope.id = sessionValidated != undefined ? sessionValidated.establishment.id : null;
       $rootScope.id_hash = sessionValidated != undefined ? sessionValidated.establishment.id_hash : null;
       $rootScope.token = sessionValidated != undefined ? sessionValidated.token : null;
       $scope.salesUser = 'salesestablish'
       $scope.showOptions = true;
+      $scope.role = "establish";
     }
 
     $scope.dataFreelancer;    
@@ -85,12 +89,30 @@ easyjob.controller('JobController', [
       })
     }
 
-    $scope.aceptedById = function(id){
+    $scope.acceptedById = function(id){
       $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
       data = {
         accepted : true
       }
       JobModel.refuseById(id, data).then(function(response){
+
+        $scope.user = JSON.parse(localStorage.getItem("dataUser"));
+        
+        data = {
+          name : $rootScope.name,
+          email:  $rootScope.email,
+          role: $scope.role,
+          type: 2,
+          begin_time : $scope.jobList[0].begin_time,
+          end_time : $scope.jobList[0].end_time,
+          amount: $scope.jobList[0].amount,
+          endereco : `${$scope.jobList[0].establishment.company_name} ${$scope.jobList[0].establishment.address.public_place} ${$scope.jobList[0].establishment.address.number} ${$scope.jobList[0].establishment.address.neighborhood} ${$scope.jobList[0].establishment.address.city}`,
+        }
+
+        MainModel.sendEmail(data).then(response => {
+          console.log(response);  
+        });
+
         console.log(response);
         $scope.fetchNotification();
         $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");

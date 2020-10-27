@@ -265,6 +265,11 @@ easyjob.controller('MainController', [
                 }         
                 
                 $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+
+                $rootScope.data[0]["begin_time"] = "17:00"
+                $rootScope.data[0]["end_time"] = "17:00"
+                $rootScope.data[0]["amount"] = "17:00"
+                $rootScope.data[0]["endereco"] = "17:00"
       
                 MainModel.sendEmail($rootScope.data[0]).then(response => {
                   console.log(response);
