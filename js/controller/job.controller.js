@@ -19,8 +19,6 @@ easyjob.controller('JobController', [
 
     $scope.jobList;
     
-    console.log($scope.jobList[0]);
-
     const week = [
       'Domingo',
       'Segunda',
