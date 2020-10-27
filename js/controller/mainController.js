@@ -251,31 +251,32 @@ easyjob.controller('MainController', [
 
             if (response.data.error != null) {
               swal("Usuário já Cadastrado!", "Realize o Login ou tente recuperar sua senha!", "error");
+              $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
             }  
             else{
+              if (role == 'freelancer') {
+                $rootScope.data[0]["role"] = "freelancer";
+                localStorage.setItem('dataUser', JSON.stringify($rootScope.data));
+              } else {
+                $rootScope.data[0]["role"] = "establish";
+                localStorage.setItem('dataUser', JSON.stringify($rootScope.data));
+              }         
+              
+              $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+    
+              MainModel.sendEmail($rootScope.data[0]).then(response => {
+                console.log(response);
+    
+                if (role == 'freelancer') {
+                  $state.go('signfreelancer3');
+                } else {
+                  $state.go('signestablish3');
+                }
+              });
 
             }       
           })
 
-          if (role == 'freelancer') {
-            $rootScope.data[0]["role"] = "freelancer";
-            localStorage.setItem('dataUser', JSON.stringify($rootScope.data));
-          } else {
-            $rootScope.data[0]["role"] = "establish";
-            localStorage.setItem('dataUser', JSON.stringify($rootScope.data));
-          }         
-          
-          $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
-
-          MainModel.sendEmail($rootScope.data[0]).then(response => {
-            console.log(response);
-
-            if (role == 'freelancer') {
-              $state.go('signfreelancer3');
-            } else {
-              $state.go('signestablish3');
-            }
-          });
 
           //enviar email para conocluir o cadastro.
         }
