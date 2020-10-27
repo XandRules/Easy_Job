@@ -86,7 +86,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
         
               })
             }else{
-              establish_address["stablish_id"] = $rootScope.id;
+              establish_address["id"] = $$scope.establishAddressId;
               MainModel.saveAddress(establish_address).then(function (response) {
                 if (response.data.error != null) {
                   swal("Ooops!", "Seus dados não foram atualizados!", "error");
