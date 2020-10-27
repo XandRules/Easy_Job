@@ -32,6 +32,10 @@ easyjob.factory('JobModel', [
       return axios.post(config.baseUrl + '/initialjob', data);
     }
 
+    JobFactory.refuseById = function(id, data){
+      return axios.put(config.baseUrl + `/initialjob/${id}`, data);
+    }
+
     return JobFactory;
   },
 ]);

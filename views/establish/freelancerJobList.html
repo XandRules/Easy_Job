@@ -35,7 +35,7 @@
             <div class="col-md-12">
               <div ng-hide="jobList[0]" class="col-md-12 text-center">
                 <div>
-                  <h3>Nenhum Anúncio Cadastrado</h3>
+                  <h3>Nenhum serviço encontrado</h3>
                 </div>
               </div>
 
@@ -84,7 +84,9 @@
                   </div>
                   <label>
                     <span class="text-primary" style="font-size: 20px; padding: .7rem;">
-                      <strong>Pendente</strong>
+                      <strong ng-if="item.accepted == null">Pendente</strong>
+                      <strong ng-if="item.accepted == false">Rejeitado</strong>
+                      <strong ng-if="item.accepted == true">Aceito</strong>                
                     </span>
                   </label>
                   <div class="mr-5">
@@ -122,11 +124,8 @@
                     </a>
                   </div> -->
                   <div class="col-md-12">
-                    <div class="col-md-12">
-                      <button ng-click="edit(item)" class="btn btn-primary col-md-12" style="margin: 2px;"> Aceitar</button>
-                    </div>
-                    <div class="col-md-12">
-                      <button ng-click="deleteAnnouncementById(item.id)" class="btn btn-danger col-md-12" style="margin: 2px;"> Recusar</button>
+                    <div class="col-md-12" ng-if="showOptions">
+                      <button ng-click="refuseById(item.id)" class="btn btn-danger col-md-12" style="margin: 2px;"> Cancelar</button>
                     </div>
                   </div>
                 </div>

@@ -32,45 +32,40 @@
       <div class="row">
         <div class="col-lg-12 pr-lg-4">
           <div class="row">
-            <div class="col-md-12">
-              <div ng-hide="jobList[0]" class="col-md-12 text-center">
-                <div>
-                  <h3>Nenhum Anúncio Cadastrado</h3>
-                  
-                </div>
-              </div>
+            <div class="col-md-12">             
+             
+              <div ng-repeat="item in jobList">
 
-              <div  class="job-post-item p-4 d-block d-lg-flex align-items-center">
+              <div  class="job-post-item p-4 d-block d-lg-flex align-items-center"  ng-if="item.accepted != false">
                 <div class="one-third mb-4 mb-md-0">
-                  <div class="job-post-item-header align-items-center">
+                  <div class="job-post-item-header align-items-center" >
 
                     <h2 class="mr-3 text-black">
-                      <a href="#">Garçom experiente</a>
+                      <a href="#">{{item.title}}</a>
                     </h2>
                     <div>
                       <strong><span class="badge badge-success"
                           style="font-size: 16px; padding: 5px;margin: 4px;">Hora de entrada:
                         </span>
-                        <span class="labelsUnit badge badge-primary">17:00</span>
+                        <span class="labelsUnit badge badge-primary">{{item.begin_time}}</span>
                       </strong>
                       <strong><span class="badge badge-success"
                           style="font-size: 16px; padding: 5px;margin: 4px;">Hora de saída:
                         </span>
-                        <span class="labelsUnit badge badge-primary">23:40</span>
+                        <span class="labelsUnit badge badge-primary">{{item.end_time}}</span>
                       </strong>
 
                     <strong><span class="text-right badge badge-primary"
-                        style="position: relative; font-size: 24px; padding: 5px;margin: 4px; left: 50%;"> 1 Dias 10:55:55
+                        style="position: relative; font-size: 24px; padding: 5px;margin: 4px; left: 50%;"> {{time}}
                       </span>
                    
                     </strong>
                     </div>
                     
 
-                    <strong><span class="badge badge-success" style="font-size: 16px; padding: 5px; margin: 4px;">Dia
-                        da semana:
+                    <strong><span class="badge badge-success" style="font-size: 16px; padding: 5px; margin: 4px;">Data:
                       </span>
-                      <span class="labelsUnit badge badge-primary">Sexta-feira 30/10/2020
+                      <span class="labelsUnit badge badge-primary">{{formatDate(item.date)}}
                       </span>
 
                     </strong>
@@ -80,13 +75,15 @@
                     <br>
                     <label>
                       <span class="text-success " style="font-size: 20px; padding: .7rem;">
-                        <strong>R$10,00</strong>
+                        <strong>R${{item.amount}},00 / Hora</strong>
                       </span>
                     </label>
                   </div>
                   <label>
                     <span class="text-primary" style="font-size: 20px; padding: .7rem;">
-                      <strong>Pendente</strong>
+                      <strong ng-if="item.accepted == null">Pendente</strong>
+                      <strong ng-if="item.accepted == false">Rejeitado</strong>
+                      <strong ng-if="item.accepted == true">Aceito</strong>                
                     </span>
                   </label>
                   <div class="mr-5">
@@ -95,7 +92,7 @@
                     <div class="job-post-item-body d-block d-md-flex">
                       <div>
                         <span class="fa fa-" style="color: black"></span>
-                        <span>Boa tarde gostaria de contar com seus serviços no dia e hora marcados! Aguardo seu retorno.</span>
+                        <span>{{item.comment}}</span>
                       </div>
                     </div>
                   </div>
@@ -103,11 +100,13 @@
                   <div class="job-post-item-body d-block d-md-flex">
                     <div class="mr-3">
                       <span class="icon-layers"></span>
-                      <a href="#">Bar e restaurante Fecha nunca</a>
+                      <a href="#">{{item.establishment.company_name}}</a>
                     </div>
                     <div>
                       <span class="fa fa-map-marker" style="color: black"></span>
-                      <span>Rua Vicente Vono 116, Novo Horizonte Santa Rita do Sapucaí</span>
+                      <span>{{item.establishment.address.public_place }} ,{{item.establishment.address.number}}
+                        {{item.establishment.address.neighborhood}} {{item.establishment.address.city}}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -122,13 +121,22 @@
                     </a>
                   </div> -->
                   <div class="col-md-12">
-                    <div class="col-md-12">
-                      <button ng-click="edit(item)" class="btn btn-primary col-md-12" style="margin: 2px;"> Aceitar</button>
+                    <div class="col-md-12" ng-if="!showOptions">
+                      <button ng-click="aceptedById(item.id)" class="btn btn-primary col-md-12" style="margin: 2px;"> Aceitar</button>
                     </div>
-                    <div class="col-md-12">
-                      <button ng-click="deleteAnnouncementById(item.id)" class="btn btn-danger col-md-12" style="margin: 2px;"> Recusar</button>
+                    <div class="col-md-12" ng-if="!showOptions">
+                      <button ng-click="refuseById(item.id)" class="btn btn-danger col-md-12" style="margin: 2px;"> Recusar</button>
+                    </div>
+                    <div class="col-md-12" ng-if="showOptions">
+                      <button ng-click="refuseById(item.id)" class="btn btn-danger col-md-12" style="margin: 2px;"> Cancelar</button>
                     </div>
                   </div>
+                </div>
+              </div>
+              </div>
+              <div ng-hide="jobCount > 0" class="col-md-12 text-center">
+                <div>
+                  <h3>Nenhum Serviço Encontrado </h3>
                 </div>
               </div>
             </div>

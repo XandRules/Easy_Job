@@ -18,6 +18,7 @@ easyjob.controller('JobController', [
     $scope.applyJob;
 
     $scope.jobList;
+    $scope.jobCount = 0;
     
     const week = [
       'Domingo',
@@ -70,6 +71,31 @@ easyjob.controller('JobController', [
 
     }
     $rootScope.announcementSelectId = JSON.parse(localStorage.getItem("anuncio_id")); 
+
+    $scope.refuseById = function(id){
+      $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
+      data = {
+        accepted : false
+      }
+      JobModel.refuseById(id, data).then(function(response){
+        $scope.showOptions = true;
+        $scope.fetchNotification();
+        $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+
+      })
+    }
+
+    $scope.aceptedById = function(id){
+      $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+      data = {
+        accepted : true
+      }
+      JobModel.refuseById(id, data).then(function(response){
+        console.log(response);
+        $scope.fetchNotification();
+        $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
+      })
+    }
 
     $scope.pushAnnouncementFromFreelancer = function(){
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
@@ -245,6 +271,13 @@ easyjob.controller('JobController', [
         SearchModel.fetchNotificationJobList($rootScope.id_hash).then(response =>{
           if(response.data){
             $scope.jobList = response.data;
+
+            $scope.jobList.map(job =>{
+              if(job.accepted != false){
+                $scope.jobCount++;
+              }
+            });
+
             $scope.$apply();
             $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
           }

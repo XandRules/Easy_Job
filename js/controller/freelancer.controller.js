@@ -274,7 +274,7 @@ easyjob.controller('FreelancerController', [
         })
 
         SearchModel.fetchNotificationJob($rootScope.id_hash).then(response =>{
-          if(response.data){
+          if(!response.data.error){
             console.log(response.data)
             $scope.jobCount = response.data;
             $scope.$apply();
