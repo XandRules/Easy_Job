@@ -150,11 +150,14 @@
                         <input type="text" class="form-control" id="city" name="city" ng-model="city" disabled
                             placeholder="Município" />
                     </div>
-
                     <div class="col-12 text-center">
-                        <button class="btn btn-primary" ng-click="updateEstablish()">Salvar <i id="salvar"
-                                ng-class="salvar"></i></a></button>
-
+                        <button class="btn btn-danger" ng-click="deleteEstablishment()"
+                        >Excluir Conta <i id="salvar" ng-class="salvar"></i></a>
+                        </button>
+                        <button class="btn btn-primary" ng-click="updateEstablishment()"
+                            >Salvar Alterações<i id="salvar" ng-class="salvar"></i></a>
+                        </button>
+                           
                     </div>
                     </form>
                 </div>

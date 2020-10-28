@@ -27,6 +27,10 @@ easyjob.factory('FreelancerModel', [
       return axios.put(config.baseUrl + `/freelancers/${id}`, data);
     };
 
+    FreelancerFactory.checkPassword = function (data, id) {
+      return axios.post(config.baseUrl + `/freelancers/password/${id}`, data);
+    };    
+
     return FreelancerFactory;
   },
 ]);

@@ -212,7 +212,7 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
 });
 
 easyjob.constant('config', {
- // baseUrl: 'http://localhost:3333',
+  //baseUrl: 'http://localhost:3333',
 
   baseUrl: 'https://easyjob-app.herokuapp.com',
 

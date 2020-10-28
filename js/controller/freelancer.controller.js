@@ -79,6 +79,55 @@ easyjob.controller('FreelancerController', [
 
     }
 
+    $scope.deleteFreelancer = function(){
+
+      swal({
+        icon: "warning",
+        title: "Tem certeza disso?",
+        text: "Todos os seus dados seram apagados para sempre! \n    Digite sua senha para prosseguir",
+        content: {
+          element: "input",
+          attributes: {
+            placeholder: "digite sua senha",
+            type: "password",
+          },
+        },
+      }).then(function(senha){
+
+
+        data = {
+          password: senha
+        }
+        FreelancerModel.checkPassword(data,$rootScope.id).then(response =>{
+          if(response.data.status == "ok"){
+
+            swal( {
+              icon: "warning",
+              title: "Você realmente tem certeza",
+              buttons: {
+                cancel: "Cancelar",
+                catch: {
+                  text: "Continuar",
+                  value: "continue",
+                },
+              },
+            })
+            .then((value) => {
+              switch (value) {  
+
+                case "continue":
+                  swal("Conta cancelada!", "Sua conta foi cancelada!", "success");
+                  break;
+              }
+            });
+          }else{
+            swal("Senha incorreta!", "Digite sua senha corretamente!", "error");
+          }
+        })
+      });     
+
+    }
+
     $scope.updateFreelancerAddress = function () {
 
       if($scope.addressId){

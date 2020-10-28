@@ -26,6 +26,10 @@ easyjob.factory('EstablishModel', [
       return axios.put(config.baseUrl + `/establishments/${id}`,data);
     };
 
+    EstablishFactory.checkPassword = function (data, id) {
+      return axios.post(config.baseUrl + `/establishments/password/${id}`,data);
+    };
+
     return EstablishFactory;
   },
 ]);
