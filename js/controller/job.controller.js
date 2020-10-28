@@ -95,8 +95,6 @@ easyjob.controller('JobController', [
         accepted : true
       }
       JobModel.refuseById(id, data).then(function(response){
-
-        $scope.user = JSON.parse(localStorage.getItem("dataUser"));
         
         data = {
           name : $rootScope.name,
