@@ -47,6 +47,7 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
                 } else {
                     swal("email ou senha incorreta!", "Tente redefinir sua senha!", "error");
                     console.log('usuário ou senha incorreta');
+                    $scope.entrar = "";
                 }
 
             });
@@ -77,6 +78,69 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
                 } else {
                     swal("email ou senha incorreta!", "Tente redefinir sua senha!", "error");
                     console.log('usuário ou senha incorreta');
+                    $scope.entrar = "";
+                }
+
+            });
+        }
+
+        $scope.verifyEmailFreelancer = function () {
+
+            // let entrar = document.getElementById('entrar')
+
+            $scope.entrar = "fa fa-spinner fa-spin fa-fw";
+
+            data = {
+                "email": $scope.user                
+            }
+
+            console.log(data);
+
+            let route = '/emailfreelancer';
+
+            LoginModel.verifyEmail(data, route).then(function (response) {
+                console.log('data : ' + response.status);
+
+                if (response.data.error == undefined) {
+
+                    $scope.entrar = "";
+                    console.log(response.data);
+
+                    swal(`${response.data.name}`, "Você receberá um email com as informações para redefinir sua senha", "info");
+
+                } else {
+                    swal("email ou senha incorreta!", "Tente redefinir sua senha!", "error");
+                    console.log('usuário ou senha incorreta');
+                    $scope.entrar = "";
+                }
+
+            });
+        }
+
+        $scope.VerifyEmailEstablish = function () {
+
+            $scope.entrar = "fa fa-spinner fa-spin fa-fw";
+
+            data = {
+                "email": $scope.user
+            }
+
+            console.log(data);
+
+            let route = '/emailestablishment';
+
+            LoginModel.verifyEmail(data, route).then(function (response) {
+                
+                if (response.data.error == undefined) {
+
+                    $scope.entrar = "";
+                    console.log(response.data);
+                    swal(`${response.data.name}`, "Você receberá um email com as informações para redefinir sua senha", "info");
+
+                } else {
+                    swal("email ou senha incorreta!", "Tente redefinir sua senha!", "error");
+                    console.log('usuário ou senha incorreta');
+                    $scope.entrar = "";
                 }
 
             });

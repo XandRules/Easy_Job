@@ -79,6 +79,11 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/freelancer/loginfreelancer.html',
       controller: 'LoginController',
     })
+    .state('recoveryfreelancer', {
+      url: '/recovery/freelancer',
+      templateUrl: 'views/recoveryPasswordFreelancer.html',
+      controller: 'LoginController',
+    })
     .state('freelancerannouncement', {
       url: '/freelancer/announcement',
       templateUrl: 'views/freelancer/freelancerAnnouncements.html',
@@ -139,6 +144,11 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
     .state('loginestablish', {
       url: '/login/establish',
       templateUrl: 'views/establish/loginEstablish.html',
+      controller: 'LoginController',
+    })
+    .state('recoveryestablish', {
+      url: '/recovery/establish',
+      templateUrl: 'views/recoveryPasswordEstablish.html',
       controller: 'LoginController',
     })
     .state('signestablish', {
@@ -202,7 +212,7 @@ easyjob.config(function ($stateProvider, $urlRouterProvider) {
 });
 
 easyjob.constant('config', {
-  // baseUrl: 'http://localhost:3333',
+ // baseUrl: 'http://localhost:3333',
 
   baseUrl: 'https://easyjob-app.herokuapp.com',
 

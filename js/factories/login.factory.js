@@ -8,6 +8,11 @@ easyjob.factory('LoginModel', ['config', '$http',
             return $http.post(config.baseUrl+ route,data, config.defaultHeader);
         };
 
+        LoginFactory.verifyEmail = function (data,route) {
+
+            return $http.post(config.baseUrl+ route,data, config.defaultHeader);
+        };
+
         return LoginFactory;
     }
 ]);
