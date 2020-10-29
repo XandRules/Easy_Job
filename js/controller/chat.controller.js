@@ -207,7 +207,7 @@ easyjob.controller('ChatController', [
     }
 
     $scope.loadChat = function(data){    
-      
+      $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       $scope.data
       
       data.map(msg=>{
@@ -305,6 +305,7 @@ easyjob.controller('ChatController', [
 
             }
           })
+          $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
         });//.then
        }); //map
     }
