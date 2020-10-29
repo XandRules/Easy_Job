@@ -283,7 +283,7 @@ easyjob.controller('JobController', [
 
               AnnouncementModel.getAnnouncementsById(job.announcement_id).then(function(response){
           
-                $scope.jobList[index].title = response.data[0].title;
+                $scope.jobList[index].title = response.data.title;
                                           
                 $scope.$apply();
                 $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
@@ -309,7 +309,7 @@ easyjob.controller('JobController', [
 
               AnnouncementModel.getAnnouncementsById(job.announcement_id).then(function(response){
           
-                $scope.jobList[index].title = response.data[0].title;   
+                $scope.jobList[index].title = response.data.title;   
                                                     
                 $scope.$apply();
                 $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
