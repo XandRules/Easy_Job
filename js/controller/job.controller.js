@@ -301,14 +301,22 @@ easyjob.controller('JobController', [
           if(response.data){
             $scope.jobList = response.data;
 
-            $scope.jobList.map(job =>{
+            $scope.jobList.forEach((job, index) =>{
+
               if(job.accepted != false){
                 $scope.jobCount++;
               }
+
+              AnnouncementModel.getAnnouncementsById(job.announcement_id).then(function(response){
+          
+                $scope.jobList[index].title = response.data[0].title;   
+                                                    
+                $scope.$apply();
+                $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+              })
+              
             });
 
-            $scope.$apply();
-            $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
           }
         });
 
