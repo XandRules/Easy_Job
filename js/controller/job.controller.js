@@ -73,8 +73,8 @@ easyjob.controller('JobController', [
 
       return day + " / " + month + " / " + year;
 
-
     }
+    
     $rootScope.announcementSelectId = JSON.parse(localStorage.getItem("anuncio_id")); 
 
     $scope.refuseById = function(id){
@@ -132,6 +132,7 @@ easyjob.controller('JobController', [
 
     $scope.pushAnnouncementFromFreelancer = function(){
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
+
       JobModel.getAnnouncementsFromFreelancer($rootScope.announcementSelectId.anuncio_id).then(response =>{
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 

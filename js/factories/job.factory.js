@@ -16,8 +16,12 @@ easyjob.factory('JobModel', [
       }
     );
 
-    JobFactory.getAnnouncementsFromFreelancer = function (id) {
+    JobFactory.getAnnouncementsById = function (id) {
       return axios.get(config.baseUrl + `/announcements/search/${id}`);
+    };
+
+    JobFactory.getAnnouncementsFromFreelancer = function (id) {
+      return axios.get(config.baseUrl + `/announcements/${id}`);
     };
 
     JobFactory.createChat = function(data){
