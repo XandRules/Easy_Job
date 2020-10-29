@@ -1,8 +1,8 @@
 easyjob.controller('JobController', [
-  'JobModel','SearchModel','MainModel','$scope','$rootScope',
-  function (JobModel, SearchModel,MainModel, $scope,$rootScope) { 
+  'JobModel','SearchModel','MainModel','AnnouncementModel','$scope','$rootScope',
+  function (JobModel, SearchModel,MainModel,AnnouncementModel, $scope,$rootScope) { 
 
-    console.log("Job");
+    //console.log("Job");
 
     $rootScope.headerDefault = false;
     $rootScope.headerDefaultLogout = true;
@@ -19,6 +19,7 @@ easyjob.controller('JobController', [
 
     $scope.jobList;
     $scope.jobCount = 0;
+    $scope.job = [];
     
     const week = [
       'Domingo',
@@ -111,10 +112,10 @@ easyjob.controller('JobController', [
         }
 
         MainModel.sendEmail(data).then(response => {
-          console.log(response);  
+          //console.log(response);  
         });
 
-        console.log(response);
+        //console.log(response);
         $scope.fetchNotification();
         $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       })
@@ -124,7 +125,6 @@ easyjob.controller('JobController', [
       $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
       JobModel.deleteById(id).then(function(response){
-        console.log(response);
         $scope.fetchNotification();
         $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       })
@@ -133,12 +133,11 @@ easyjob.controller('JobController', [
     $scope.pushAnnouncementFromFreelancer = function(){
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       JobModel.getAnnouncementsFromFreelancer($rootScope.announcementSelectId.anuncio_id).then(response =>{
-        console.log(response.data);
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
         localStorage.setItem("freelancer_id", JSON.stringify({"id" : response.data.freelancer_id, "id_hash": response.data.freelancer_id_hash}));
 
-        $scope.dataFreelancer = response.data;        
+        $scope.dataFreelancer = response.data[0];        
         $scope.dataFreelancer.day_of_week = $scope.dataFreelancer.day_of_week.split(" ");
         $scope.dataFreelancer.period = $scope.dataFreelancer.period.trim().split(" ");
         $scope.amountService = parseInt($scope.dataFreelancer.amount);
@@ -153,8 +152,6 @@ easyjob.controller('JobController', [
 
       const day = dateService.getDay();
 
-      console.log(week[day])
-
       $scope.applyJob = $scope.dataFreelancer.day_of_week.find(dayOfWeek =>{
         $scope.applyJob = week[day] === dayOfWeek;
         return $scope.applyJob;
@@ -166,7 +163,6 @@ easyjob.controller('JobController', [
     }
 
     $scope.openChat = function(){
-      console.log($rootScope.announcementSelectId.anuncio_id);
 
       $rootScope.freelancer_id = JSON.parse(localStorage.getItem("freelancer_id")); 
 
@@ -203,26 +199,12 @@ easyjob.controller('JobController', [
       
       beginTime = hour + ":" + minutes;
 
-      var year = $scope.date.getFullYear();
-      var month = ($scope.date.getMonth() + 1);
-      var day = $scope.date.getDate();
-
-      if (month < 10) {
-        month = "0" + month;
-      }
-
-      if (day < 10) {
-        day = "0" + day;
-      }
-
-      $scope.date = year + '-' + month + '-' + day;
-
       data = {
-        to_user : $scope.dataFreelancer.freelancer_id_hash,
+        to_user : $scope.dataFreelancer.freelancer.id_hash,
         from_user : $rootScope.id_hash,
         amount : $scope.amountService,
         comment : $scope.comment,
-        date : $scope.date,
+        date : $scope.date.toISOString(),
         begin_time : beginTime,
         end_time : endTime,
         announcement_id : $rootScope.announcementSelectId.anuncio_id,
@@ -235,7 +217,7 @@ easyjob.controller('JobController', [
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
         if(response.data.error == null){
-          swal('Solicitação enviada!',`Notificação enviada com sucesso para ${$scope.dataFreelancer.name.trim().split(" ")[0]} você receberá uma notificação informando a negociação!`, 'success')
+          swal('Solicitação enviada!',`Notificação enviada com sucesso para ${$scope.dataFreelancer.freelancer.name.trim().split(" ")[0]} você receberá uma notificação informando a negociação!`, 'success')
         }
       })
 
@@ -269,13 +251,13 @@ easyjob.controller('JobController', [
           message: $scope.message,
         }
   
-        console.log(data)
+        //console.log(data)
   
         JobModel.createNotificationFreelancer(data).then(response =>{
-          console.log(response.data)
+          //console.log(response.data)
           swal.stopLoading();
           swal.close();
-          swal("Mensagem Enviada", `Sua Mensagem foi Enviada para ${$scope.dataFreelancer.name.trim().split(" ")[0]}`,"success");
+          swal("Mensagem Enviada", `Sua Mensagem foi Enviada para ${$scope.dataFreelancer.freelancer.name.trim().split(" ")[0]}`,"success");
         })
   
       });
@@ -291,10 +273,25 @@ easyjob.controller('JobController', [
       if($rootScope.pageSelect === "establishjoblist"){
 
         SearchModel.fetchNotificationJobList($rootScope.id_hash).then(response =>{
+
           if(response.data){
+
             $scope.jobList = response.data;
-            $scope.$apply();
-            $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+
+            $scope.jobList.forEach((job, index) =>{
+
+              AnnouncementModel.getAnnouncementsById(job.announcement_id).then(function(response){
+          
+                $scope.jobList[index].title = response.data[0].title;
+                            
+                console.log("JOB" ,$scope.jobList[0]);
+                
+                $scope.$apply();
+                $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+              })
+              
+            });
+            
           }
         });
 
