@@ -74,7 +74,7 @@ easyjob.controller('JobController', [
       return day + " / " + month + " / " + year;
 
     }
-    
+
     $rootScope.announcementSelectId = JSON.parse(localStorage.getItem("anuncio_id")); 
 
     $scope.refuseById = function(id){
@@ -284,9 +284,7 @@ easyjob.controller('JobController', [
               AnnouncementModel.getAnnouncementsById(job.announcement_id).then(function(response){
           
                 $scope.jobList[index].title = response.data[0].title;
-                            
-                console.log("JOB" ,$scope.jobList[0]);
-                
+                                          
                 $scope.$apply();
                 $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
               })
