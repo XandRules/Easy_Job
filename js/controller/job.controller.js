@@ -138,7 +138,7 @@ easyjob.controller('JobController', [
 
         localStorage.setItem("freelancer_id", JSON.stringify({"id" : response.data.freelancer_id, "id_hash": response.data.freelancer_id_hash}));
 
-        $scope.dataFreelancer = response.data[0];        
+        $scope.dataFreelancer = response.data;        
         $scope.dataFreelancer.day_of_week = $scope.dataFreelancer.day_of_week.split(" ");
         $scope.dataFreelancer.period = $scope.dataFreelancer.period.trim().split(" ");
         $scope.amountService = parseInt($scope.dataFreelancer.amount);
@@ -201,7 +201,7 @@ easyjob.controller('JobController', [
       beginTime = hour + ":" + minutes;
 
       data = {
-        to_user : $scope.dataFreelancer.freelancer.id_hash,
+        to_user : $scope.dataFreelancer.freelancer_id_hash,
         from_user : $rootScope.id_hash,
         amount : $scope.amountService,
         comment : $scope.comment,
@@ -218,7 +218,7 @@ easyjob.controller('JobController', [
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
 
         if(response.data.error == null){
-          swal('Solicitação enviada!',`Notificação enviada com sucesso para ${$scope.dataFreelancer.freelancer.name.trim().split(" ")[0]} você receberá uma notificação informando a negociação!`, 'success')
+          swal('Solicitação enviada!',`Notificação enviada com sucesso para ${$scope.dataFreelancer.name.trim().split(" ")[0]} você receberá uma notificação informando a negociação!`, 'success')
         }
       })
 
@@ -258,7 +258,7 @@ easyjob.controller('JobController', [
           //console.log(response.data)
           swal.stopLoading();
           swal.close();
-          swal("Mensagem Enviada", `Sua Mensagem foi Enviada para ${$scope.dataFreelancer.freelancer.name.trim().split(" ")[0]}`,"success");
+          swal("Mensagem Enviada", `Sua Mensagem foi Enviada para ${$scope.dataFreelancer.name.trim().split(" ")[0]}`,"success");
         })
   
       });

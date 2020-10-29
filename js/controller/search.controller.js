@@ -20,7 +20,6 @@ easyjob.controller('SearchController', [
     window.addEventListener('load', () => {
       $scope.buscarCidadesBrasil();
       $scope.getSpecilities();
-      $scope.searchAnnouncements();
     });
 
 
@@ -76,6 +75,10 @@ easyjob.controller('SearchController', [
 
         console.log($rootScope.specilities);
         $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+
+        
+        $scope.searchAnnouncements();
+
       });
 
     };
@@ -94,6 +97,7 @@ easyjob.controller('SearchController', [
             element.day_of_week = [];
             element.period.push(period);
             element.day_of_week.push(day);
+            element.speciality = $rootScope.specilities[element.speciality_id -1].speciality_function
             $scope.anuncios.push(element);            
 
           });
@@ -133,6 +137,7 @@ easyjob.controller('SearchController', [
             element.day_of_week = [];
             element.period.push(period);
             element.day_of_week.push(day);
+            element.speciality = $rootScope.specilities[element.speciality_id -1].speciality_function
             $scope.anuncios.push(element);
           });
 
@@ -163,7 +168,6 @@ easyjob.controller('SearchController', [
       
     }
 
-    $scope.searchAnnouncements();
   },
 ]);
 
