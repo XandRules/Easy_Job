@@ -223,7 +223,8 @@ easyjob.controller('ChatController', [
 
             if($scope.role === 'freelancer'){
 
-              $scope.avatar = 'https://easyjobapp.vercel.app/img/notre-dame.svg';            
+              $scope.avatar = 'https://easyjobapp.vercel.app/img/notre-dame.svg';  
+              $scope.avatar2 = 'https://easyjobapp.vercel.app/img/seguran%C3%A7a.jpg';          
 
               if(msg.from_user == $scope.freelancerData.id_hash){
                 $('.msg_history').append(`
@@ -263,11 +264,12 @@ easyjob.controller('ChatController', [
             }else{
 
               $scope.avatar = 'https://easyjobapp.vercel.app/img/seguran%C3%A7a.jpg';
+              $scope.avatar2 = 'https://easyjobapp.vercel.app/img/notre-dame.svg';
 
               
               if(msg.from_user == $scope.establishData.id_hash){
                 $('.msg_history').append(`
-                <div class="media "><img src="${$scope.avatar}" alt="user" width="50" class="rounded-circle">
+                <div class="media "><img src="${$scope.avatar2}" alt="user" width="50" class="rounded-circle">
                 <div class="media-body ml-3">
                   <div class="bg-light rounded py-2 px-3 mb-2">
                     <p class="text-small mb-0 text-muted">${msg.message}</p>
