@@ -162,7 +162,7 @@ easyjob.controller('ChatController', [
 
     $scope.fetchNotification = function(){
         SearchModel.fetchNotificationChat($rootScope.id_hash).then(response =>{
-          if(response.data.length > 0){
+          if(response.data.length > 0 ){
             console.log("chat", response.data)
 
             $scope.chatMessages = response.data;
@@ -196,6 +196,8 @@ easyjob.controller('ChatController', [
               $scope.$apply();
             }
             
+          }else if(response.data.error){
+            $scope.fetchNotification();
           }
         })
     }
@@ -319,11 +321,10 @@ easyjob.controller('ChatController', [
       $state.go('freelancerjob');
       
     }
-
-    $scope.fetchNotification();
-
+    
     $scope.login();
 
+    $scope.fetchNotification();
 
   },
 ]);
