@@ -16,8 +16,8 @@ easyjob.factory('SearchModel', [
       }
     );
 
-    SearchFactory.getEstablish = function () {
-      return $http.get('mock/getmenuvalues.json', config.defaultHeader);
+    SearchFactory.getEstablish = function (id) {
+      return axios.get(config.baseUrl + `/establishments/${id}`);
     };
 
     SearchFactory.buscarCidades = function () {
