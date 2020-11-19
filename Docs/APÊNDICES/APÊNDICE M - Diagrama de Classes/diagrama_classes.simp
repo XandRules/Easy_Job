@@ -1,0 +1,1282 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="11.91" multi-file="no" uid="simp426621012f7d4827b14ef5a2d48cd248">
+  <meta>
+    <name>Project</name>
+    <authors> </authors>
+    <description />
+  </meta>
+  <counters models="1">
+    <entity-names>
+      <counter>
+        <item-type type-id="class" type="UmlClass" />
+        <value>10</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type type-id="class" type="UmlClass" />
+        <value>11</value>
+      </counter>
+      <counter>
+        <item-type type-id="relationship" type="UmlAssociation" />
+        <value>18</value>
+      </counter>
+      <counter>
+        <item-type type-id="generalization" type="UmlGeneralization" />
+        <value>3</value>
+      </counter>
+      <counter>
+        <item-type type-id="universal-connector" type="UniversalConnector" />
+        <value>8</value>
+      </counter>
+      <counter>
+        <item-type type-id="comment" type="UmlComment" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="" type="AbstractElementGroup" />
+        <value>400</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlClassDiagram</type>
+        <value>1</value>
+      </counter>
+    </diagrams>
+    <fields>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.AttributeField</type>
+        <value>167</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
+        <value>185</value>
+      </counter>
+    </fields>
+  </counters>
+  <alias-groups />
+  <management uid="md-6cb3a92e543c4ee98082bbf2b92b0056" name="" task-id-sequence="0">
+    <working-schedule uid="ws-ccea40fea2a049eeb7e67dcee6471341" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+    <persons>
+      <person id="Pe87f575d8df942d3ac232642822192e4">
+        <first-name>Luan</first-name>
+        <last-name>Reis</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-6ee8eec064f642108a5cb101025cdc08" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-4d7a686c421949e7855d073efeb3bec1" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types />
+  </types>
+  <items />
+  <models>
+    <model id="p871c0ab1dd9a4eef97ae068e0a4f4d1e_172501650" name="Model1" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>06/01/2020 10:15:04</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models />
+      <diagram type="uml-class" id="pd99daf892a0b44a791ebab618ca6b965_223774545" name="Diagrama_classes_pacote_entidade" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-119,-470" zoom="0.6">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>06/01/2020 10:15:04</creation-date>
+          <change-date>06/29/2020 00:33:42</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="7f96732d9dfb4cc8b7001ce55a7d15a0" cid="REL001" type="relationship" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 10:53:53" from="87ce3294fbc14cdb9e0b7e7e379d8853" to="2e27437d7307428f96f677d69a97d73e">
+            <relation from="87ce3294fbc14cdb9e0b7e7e379d8853" to="2e27437d7307428f96f677d69a97d73e">
+              <start-role id="umlar-226383cc-b0cf-48e9-922e-48a1132126d9" name="" navigability="" association-type="composition" visibility="private" />
+              <end-role id="umlar-4cbfebd0-b7fe-4bb8-9df1-5fcb6ab4820d" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="2e27437d7307428f96f677d69a97d73e" cid="C002" type="class" name="address" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 10:54:00">
+            <attributes>
+              <attribute id="a3beedacaf67b4920b4f6fc0b49e9de87599" cid="ELEM016" name="logradouro" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-82a3fe6c-2a8c-4cc2-8e13-6008df98218e" />
+                </source-codes>
+              </attribute>
+              <attribute id="ad25c70d51170495887262f5feb945216880" cid="ELEM017" name="street" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-1f3c6b25-9d7d-4f50-af5f-643bdf7381c3" />
+                </source-codes>
+              </attribute>
+              <attribute id="a035b45c4cd2044c18976402a49ff4916884" cid="ELEM018" name="neighborhood" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-71ff09d1-af8f-43d9-905d-0df364f1e581" />
+                </source-codes>
+              </attribute>
+              <attribute id="a57ed16d8f61e407b947d289558a23394728" cid="ELEM019" name="city" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-c17a1ad4-9bdc-443a-8373-e383c2f84050" />
+                </source-codes>
+              </attribute>
+              <attribute id="a1ba341d4b65e435a8a55970f3255871f719" cid="ELEM020" name="cep" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-52818553-c8b8-4214-b4e9-bd16d1e6b235" />
+                </source-codes>
+              </attribute>
+              <attribute id="a343bcb55865844b3bd1cebbe58c6d68b51" cid="ELEM021" name="state" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-d5c5db6e-a0b6-4cfb-b992-149594d06691" />
+                </source-codes>
+              </attribute>
+            </attributes>
+            <operations>
+              <operation id="o39489dcb963142ee986660c0cb91941a571" cid="ELEM142" name="GetLogradouro" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="od0daac9d53554bf0b93541aa96f5d783571" cid="ELEM143" name="SetLogradouro" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p8d06bc5b51dd4265965507916fe03768" name="logradouro" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o8dfeb529e8444a0c859cb9a70c0b2770653" cid="ELEM144" name="GetNeighborhood" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o6b9e2e8779964a2da5380ee659a5c3e5653" cid="ELEM145" name="SetNeighborhood" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="paff07bf801e045bda8ed17c1e5f90be2" name="neighborhood" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oec938f90fd0b4034b8a48e7deb401659261" cid="ELEM146" name="GetStreet" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o9559b948b71f455c8705be550d537598261" cid="ELEM147" name="SetStreet" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pfebaa407472f40b88dbe0de00e6ce199" name="street" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o1e61062b18e645cb8e232490a00e4ed2517" cid="ELEM148" name="GetCep" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="of3f5696516a1496aa19ed876dcf8a420517" cid="ELEM149" name="SetCep" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pda1aa05769c6427381b392704ea48da8" name="cep" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o518cbdbc241946318ab7ec8cc5ab63e7202" cid="ELEM150" name="GetState" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="odd4ab4ef3ef64c8f808b9a5fe16b3a9c202" cid="ELEM151" name="SetState" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pff2b3c1fbc61484e983a49efc188c4a8" name="state" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="occceb909cd994adc853e888ed580534f743" cid="ELEM152" name="GetCity" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="ob211881f3ad641628a2abcd82e9feed6743" cid="ELEM153" name="SetCity" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pd5e89884b2e140f4b3dfc812441ee217" name="city" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+            </operations>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="06ecf8cb245d491d9640b0b1387ccad8" cid="C003" type="class" name="Establishment" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 11:01:51">
+            <attributes>
+              <attribute id="a15720a8fb57649b599e468d7e02f88d7269" cid="ELEM151" name="company_name" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-9f3bd3ae-bdc5-4d97-93de-94c84a949767" />
+                </source-codes>
+              </attribute>
+              <attribute id="a73d8192542cc4637a5bacdf7ea0d7d4d860" cid="ELEM152" name="email" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-d76711e4-3b1b-4cd2-b487-d66877230d78" />
+                </source-codes>
+              </attribute>
+              <attribute id="ad6ea97fd8d934072ae3e4e88156e3703318" cid="ELEM153" name="cnpj" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-7977bd35-84b4-40dc-b16c-d0ccc6884bb2" />
+                </source-codes>
+              </attribute>
+              <attribute id="ada5a21476f554c24ad7870167440dec9740" cid="ELEM154" name="phone" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-ed69896a-0e8c-4219-8d91-2dd882bcec82" />
+                </source-codes>
+              </attribute>
+              <attribute id="a4491ba0c41b9478f835807f5e8e0c596469" cid="ELEM155" name="password" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-47a5989d-5e44-4d0a-87ad-ba5189be87a0" />
+                </source-codes>
+              </attribute>
+              <attribute id="a05f086d7db3b4339a01e846f3d99f537497" cid="ELEM156" name="password_hash" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-80ca7df8-c381-44c9-b08f-c79e1cb8cfad" />
+                </source-codes>
+              </attribute>
+              <attribute id="aa31a3479e1ea41d9a1e55d2514b9ee0f229" cid="ELEM157" name="active" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-86f56fd3-a107-4c35-9ec4-f7cfd82c6475" />
+                </source-codes>
+              </attribute>
+              <attribute id="a8d60604998f44c45b5d40fd594f777fb480" cid="ELEM158" name="terms_of_use" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-5c0809df-2982-4d4f-8570-83e7986d272d" />
+                </source-codes>
+              </attribute>
+            </attributes>
+            <operations>
+              <operation id="o80682a1c337e4011bac0075e47c9fc22323" cid="ELEM159" name="GetCompany_name" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o9a5e5a4c25ff4c5bbf0978da9d732593323" cid="ELEM160" name="SetCompany_name" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pee188045778c4d6a8e0d614309804abb" name="company_name" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o1bc4f046dbe44042bcce94d6f96d4f46220" cid="ELEM161" name="GetEmail" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o0894815b19fc4c888e5e4fe01d5d4b4c220" cid="ELEM162" name="SetEmail" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p1f6bcebb873f4ef6b1d67059f2b3cd0d" name="email" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="obb8e3751f9fa4e05a71f7bd03d5df2c5237" cid="ELEM163" name="GetCnpj" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o8b9668387f594001b593727b8aaecfe2237" cid="ELEM164" name="SetCnpj" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p8aeb747dae814c18bd0af5f454c088ba" name="cnpj" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o65717e8dff0a448998c15a9f7a31493e331" cid="ELEM165" name="GetPhone" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o48f6e2c8859b48e2b6b5930d76859772331" cid="ELEM166" name="SetPhone" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p4efce7593d8f4fe5bcc6616e0e8dcdf3" name="phone" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o94ae082ffb1748f8a0ac7716fc3a90d437" cid="ELEM167" name="GetPassword" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="od62b2236b070481980c7a819c39195ca37" cid="ELEM168" name="SetPassword" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pbbb7ffc73b9149dca9145a5d045058c3" name="password" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="obc766aba25f14f5793342ea8c07b220c106" cid="ELEM169" name="GetActive" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oaa7313c484454593b3794be5ff3f046d106" cid="ELEM170" name="SetActive" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p4ad27580cf8d465da926fcd99e8f2310" name="active" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o923866abe3e04660b1ca7412077012ba924" cid="ELEM171" name="GetTerms_of_use" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o774d5f46c8094062ab0e2259c562a5fa924" cid="ELEM172" name="SetTerms_of_use" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p389111c5773c448ea9cfc0b9a4ab10d1" name="terms_of_use" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+            </operations>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="87ce3294fbc14cdb9e0b7e7e379d8853" cid="C004" type="class" name="Freelancer" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 11:06:45">
+            <attributes>
+              <attribute id="a58878c7b3c634d368f0f51752656c628879" cid="ELEM183" name="name" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-057e3128-5cf5-4f6d-90e4-124d659fc337" />
+                </source-codes>
+              </attribute>
+              <attribute id="afec1ed9299314a95adb150baaffcf8b0640" cid="ELEM184" name="email" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-84bd892f-c356-4f76-b327-c13650843f0e" />
+                </source-codes>
+              </attribute>
+              <attribute id="aca96f554b75d4d14b69c27c0ad79642b8" cid="ELEM185" name="cpf" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-c0ffec89-c2f8-4bf9-b94e-e6d0bf3e7600" />
+                </source-codes>
+              </attribute>
+              <attribute id="a903d977f2ea944bead92f430f17524ee840" cid="ELEM186" name="phone" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-b9bfdf66-3e66-4670-a01c-d6817469e541" />
+                </source-codes>
+              </attribute>
+              <attribute id="a5caaa37992cb44d5a2c74e27407b5e43982" cid="ELEM187" name="password" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-1e18978a-94c8-4703-8288-242dc20d1d9a" />
+                </source-codes>
+              </attribute>
+              <attribute id="aae79834fd3e44dd49ff92a140f7d80e9750" cid="ELEM188" name="password_hash" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-90b1f100-cf0f-4a86-9321-c059ac7a0b76" />
+                </source-codes>
+              </attribute>
+              <attribute id="a48ebf3e8281141108a375851caf069ae552" cid="ELEM189" name="latitude" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-df64a50c-66ed-4969-832d-d30fa6f6c58c" />
+                </source-codes>
+              </attribute>
+              <attribute id="af0c70ba3d85042919d67b0ca1ee62645493" cid="ELEM190" name="longitude" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-35716746-4d58-4647-949d-109d334d2591" />
+                </source-codes>
+              </attribute>
+              <attribute id="adbbae7cc822c41ca8a1d835b628aa70545" cid="ELEM191" name="gender" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-493920b0-5a7e-4714-8fad-4d6982a0ae68" />
+                </source-codes>
+              </attribute>
+              <attribute id="aae624583b1fe4038b47e8f69083870b257" cid="ELEM192" name="birth" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-46c57bd9-5075-43cd-9a3a-509b708e3744" />
+                </source-codes>
+              </attribute>
+              <attribute id="a7f25716bec5c48d2a4c4805b70d9557f832" cid="ELEM193" name="active" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-356450a1-43b2-45ba-adb8-0f290dc16ce4" />
+                </source-codes>
+              </attribute>
+              <attribute id="af3fd439269714e3ba5f1463819411f31142" cid="ELEM194" name="terms_of_use" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-4530107d-7c48-434a-9954-c0a6cdec8fb9" />
+                </source-codes>
+              </attribute>
+            </attributes>
+            <operations>
+              <operation id="o5c67efa8f6f14e25a042beab5ceeb94f927" cid="ELEM195" name="GetName" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="ob5ca8d0d2a6348559866cefbecb3b827927" cid="ELEM196" name="SetName" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pe33c2b05196644139856af0ae1a008c1" name="name" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oe8086d9fe314440aa8bce133743a0a9a189" cid="ELEM197" name="GetEmail" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o7cb160c20f634e63a4c81936de37de0c189" cid="ELEM198" name="SetEmail" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pfad5d12332c54f5cb1fc616d7372dfc9" name="email" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o0d590f2407544fdf908cd150ae9d09e8171" cid="ELEM199" name="GetCpf" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o87ff0cc7520c4891a3dbe4f759acb125171" cid="ELEM200" name="SetCpf" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p109566af71444198a99b0775de45d648" name="cpf" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o8747bac04e424845bf827142728efe6e496" cid="ELEM201" name="GetPhone" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o7551480ae3114411ab33025b5945df69496" cid="ELEM202" name="SetPhone" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pdc7708b9fb1b4709bec939245758250a" name="phone" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o88f378ea584b4b4ca20d1dae5e18b7975" cid="ELEM203" name="GetPassword" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o04f82809797f4dbb991c9a4aebbe9be65" cid="ELEM204" name="SetPassword" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p9b5fcc20514a4147a50121bd21d99671" name="password" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o172213e1563749b1b5f3a0f2e3c29c5c879" cid="ELEM205" name="GetPassword_hash" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o2cffdb019b4748e8a26325ce297b06f7879" cid="ELEM206" name="SetPassword_hash" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p45bca220513f4598947c21c0f8cebee1" name="password_hash" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o82d255dddec24f518c43536537d4a60488" cid="ELEM207" name="GetLatitude" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o2f606e5a666f4d3c8b2ae13b93a3d82088" cid="ELEM208" name="SetLatitude" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pa9c5520ac8704a598f0ba85096f38707" name="latitude" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o195fb13b0c3a4cb18e6c5de54a944bd2209" cid="ELEM209" name="GetLongitude" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o1b443fb2e96b46dc96e32e7a6e808a1a209" cid="ELEM210" name="SetLongitude" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pa8722c7a19fe427090fb73603824968b" name="longitude" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o7d50a4354e194377bce51e166bc6f6a054" cid="ELEM211" name="GetGender" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o6dcf0393d4c24fa2bd02027cd2bbb31d54" cid="ELEM212" name="SetGender" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p1f2aae0a28824d03b6d954ea34853913" name="gender" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oa0b0372990d746618078c01d964ca463968" cid="ELEM213" name="GetBirth" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="ob95cd6b215b74efd8d8192c50f92dc46968" cid="ELEM214" name="SetBirth" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p294936f41b194f28b6b9256c3cde0ea2" name="birth" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o8a63b0e720ba433c90b924994d17f9c9449" cid="ELEM215" name="GetActive" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o49165187bfb4480f8022d7ad453f0593449" cid="ELEM216" name="SetActive" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p5db455380cff42e1bca35a6740469ee2" name="active" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="ob4bf61ee57a743b8b400397d142e51f9901" cid="ELEM217" name="GetTerms_of_use" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o98d4c1e7b15f4fe0b82682d565932ec1901" cid="ELEM218" name="SetTerms_of_use" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p37776c6ae17b4444abffad63929650c7" name="terms_of_use" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+            </operations>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="cc223ef4e5794ec18fd644ecc8403bc4" cid="REL002" type="relationship" name="Cria" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 11:13:54" from="di766ffc1c0e8d4c2bb0d9d75753e0038c5139" to="87ce3294fbc14cdb9e0b7e7e379d8853">
+            <relation from="di766ffc1c0e8d4c2bb0d9d75753e0038c5139" to="87ce3294fbc14cdb9e0b7e7e379d8853">
+              <start-role id="umlar-e0671b3d-5f2e-43f1-9526-109ccd94da01" name="" multiplicity="0..*" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-e5f814e9-01b6-4267-9bd4-34e611c3c043" name="" multiplicity="1" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="34142176350149b6a935e908715561e5" cid="C006" type="class" name="Speciality " style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 11:21:54">
+            <attributes>
+              <attribute id="a32bb3251ad114dc3913807da3c0ba6a292" cid="ELEM092" name="speciality_function" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-537fe064-6721-40f3-b96d-e44e68d5e27c" />
+                </source-codes>
+              </attribute>
+            </attributes>
+            <operations>
+              <operation id="o965eb98541534a4cb2fae322fb6eaf30852" cid="ELEM173" name="GetSpeciality_function" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o9a54ac23a3b4487cbb96c9ce3c01e4ff852" cid="ELEM174" name="SetSpeciality_function" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p35be7173ef144932be3259daf1809aac" name="speciality_function" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+            </operations>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="7cd7d6f4028d4412af6d8e2bef91b6e9" cid="REL003" type="relationship" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 11:23:08" from="di766ffc1c0e8d4c2bb0d9d75753e0038c5139" to="34142176350149b6a935e908715561e5">
+            <relation from="di766ffc1c0e8d4c2bb0d9d75753e0038c5139" to="34142176350149b6a935e908715561e5">
+              <start-role id="umlar-80caf727-220e-49ca-a485-606e4c249980" name="" multiplicity="0..*" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-af1af9c4-b869-4ae1-a7c5-3fd9364b2367" name="" multiplicity="1" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="758d0eb4613341638ed27eaa2a0fed7e" cid="C007" type="class" name="Job" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 11:24:43">
+            <attributes>
+              <attribute id="a77551775d66f4ce29ee984ae119bb9fa996" cid="ELEM097" name="id" creation-date="01/01/0001 00:00:00" type="Integer" type-id="Uml.Integer" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-defd587b-f2b5-40e2-b614-ed4d56e90e3b" />
+                </source-codes>
+              </attribute>
+              <attribute id="a78cea987dd1745a5a7ee01cd348f26e9477" cid="ELEM098" name="date" creation-date="01/01/0001 00:00:00" type="DateTime" type-id="Uml.DateTime" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-462f3a95-d5a8-42ad-8177-0e927df8b8ce" />
+                </source-codes>
+              </attribute>
+              <attribute id="a11be2eb2045245d5bf7c98a401538312637" cid="ELEM100" name="terms_of_use" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-b0107178-abd6-4bcd-8fdd-7dbf194cdd03" />
+                </source-codes>
+              </attribute>
+              <attribute id="a1eacdfcc6e2a44f386b4b1a955fde0d9743" cid="ELEM101" name="latitude" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-5c7ded10-629c-4b4e-b6f1-f18f8d8518ab" />
+                </source-codes>
+              </attribute>
+              <attribute id="a680f9e9eb419455090c58a29768612a1198" cid="ELEM102" name="establishment_note" creation-date="01/01/0001 00:00:00" type="Integer" type-id="Uml.Integer" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-bed7685a-241c-4d11-bdcf-00e2ebc94ec5" />
+                </source-codes>
+              </attribute>
+              <attribute id="a2a40bdc7692241648658e00d635ed87a110" cid="ELEM103" name="establishment comment" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-1686ce06-53d6-4785-bfc7-d082ab13af29" />
+                </source-codes>
+              </attribute>
+              <attribute id="afc34c1e481d14f7980bdcb6397dffcad550" cid="ELEM104" name="freelancer_note" creation-date="01/01/0001 00:00:00" type="Integer" type-id="Uml.Integer" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-6b5a0214-78ed-4755-9833-4059db2ac92d" />
+                </source-codes>
+              </attribute>
+              <attribute id="afc9adedb808343ceb467307ef9487541163" cid="ELEM105" name="freelancer_comment" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-b1e67f02-098a-4302-9b6f-c8b27c7fe2ae" />
+                </source-codes>
+              </attribute>
+              <attribute id="a5da35c2dba374d3fa651d21ddfb316b5561" cid="ELEM166" name="longitude" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-05ece454-ea0e-4852-95a8-5071c70ae891" />
+                </source-codes>
+              </attribute>
+            </attributes>
+            <operations>
+              <operation id="o4204cf49fdf14570a8f656e89cdf7162937" cid="ELEM167" name="GetId" creation-date="01/01/0001 00:00:00" type="Integer" type-id="Uml.Integer" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o9d51afadc71e49248a88a093262411f2937" cid="ELEM168" name="SetId" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p7a359687ed1247c9940ae3abd31153a1" name="id" type="Integer" type-id="Uml.Integer" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oa7e50ccf30ca4a90b8da417a82046b2488" cid="ELEM169" name="GetDate" creation-date="01/01/0001 00:00:00" type="DateTime" type-id="Uml.DateTime" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o19152b55274841999d0e6d66cfd4c6a988" cid="ELEM170" name="SetDate" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pf93c09a429474bf49bfb71aaa28fb608" name="date" type="DateTime" type-id="Uml.DateTime" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o4a98b7e57e6044b7b71adb833c22b90e649" cid="ELEM171" name="GetTerms_of_use" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="off2ec1f108a0404b88d4751939fd01f3649" cid="ELEM172" name="SetTerms_of_use" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p001bcde28c5747e19b43da68cb7ce6ab" name="terms_of_use" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o9c0fb6dfc88a4422bb46ede6be648b95561" cid="ELEM173" name="GetLatitude" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oe37f9c9b7cb44e3a92e59de062a8582d561" cid="ELEM174" name="SetLatitude" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p382b72d5c1df4dd4a7dce3396d783c43" name="latitude" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o8a23941268c149abb6074d38418566c0793" cid="ELEM175" name="GetEstablishment_note" creation-date="01/01/0001 00:00:00" type="Integer" type-id="Uml.Integer" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o33cc753c9b754cc2acf496e410b60be0793" cid="ELEM176" name="SetEstablishment_note" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pd4a58525e9934ca0b997ae26e9868e60" name="establishment_note" type="Integer" type-id="Uml.Integer" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o60d7cdd3e06242ecbebf21e5b2b8f50e657" cid="ELEM177" name="GetEstablishment comment" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o022409700fee438b9f001b92cf80edd9657" cid="ELEM178" name="SetEstablishment comment" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p0b019732795c43c6850a4fcb8d819917" name="establishment comment" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oc0b8d30331fd49e4bbbffd104eddc911577" cid="ELEM179" name="GetFreelancer_note" creation-date="01/01/0001 00:00:00" type="Integer" type-id="Uml.Integer" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oa9cc14b705f0445bbc4a3a75e863326f577" cid="ELEM180" name="SetFreelancer_note" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p5dd8582d49aa4212919e6a3f9b366a63" name="freelancer_note" type="Integer" type-id="Uml.Integer" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o675cdb0d9cc54c8ebeee10e3cc1f64fa761" cid="ELEM181" name="GetFreelancer_comment" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oe0aa54c3349540be9b0f541de8e84b35761" cid="ELEM182" name="SetFreelancer_comment" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p4cca4d2f61b54f6e9a9cf59750381a0a" name="freelancer_comment" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oc24bf407ad984bdd9609c2b612bd4ea6594" cid="ELEM183" name="GetLongitude" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o766dbe06bd4347b68ce525cba2929761594" cid="ELEM184" name="SetLongitude" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pe24e9a597b4346838f104e1495dcd948" name="longitude" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+            </operations>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="10c53881b60c4bdab892d3a6a2ab5c65" cid="REL005" type="relationship" name="gera" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 11:47:55" from="758d0eb4613341638ed27eaa2a0fed7e" to="06ecf8cb245d491d9640b0b1387ccad8">
+            <relation from="758d0eb4613341638ed27eaa2a0fed7e" to="06ecf8cb245d491d9640b0b1387ccad8">
+              <start-role id="umlar-8f04db29-a6fd-4dac-94e7-21daa420c0c8" name="" multiplicity="0..*" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-22461da1-a9b6-4567-b7e0-3e6c036a1d9b" name="" multiplicity="1" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="9ed1a7cf5dcb44189b77fb76b4ecb112" cid="REL006" type="relationship" name="gera" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 11:49:21" from="758d0eb4613341638ed27eaa2a0fed7e" to="di766ffc1c0e8d4c2bb0d9d75753e0038c5139">
+            <relation from="758d0eb4613341638ed27eaa2a0fed7e" to="di766ffc1c0e8d4c2bb0d9d75753e0038c5139">
+              <start-role id="umlar-f3348601-926f-4e56-88ca-b3014236e86d" name="" multiplicity="0..*" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-0d79a716-2e7d-4d3a-96dd-09a68408564c" name="" multiplicity="1" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="f26502495d4c4418aae58c884c3ee3ba" cid="C008" type="class" name="photo" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 11:51:26">
+            <attributes>
+              <attribute id="aec793dce85aa426e8aa245b3fc158ea2733" cid="ELEM124" name="url_imagem" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-428f90ee-26bb-4730-a186-0b2691bdf5b5" />
+                </source-codes>
+              </attribute>
+            </attributes>
+            <operations>
+              <operation id="oaffdb64f81ee4be2b2a992190327b4c8152" cid="ELEM125" name="GetUrl_imagem" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oa6ac5f3c52254d52afc73c423510ebad152" cid="ELEM126" name="SetUrl_imagem" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pa61bd42af40a4ceeac0220ff5828b290" name="url_imagem" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+            </operations>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="08c7a729eafc4831a492c2fa6a590116" cid="REL010" type="relationship" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 11:58:00" from="87ce3294fbc14cdb9e0b7e7e379d8853" to="f26502495d4c4418aae58c884c3ee3ba">
+            <relation from="87ce3294fbc14cdb9e0b7e7e379d8853" to="f26502495d4c4418aae58c884c3ee3ba">
+              <start-role id="umlar-8faec44c-0498-4b7d-aa77-60ed1b90ac49" name="" navigability="" association-type="composition" visibility="private" />
+              <end-role id="umlar-38ba211a-a422-4eec-b490-2bc1b9d48b2c" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di55233a45ba384c8fb7eee414f3ba81222825" cid="C008" type="class" name="File" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 11:51:26">
+            <attributes>
+              <attribute id="aec793dce85aa426e8aa245b3fc158ea2733" cid="ELEM124" name="name" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-ebf2aafb-bead-40b0-8bf1-030f6d9a08d2" />
+                </source-codes>
+              </attribute>
+              <attribute id="ad2dcb68cacb84b939696f4fd2abbde80172" cid="ELEM175" name="path" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-c3ac3ae6-2c02-47aa-bb9f-4a55d544e138" />
+                </source-codes>
+              </attribute>
+              <attribute id="a18cea649c4164eea87abf59743156038872" cid="ELEM176" name="url " creation-date="01/01/0001 00:00:00" type="Announcement" type-id="Class:2754d0ab3a1840169acd16907a668c9d" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-60a25ad0-890a-429f-9cdb-fd990c772ad2" />
+                </source-codes>
+              </attribute>
+            </attributes>
+            <operations>
+              <operation id="o561633cfc9c6438ca57a37c72a908f9a494" cid="ELEM177" name="GetName" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o5f5112cbcfd14ee08542d36e94edb859494" cid="ELEM178" name="SetName" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pf62cff7d23b64753868c0b122ad4ad19" name="name" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oa4d3287398024fd68ff8f03dc37463a8460" cid="ELEM179" name="GetPath" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o47479310c1e44c658fd1ef6f22c02dc6460" cid="ELEM180" name="SetPath" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p2e96211f35c24c3f891abc875ee20a63" name="path" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="ofbd9435cc66f46ccb4cdaa3b914a5cb8797" cid="ELEM181" name="GetUrl" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="ob559b0a3f4bd43b38fd9cea78d88cfa2797" cid="ELEM182" name="SetUrl" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p1b71b11ff62949809920f53168a07d1c" name="url " type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+            </operations>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="1fb861d87b6246cda9492ef3cd2a1111" cid="C009" type="class" name="Chat" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 12:02:58">
+            <attributes>
+              <attribute id="ab41b7430422e43f8958b3b0ba8b6cd1a254" cid="ELEM127" name="id" creation-date="01/01/0001 00:00:00" type="Integer" type-id="Uml.Integer" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-08f14898-264d-4094-bab0-4ca92f0ebdb3" />
+                </source-codes>
+              </attribute>
+              <attribute id="a1743d6552e8a4720996e20e1263d9435151" cid="ELEM128" name="date" creation-date="01/01/0001 00:00:00" type="DateTime" type-id="Uml.DateTime" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-ea6a90d9-c6ff-48b9-b720-d5d7345c9bd8" />
+                </source-codes>
+              </attribute>
+            </attributes>
+            <operations>
+              <operation id="o28ecd5434006412eb8c591ca154eb926871" cid="ELEM154" name="GetDate" creation-date="01/01/0001 00:00:00" type="DateTime" type-id="Uml.DateTime" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="obdea1379884e4d17a86f32049069fce8871" cid="ELEM155" name="SetDate" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pde7d392cdfda4b1980d14f8481464aa2" name="date" type="DateTime" type-id="Uml.DateTime" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o00a1fe03c0164c96838e50d4e35508c5575" cid="ELEM156" name="GetId" creation-date="01/01/0001 00:00:00" type="Integer" type-id="Uml.Integer" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o7b4f1694709142209a970045ac50fcef575" cid="ELEM157" name="SetId" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pbde8827fd2444fb288f7dd0d23b2c55e" name="id" type="Integer" type-id="Uml.Integer" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+            </operations>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="2c59b0b841564b778e15e06d6885a2c4" cid="C010" type="class" name="message" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 12:04:18">
+            <attributes>
+              <attribute id="a40b09c6ae78a49289282ece482f55f53287" cid="ELEM133" name="id" creation-date="01/01/0001 00:00:00" type="Integer" type-id="Uml.Integer" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-e99848da-89a7-419a-8076-ec7eeb309f7f" />
+                </source-codes>
+              </attribute>
+              <attribute id="af3d8ac8e84c04458bc49dcf1e2c1b35a78" cid="ELEM134" name="date" creation-date="01/01/0001 00:00:00" type="DateTime" type-id="Uml.DateTime" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-594c408e-3749-444e-8fbe-3db2373619f0" />
+                </source-codes>
+              </attribute>
+              <attribute id="ae8be1af8640849c2952412256d828c74339" cid="ELEM135" name="mensage" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-5a17457a-7bb0-4daa-8dc2-0970c642d9df" />
+                </source-codes>
+              </attribute>
+            </attributes>
+            <operations>
+              <operation id="o029c553de53442d495365cb93d358d86831" cid="ELEM158" name="GetDate" creation-date="01/01/0001 00:00:00" type="DateTime" type-id="Uml.DateTime" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="obe27f773f28441229abf6e1188eaa230831" cid="ELEM159" name="SetDate" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pace72c59cc894a75bd256dafac1cd1a8" name="date" type="DateTime" type-id="Uml.DateTime" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o9740432c6f44429cb749275040cc80c4335" cid="ELEM160" name="GetId" creation-date="01/01/0001 00:00:00" type="Integer" type-id="Uml.Integer" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oc5b734cc196545a5a1b482510f7a25bb335" cid="ELEM161" name="SetId" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pa7c84af25ccb423c9f7857b0f1eef73d" name="id" type="Integer" type-id="Uml.Integer" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="of4bc92bff9a54eeab19c9984ddbe59d7839" cid="ELEM162" name="GetMensage" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o8e8bddcce2ea48c59777b51ea66cbe3b839" cid="ELEM163" name="SetMensage" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p027f86d86bc84aa892242cdaf35992c7" name="mensage" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+            </operations>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="0cd23c77ac714a43b9e5eff1faf0e04c" cid="REL012" type="relationship" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 12:06:36" from="1fb861d87b6246cda9492ef3cd2a1111" to="2c59b0b841564b778e15e06d6885a2c4">
+            <relation from="1fb861d87b6246cda9492ef3cd2a1111" to="2c59b0b841564b778e15e06d6885a2c4">
+              <start-role id="umlar-edf5f9b1-3ce9-485f-84be-ff64fe7f4da7" name="" navigability="" association-type="composition" visibility="private" />
+              <end-role id="umlar-22f673a5-eb3c-4004-9b0e-fa6a95956236" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="05ffa3ab925d4b3eb79a71d95637efed" cid="REL013" type="relationship" name="inicia" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 12:06:51" from="06ecf8cb245d491d9640b0b1387ccad8" to="1fb861d87b6246cda9492ef3cd2a1111">
+            <relation from="06ecf8cb245d491d9640b0b1387ccad8" to="1fb861d87b6246cda9492ef3cd2a1111">
+              <start-role id="umlar-9c138b38-d256-4481-9a6c-670136020023" name="" multiplicity="1" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-08636a84-8f33-487c-bc55-dde0e9d48513" name="" multiplicity="0..*" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="e1898bc43fd6405d8c5a9cca639fe197" cid="REL014" type="relationship" name="possui" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 12:07:35" from="di766ffc1c0e8d4c2bb0d9d75753e0038c5139" to="1fb861d87b6246cda9492ef3cd2a1111">
+            <relation from="di766ffc1c0e8d4c2bb0d9d75753e0038c5139" to="1fb861d87b6246cda9492ef3cd2a1111">
+              <start-role id="umlar-74ee0cf0-ec6b-4695-96c7-5aa9fce35f81" name="" multiplicity="1" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-078174fa-68cf-4762-8a47-861f4f82fd1a" name="" multiplicity="0..*" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="27695d1c066546209cb3f25c843f9d30" cid="REL017" type="relationship" name="pertence" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/29/2020 00:18:24" from="di55233a45ba384c8fb7eee414f3ba81222825" to="di766ffc1c0e8d4c2bb0d9d75753e0038c5139">
+            <relation from="di55233a45ba384c8fb7eee414f3ba81222825" to="di766ffc1c0e8d4c2bb0d9d75753e0038c5139">
+              <start-role id="umlar-1d3b2d5c-a2d8-4970-91bc-5915d887b867" name="" multiplicity="1" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-70050731-470e-430f-9e45-2d479ef86cbb" name="" multiplicity="1" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="671512ef06ea452b936b26f82cdf36a1" cid="CMT001" type="comment" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/28/2020 18:56:53">
+            <comment>diagrama de classes referente ao pacote entidade
+</comment>
+          </item>
+          <item id="di766ffc1c0e8d4c2bb0d9d75753e0038c5139" cid="C005" type="class" name="Announcement" style-class="" visibility="package" change-tracking-state="added" creator="Pe87f575d8df942d3ac232642822192e4" creation-date="06/01/2020 11:13:30">
+            <attributes>
+              <attribute id="acd970041052247bab69e0599df14312a478" cid="ELEM077" name="description" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-826f0388-f2ec-4619-9dfd-23daa827076b" />
+                </source-codes>
+              </attribute>
+              <attribute id="adf6cca5dd84148ffbe2283795855bbb3534" cid="ELEM078" name="amount" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-ac1692bc-eea3-42e6-8d2e-f16b9df4a1cc" />
+                </source-codes>
+              </attribute>
+              <attribute id="a611ba20a72e1434f9bfaca04c08fb6f8246" cid="ELEM080" name="day_of_week" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-708030ba-b420-42e0-ab1b-99248ff7dad0" />
+                </source-codes>
+              </attribute>
+              <attribute id="aac64cac3a1be4bd6aa3893a84f639505713" cid="ELEM142" name="period" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="private">
+                <source-codes>
+                  <source-code language="ActionScript" uid="scs-d3fdc25a-5ac9-4138-a11c-677c9e7362c9" />
+                </source-codes>
+              </attribute>
+            </attributes>
+            <operations>
+              <operation id="o8ce0317d7d934acd8d922d50d308b5c915" cid="ELEM143" name="GetDescription" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o5415573a6e3f4630afaf1bae10bd28a815" cid="ELEM144" name="SetDescription" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p2689a2ea3d3c4f77a6326fba4530b05f" name="description" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o58c542cbde56432f85466914aff5ecf1611" cid="ELEM145" name="GetAmount" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oea74d16727634bcf9178e312c6fe94e8611" cid="ELEM146" name="SetAmount" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p991deb7494d24ef2a0a1b88357e0659c" name="amount" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="od3098bbda6f64131930c524ada5b8a1e697" cid="ELEM147" name="GetDay_of_week" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o943442ac713e4c02bcc1f835ff236fb5697" cid="ELEM148" name="SetDay_of_week" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pdac6aa77c47149048dafadc0208997f6" name="day_of_week" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o48e809b8b3a348148a6d69daf9f2b038690" cid="ELEM149" name="GetPeriod" creation-date="01/01/0001 00:00:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oc157faded85f480786813e339d657e56690" cid="ELEM150" name="SetPeriod" creation-date="01/01/0001 00:00:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p33257f6a16134cea897a5c7e194b6ad6" name="period" type="String" type-id="Uml.String" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+            </operations>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+        </abstract-items>
+        <layer id="31856b8e91904ed5ae1c1816f0b5c8c7" name="Default" visible="true" enabled="true" locked="false">
+          <item id="7f96732d9dfb4cc8b7001ce55a7d15a0" iid="43b8b96dad6246e88b7196107d8618fc" creation-date="06/01/2020 10:53:53" order-index="1" type="relation">
+            <layout start-role-position="-8.010578,-124.1634" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="-149" y1="208" x2="22" y2="291" start-border-pos="0.337053574621677" end-border-pos="0.0892857142857143" name-position="0,0">
+              <points>
+                <point x="-149" y="208" />
+                <point x="22" y="291" />
+              </points>
+            </layout>
+            <relation from="87ce3294fbc14cdb9e0b7e7e379d8853" from-iid="7eb3fa5c139d47d8ba8e2e778b4ec975" to="2e27437d7307428f96f677d69a97d73e" to-iid="f90dec80fe854063aa98f42e232f6514" />
+          </item>
+          <item id="cc223ef4e5794ec18fd644ecc8403bc4" iid="98e74715e1334baab0650f711acc5cd4" creation-date="06/01/2020 11:13:54" order-index="8" type="relation">
+            <layout start-role-position="22,63" end-role-position="12,-25" start-multiplicity-position="25,-15" end-multiplicity-position="31.15038,-10.30185" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="114" y1="-145" x2="-149" y2="50" start-border-pos="0.640378548895899" end-border-pos="0.278273809701204" name-position="15,10">
+              <points>
+                <point x="114" y="-145" />
+                <point x="58" y="-121" />
+                <point x="-149" y="50" />
+              </points>
+            </layout>
+            <relation from="di766ffc1c0e8d4c2bb0d9d75753e0038c5139" from-iid="8cc36b3f24a144e3a8f79c06d12cf45b" to="87ce3294fbc14cdb9e0b7e7e379d8853" to-iid="7eb3fa5c139d47d8ba8e2e778b4ec975" to-field="aca96f554b75d4d14b69c27c0ad79642b8" />
+          </item>
+          <item id="7cd7d6f4028d4412af6d8e2bef91b6e9" iid="d3ebda62007a4b118860a1df41e26d35" creation-date="06/01/2020 11:23:08" order-index="10" type="relation">
+            <layout start-role-position="25,15" start-role-width="52" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25.00002,15.00001" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="292" y1="-356" x2="402" y2="-344" start-border-pos="0.326480261981487" end-border-pos="0.8515625" name-position="0,0">
+              <points>
+                <point x="292" y="-356" />
+                <point x="402" y="-344" />
+              </points>
+            </layout>
+            <relation from="di766ffc1c0e8d4c2bb0d9d75753e0038c5139" from-iid="8cc36b3f24a144e3a8f79c06d12cf45b" to="34142176350149b6a935e908715561e5" to-iid="f1323d1ecfae409dbb6977515ff3e3ca" to-field="o9a54ac23a3b4487cbb96c9ce3c01e4ff852" />
+          </item>
+          <item id="10c53881b60c4bdab892d3a6a2ab5c65" iid="6791722124274d18818ddceb92ee04f4" creation-date="06/01/2020 11:47:55" order-index="12" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="6.524219,-17.15511" end-multiplicity-position="1.854436,-13.50063" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="745" y1="-113" x2="748" y2="44" start-border-pos="0.740121573209763" end-border-pos="0.0936578139662743" name-position="-27,16">
+              <points>
+                <point x="745" y="-113" />
+                <point x="748" y="44" />
+              </points>
+            </layout>
+            <relation from="758d0eb4613341638ed27eaa2a0fed7e" from-iid="37f08b765c9749a1b8a40c564e6ddf2d" to="06ecf8cb245d491d9640b0b1387ccad8" to-iid="a79224511d334e0bb160d23c830f2df4" />
+          </item>
+          <item id="9ed1a7cf5dcb44189b77fb76b4ecb112" iid="a50d195ee6e345a39529732185267b8d" creation-date="06/01/2020 11:49:21" order-index="13" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="24.99998,15.00001" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="731" y1="-197" x2="292" y2="-186" start-border-pos="0.78775167837739" end-border-pos="0.466282889246941" name-position="-3,14">
+              <points>
+                <point x="731" y="-197" />
+                <point x="292" y="-186" />
+              </points>
+            </layout>
+            <relation from="758d0eb4613341638ed27eaa2a0fed7e" from-iid="37f08b765c9749a1b8a40c564e6ddf2d" to="di766ffc1c0e8d4c2bb0d9d75753e0038c5139" to-iid="8cc36b3f24a144e3a8f79c06d12cf45b" />
+          </item>
+          <item id="f26502495d4c4418aae58c884c3ee3ba" iid="58114f8a8c86445a87f6306b7d6f4454" anchor="None" creation-date="06/01/2020 11:51:26" order-index="14" type="entity">
+            <layout ax="-858" ay="240" awidth="286" aheight="140" x="-858" y="240" width="286" height="140" />
+            <class />
+          </item>
+          <item id="08c7a729eafc4831a492c2fa6a590116" iid="5bd56f35ba3742148df7e941ef5e13a0" creation-date="06/01/2020 11:58:00" order-index="15" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="-463" y1="322" x2="-572" y2="325" start-border-pos="0.870535716414452" end-border-pos="0.401785716414452" name-position="0,0">
+              <points>
+                <point x="-463" y="322" />
+                <point x="-572" y="325" />
+              </points>
+            </layout>
+            <relation from="87ce3294fbc14cdb9e0b7e7e379d8853" from-iid="7eb3fa5c139d47d8ba8e2e778b4ec975" to="f26502495d4c4418aae58c884c3ee3ba" to-iid="58114f8a8c86445a87f6306b7d6f4454" />
+          </item>
+          <item id="1fb861d87b6246cda9492ef3cd2a1111" iid="723fc923dedf4fa6b3aa4fc2c4e1bef9" anchor="None" creation-date="06/01/2020 12:02:58" order-index="16" type="entity">
+            <layout ax="235" ay="44.5" awidth="294" aheight="175" x="235" y="44.5" width="294" height="175" />
+            <class />
+          </item>
+          <item id="2c59b0b841564b778e15e06d6885a2c4" iid="491c531b72b846ab8900796e35935a09" anchor="None" creation-date="06/01/2020 12:04:18" order-index="17" type="entity">
+            <layout ax="240" ay="297" awidth="303" aheight="224" x="240" y="297" width="303" height="224" />
+            <class />
+          </item>
+          <item id="0cd23c77ac714a43b9e5eff1faf0e04c" iid="5cda0a4b324746b79b4d0332615269a4" creation-date="06/01/2020 12:06:36" order-index="18" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="398" y1="220" x2="391" y2="297" start-border-pos="0.611394554376602" end-border-pos="0.124587458745875" name-position="0,0">
+              <points>
+                <point x="398" y="220" />
+                <point x="391" y="297" />
+              </points>
+            </layout>
+            <relation from="1fb861d87b6246cda9492ef3cd2a1111" from-iid="723fc923dedf4fa6b3aa4fc2c4e1bef9" to="2c59b0b841564b778e15e06d6885a2c4" to-iid="491c531b72b846ab8900796e35935a09" />
+          </item>
+          <item id="05ffa3ab925d4b3eb79a71d95637efed" iid="81c5f494e39243aaae14535590d042fb" creation-date="06/01/2020 12:06:51" order-index="19" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="23.96062,-15.95902" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="true" auto-path="" x1="621" y1="132" x2="529" y2="139" start-border-pos="0.951710820198059" end-border-pos="0.385714285714286" name-position="-3,13">
+              <points>
+                <point x="621" y="132" />
+                <point x="529" y="139" />
+              </points>
+            </layout>
+            <relation from="06ecf8cb245d491d9640b0b1387ccad8" from-iid="a79224511d334e0bb160d23c830f2df4" from-field="of076c64c81df4fc4ae3c0a0212d0c9d0453" to="1fb861d87b6246cda9492ef3cd2a1111" to-iid="723fc923dedf4fa6b3aa4fc2c4e1bef9" to-field="obdea1379884e4d17a86f32049069fce8871" />
+          </item>
+          <item id="e1898bc43fd6405d8c5a9cca639fe197" iid="a5a5e45241244cc4b75708fea183d9c7" creation-date="06/01/2020 12:07:35" order-index="20" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="26.3261,13.41199" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="true" auto-path="" x1="275" y1="-145" x2="382" y2="44" start-border-pos="0.513406939804554" end-border-pos="0.125" name-position="-30,7">
+              <points>
+                <point x="275" y="-145" />
+                <point x="382" y="44" />
+              </points>
+            </layout>
+            <relation from="di766ffc1c0e8d4c2bb0d9d75753e0038c5139" from-iid="8cc36b3f24a144e3a8f79c06d12cf45b" from-field="oce4fa2b422f6416f880a2d80407c9213791" to="1fb861d87b6246cda9492ef3cd2a1111" to-iid="723fc923dedf4fa6b3aa4fc2c4e1bef9" />
+          </item>
+          <item id="671512ef06ea452b936b26f82cdf36a1" iid="aaa457f747174d3eada526ed4ac9c097" anchor="None" creation-date="06/28/2020 18:56:53" order-index="22" type="entity">
+            <layout ax="-331.5" ay="-555" awidth="197" aheight="130" x="-331.5" y="-555" width="197" height="130" />
+          </item>
+          <item id="di766ffc1c0e8d4c2bb0d9d75753e0038c5139" iid="8cc36b3f24a144e3a8f79c06d12cf45b" anchor="None" creation-date="06/01/2020 11:13:30" order-index="7" type="entity">
+            <layout ax="-25" ay="-449" awidth="317" aheight="304" x="-25" y="-449" width="317" height="304" />
+            <class />
+          </item>
+          <item id="34142176350149b6a935e908715561e5" iid="f1323d1ecfae409dbb6977515ff3e3ca" anchor="None" creation-date="06/01/2020 11:21:54" order-index="9" type="entity">
+            <layout ax="401.5" ay="-439" awidth="251" aheight="160" x="401.5" y="-439" width="251" height="160" />
+            <class />
+          </item>
+          <item id="di55233a45ba384c8fb7eee414f3ba81222825" iid="98456b2e3a6140ebb22d7f38c5eacb5d" anchor="None" creation-date="06/01/2020 11:51:26" order-index="14" type="entity">
+            <layout ax="-421" ay="-379" awidth="272" aheight="198" x="-421" y="-379" width="272" height="198" />
+            <class />
+          </item>
+          <item id="27695d1c066546209cb3f25c843f9d30" iid="89e14e1b141840d781d4677cc6f84f36" creation-date="06/29/2020 00:18:24" order-index="23" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25.00001,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="true" auto-path="" x1="-149" y1="-232" x2="-25" y2="-229" start-border-pos="0.434974747474748" end-border-pos="0.819078947368421" name-position="0,0">
+              <points>
+                <point x="-149" y="-232" />
+                <point x="-25" y="-229" />
+              </points>
+            </layout>
+            <relation from="di55233a45ba384c8fb7eee414f3ba81222825" from-iid="98456b2e3a6140ebb22d7f38c5eacb5d" from-field="o47479310c1e44c658fd1ef6f22c02dc6460" to="di766ffc1c0e8d4c2bb0d9d75753e0038c5139" to-iid="8cc36b3f24a144e3a8f79c06d12cf45b" />
+          </item>
+          <item id="87ce3294fbc14cdb9e0b7e7e379d8853" iid="7eb3fa5c139d47d8ba8e2e778b4ec975" anchor="None" creation-date="06/01/2020 11:06:45" order-index="5" type="entity">
+            <layout ax="-463" ay="-26" awidth="314" aheight="672" x="-463" y="-26" width="314" height="672" />
+            <class />
+          </item>
+          <item id="2e27437d7307428f96f677d69a97d73e" iid="f90dec80fe854063aa98f42e232f6514" anchor="None" creation-date="06/01/2020 10:54:00" order-index="2" type="entity">
+            <layout ax="-86" ay="291" awidth="303" aheight="355" x="-86" y="291" width="303" height="355" />
+            <class />
+          </item>
+          <item id="06ecf8cb245d491d9640b0b1387ccad8" iid="a79224511d334e0bb160d23c830f2df4" creation-date="06/01/2020 11:01:51" order-index="4" type="entity">
+            <layout ax="621" ay="44.5" awidth="339" aheight="453" x="621" y="44.5" width="339" height="453" />
+            <class />
+          </item>
+          <item id="758d0eb4613341638ed27eaa2a0fed7e" iid="37f08b765c9749a1b8a40c564e6ddf2d" anchor="None" creation-date="06/01/2020 11:24:43" order-index="11" type="entity">
+            <layout ax="731" ay="-670" awidth="343" aheight="557" x="731" y="-670" width="343" height="557" />
+            <class />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>
