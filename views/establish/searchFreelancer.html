@@ -57,11 +57,11 @@
                                 <div class="select-wrap">
                                   <label>Turno</label>
                                   <div class="icon"><span></span></div>
-                                  <select name="" id="" class="form-control">
+                                  <select name="" id="" class="form-control" ng-model="turn">
                                     <option value="">Turno</option>
-                                    <option value="">Manhã</option>
-                                    <option value="">Tarde</option>
-                                    <option value="">Noite</option>
+                                    <option value="Manhã">Manhã</option>
+                                    <option value="Tarde">Tarde</option>
+                                    <option value="Noite">Noite</option>
                                   </select>
                                 </div>
                               </div>
@@ -74,15 +74,15 @@
                                 <div class="select-wrap">
                                   <label>Dias da semana</label>
                                   <div class="icon"><span></span></div>
-                                  <select name="" id="" class="form-control">
+                                  <select name="" id="" class="form-control" ng-model="dayOfWeek">
                                     <option value="">Dias da semana</option>
-                                    <option value="">Domingo</option>
-                                    <option value="">Segunda</option>
-                                    <option value="">Terça</option>
-                                    <option value="">Quarta</option>
-                                    <option value="">Quinta</option>
-                                    <option value="">Sexta</option>
-                                    <option value="">Sábado</option>
+                                    <option value="Domingo">Domingo</option>
+                                    <option value="Segunda">Segunda</option>
+                                    <option value="Terça">Terça</option>
+                                    <option value="Quarta">Quarta</option>
+                                    <option value="Quinta">Quinta</option>
+                                    <option value="Sexta">Sexta</option>
+                                    <option value="Sábado">Sábado</option>
                                   </select>
                                 </div>
                               </div>
@@ -95,7 +95,7 @@
                                 <div class="icon">
                                   <span class="icon-map-marker"></span>
                                 </div>
-                                <input type="text" id="localidade" ng-model="city" ng-change="autoCompleteLocale()"
+                                <input type="text" id="localidade" ng-model="locale" ng-change="autoCompleteLocale()"
                                   class="form-control" placeholder="Localidade" />
                               </div>
                             </div>
@@ -104,8 +104,8 @@
                             <div class="form-group">
                               <div class="form-field">
                                 <label ></label>
-                                <button style="position: relative; top: 8px;" type="submit" class="form-control btn btn-primary"
-                                  style="background-color: #4455dd">
+                                <button style="position: relative; top: 8px;" class="form-control btn btn-primary"
+                                  style="background-color: #4455dd" ng-click="searchAnnouncementsByFilter()">
                                   Buscar
                                 </button>
                               </div>
