@@ -16,6 +16,9 @@ easyjob.controller('SearchController', [
     $scope.city;
     $scope.busy = false;
     $scope.speciality = 0;
+    $scope.locale;
+    $scope.turn;
+    $scope.dayOfWeek;
 
     window.addEventListener('load', () => {
       $scope.buscarCidadesBrasil();
@@ -115,6 +118,11 @@ easyjob.controller('SearchController', [
     // 
 
     $scope.searchAnnouncementsByFilter = function () {
+
+      console.log('especialidade' ,$scope.speciality);      
+      console.log('Turno' ,$scope.speciality);
+      console.log('Dias da semana' ,$scope.speciality);
+      console.log('Localidade' ,$scope.speciality);
 
     }
 
