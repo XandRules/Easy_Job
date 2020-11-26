@@ -120,9 +120,9 @@ easyjob.controller('SearchController', [
     $scope.searchAnnouncementsByFilter = function () {
 
       console.log('especialidade' ,$scope.speciality);      
-      console.log('Turno' ,$scope.speciality);
-      console.log('Dias da semana' ,$scope.speciality);
-      console.log('Localidade' ,$scope.speciality);
+      console.log('Turno' ,$scope.turn);
+      console.log('Dias da semana' ,$scope.dayOfWeek);
+      console.log('Localidade' ,$scope.locale);
 
     }
 
