@@ -25,6 +25,7 @@ easyjob.controller('EstablishController', ['EstablishModel', '$scope', '$rootSco
 
             let userLogin = document.getElementById("userlogin");
             userLogin.innerHTML = $rootScope.name;
+            $scope.$apply();
 
         });
 

@@ -298,7 +298,7 @@ easyjob.controller('JobController', [
       if($rootScope.pageSelect === "freelancerjoblist"){
 
         SearchModel.fetchNotificationJobList($rootScope.id_hash).then(response =>{
-          if(response.data){
+          if(response.data.length > 0){
             $scope.jobList = response.data;
 
             $scope.jobList.forEach((job, index) =>{
@@ -317,6 +317,8 @@ easyjob.controller('JobController', [
               
             });
 
+          }else{
+            $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
           }
         });
 
@@ -324,8 +326,9 @@ easyjob.controller('JobController', [
     }
 
     $scope.fetchNotification();
-
-    $scope.pushAnnouncementFromFreelancer();
+    if($rootScope.pageSelect === 'freelancerjob'){
+      $scope.pushAnnouncementFromFreelancer();
+    }
 
   },
 ]);
