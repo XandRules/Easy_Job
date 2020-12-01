@@ -19,6 +19,7 @@ easyjob.controller('SearchController', [
     $scope.locale;
     $scope.turn;
     $scope.dayOfWeek;
+    $scope.showAnnouncement = false
 
     window.addEventListener('load', () => {
       $scope.buscarCidadesBrasil();
@@ -92,18 +93,24 @@ easyjob.controller('SearchController', [
     $scope.searchAnnouncements = function () {
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       SearchModel.getAllAnnouncements().then(response => {
-        if (response.data[0]) {
-          response.data.forEach(element => {
-            let period = element.period.split(" ");
-            let day = element.day_of_week.split(" ");
-            element.period = [];
-            element.day_of_week = [];
-            element.period.push(period);
-            element.day_of_week.push(day);
-            element.speciality = $rootScope.specilities[element.speciality_id -1].speciality_function
-            $scope.anuncios.push(element);            
+        if (response.status == 200) {
+          if(response.data.length == 0){
+            $scope.showAnnouncement = false
+          }else{
+            $scope.showAnnouncement = true;
+            response.data.forEach(element => {
+              let period = element.period.split(" ");
+              let day = element.day_of_week.split(" ");
+              element.period = [];
+              element.day_of_week = [];
+              element.period.push(period);
+              element.day_of_week.push(day);
+              element.speciality = $rootScope.specilities[element.speciality_id -1].speciality_function
+              $scope.anuncios.push(element);            
+  
+            });
 
-          });
+          }
           $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
           $scope.$apply();
         } else {
@@ -119,10 +126,39 @@ easyjob.controller('SearchController', [
 
     $scope.searchAnnouncementsByFilter = function () {
 
-      console.log('especialidade' ,$scope.speciality);      
-      console.log('Turno' ,$scope.turn);
-      console.log('Dias da semana' ,$scope.dayOfWeek);
-      console.log('Localidade' ,$scope.locale);
+      console.log('speciality' ,$scope.speciality.speciality_function);      
+      console.log('period' ,$scope.turn);
+      console.log('day' ,$scope.dayOfWeek);
+      console.log('city' ,$scope.locale);
+
+      data ={
+        'speciality' : $scope.speciality.speciality_function,      
+        'period' : $scope.turn,
+        'day' : $scope.dayOfWeek,
+        'city' : $scope.locale,
+      }
+
+      SearchModel.getAllAnnouncementsByFilter(data).then(response =>{
+        if (response.data[0]) {
+          response.data.forEach(element => {
+            let period = element.period.split(" ");
+            let day = element.day_of_week.split(" ");
+            element.period = [];
+            element.day_of_week = [];
+            element.period.push(period);
+            element.day_of_week.push(day);
+            element.speciality = $rootScope.specilities[element.speciality_id -1].speciality_function
+            $scope.anuncios.push(element);
+          });
+
+          $scope.busy = false;
+          $scope.showAnnouncement = true;
+          $scope.$apply();
+        }else{
+          $scope.showAnnouncement = false
+          $scope.$apply();
+        }
+      })
 
     }
 
@@ -175,6 +211,9 @@ easyjob.controller('SearchController', [
       $state.go('freelancerjob');
       
     }
+
+    $scope.buscarCidadesBrasil();
+    $scope.getSpecilities();
 
   },
 ]);
