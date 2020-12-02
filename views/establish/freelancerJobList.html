@@ -2,6 +2,45 @@
   .labelsUnit {
     font-size: 14px;
   }
+  *{
+    margin: 0;
+    padding: 0;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
 </style>
 
 
@@ -83,10 +122,8 @@
                     </label>
                   </div>
                   <label>
-                    <span class="text-primary" style="font-size: 20px; padding: .7rem;">
-                      <strong ng-if="item.accepted == null">Pendente</strong>
-                      <strong ng-if="item.accepted == false">Rejeitado</strong>
-                      <strong ng-if="item.accepted == true">Aceito</strong>                
+                    <span class="text-primary" style="font-size: 20px; padding: .7rem;">  
+                      <strong >{{item.accepted}}</strong>     
                     </span>
                   </label>
                   <div class="mr-5">
@@ -124,8 +161,16 @@
                     </a>
                   </div> -->
                   <div class="col-md-12">
+                    <div class="col-md-12" ng-if="item.accepted === 'Aceito'">
+                      <button ng-click="endService(item.id)" class="btn btn-primary col-md-12" style="margin: 2px; cursor: pointer;"> Finalizar</button>
+                    </div>
+                    <div class="col-md-12" ng-if="item.accepted === 'Finalizado'">
+                      <button class="btn btn-success col-md-12" style="margin: 2px; cursor: pointer;" 
+                       name="btnAddMore"  ng-click="openModalrate(item.id);" data-toggle="modal" 
+                       data-target=".cd-example-modal-xl"> Avaliar</button>
+                    </div>
                     <div class="col-md-12" ng-if="showOptions">
-                      <button ng-click="deleteById(item.id)" class="btn btn-danger col-md-12" style="margin: 2px;"> Cancelar</button>
+                      <button ng-click="deleteById(item.id)" class="btn btn-danger col-md-12" style="margin: 2px; cursor: pointer;"> Cancelar</button>
                     </div>
                   </div>
                 </div>
@@ -138,3 +183,44 @@
     </div>
   </section>
 </div>
+
+<div class="modal fade cd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" style="margin-top: 80px;">
+      <div class="modal-content container col-md-12" >
+          <h1 class="text-center" style="position: relative; margin: 20px;"> Avaliação de prestação de serviço</h1>
+          <form class="text-center" style="position: relative; left: 100px;">
+              <div class="row col-md-10 text-center">
+                  <div class="col-md-3 text-center">
+                    <label for="begin_time"><strong>Avaliação do profissional</strong> </label>
+                    <div class="rate form-control" style="width: auto;">
+                      <input type="radio" id="star5" name="rate" value="5" ng-model="rate"/>
+                      <label for="star5" title="5 Estrelas">5 stars</label>
+                      <input type="radio" id="star4" name="rate" value="4" ng-model="rate" />
+                      <label for="star4" title="4 Estrelas">4 stars</label>
+                      <input type="radio" id="star3" name="rate" value="3" ng-model="rate" />
+                      <label for="star3" title="3 Estrelas">3 stars</label>
+                      <input type="radio" id="star2" name="rate" value="2" ng-model="rate" />
+                      <label for="star2" title="2 Estrelas">2 stars</label>
+                      <input type="radio" id="star1" name="rate" value="1" ng-model="rate" />
+                      <label for="star1" title="1 Estrela">1 star</label>
+                    </div>
+                  </div>
+                 
+                  <div  style="position: relative; margin-top: 40px; width: 100%;">
+                      <label for="obs"><strong>Observações</strong> </label>
+                      <textarea class="col-md-12 form-control" cols="5" rows="5" type="text" id="obs" ng-model="messageRate" placeholder="Digite aqui um informação que você acha importante!"/>
+                  </div>
+
+                  <div class="col-md-12" style="position: relative; margin-top: 40px; margin-bottom: 40px;" >
+                      <div class="col-md-12">
+                          <button class="btn btn-danger" data-dismiss="modal"> Cancelar</button>
+                          <button class="btn btn-primary" ng-click="rateService();">Enviar</button>
+                      </div>
+                      <div class="col-md-12">
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+  </div>

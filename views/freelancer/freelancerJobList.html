@@ -81,9 +81,7 @@
                   </div>
                   <label>
                     <span class="text-primary" style="font-size: 20px; padding: .7rem;">
-                      <strong ng-if="item.accepted == null">Pendente</strong>
-                      <strong ng-if="item.accepted == false">Rejeitado</strong>
-                      <strong ng-if="item.accepted == true">Aceito</strong>                
+                      <strong>{{item.accepted}}</strong>
                     </span>
                   </label>
                   <div class="mr-5">

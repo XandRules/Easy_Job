@@ -16,10 +16,13 @@ easyjob.controller('JobController', [
     $scope.comment;
     $scope.acceptTerms;
     $scope.applyJob;
+    $scope.establishmentOptions = false;
 
     $scope.jobList;
     $scope.jobCount = 0;
     $scope.job = [];
+    $scope.rate = 0;
+    $scope.messageRate = '';
     
     const week = [
       'Domingo',
@@ -80,7 +83,7 @@ easyjob.controller('JobController', [
     $scope.refuseById = function(id){
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
       data = {
-        accepted : false
+        accepted : 'Rejeitado'
       }
       JobModel.refuseById(id, data).then(function(response){
         $scope.showOptions = true;
@@ -93,7 +96,7 @@ easyjob.controller('JobController', [
     $scope.acceptedById = function(id){
       $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
       data = {
-        accepted : true
+        accepted : 'Aceito'
       }
       JobModel.refuseById(id, data).then(function(response){
 
@@ -210,6 +213,7 @@ easyjob.controller('JobController', [
         end_time : endTime,
         announcement_id : $rootScope.announcementSelectId.anuncio_id,
         establishment_id : $rootScope.id,
+        accepted: 'Pendente',
       }
 
       $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
@@ -279,6 +283,7 @@ easyjob.controller('JobController', [
 
             $scope.jobList = response.data;
 
+            
             $scope.jobList.forEach((job, index) =>{
 
               AnnouncementModel.getAnnouncementsById(job.announcement_id).then(function(response){
@@ -323,6 +328,32 @@ easyjob.controller('JobController', [
         });
 
       }
+    }
+
+    $scope.endService = function(id){
+      $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");
+      data = {
+        accepted : 'Finalizado'
+      }
+      JobModel.refuseById(id, data).then(function(response){
+        $scope.showOptions = true;
+        $scope.fetchNotification();
+        $scope.loading = angular.element('#loading').removeClass("loader loader-default is-active");
+
+      })
+
+
+    }
+
+    $scope.openModalrate = function(id){
+
+      console.log(id);
+      
+    }
+
+    $scope.rateService = function(id){
+      console.log($scope.rate);
+      console.log($scope.messageRate);
     }
 
     $scope.fetchNotification();
