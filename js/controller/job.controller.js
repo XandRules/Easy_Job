@@ -118,6 +118,28 @@ easyjob.controller('JobController', [
           //console.log(response);  
         });
 
+        let establishment_id;
+        let announcement_id;
+
+        $scope.jobList.forEach(item =>{
+
+          if(item.id == id){
+            establishment_id = item.establishment_id;
+            announcement_id = item.announcement_id;
+          }
+        })
+
+        job = {
+          initial_job_id : id,
+          establishment_id: establishment_id,
+          announcement_id: announcement_id,
+          date: new Date(),
+        }
+
+        JobModel.createJob(job).then(response =>{
+          console.log(response.data);
+        })
+
         //console.log(response);
         $scope.fetchNotification();
         $scope.loading = angular.element('#loading').addClass("loader loader-default is-active");

@@ -20,6 +20,10 @@ easyjob.factory('JobModel', [
       return axios.get(config.baseUrl + `/announcements/search/${id}`);
     };
 
+    JobFactory.createJob = function (job) {
+      return axios.post(config.baseUrl + `/jobs`, job);
+    };
+
     JobFactory.getAnnouncementsFromFreelancer = function (anuncio_id) {
       return axios.get(config.baseUrl + `/announcements/${anuncio_id}`);
     };
