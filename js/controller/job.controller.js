@@ -17,6 +17,7 @@ easyjob.controller('JobController', [
     $scope.acceptTerms;
     $scope.applyJob;
     $scope.establishmentOptions = false;
+    $scope.jobId;
 
     $scope.jobList;
     $scope.jobCount = 0;
@@ -369,13 +370,38 @@ easyjob.controller('JobController', [
 
     $scope.openModalrate = function(id){
 
-      console.log(id);
+      $scope.jobId = id;
       
     }
 
     $scope.rateService = function(id){
       console.log($scope.rate);
       console.log($scope.messageRate);
+
+      let data;
+
+      if($rootScope.pageSelect == 'establishjoblist'){
+
+        data ={        
+          establishment_evaluation: $scope.rate,
+          establishment_comment : $scope.messageRate
+        }        
+      }else{
+        data ={         
+          freelancer_evaluation: $scope.rate,
+          freelancer_comment : $scope.messageRate
+        }
+      }
+
+      JobModel.rateUser($scope.jobId,data).then(function(response){
+        console.log(response.data[0]);
+      })
+
+      $('myModal').hide();
+      $scope.rate = 0;
+      $scope.messageRate = '';
+      swal("Avaliação Enviada","Sua avaliação foi feita com sucesso", "success");
+
     }
 
     $scope.fetchNotification();

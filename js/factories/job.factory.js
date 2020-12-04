@@ -48,6 +48,9 @@ easyjob.factory('JobModel', [
       return axios.delete(config.baseUrl + `/initialjob/${id}`);
     }
 
+    JobFactory.rateUser = function(id, data){
+      return axios.put(config.baseUrl + `/jobs/${id}`, data);
+    }
     return JobFactory;
   },
 ]);
