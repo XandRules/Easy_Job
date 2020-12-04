@@ -23,13 +23,13 @@ easyjob.run([
 
       if ($rootScope.sessionValidated) {
         $rootScope.token = $rootScope.token + $rootScope.sessionValidated.token;
+        if ($rootScope.sessionValidated.freelancer) {
+          $rootScope.loggedUser = $rootScope.sessionValidated.freelancer;
+        } else if ($rootScope.sessionValidated.establishment) {
+          $rootScope.loggedUser = $rootScope.sessionValidated.establishment;
+        }
       }
 
-      if ($rootScope.sessionValidated.freelancer) {
-        $rootScope.loggedUser = $rootScope.sessionValidated.freelancer;
-      } else if ($rootScope.sessionValidated.establishment) {
-        $rootScope.loggedUser = $rootScope.sessionValidated.establishment;
-      }
 
       $rootScope.pageSelect = toState.name;
 
