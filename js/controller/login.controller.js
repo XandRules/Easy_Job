@@ -101,7 +101,7 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
             LoginModel.verifyEmail(data, route).then(function (response) {
                 console.log('data : ' + response.status);
 
-                if (response.data.error == undefined) {
+                if (!response.data.message && !response.data.error) {
 
                     $scope.entrar = "";
                     console.log(response.data);
@@ -109,7 +109,7 @@ easyjob.controller('LoginController', ['LoginModel', '$scope', '$state', '$rootS
                     swal(`${response.data.name}`, "Você receberá um email com as informações para redefinir sua senha", "info");
 
                 } else {
-                    swal("email ou senha incorreta!", "Tente redefinir sua senha!", "error");
+                    swal("email não encontrado!", "Cadastre um novo usuário!", "error");
                     console.log('usuário ou senha incorreta');
                     $scope.entrar = "";
                 }
