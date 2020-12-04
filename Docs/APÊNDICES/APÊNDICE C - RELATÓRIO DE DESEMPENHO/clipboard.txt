@@ -1,3 +1,0 @@
-
-Todas as imagens possuem o atributo alt no html, preenchido com alguma frase que dê significado para a imagem, possibilidando que pessoas com alguma dificuldade visual possam
-utilizem softwares para identificar as imagens. O site utiliza também poucas cores e faz um contraste significativo entre elas para facilitar a visualização.
