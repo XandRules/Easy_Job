@@ -1,0 +1,29 @@
+/* Vantagens */
+.vantagens {
+    margin-bottom: 60px;
+  }
+  
+  .vantagens h1 {
+    text-align: center;
+  }
+  
+  .vantagens-itens {
+    margin: 0 15px;
+    text-align: center;
+  }
+  
+  .vantagens-itens h2 {
+    font-size: 1.25rem;
+    color: #000000;
+  }
+  
+  @media (max-width: 770px) {
+    .img-vantagens {
+      margin: 0 auto;
+      width: auto;
+    }
+  
+    .vantagens-itens {
+      margin: 0;
+    }
+  }

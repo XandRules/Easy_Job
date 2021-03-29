@@ -1,0 +1,22 @@
+.conta-campos h1 {
+    color: #000000;
+  }
+  
+  .conta-campos {
+    margin-top: 60px;
+  }
+  
+  .conta-icone {
+    width: 400px;
+    margin: 0 auto;
+    margin-left: 200px;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 770px) {
+    .conta-icone {
+      margin-left: auto;
+      width: auto;
+    }
+  }
+  

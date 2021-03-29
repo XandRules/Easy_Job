@@ -1,0 +1,58 @@
+.mapa-site span {
+    display: block;
+  }
+  
+  .redes-sociais-item {
+    display: inline-block;
+  }
+  
+  footer {
+    background: #000000;
+    padding: 30px 0;
+  }
+  
+  footer h2 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  footer span {
+    font-size: 1rem;
+    color: #808080;
+    cursor: pointer;
+  }
+  
+  .copy {
+    background: #4455dd;
+    text-align: center;
+    padding: 1.2rem 0;
+  }
+  
+  .redes-sociais-item {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    margin: 0 5px;
+    margin-top: 8px;
+  }
+  
+  .footer-item p {
+    font-size: 1rem;
+    color: #808080;
+  }
+  
+  .footer-item {
+    margin-bottom: 20px;
+  }
+  
+  .copy p {
+    color: #ffffff;
+    margin: 0;
+  }
+  
+  .footer-info-item span {
+    display: block;
+  }
+  

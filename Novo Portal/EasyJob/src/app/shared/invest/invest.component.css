@@ -1,0 +1,58 @@
+/* Investimento */
+
+  
+  .invest-item {
+    background: #ffffff;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+    margin: 0 15px;
+    margin-bottom: 20px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 0.3rem;
+    
+  }
+  
+  @media (min-width: 992px) and (max-width: 1140px) {
+    .invest-item {
+      flex-basis: 400px;
+    }
+  }
+  
+  .invest-item h2 {
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+  
+  .invest-item h3 {
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: #4455dd;
+  }
+  
+  .invest-item h3::after {
+    content: '';
+    display: block;
+    background: #dedede;
+    width: 40px;
+    height: 2px;
+    margin-top: 10px;
+  }
+  
+  .invest-item span {
+    color: #808080;
+    font-weight: 500;
+  }
+  
+  .btn-invest {
+    display: block;
+    width: 200px;
+    padding: 0.62rem 0.75rem;
+    text-align: left;
+    margin-top: 1rem;
+  }
+  
+  .btn-invest i {
+    font-size: 1.3rem;
+    align-items: center;
+    margin-left: 77px;
+  }
+  
